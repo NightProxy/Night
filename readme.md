@@ -2,7 +2,7 @@
 
 Modified Version of the <a href="https://github.com/TheTIW/UV-Static" target="blank">Ultraviolet Staic</a> backend. This modification makes the proxy a static website, something no one has ever done before. 
 <br> <strong> Our Developers That Worked on This Project: </strong>
-NC Gaming#0058 and Kwazehhh#7245  <center> Join our discord <a href="https://discord.gg/f8yqSBenuk" target="_blank" style="text-decoration:none;"> here </a><br>
+NC Gaming#0058 and Kwazehhh#7245  <center> Join our discord <a href="[https://discord.gg/f8yqSBenuk](https://discord.gg/f8yqSBenuk)" target="_blank" style="text-decoration:none;"> here </a><br>
 <a> <img src="static/logo.gif" style="width:25%; align-self:center;"> </img> </a> 
 </center> <br>
 
@@ -25,11 +25,11 @@ To deploy this website locally, follow these steps:
 ## Hosting
 
 You can host this on any static hosting platoform. <br>
-[![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://glitch.com/edit/#!/import/github/TheTIW/UV-Static)
-[![Run on Google Cloud](https://binbashbanana.github.io/deploy-buttons/buttons/remade/googlecloud.svg)](https://deploy.cloud.run/?git_repo=https://github.com/TheTIW/UV-Static)
-[![Deploy with Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/TheTIW/UV-Static) 
-[![Deploy with Netlify](https://binbashbanana.github.io/deploy-buttons/buttons/remade/netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/TheTIW/UV-Static)
-[![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://render.com/deploy?repo=https://github.com/TheTIW/UV-Static)
+[![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://glitch.com/edit/#!/import/github/jacksoncraft859/Evasi)
+[![Run on Google Cloud](https://binbashbanana.github.io/deploy-buttons/buttons/remade/googlecloud.svg)](https://deploy.cloud.run/?git_repo=https://github.com/jacksoncraft859/Evasi)
+[![Deploy with Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/jacksoncraft859/Evasi) 
+[![Deploy with Netlify](https://binbashbanana.github.io/deploy-buttons/buttons/remade/netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jacksoncraft859/Evasi)
+[![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://render.com/deploy?repo=https://github.com/jacksoncraft859/Evasi)
 ## Contributing
 
 Contributions are welcome! If you have any suggestions or improvements, please create a pull request.
