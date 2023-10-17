@@ -1,4 +1,5 @@
-function hide_panel(){
+subpanel = document.getElementById("sidenav")
+function hide_sidenav(){
   if (subpanel.hidden == false){
       subpanel.hidden = true;
   }else{
