@@ -17,8 +17,8 @@ NC Gaming#0058 and Kwazehhh#7245  <center> Join our discord <a href="https://dis
 
 To deploy this website locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/TheTIW/UV-Static`
-2. Navigate to the project directory: `cd UV-Static`
+1. Clone the repository: `git clone https://github.com/jacksoncraft859/Evasi`
+2. Navigate to the project directory: `cd Evasi`
 3. Open the index.html file in a web browser (Cannot be run locally).
 <br><br>
 
