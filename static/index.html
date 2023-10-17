@@ -22,7 +22,16 @@
       <link href="https://fonts.googleapis.com/css?family=Share Tech Mono" rel="stylesheet"/>
    </head>
    <body>
-      <script>window.onload = hide_sidenav();</script>
+      <script>
+         subpanel = document.getElementById("sidenav");
+         function hide_sidenav(){
+             if (subpanel.hidden == false){
+                  subpanel.hidden = true;
+            }else{
+                  subpanel.hidden = false;
+              }
+         };
+         window.onload = hide_sidenav();</script>
       <div id="particles-js"></div>
       <div id="imgsearch">
          <title>ΞV∆SI</title>
@@ -54,7 +63,6 @@
       <script src="error.js" defer></script>
       <script src="search.js" defer></script>
       <script src="index.js" defer></script>
-      <script src="nav.js" defer></script>
       <script src="particles.min.js"></script>
       <script src="particles.js"></script>
       <div id="footer">
