@@ -3,161 +3,161 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: "Amazon",
       link: "https://amazon.com/",
-      image: "/images/icons/apps/amazon.png",
+      image: "./images/icons/apps/amazon.png",
       categories: ["all", "media"],
       error: false
     },
     {
       name: "BuzzFeed Quizzes",
       link: "https://buzzfeed.com/quizzes",
-      image: "/images/icons/apps/buzzfeed.png",
+      image: "./images/icons/apps/buzzfeed.png",
       categories: ["all", "media"],
       error: false
     },
     {
       name: "Free Movies Watch",
       link: "https://freemovieswatch.tv",
-      image: "/images/icons/freemovieswatch.png",
+      image: "./images/icons/freemovieswatch.png",
       categories: ["all", "media", "stream"],
       error: false
     },
     {
       name: "Scratch",
       link: "https://scratch.mit.edu",
-      image: "/images/icons/scratch.jpg",
+      image: "./images/icons/scratch.jpg",
       categories: ["all", "social", "game", "media", ""],
       error: false
     },
     {
       name: "Chess.com",
       link: "https://chess.com",
-      image: "/images/icons/chess.png",
+      image: "./images/icons/chess.png",
       categories: ["all", "game"],
       error: false
     },
     {
       name: "Cool Math Games",
       link: "https://coolmathgames.com",
-      image: "/images/icons/apps/coolmath.png",
+      image: "./images/icons/apps/coolmath.png",
       categories: ["all", "game"],
       error: false
     },
     {
       name: "Discord",
       link: "https://canary.discord.com",
-      image: "/images/icons/apps/discord.jpg",
+      image: "./images/icons/apps/discord.jpg",
       categories: ["all", "social"],
       error: false
     },
     {
       name: "DuckDuckGo",
       link: "https://start.duckduckgo.com/",
-      image: "/images/icons/apps/duckduckgo.png",
+      image: "./images/icons/apps/duckduckgo.png",
       categories: ["all"],
       error: false
     },
     {
       name: "ESPN",
       link: "https://www.espn.com/watch/",
-      image: "/images/icons/apps/espn.webp",
+      image: "./images/icons/apps/espn.webp",
       categories: ["all", "media"],
       error: false
     },
     {
       name: "Fifa Rosters",
       link: "https://fifarosters.com/",
-      image: "/images/icons/fifa.png",
+      image: "./images/icons/fifa.png",
       categories: ["all", "media"],
       error: false
     },
     {
       name: "Firefox Web Browser",
       link: "https://replit.com/@cooleddie001/Firefox-Legacy?v=1",
-      image: "/images/icons/apps/firefox.png",
+      image: "./images/icons/apps/firefox.png",
       categories: ["all", "media"],
       error: false
     },
     {
       name: "Flix HQ",
       link: "https://flixhq.to",
-      image: "/images/icons/apps/flixhq.png",
+      image: "./images/icons/apps/flixhq.png",
       categories: ["all", "media"],
       error: false
     },
     {
       name: "Geforce NOW",
       link: "https://play.geforcenow.com",
-      image: "/images/icons/apps/geforce-now.png",
+      image: "./images/icons/apps/geforce-now.png",
       categories: ["all", "stream", "cloud"],
       error: false
     },
     {
       name: "Github",
       link: "https://github.com",
-      image: "/images/icons/apps/github.png",
+      image: "./images/icons/apps/github.png",
       categories: ["all", "media"],
       error: false
     },
     {
       name: "Google",
       link: "https://google.com",
-      image: "/images/icons/apps/google.png",
+      image: "./images/icons/apps/google.png",
       categories: ["all", "media"],
       error: false
     },
     {
       name: "HBO MAX",
       link: "https://www.hbomax.com/",
-      image: "/images/icons/apps/hbo.webp",
+      image: "./images/icons/apps/hbo.webp",
       categories: ["all", "stream"],
       error: false
     },
     {
       name: "Messenger",
       link: "https://messenger.com/",
-      image: "/images/icons/apps/messenger.png",
+      image: "./images/icons/apps/messenger.png",
       categories: ["all", "social", "message"],
       error: false
     },
     {
       name: "Paramount Plus",
       link: "https://paramountplus.com",
-      image: "/images/icons/apps/paramount.png",
+      image: "./images/icons/apps/paramount.png",
       categories: ["all", "stream"],
       error: false
     },
     {
       name: "Pinterest",
       link: "https://pinterest.com",
-      image: "/images/icons/apps/pinterest.png",
+      image: "./images/icons/apps/pinterest.png",
       categories: ["all", "media"],
       error: false
     },
     {
       name: "Pixlr",
       link: "https://pixlr.com/",
-      image: "/images/icons/pix.png",
+      image: "./images/icons/pix.png",
       categories: ["all", "media"],
       error: false
     },
     {
       name: "Poki",
       link: "https://poki.com",
-      image: "/images/icons/apps/poki.png",
+      image: "./images/icons/apps/poki.png",
       categories: ["all", "game"],
       error: false
     },
     {
       name: "Soundcloud",
       link: "https://soundcloud.com",
-      image: "/images/icons/apps/soundcloud.jpg",
+      image: "./images/icons/apps/soundcloud.jpg",
       categories: ["all", "media"],
       error: false
     },
     {
       name: "Spotify",
       link: "https://open.spotify.com",
-      image: "/images/icons/apps/spotify.png",
+      image: "./images/icons/apps/spotify.png",
       categories: ["all", "media"],
       say: "Spotify is currently not working on the proxy.",
       error: true
@@ -165,84 +165,84 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: "Telegram",
       link: "https://web.telegram.org/",
-      image: "/images/icons/apps/telegram.png",
+      image: "./images/icons/apps/telegram.png",
       categories: ["all", "social"],
       error: false
     },
     {
       name: "Tiktok",
       link: "https://tiktok.com",
-      image: "/images/icons/apps/tiktok.png",
+      image: "./images/icons/apps/tiktok.png",
       categories: ["all", "social", "media"],
       error: false
     },
     {
       name: "Tumblr",
       link: "https://tumblr.com/",
-      image: "/images/icons/apps/tumblr.png",
+      image: "./images/icons/apps/tumblr.png",
       categories: ["all", "social"],
       error: false
     },
     {
       name: "Twitch",
       link: "https://twitch.tv",
-      image: "/images/icons/apps/twitch-tv.png",
+      image: "./images/icons/apps/twitch-tv.png",
       categories: ["all", "stream", "media"],
       error: false
     },
     {
       name: "Twitter",
       link: "https://twitter.com",
-      image: "/images/icons/apps/twitter.png",
+      image: "./images/icons/apps/twitter.png",
       categories: ["all", "social", "media"],
       error: false
     },
     {
       name: "VS Code",
       link: "https://vscode.dev",
-      image: "/images/icons/apps/vscode.png",
+      image: "./images/icons/apps/vscode.png",
       categories: ["all", "tool"],
       error: false
     },
     {
       name: "Y8 Games",
       link: "https://y8.com/",
-      image: "/images/icons/apps/y8.png",
+      image: "./images/icons/apps/y8.png",
       categories: ["all", "game"],
       error: false
     },
     {
       name: "YouTube",
       link: "https://youtube.com",
-      image: "/images/icons/apps/yt.png",
+      image: "./images/icons/apps/yt.png",
       categories: ["all", "social", "stream", "media"],
       error: false
     },
     {
       name: "Whatsapp",
       link: "https://web.whatsapp.com/",
-      image: "/images/icons/apps/whatsapp.png",
+      image: "./images/icons/apps/whatsapp.png",
       categories: ["all", "message", "social"],
       error: false
     },
     {
       name: "Wattpad",
       link: "https://wattpad.com/",
-      image: "/images/icons/apps/wattpad.webp",
+      image: "./images/icons/apps/wattpad.webp",
       categories: ["all", "social"],
       error: false
     },
     {
       name: "ChatGPT Clone",
       link: "https://chat.shuttle.rip/",
-      image: "/images/icons/chatgpt.png",
+      image: "./images/icons/chatgpt.png",
       categories: ["all", "AI"],
       error: false
     },
     {
       name: "Discord - Login",
       link: "https://canary.discord.com/login",
-      image: "/images/icons/discord.jpg",
+      image: "./images/icons/discord.jpg",
       categories: ["all", "social"],
       blank: "true",
       error: false
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: "HD Today",
       link: "https://hdtoday.tv",
-      image: "/images/icons/hd.png",
+      image: "./images/icons/hd.png",
       categories: ["all", "media", "stream"],
       error: false
     },
