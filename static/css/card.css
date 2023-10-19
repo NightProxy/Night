@@ -11,7 +11,7 @@ body {
 .column {
   width: 145px;
   transition: all 0.2s ease;
-  cursor: pointer;
+  cursor: crosshair;
   background: #00ffab;
   border-radius: 10px;
   padding-left: 10px;
