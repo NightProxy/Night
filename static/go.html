@@ -78,7 +78,7 @@
         let encodedUrl = sessionStorage.getItem("encodedUrl");
         encodedUrl = "/static/tiw/" + encodedUrl;
         console.log(encodedUrl);
-        document.querySelector("#iframeid").src = encodedUrl;
+        window.location.href = encodedUrl;
       };
     </script>
     <script src="/scripts/main.js"></script>
