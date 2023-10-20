@@ -23,7 +23,7 @@
    </head>
    <body>
       <div id="particles-js"></div>
-      <div id="imgsearch">
+      <div class="page" id="imgsearch">
          <title>ΞV∆SI</title>
          <img src="logo.gif" alt="Logo" style="width:640px;height:330px;">
          <form id="uv-form"">
@@ -47,6 +47,7 @@
              <a href="https://github.com/jacksoncraft859/Evasi" target="_blank" class="fa-brands fa-github"></a>
           </div>
         </div>
+      <canvas id="ghost"></canvas>
       <script src="uv/uv.bundle.js" defer></script>
       <script src="uv/uv.config.js" defer></script>
       <script src="register-sw.js" defer></script>
@@ -57,6 +58,141 @@
       <script src="particles.js"></script>
       <script src="nav.js"></script>
       <script>hide_sidenav();</script>
+      <script type="x-shader/x-fragment" id="vertShader">
+    precision mediump float;
+
+    varying vec2 vUv;
+    attribute vec2 a_position;
+
+    void main() {
+        vUv = .5 * (a_position + 1.);
+        gl_Position = vec4(a_position, 0.0, 1.0);
+    }
+</script>
+
+
+<script type="x-shader/x-fragment" id="fragShader">
+    precision mediump float;
+
+    varying vec2 vUv;
+    uniform float u_time;
+    uniform float u_ratio;
+    uniform float u_size;
+    uniform vec2 u_pointer;
+    uniform float u_smile;
+    uniform vec2 u_target_pointer;
+    uniform vec3 u_main_color;
+    uniform vec3 u_border_color;
+    uniform float u_flat_color;
+    uniform sampler2D u_texture;
+
+    #define TWO_PI 6.28318530718
+    #define PI 3.14159265358979323846
+
+    vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+    vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+    vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+    float snoise(vec2 v) {
+        const vec4 C = vec4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);
+        vec2 i = floor(v + dot(v, C.yy));
+        vec2 x0 = v - i + dot(i, C.xx);
+        vec2 i1;
+        i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+        vec4 x12 = x0.xyxy + C.xxzz;
+        x12.xy -= i1;
+        i = mod289(i);
+        vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0));
+        vec3 m = max(0.5 - vec3(dot(x0, x0), dot(x12.xy, x12.xy), dot(x12.zw, x12.zw)), 0.0);
+        m = m*m;
+        m = m*m;
+        vec3 x = 2.0 * fract(p * C.www) - 1.0;
+        vec3 h = abs(x) - 0.5;
+        vec3 ox = floor(x + 0.5);
+        vec3 a0 = x - ox;
+        m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);
+        vec3 g;
+        g.x = a0.x * x0.x + h.x * x0.y;
+        g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+        return 130.0 * dot(m, g);
+    }
+    vec2 rotate(vec2 v, float angle) {
+        float r_sin = sin(angle);
+        float r_cos = cos(angle);
+        return vec2(v.x * r_cos - v.y * r_sin, v.x * r_sin + v.y * r_cos);
+    }
+
+    float eyes(vec2 uv) {
+        uv.y -= .5;
+        uv.x *= 1.;
+        uv.y *= .8;
+        uv.x = abs(uv.x);
+        uv.y += u_smile * .3 * pow(uv.x, 1.3);
+        uv.x -= (.6 + .2 * u_smile);
+
+        float d = clamp(length(uv), 0., 1.);
+        return 1. - pow(d, .08);
+    }
+
+    float mouth(vec2 uv) {
+        uv.y += 1.5;
+
+        uv.x *= (.5 + .5 * abs(1. - u_smile));
+        uv.y *= (3. - 2. * abs(1. - u_smile));
+        uv.y -= u_smile * 4. * pow(uv.x, 2.);
+
+        float d = clamp(length(uv), 0., 1.);
+        return 1. - pow(d, .07);
+    }
+
+    float face(vec2 uv, float rotation) {
+        uv = rotate(uv, rotation);
+        uv /= (.27 * u_size);
+
+        float eyes_shape = 10. * eyes(uv);
+        float mouth_shape = 20. * mouth(uv);
+
+        float col = 0.;
+        col = mix(col, 1., eyes_shape);
+        col = mix(col, 1., mouth_shape);
+
+        return col;
+    }
+
+    void main() {
+
+        vec2 point = u_pointer;
+        point.x *= u_ratio;
+
+        vec2 uv = vUv;
+        uv.x *= u_ratio;
+        uv -= point;
+
+        float texture = texture2D(u_texture, vec2(vUv.x, 1. - vUv.y)).r;
+        float shape = texture;
+
+        float noise = snoise(uv * vec2(.7 / u_size, .6 / u_size) + vec2(0., .0015 * u_time));
+        noise += 1.2;
+        noise *= 2.1;
+        noise += smoothstep(-.8, -.2, (uv.y) / u_size);
+
+        float face = face(uv, 5. * (u_target_pointer.x - u_pointer.x));
+        shape -= face;
+
+        shape *= noise;
+
+        vec3 border = (1. - u_border_color);
+        border.g += .2 * sin(.005 * u_time);
+        border *= .5;
+
+        vec3 color = u_main_color;
+        color -= (1. - u_flat_color) * border * smoothstep(.0, .01, shape);
+
+        shape = u_flat_color * smoothstep(.8, 1., shape) + (1. - u_flat_color) * shape;
+        color *= shape;
+
+        gl_FragColor = vec4(color, shape);
+    }
+</script>
       <div id="footer">
          <p>&copy; 2023 Evasi. All rights reserved.</p>
       </div>
