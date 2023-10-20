@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="googlebot" content="index, follow, snippet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link id="" rel="stylesheet" type="text/css" href="CSS/main.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="settings/js/themes.js"> </script>
+    <script src="uv/uv.bundle.js" defer></script>
+    <script src="uv/uv.config.js" defer></script>
+    <script src="register-sw.js" defer></script>
+    <script src="search.js" defer></script>
+    <script src="main.js" defer></script>
+    <script src="tab.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="register-sw.js" defer></script>
+    <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet" />   
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.cdnfonts.com/css/blacklisted" rel="stylesheet" />
+    <script src="search.js" defer></script>
+    <script type="application/ld+json"></script>
+    <title>New Tab</title>
+    <script src="tab.js"></script>
+  </head>
+  <body style="overflow:hidden;" >
+    <header class="mainheading">
+      <h1 class="heading">Shadow</h1>
+    </header>
+    <br><br>
+    <div class="search-container">
+      <form id="uv-form" class="flex-center">
+        <input style="z-index: -9999;" id="uv-search-engine" value="" type="hidden"/>
+        <input id="uv-address" class="mainurl"type="text" placeholder="Search the web" autofocus/>
+      </form>
+      <div class="shortcuts">
+        <a id="discord" >
+          <img src="shortcuts/discord.jpg" alt="" />
+          <span>Discord</span>
+        </a>
+        <a id = "chess">
+          <img src="shortcuts/chess.png" alt="" />
+          <span>Chess</span>
+        </a>
+        <a  id="mc">
+          <img src="shortcuts/minecraft.png" alt="" />
+          <span>Minecraft</span>
+        </a>
+        <a id="poki">
+          <img src="shortcuts/poki.png" alt="" />
+          <span>Poki</span>
+        </a>
+        <a  id = "y8">
+          <img src="shortcuts/y8.png" alt="" />
+          <span>Y8 Games</span>
+        </a>
+        <a id="yt">
+          <img src="https://www.teamphenomenalhope.org/wp-content/uploads/2017/04/YouTube-icon-full_color-520x300.png" alt="" />
+          <span>YouTube</span>
+        </a>
+        <a id = "GPT" >
+          <img src="shortcuts/chatgpt.png" alt="" />
+          <span>ChatGPT</span>
+        </a>
+        <a id = "vs" >
+          <img src="shortcuts/vscode.png" alt="" />
+          <span>VS Code</span>
+        </a>
+        <a id = "github">
+          <img src="shortcuts/github.webp" alt="" />
+          <span>Github</span>
+        </a>
+        <a id = "calc">
+          <img src="shortcuts/calculator.png" alt="" />
+          <span>Calculator</span>
+        </a>
+      </div>
+    </div>
+
+  </body>
+
+<script>
+  var searchEngineValue = localStorage.getItem("searchengine");
+    if (!searchEngineValue) {
+    searchEngineValue = "https://www.google.com/search?q=%s";
+  }
+  document.getElementById("uv-search-engine").value = searchEngineValue;
+  </script>
+
+<script src="https://phantomcloud.strangled.net/js/panic.js"></script>
+<div id="custom-menu">
+  <ul>
+    <div id="section">
+      <li onclick="copy()"><a><i class="fa-solid fa-copy"></i>Copy</a></li>
+      <li onclick="paste()"><a><i class="fa-solid fa-paste"></i> Paste</a></li>
+      <li onclick="selectAll()"><a><i class="fa-sharp fa-solid fa-border-all"></i>Select All</a></li>
+    </div>
+    <div id="section">
+      <li onclick="openSettings()"><a><i class="fa-sharp fa-solid fa-gear fa-lg" id="settings"></i>Open Settings</a></li>
+      <li onclick="openDiscord()"><a><i class="fa-brands fa-discord fa-lg"></i>Open Discord</a></li>
+      <li onclick="openIframeInNewTab()"><a><i class="fa-solid fa-arrow-up-right-from-square fa-lg" id="openiframe"></i>Open Tab Content In A New Tab</a></li>
+      <li onclick="devtooltoggle()"><a><i class="fa-solid fa-wrench fa-lg" id="devbtn"></i>Toggle Dev Tools</a></li>    
+    </div>
+    <div id="section">
+      <li onclick="openNewTab()"><a><i class="fa-solid fa-lock"></i>Launch About:Blank in New Tab</a></li>
+      <li onclick="openNewWindow()"><a><i class="fa-solid fa-lock"></i>Launch About:Blank in New Window</a></li>
+    </div>
+    <div id="section">
+      <li onclick="navigateForward()"><a><i class="fa-sharp fa-solid fa-arrow-right fa-lg" id="forward"></i>Forward</a></li>
+      <li onclick="navigateBack()"><a><i class="fa-solid fa-arrow-left fa-lg" id="back"></i> Back</a></li>
+      <li onclick="reloadIframe()"><a><i class="fa-solid fa-rotate-right fa-lg" id="reload"></i>Reload</a></li>
+    </div>
+    <div id="section">
+      <li onclick="Fullscreen()"><a> <i class="fa-solid fa-expand fa-lg" id="full-btn"></i>Fullscreen </a></li>
+    </div>
+  </ul>
+</div>
+<div id="content"></div>
+<script src="tab.js"> </script>
+<script>
+      let toggleState = false;
+    function devtooltoggle() {
+      if (toggleState) {
+        eruda.hide();
+        eruda.destroy();
+      } else {
+        var script = document.createElement('script');
+        script.src = "//cdn.jsdelivr.net/npm/eruda";
+        document.body.appendChild(script);
+        script.onload = function () {
+          eruda.init();
+          eruda.show();
+      }}
+      toggleState = !toggleState;
+    };
+
+function Fullscreen() {
+  const canvas = document.getElementById('body');
+  if (canvas.requestFullscreen) {
+    canvas.requestFullscreen();
+  } else if (canvas.mozRequestFullScreen) {
+    canvas.mozRequestFullScreen();
+  } else if (canvas.webkitRequestFullscreen) {
+    canvas.webkitRequestFullscreen();
+  } else if (canvas.msRequestFullscreen) {
+    canvas.msRequestFullscreen();
+  }
+}
+
+
+function navigateForward() {
+  window.history.forward();
+}
+
+
+function navigateBackward() {
+  window.history.back();
+}
+
+
+function reloadIframe() {
+  location.reload();
+}
+
+function openDiscord() {
+ location.href = '/uv/service/hvtrs8%2F-dksaopd%2Ccmm-ilvktg%2Fr9j3fTJAOA';
+}
+
+function openIframeInNewTab() {
+    const iframeSrc = location.href;
+    window.open(iframeSrc, '_blank');
+  }
+
+
+function openSettings() {
+  window.location.href="/settings/"
+}
+
+function openNewTab() {
+    const currentURL = window.location.href;
+    const newTab = window.open('about:blank', '_blank');
+    newTab.document.write('<html><body style="margin: 0; padding: 0;"><embed src="https://phantomcloud.strangled.net/'&#32;+&#32;currentURL&#32;+&#32;'" style="width: 100%; height: 100%;"></embed></body></html>');
+    newTab.document.close();
+  }
+  
+  function openNewWindow() {
+    const currentURL = window.location.href;
+    const newWindow = window.open('about:blank', '_blank', 'width=800,height=600');
+    newWindow.document.write('<html><body style="margin: 0; padding: 0;"><embed src="https://phantomcloud.strangled.net/'&#32;+&#32;currentURL&#32;+&#32;'" style="width: 100%; height: 100%;"></embed></body></html>');
+    newWindow.document.close();
+  }
+  
+</script>
+
+<script>
+  document.getElementById("uv-address").addEventListener("input", function() {
+  this.suggestions = [];
+});
+
+</script> 
+</html>
+
+
