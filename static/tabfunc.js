@@ -5,7 +5,7 @@ function devtooltoggle() {
         eruda.destroy();
       } else {
         var script = document.createElement('script');
-        script.src = "//cdn.jsdelivr.net/npm/eruda";
+        script.src = "eruda.js";
         document.body.appendChild(script);
         script.onload = function () {
           eruda.init();
