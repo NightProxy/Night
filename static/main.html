@@ -1,87 +1,58 @@
 <!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="utf-8" />
-    <meta name="googlebot" content="index, follow, snippet" />
-    <link id="" rel="stylesheet" type="text/css" href="main.css" >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="settings/js/themes.js"> </script>
-    <script src="uv/uv.bundle.js" defer></script>
-    <script src="uv/uv.config.js" defer></script>
-    <script src="register-sw.js" defer></script>
-    <script src="search.js" defer></script>
-    <script src="main.js" defer></script>
-    <script src="tab.js"> </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
-    <script src="register-sw.js" defer></script>
+<html>
+   <head>
+      <script async src="https://arc.io/widget.min.js#L1SfLEWE"></script>
+      <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VHVNHMYGN3"></script>
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://kit.fontawesome.com/32abd502cd.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./particles.css">
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet" />   
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.cdnfonts.com/css/blacklisted" rel="stylesheet" />
-    <script src="search.js" defer></script>
-    <script type="application/ld+json"></script>
-    <title>New Tab</title>
-    <script src="tab.js"></script>
-  </head>
-  <body style="overflow:hidden;" >
-    <header class="mainheading">
-      <h1 class="heading">Shadow</h1>
-    </header>
-    <br><br>
-    <div class="search-container">
-      <form id="uv-form" class="flex-center">
-        <input style="z-index: -9999;" id="uv-search-engine" value="" type="hidden"/>
-        <input id="uv-address" class="mainurl"type="text" placeholder="Search the web" autofocus/>
-      </form>
-      <div class="shortcuts">
-        <a id="discord" >
-          <img src="shortcuts/discord.jpg" alt="" />
-          <span>Discord</span>
-        </a>
-        <a id = "chess">
-          <img src="shortcuts/chess.png" alt="" />
-          <span>Chess</span>
-        </a>
-        <a  id="mc">
-          <img src="shortcuts/minecraft.png" alt="" />
-          <span>Minecraft</span>
-        </a>
-        <a id="poki">
-          <img src="shortcuts/poki.png" alt="" />
-          <span>Poki</span>
-        </a>
-        <a  id="y8">
-          <img src="shortcuts/y8.png" alt="" />
-          <span>Y8 Games</span>
-        </a>
-        <a id="yt">
-          <img src="https://www.teamphenomenalhope.org/wp-content/uploads/2017/04/YouTube-icon-full_color-520x300.png" alt="" />
-          <span>YouTube</span>
-        </a>
-        <a id="GPT" >
-          <img src="shortcuts/chatgpt.png" alt="" />
-          <span>ChatGPT</span>
-        </a>
-        <a id="vs" >
-          <img src="shortcuts/vscode.png" alt="" />
-          <span>VS Code</span>
-        </a>
-        <a id="github">
-          <img src="shortcuts/github.webp" alt="" />
-          <span>Github</span>
-        </a>
-        <a id="calc">
-          <img src="shortcuts/calculator.png" alt="" />
-          <span>Calculator</span>
-        </a>
+  gtag('config', 'G-VHVNHMYGN3');
+</script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <link rel="stylesheet" href="index.css">
+      <script type="text/javascript" src="//counter.websiteout.net/js/7/10/5/0"></script>
+      <link rel="shortcut icon" type="image/jpg" href="../favicon.ico"/>
+      <link href="https://fonts.googleapis.com/css?family=Share Tech Mono" rel="stylesheet"/>
+   </head>
+   <body>
+      <div id="particles-js"></div>
+      <div class="page" id="imgsearch">
+         <title>ΞV∆SI</title>
+         <img src="logo.gif" alt="Logo" style="width:640px;height:330px;">
+         <form id="uv-form"">
+            <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
+            <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input"/>
+          </form>
+          <div class="desc left-margin">
+            <p id="uv-error"></p>
+            <pre id="uv-error-code"></pre>
+          </div>
+             <a href="https://discord.gg/JrmurfukMd" target="_blank" class="fa-brands fa-discord"></a>
+             <a href="https://github.com/jacksoncraft859/Evasi" target="_blank" class="fa-brands fa-github"></a>
+          </div>
+        </div>
+      <canvas id="ghost"></canvas>
+      <script src="uv/uv.bundle.js" defer></script>
+      <script src="uv/uv.config.js" defer></script>
+      <script src="register-sw.js" defer></script>
+      <script src="error.js" defer></script>
+      <script src="search.js" defer></script>
+      <script src="index.js" defer></script>
+      <script src="particles.min.js"></script>
+      <script src="particles.js"></script>
+      <script src="nav.js"></script>
+      <script>hide_sidenav();</script>
+      <div id="footer">
+         <p>&copy; 2023 Evasi. All rights reserved.</p>
       </div>
-    </div>
-
-  </body>
+   </body>
 
 <script>
   var searchEngineValue = localStorage.getItem("searchengine");
