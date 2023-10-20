@@ -1,9 +1,9 @@
 :root {
-  --primary-background-color: #1a1a2b;
-  --secondary-background-color: #2a2a3d;
+  --primary-background-color: rgba(255,255,255,.02);;
+  --secondary-background-color: #2a2a2a;
   --accent-color: #5B3A75;
-  --main-text-color: #fff;
-  --search-placeholder-color: #999;
+  --main-text-color: #14ffbc;
+  --search-placeholder-color: #14ffbc;
   --bookmark-background-color: #6B52A3;
   --bookmark-hover-background-color: #5B3A75;
   --input-background-color: #1a1a2b;
