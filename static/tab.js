@@ -124,7 +124,7 @@ function updateTabTitleFromIframe(iframe) {
     const activeTab = document.querySelector('.tabs li.active');
     if (activeTab) {
         const src = iframe.src;
-        const encodedurl = src.split('/static/tiw')[1];
+        const encodedurl = src.split('/static/tiw/')[1];
         const decodedsrc = __uv$config.decodeUrl(encodedurl);
         const imgsrc = `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${decodedsrc}&size=20`;
         const faviconsrc = `<img style="margin-right: 1px;" src="${imgsrc}">`;
@@ -254,7 +254,7 @@ function addBookmark(title, link) {
         const imgsrc = `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${decodedlink}&size=26`;
         const faviconlink = `<img style="margin-right: 5px;" src="${imgsrc}">`;
         bookmark.innerHTML = faviconlink + title;
-        const encodedlink = `/uv/service/` + __uv$config.encodeUrl(link);
+        const encodedlink = `/static/tiw` + __uv$config.encodeUrl(link);
         bookmark.setAttribute('onclick', `changeTabSrc('${encodedlink}')`);
     }
 
@@ -336,7 +336,7 @@ function deleteBookmark(bookmarkElement, link) {
       const bookmarkTitleInput = document.getElementById('bookmark-title-input');
       let defaultlink = iframe.src;
       if (defaultlink.includes('/uv/service/')) {
-          defaultlink = defaultlink.substring(defaultlink.indexOf('/uv/service/') + '/uv/service/'.length);
+          defaultlink = defaultlink.substring(defaultlink.indexOf('static/tiw') + '/static/tiw/'.length);
           defaultlink = __uv$config.decodeUrl(defaultlink);
       }
       bookmarkLinkInput.value = defaultlink;
