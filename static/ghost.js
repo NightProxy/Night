@@ -250,7 +250,7 @@ function resizeCanvas() {
     }
 };
 
-function createControlsold() {
+function createControls() {
     const gui = new GUI();
     gui.add(params, "size", .02, .3, .01)
         .onChange(v => {
