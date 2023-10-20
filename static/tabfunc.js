@@ -10,7 +10,7 @@ function devtooltoggle() {
         script.onload = function () {
           eruda.init();
           eruda.show();
-      }}
+      }};
       toggleState = !toggleState;
     };
 
