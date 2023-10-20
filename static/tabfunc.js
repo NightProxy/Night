@@ -1,19 +1,3 @@
-let toggleState = false;
-function devtooltoggle() {
-   if (toggleState) {
-        eruda.hide();
-        eruda.destroy();
-      } else {
-        var script = document.createElement('script');
-        script.src = "eruda.js";
-        document.body.appendChild(script);
-        script.onload = function () {
-          eruda.init();
-          eruda.show();
-      }};
-      toggleState = !toggleState;
-    };
-
 function Fullscreen() {
   const canvas = document.getElementById('body');
   if (canvas.requestFullscreen) {
