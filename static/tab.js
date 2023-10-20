@@ -164,7 +164,7 @@ function resizeTabs() {
 
 tabsContainer.addEventListener('click', switchTab);
 addTabBtn.addEventListener('click', function () {
-    addTab('<i class="fas fa-globe"></i> New Tab', "home.html");
+    addTab('<i class="fas fa-globe"></i> New Tab', "main.html");
 });
 
 inputField.addEventListener('keydown', function (event) {
