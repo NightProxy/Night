@@ -15,7 +15,7 @@
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 20px;
-  color: #14ffbc;
+  color: #f1f1f1;
   display: block;
   border: none;
   background: none;
@@ -27,7 +27,7 @@
 
 /* On mouse-over */
 .sidenav a:hover, .dropdown-btn:hover {
-  color: #f1f1f1;
+  color: #14ffbc;
 }
 
 /* Main content */
