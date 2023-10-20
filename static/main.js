@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const errorCode = document.getElementById("uv-error-code");
 
     window.addEventListener('load', async () => {
-        await registerServiceWorker();
+        await registerServiceWorker;
       });
 
 
