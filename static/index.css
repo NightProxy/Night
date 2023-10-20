@@ -123,7 +123,7 @@ a{
 
 
 #icbuttons {
-  display: flex;
+  display: grid;
   position: absolute;
   align-items: center;
   justify-items: center;
