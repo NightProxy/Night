@@ -120,11 +120,6 @@ a{
 .fa:hover {
   color: #aaa;
 }
-canvas { 
-  display: flex; 
-  vertical-align: bottom; 
-  horizontal-align: center;
-}
 
 .sidenav {
   height: 100%;
