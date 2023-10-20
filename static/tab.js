@@ -164,7 +164,7 @@ function resizeTabs() {
 
 tabsContainer.addEventListener('click', switchTab);
 addTabBtn.addEventListener('click', function () {
-    addTab('<i class="fas fa-globe"></i> New Tab', "main.html");
+    addTab('<i class="fas fa-globe"></i> New Tab', "home.html");
 });
 
 inputField.addEventListener('keydown', function (event) {
@@ -195,7 +195,7 @@ forwardBtn.addEventListener('click', function () {
 function initTabs() {
     showTab('panel1');
     saveInputs('panel1');
-    addTab('<i class="fa-solid fa-house"></i> Home', "thome.html"); // Add the Home tab on load
+    addTab('<i class="fa-solid fa-house"></i> Home', "home.html"); // Add the Home tab on load
 
     const iframes = document.querySelectorAll('.tab-panel iframe');
     iframes.forEach(iframe => {
