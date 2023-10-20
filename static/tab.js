@@ -124,7 +124,7 @@ function updateTabTitleFromIframe(iframe) {
     const activeTab = document.querySelector('.tabs li.active');
     if (activeTab) {
         const src = iframe.src;
-        const encodedurl = src.split('/uv/service/')[1];
+        const encodedurl = src.split('/static/tiw')[1];
         const decodedsrc = __uv$config.decodeUrl(encodedurl);
         const imgsrc = `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${decodedsrc}&size=20`;
         const faviconsrc = `<img style="margin-right: 1px;" src="${imgsrc}">`;
@@ -195,7 +195,7 @@ forwardBtn.addEventListener('click', function () {
 function initTabs() {
     showTab('panel1');
     saveInputs('panel1');
-    addTab('<i class="fa-solid fa-house"></i> Home', "home.html"); // Add the Home tab on load
+    addTab('<i class="fa-solid fa-house"></i> Home', "thome.html"); // Add the Home tab on load
 
     const iframes = document.querySelectorAll('.tab-panel iframe');
     iframes.forEach(iframe => {
