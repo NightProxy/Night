@@ -376,3 +376,6 @@ color: var(--button-text-color);
 .context-menu div:hover {
   background-color: var(--accent-color);
 }
+a {
+  text-decoration: none;
+}
