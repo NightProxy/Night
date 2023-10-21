@@ -63,7 +63,7 @@ body {
 .search:focus::placeholder {
   color: transparent;
   color: var(--search-placeholder-color);
-  font-family: 'Comfortaa', cursive;
+  font-family: ''Share Tech Mono';
 }
 
 .tabs {
