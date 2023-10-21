@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: 'Share Tech Mono';
+  font-family: 'Share Tech Mono';font-size: 22px;
   margin: 0;
   padding: 0;
   display: flex;
@@ -57,7 +57,7 @@ body {
   background-color: var(--secondary-background-color);
   color: var(--main-text-color);
   outline: none;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Share Tech Mono';
 }
 
 .search:focus::placeholder {
