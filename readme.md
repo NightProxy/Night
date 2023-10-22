@@ -1,6 +1,6 @@
 # Evasi Bypasser
 
-Modified Version of the <a href="https://github.com/TheTIW/UV-Static" target="blank">Ultraviolet Staic</a> backend. This modification makes the proxy a static website, something no one has ever done before. 
+Modified Version of the <a href="https://github.com/TheTIW/UV-Static" target="blank">Ultraviolet Static</a> backend. This modification makes the proxy a static website, something no one has ever done before. 
 <br> <strong> Our Developers That Worked on This Project: </strong>
 NC Gaming#0058 and Kwazehhh#7245  <center> Join our discord <a href="https://discord.gg/JrmurfukMd" target="_blank" style="text-decoration:none;"> here </a><br>
 <a> <img src="static/logo.gif" style="width:25%; align-self:center;"> </img> </a> 
