@@ -22,7 +22,7 @@ body {
 
 #imgsearch {
   display: grid;
-  position: absolute;
+  position: fixed;
   align-items: center;
   justify-items: center;
   top: 0;
