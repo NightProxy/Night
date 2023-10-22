@@ -1,4 +1,23 @@
-# Evasi Bypasser
+<div align="center">
+    <h1>Evasi Bypasser</h1>
+    <h3>Interstellar is one of the most modern and popular unblocking sites.</h3>
+    
+### [Join our Discord!](https://discord.gg/Gfs6dnVkct)
+</div>
+
+> **If you do fork this repo, please give the original repo a star! It helps out alot and only 30% of people who fork give us a star... besides, you know you want to...**
+
+<h2 align="center">Features</h2>
+<ul>
+    <li>Fast Speeds</li>
+    <li>Wide collection of Games</li>
+    <li>Tab Cloaking</li>
+    <li>Wide collection of Apps</li>
+    <li>Built-In Tab System</li>
+    <li>Clean UI</li>
+</ul>
+
+
 
 Modified Version of the <a href="https://github.com/TheTIW/UV-Static" target="blank">Ultraviolet Static</a> backend. This modification makes the proxy a static website, something no one has ever done before. 
 <br> <strong> Our Developers That Worked on This Project: </strong>
