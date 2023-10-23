@@ -1,6 +1,6 @@
 <div align="center">
     <h1>Evasi Bypasser</h1>
-    <h3>Interstellar is one of the most modern and popular unblocking sites.</h3>
+    <h3>Evasi is one of the most modern and popular unblocking sites.</h3>
     
 ### [Join our Discord!](https://discord.gg/Gfs6dnVkct)
 </div>
