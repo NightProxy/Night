@@ -50,6 +50,8 @@ You can host this on any static hosting platform!
 [![Deploy with Netlify](https://binbashbanana.github.io/deploy-buttons/buttons/remade/netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jacksoncraft859/Evasi)
 [![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://render.com/deploy?repo=https://github.com/jacksoncraft859/Evasi)
 
+<br>
+
 ## Contributing
 Contributions are welcome! If you have any suggestions or improvements, please create a pull request.
 
@@ -59,9 +61,12 @@ Contributions are welcome! If you have any suggestions or improvements, please c
 
 This project is licensed under the [MIT License](LICENSE).
 
+## Disclamer
+> We take no credit for the making of UV. Ultraviolet is made by TN. 
+
 # Credits
 Huge thanks to following people for contributing to Evasi!
 
+![Contrib](https://contrib.rocks/image?repo=jacksoncraft859/Evasi)
 
-### Disclamer
-> We take no credit for the making of UV. Ultraviolet is made my TN. 
+
