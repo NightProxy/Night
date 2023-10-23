@@ -1,6 +1,6 @@
 function openGame() {
 var win = window.open()
-var url = "https://evasi.netlify.app/"
+var url = window.location.href;
 var iframe = win.document.createElement('iframe')
 iframe.style.frameborder="0";
 iframe.style.marginwidth="0";
