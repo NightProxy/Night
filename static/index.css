@@ -137,6 +137,7 @@ a{
 .zoom {
   transition: transform .2s;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .zoom:hover {
