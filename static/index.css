@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   position: r;
+  overflow: hidden;
 }
 
 #particles-js { 
@@ -18,7 +19,6 @@ body {
   text-align: center;
   padding: 20px;
   margin-top: -4%;
-  overflow: hidden;
 } 
 
 #imgsearch {
