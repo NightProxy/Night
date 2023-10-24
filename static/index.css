@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   position: r;
+  overflow: hidden;
 }
 
 #particles-js { 
