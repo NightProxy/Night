@@ -44,6 +44,17 @@ body {
   margin-bottom: 20px;
 }
 
+#header img {
+  width: 20%;
+  height: auto;
+}
+
+#content {
+  text-align: center;
+  padding: 20px;
+  margin-top: -4%;
+}
+
 #searchbar {
   text-align: center;
   margin: 0px;
