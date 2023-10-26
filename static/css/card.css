@@ -12,8 +12,8 @@ body {
   width: 145px;
   transition: all 0.2s ease;
   cursor: crosshair;
-  background: rgb(0,0,0);
-  background: linear-gradient(122deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 46%, rgba(69,0,107,1) 78%, rgba(0,0,0,1) 97%);
+  background: rgb(151,0,255);
+  background: linear-gradient(122deg, rgba(151,0,255,1) 0%, rgba(0,116,166,1) 46%, rgba(0,255,211,1) 100%);
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
