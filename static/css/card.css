@@ -13,7 +13,7 @@ body {
   transition: all 0.2s ease;
   cursor: crosshair;
   background: rgb(0,0,0);
-  background: linear-gradient(122deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, rgba(125,0,194,1) 78%, rgba(0,0,0,1) 97%);
+  background: linear-gradient(122deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 46%, rgba(69,0,107,1) 78%, rgba(0,0,0,1) 97%);
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
