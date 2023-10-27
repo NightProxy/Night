@@ -8,13 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
       error: false
     },
     {
-      name: "BuzzFeed Quizzes",
-      link: "https://buzzfeed.com/quizzes",
-      image: "./images/icons/apps/buzzfeed.png",
-      categories: ["all", "media"],
-      error: false
-    },
-    {
       name: "Free Movies Watch",
       link: "https://freemovieswatch.tv",
       image: "./images/icons/freemovieswatch.png",
@@ -67,13 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
       name: "Fifa Rosters",
       link: "https://fifarosters.com/",
       image: "./images/icons/fifa.png",
-      categories: ["all", "media"],
-      error: false
-    },
-    {
-      name: "Firefox Web Browser",
-      link: "https://replit.com/@cooleddie001/Firefox-Legacy?v=1",
-      image: "./images/icons/apps/firefox.png",
       categories: ["all", "media"],
       error: false
     },
