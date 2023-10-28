@@ -29,9 +29,9 @@ This is a heavily modified version of the <a href="https://github.com/TheTIW/UV-
 4. Then click **Create Repl**
 5. Click **Shell**
 - Paste the code below. (Ctrl + Shift + V)
-- `git clone https://github.com/interstellarnetwork/interstellar`
+- `git clone https://github.com/andromedaproxy/andromeda`
 6. Once it's done cloning paste the code below. (Ctrl + Shift + V)
-- ``cd interstellar && npm i && npm run start``
+- ``cd andromeda && npm i && npm run start``
 
 ## Hosting sites</h2>
 
