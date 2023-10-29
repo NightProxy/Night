@@ -25,7 +25,7 @@ This is a heavily modified version of the <a href="https://github.com/TheTIW/UV-
 ## Deploy to Replit
 1. Create a Replit Account (https://replit.com)
 2. Click **+ Create Repl**
-3. Click **Template** and Change the language to **Node.js**
+3. Click **Template** and Change the language to **Python**
 4. Then click **Create Repl**
 5. Click **Shell**
 - Paste the code below. (Ctrl + Shift + V)
