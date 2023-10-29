@@ -3,7 +3,7 @@
     <h1></h1>
     <h3>Andromeda is one of the fastest and newest static proxy</h3>
     
-### [Join our Discord!](https://discord.gg/Gfs6dnVkct)
+### [Join our Discord!](https://discord.gg/JrmurfukMd))
 </div>
 
 > **If you do fork this repo, please give the original repo a star! It helps out alot and only 30% of people who fork give us a star... besides, you know you want to...**
@@ -31,7 +31,7 @@ This is a heavily modified version of the <a href="https://github.com/TheTIW/UV-
 - Paste the code below. (Ctrl + Shift + V)
 - `git clone https://github.com/andromedaproxy/andromeda`
 6. Once it's done cloning paste the code below. (Ctrl + Shift + V)
-- ``cd andromeda && npm i && npm run start``
+- ``cd andromeda && python3 -m http.server``
 
 ## Hosting sites</h2>
 
