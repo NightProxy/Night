@@ -6,3 +6,19 @@ function hide_sidenav(){
       subpanel.hidden = false;
   }
 };
+
+icons = document.getElementById("icbuttons");
+
+function sidebar() {
+  icons.style.position="fixed";
+  icons.style.alignItems="center";
+  icons.style.justifyItems="center";
+  icons.style.right="0";
+};
+
+function topbar() {
+  icons.style.alignItems="left";
+  icons.style.justifyItems="";
+  icons.style.right="";
+};
+
