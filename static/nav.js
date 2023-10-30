@@ -10,6 +10,7 @@ function hide_sidenav(){
 icons = document.getElementById("icbuttons");
 
 function sidebar() {
+  icons.style.display="grid";
   icons.style.position="fixed";
   icons.style.alignItems="center";
   icons.style.justifyItems="center";
@@ -17,6 +18,7 @@ function sidebar() {
 };
 
 function topbar() {
+  icons.style.display="flex";
   icons.style.alignItems="left";
   icons.style.justifyItems="";
   icons.style.right="";
