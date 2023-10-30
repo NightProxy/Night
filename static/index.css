@@ -154,9 +154,6 @@ a{
 
 #icbuttons {
   display: grid;
-  position: fixed;
-  align-items: center;
-  justify-items: center;
   top: 20px;
   right: 0;
   z-index: 999;
