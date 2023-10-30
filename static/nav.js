@@ -15,6 +15,7 @@ function sidebar() {
   icons.style.alignItems="center";
   icons.style.justifyItems="center";
   icons.style.right="0";
+  icon.style.left="";
 };
 
 function topbar() {
@@ -22,6 +23,7 @@ function topbar() {
   icons.style.alignItems="left";
   icons.style.justifyItems="left";
   icons.style.right="";
+  icons.style.left="0";
 };
 
 function bartoggle() {
