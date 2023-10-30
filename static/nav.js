@@ -29,7 +29,7 @@ function bartoggle() {
     topbar();
   }else{
     sidebar();
-  };
+  }
 };
 
 sidebar();
