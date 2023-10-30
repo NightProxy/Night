@@ -26,10 +26,10 @@ function topbar() {
 
 function bartoggle() {
   if (icons.style.display == 'grid'){
-    topbar():
+    topbar();
   }else{
     sidebar();
-  }
+  };
 };
 
 sidebar();
