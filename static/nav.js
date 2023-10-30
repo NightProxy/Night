@@ -24,4 +24,13 @@ function topbar() {
   icons.style.right="";
 };
 
+function bartoggle() {
+  if (icons.style.display == 'grid'){
+    topbar():
+  }else{
+    sidebar();
+  }
+};
+
 sidebar();
+
