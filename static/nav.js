@@ -22,3 +22,4 @@ function topbar() {
   icons.style.right="";
 };
 
+sidebar();
