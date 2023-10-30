@@ -15,7 +15,7 @@ function sidebar() {
   icons.style.alignItems="center";
   icons.style.justifyItems="center";
   icons.style.right="0";
-  icon.style.left="";
+  icons.style.left="";
 };
 
 function topbar() {
