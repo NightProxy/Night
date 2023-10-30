@@ -20,7 +20,7 @@ function sidebar() {
 function topbar() {
   icons.style.display="flex";
   icons.style.alignItems="left";
-  icons.style.justifyItems="";
+  icons.style.justifyItems="left";
   icons.style.right="";
 };
 
