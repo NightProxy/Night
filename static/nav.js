@@ -19,6 +19,7 @@ function sidebar() {
   icons.style.left="";
   swtch.style.bottom="0";
   swtch.style.right="";
+  swtch.style.top="";
 };
 
 function topbar() {
@@ -28,7 +29,9 @@ function topbar() {
   icons.style.right="";
   icons.style.left="0";
   swtch.style.right="0";
-  swtch.style.bottom="";
+  swtch.style.bottom="0";
+  swtch.style.top="0";
+  
 };
 
 function bartoggle() {
