@@ -8,6 +8,7 @@ function hide_sidenav(){
 };
 
 icons = document.getElementById("icbuttons");
+swtch = document.getElementById("switch");
 
 function sidebar() {
   icons.style.display="grid";
@@ -16,6 +17,8 @@ function sidebar() {
   icons.style.justifyItems="center";
   icons.style.right="0";
   icons.style.left="";
+  swtch.style.bottom="0";
+  swtch.style.right="";
 };
 
 function topbar() {
@@ -24,6 +27,8 @@ function topbar() {
   icons.style.justifyItems="left";
   icons.style.right="";
   icons.style.left="0";
+  swtch.style.right="0";
+  swtch.style.bottom="";
 };
 
 function bartoggle() {
