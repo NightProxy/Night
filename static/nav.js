@@ -17,10 +17,8 @@ function sidebar() {
   icons.style.justifyItems="center";
   icons.style.right="0";
   icons.style.left="";
-  swtch.style.bottom="0";
-  swtch.style.right="";
-  swtch.style.top="";
   localStorage.setItem("bar", "side");
+  localStorage.setItem("icon", "off");
 };
 
 function topbar() {
@@ -29,10 +27,8 @@ function topbar() {
   icons.style.justifyItems="left";
   icons.style.right="";
   icons.style.left="0";
-  swtch.style.right="0";
-  swtch.style.bottom="0";
-  swtch.style.top="0";
   localStorage.setItem("bar", "top");
+  localStorage.setItem("icon", "on");
   
 };
 
@@ -51,10 +47,15 @@ function setuserbar() {
     topbar();
   }
 };
-
+function settoggleicon() {
+  if (localStorage.getItem("icon") == 'off'){
+    $(".switch").addClass("fa-toggle-off");
+    $(".switch").removeClass("fa-toggle-on");
+  }else{
+    $(".switch").addClass("fa-toggle-on");
+    $(".switch").removeClass("fa-toggle-off");
+  }
+};
+  
 setuserbar();
-
-$('.toggle').click(function(e){
-  e.preventDefault(); // The flicker is a codepen thing
-  $(this).toggleClass('toggle-on');
-});
+settoggleicon();
