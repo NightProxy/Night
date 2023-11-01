@@ -58,3 +58,5 @@ body[theme=themename] {
 body[theme=themename2] {
   --set-variable: #newwhatever
 }
+
+https://github.com/NebulaServices/Nebula/blob/main/public/resources/options.js
