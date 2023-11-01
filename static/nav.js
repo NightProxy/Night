@@ -49,11 +49,11 @@ function setuserbar() {
 };
 function settoggleicon() {
   if (localStorage.getItem("icon") == 'off'){
-    $(".switch").addClass("fa-toggle-off");
-    $(".switch").removeClass("fa-toggle-on");
+    $("switch").addClass("fa-toggle-off");
+    $("switch").removeClass("fa-toggle-on");
   }else{
-    $(".switch").addClass("fa-toggle-on");
-    $(".switch").removeClass("fa-toggle-off");
+    $("switch").addClass("fa-toggle-on");
+    $("switch").removeClass("fa-toggle-off");
   }
 };
   
