@@ -1,3 +1,29 @@
+function hasClass(el, className)
+{
+    if (el.classList)
+        return el.classList.contains(className);
+    return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
+};
+
+function addClass(el, className)
+{
+    if (el.classList)
+        el.classList.add(className)
+    else if (!hasClass(el, className))
+        el.className += " " + className;
+};
+
+function removeClass(el, className)
+{
+    if (el.classList)
+        el.classList.remove(className)
+    else if (hasClass(el, className))
+    {
+        var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
+        el.className = el.className.replace(reg, ' ');
+    }
+};
+
 subpanel = document.getElementById("sidenav");
 function hide_sidenav(){
   if (subpanel.hidden == false){
@@ -49,11 +75,11 @@ function setuserbar() {
 };
 function settoggleicon() {
   if (localStorage.getItem("icon") == 'off'){
-    $("switch").addClass("fa-toggle-off");
-    $("switch").removeClass("fa-toggle-on");
+    swtch.addClass("fa-toggle-off");
+    swtch.removeClass("fa-toggle-on");
   }else{
-    $("switch").addClass("fa-toggle-on");
-    $("switch").removeClass("fa-toggle-off");
+    swtch.addClass("fa-toggle-on");
+    swtch.removeClass("fa-toggle-off");
   }
 };
   
