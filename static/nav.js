@@ -82,6 +82,10 @@ function settoggleicon() {
     swtch.classList.remove("fa-toggle-off");
   }
 };
+
+function closesettings() {
+    subpanel.hidden = true;
+};
   
 setuserbar();
 settoggleicon();
