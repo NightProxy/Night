@@ -26,8 +26,7 @@ function removeClass(el, className)
 
 subpanel = document.getElementById("sidenav");
 function buildsettings(){
-    $closebutton = '<a onclick="closesettings();" class="fa-solid fa-circle-xmark closebutton"></a>';
-    subpanel.innerHTML = $closebutton;
+    subpanel.innerHTML = '<a onclick="closesettings();" class="fa-solid fa-circle-xmark closebutton"></a>';
 };
 
 function hide_sidenav(){
