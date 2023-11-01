@@ -25,6 +25,11 @@ function removeClass(el, className)
 };
 
 subpanel = document.getElementById("sidenav");
+function buildsettings(){
+    closebutton = '<a onclick="closesettings();" class="fa-solid fa-circle-xmark closebutton"></a>';
+    subpanel.appendChild(closebutton);
+};
+
 function hide_sidenav(){
   if (subpanel.hidden == false){
       subpanel.hidden = true;
@@ -89,8 +94,4 @@ function closesettings() {
   
 setuserbar();
 settoggleicon();
-
-var elem = document.getElementById('some-id');
-elem.classList.add('some-class'); // Add class
-elem.classList.remove('some-other-class'); // Remove class
-elem.classList.toggle('some-other-class'); // Add or remove class
+buildsettings();
