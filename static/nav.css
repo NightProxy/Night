@@ -13,13 +13,11 @@
 .sidenav a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 26px;
   color: #f1f1f1;
-  display: block;
   border: none;
   background: none;
   width:100%;
-  text-align: center;
   cursor: pointer;
   outline: none;
 }
