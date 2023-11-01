@@ -20,6 +20,7 @@ function sidebar() {
   swtch.style.bottom="0";
   swtch.style.right="";
   swtch.style.top="";
+  localStorage.setItem("bar", "side");
 };
 
 function topbar() {
@@ -31,18 +32,27 @@ function topbar() {
   swtch.style.right="0";
   swtch.style.bottom="0";
   swtch.style.top="0";
+  localStorage.setItem("bar", "top");
   
 };
 
 function bartoggle() {
-  if (icons.style.display == 'grid'){
+  if (localStorage.getItem("bar") == 'side'){
     topbar();
   }else{
     sidebar();
   }
 };
 
-sidebar();
+function setuserbar() {
+  if (localStorage.getItem("bar") == 'side'){
+    sidebar();
+  }else{
+    topbar();
+  }
+};
+
+setuserbar();
 
 $('.toggle').click(function(e){
   e.preventDefault(); // The flicker is a codepen thing
