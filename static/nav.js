@@ -75,13 +75,18 @@ function setuserbar() {
 };
 function settoggleicon() {
   if (localStorage.getItem("icon") == 'off'){
-    swtch.addClass("fa-toggle-off");
-    swtch.removeClass("fa-toggle-on");
+    swtch.classList.add("fa-toggle-off");
+    swtch.classList.remove("fa-toggle-on");
   }else{
-    swtch.addClass("fa-toggle-on");
-    swtch.removeClass("fa-toggle-off");
+    swtch.classList.add("fa-toggle-on");
+    swtch.classList.remove("fa-toggle-off");
   }
 };
   
 setuserbar();
 settoggleicon();
+
+var elem = document.getElementById('some-id');
+elem.classList.add('some-class'); // Add class
+elem.classList.remove('some-other-class'); // Remove class
+elem.classList.toggle('some-other-class'); // Add or remove class
