@@ -54,3 +54,9 @@
   float: right;
   padding-right: 8px;
 }
+
+.closebutton {
+  top: 0;
+  right: 0;
+  position: fixed;
+}
