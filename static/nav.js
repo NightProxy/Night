@@ -88,13 +88,9 @@ function settoggleicon() {
   if (localStorage.getItem("icon") == 'off'){
     swtch.classList.add("fa-toggle-off");
     swtch.classList.remove("fa-toggle-on");
-    barswitch.classList.add("fa-toggle-off");
-    barswitch.classList.remove("fa-toggle-on");
   }else{
     swtch.classList.add("fa-toggle-on");
     swtch.classList.remove("fa-toggle-off");
-    barswitch.classList.add("fa-toggle-off");
-    barswitch.classList.remove("fa-toggle-on");
   }
 };
 
