@@ -34,7 +34,7 @@ function hide_sidenav(){
 };
 
 icons = document.getElementById("icbuttons");
-swtch = document.getElementById("switch");
+barswtch = document.getElementById("barswitch");
 
 function sidebar() {
   icons.style.display="grid";
@@ -74,13 +74,13 @@ function setuserbar() {
   }
 };
 
-function settoggleicon() {
+function setbartoggleicon() {
   if (localStorage.getItem("icon") == 'off'){
-    swtch.classList.add("fa-toggle-off");
+    barswtch.classList.add("fa-toggle-off");
     swtch.classList.remove("fa-toggle-on");
   }else{
-    swtch.classList.add("fa-toggle-on");
-    swtch.classList.remove("fa-toggle-off");
+    barswtch.classList.add("fa-toggle-on");
+    barswtch.classList.remove("fa-toggle-off");
   }
 };
 
