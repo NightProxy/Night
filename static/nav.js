@@ -77,7 +77,7 @@ function setuserbar() {
 function setbartoggleicon() {
   if (localStorage.getItem("icon") == 'off'){
     barswtch.classList.add("fa-toggle-off");
-    swtch.classList.remove("fa-toggle-on");
+    barswtch.classList.remove("fa-toggle-on");
   }else{
     barswtch.classList.add("fa-toggle-on");
     barswtch.classList.remove("fa-toggle-off");
