@@ -171,6 +171,7 @@ a{
 }
 
 #settings-boxes {
+  background-color: a800ff;
   display: flex;
     align-items: center;
     flex-wrap: wrap;
