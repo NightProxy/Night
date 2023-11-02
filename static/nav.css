@@ -57,3 +57,22 @@
   right: 0;
   position: absolute;
 }
+
+#settings-boxes {
+  background-color: a800ff;
+  height: 300px;
+  width: 300px;
+  display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#settings-boxes h2, p {
+  color: white;
+}
+
+#settings-boxes a {
+  font-size: 50px;
+}
