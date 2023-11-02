@@ -44,7 +44,7 @@ function hide_sidenav(){
 
 icons = document.getElementById("icbuttons");
 swtch = document.getElementById("switch");
-barswitch = document.getElementById("barswitch");
+barswitch = document.body.getElementById("barswitch");
 
 function sidebar() {
   icons.style.display="grid";
