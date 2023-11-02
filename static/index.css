@@ -169,14 +169,3 @@ a{
   -webkit-transform: scale(1.5); /* Safari 3-8 */
   transform: scale(1.5); 
 }
-
-#settings-boxes {
-  background-color: a800ff;
-  height: 300px;
-  width: 300px;
-  display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-}
