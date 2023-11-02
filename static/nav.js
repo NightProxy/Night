@@ -43,7 +43,7 @@ function hide_sidenav(){
 };
 
 icons = document.getElementById("icbuttons");
-swtch = document.getElementById("settings-boxes").getElementById("switch");
+swtch = document.getElementById("switch");
 
 function sidebar() {
   icons.style.display="grid";
