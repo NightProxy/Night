@@ -89,5 +89,5 @@ function closesettings() {
 };
   
 setuserbar();
-settoggleicon();
+setbartoggleicon();
 
