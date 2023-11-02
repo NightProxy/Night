@@ -83,6 +83,7 @@ function setuserbar() {
     topbar();
   }
 };
+
 function settoggleicon() {
   if (localStorage.getItem("icon") == 'off'){
     swtch.classList.add("fa-toggle-off");
@@ -102,5 +103,6 @@ function closesettings() {
 };
   
 setuserbar();
-settoggleicon();
 buildsettings();
+settoggleicon();
+
