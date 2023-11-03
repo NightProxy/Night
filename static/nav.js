@@ -1,27 +1,15 @@
-function hasClass(el, className)
-{
-    if (el.classList)
-        return el.classList.contains(className);
-    return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
-};
+document.head = document.head || document.getElementsByTagName('head')[0];
 
-function addClass(el, className)
-{
-    if (el.classList)
-        el.classList.add(className)
-    else if (!hasClass(el, className))
-        el.className += " " + className;
-};
-
-function removeClass(el, className)
-{
-    if (el.classList)
-        el.classList.remove(className)
-    else if (hasClass(el, className))
-    {
-        var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
-        el.className = el.className.replace(reg, ' ');
-    }
+function changeFavicon(src) {
+ var link = document.createElement('link'),
+     oldLink = document.getElementById('dynamic-favicon');
+ link.id = 'dynamic-favicon';
+ link.rel = 'shortcut icon';
+ link.href = src;
+ if (oldLink) {
+  document.head.removeChild(oldLink);
+ }
+ document.head.appendChild(link);
 };
 
 subpanel = document.getElementById("sidenav");
@@ -35,6 +23,7 @@ function hide_sidenav(){
 
 icons = document.getElementById("icbuttons");
 barswtch = document.getElementById("barswitch");
+iconswtch = document.getElementById("iconswitch");
 
 function sidebar() {
   icons.style.display="grid";
@@ -87,7 +76,35 @@ function setbartoggleicon() {
 function closesettings() {
     subpanel.hidden = true;
 };
-  
+
+function cloakon() {
+    changeFavicon('./images/favicon/drive.png');
+     localStorage.setItem("cloak", "on");
+};
+
+function cloakoff() {
+     changeFavicon('../favicon.png');
+     localStorage.setItem("cloak", "off");
+};
+
+function cloaktoggle() {
+  if (localStorage.getItem("cloak") == 'off'){
+    cloakon();
+  }else{
+    cloakoff();
+  }
+};
+    
+function setcloaktoggleicon() {
+  if (localStorage.getItem("cloak") == 'off'){
+    barswtch.classList.add("fa-toggle-off");
+    barswtch.classList.remove("fa-toggle-on");
+  }else{
+    barswtch.classList.add("fa-toggle-on");
+    barswtch.classList.remove("fa-toggle-off");
+  }
+};
+    
 setuserbar();
 setbartoggleicon();
 
