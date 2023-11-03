@@ -75,7 +75,22 @@
     <div class="container-apps">
     </div>
       </div>
-	   <div class="sidenav" id="sidenav">
+	 <div class="sidenav" id="sidenav">
+            <a onclick="closesettings();" class="fa-solid fa-circle-xmark closebutton"></a>
+            <div id="settings-boxes">
+            <center>
+               <h2>Toggle Bar</h2>
+               <p>This will toggle your bar to be at the top of you screen once enabled.</p>
+               <br>
+               <a onclick="bartoggle(); setbartoggleicon();" id="barswitch" class="fa-solid "></a>
+            </div>
+            <div id="settings-boxes">
+               <h2>Toggle Cloak</h2>
+               <p>Cloak your tab with a custom name and favicon!</p>
+               <br>
+               <a onclick="cloaktoggle(); setcloaktoggleicon();" id="iconswitch" class="fa-solid "></a>   
+            </center>
+            </div>
          </div>
     <script src="./scripts/main.js"></script>
     <script src="./scripts/main.js"></script>
