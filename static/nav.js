@@ -83,7 +83,7 @@ function cloakon() {
 };
 
 function cloakoff() {
-     changeFavicon('../favicon.png');
+     changeFavicon('../favicon.ico');
      localStorage.setItem("cloak", "off");
 };
 
