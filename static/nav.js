@@ -97,14 +97,15 @@ function cloaktoggle() {
     
 function setcloaktoggleicon() {
   if (localStorage.getItem("cloak") == 'off'){
-    barswtch.classList.add("fa-toggle-off");
-    barswtch.classList.remove("fa-toggle-on");
+    iconswtch.classList.add("fa-toggle-off");
+    iconswtch.classList.remove("fa-toggle-on");
   }else{
-    barswtch.classList.add("fa-toggle-on");
-    barswtch.classList.remove("fa-toggle-off");
+    iconswtch.classList.add("fa-toggle-on");
+    iconswtch.classList.remove("fa-toggle-off");
   }
 };
     
 setuserbar();
 setbartoggleicon();
+setcloaktoggleicon();
 
