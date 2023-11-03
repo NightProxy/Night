@@ -79,11 +79,13 @@ function closesettings() {
 
 function cloakon() {
     changeFavicon('./images/favicon/drive.png');
+    document.title = "My Drive - Google Drive";
      localStorage.setItem("cloak", "on");
 };
 
 function cloakoff() {
      changeFavicon('../favicon.ico');
+     document.title = "Andromeda";
      localStorage.setItem("cloak", "off");
 };
 
