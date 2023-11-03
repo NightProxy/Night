@@ -94,6 +94,14 @@ function cloaktoggle() {
     cloakoff();
   }
 };
+
+function setusercloak() {
+  if (localStorage.getItem("cloak") == 'on'){
+    cloakon();
+  }else{
+    cloakoff();
+  }
+};
     
 function setcloaktoggleicon() {
   if (localStorage.getItem("cloak") == 'off'){
@@ -106,6 +114,7 @@ function setcloaktoggleicon() {
 };
     
 setuserbar();
+setusercloak();
 setbartoggleicon();
 setcloaktoggleicon();
 
