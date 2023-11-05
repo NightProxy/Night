@@ -7,9 +7,9 @@ function changeFavicon(src) {
  link.rel = 'shortcut icon';
  link.href = src;
  if (oldLink) {
-  document.removeChild(oldLink);
+  document.head.removeChild(oldLink);
  }
- document.appendChild(link);
+ document.head.appendChild(link);
 };
 
 subpanel = document.getElementById("sidenav");
