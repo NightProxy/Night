@@ -1,0 +1,64 @@
+<html>
+<head>
+    <style>
+        /* Define the default theme /
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        / Define the dark theme /
+        .dark-theme {
+            background-color: black;
+            color: white;
+        }
+
+        / Define the red theme /
+        .red-theme {
+            background-color: red;
+            color: yellow;
+        }
+
+        / Define the blue theme */
+        .blue-theme {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Theme Changer</h1>
+    <p>Select a theme from the drop down menu:</p>
+    <select id="theme-select">
+        <option value="default">Default</option>
+        <option value="dark">Dark</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+    </select>
+    <script>
+        // Get the theme select element
+        var themeSelect = document.getElementById("theme-select");
+
+        // Add an event listener to the theme select element
+        themeSelect.addEventListener("change", function() {
+            // Get the selected theme value
+            var theme = themeSelect.value;
+
+            // Get the body element
+            var body = document.body;
+
+            // Remove any existing theme class from the body element
+            body.classList.remove("dark-theme", "red-theme", "blue-theme");
+
+            // Add the selected theme class to the body element
+            if (theme !== "default") {
+                body.classList.add(theme + "-theme");
+            }
+        });
+    </script>
+</body>
+</html>
