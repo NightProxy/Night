@@ -1,6 +1,6 @@
 self.__uv$config = {
     prefix: '/static/ghost/',
-    bare: 'https://phantom.lol/bare/', 'https://phantomcloud.strangled.net/bare', 'https://explode-rn.strangled.net/bare', 
+    bare: 'https://phantom.lol/bare/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/static/uv/uv.handler.js',
