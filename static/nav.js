@@ -131,6 +131,40 @@ function setdefaults() {
   localStorage.setItem("proxy", "uv")
  };
 };
+
+window.addEventListener("load", ()=>{
+    navigator.serviceWorker.register("./uv-sw.js", {
+        scope: "/static/"
+    });
+    function isUrl(val="") {
+        if (/^http(s?):\/\//.test(val) || (val.includes(".") && val.substr(0, 1) !== " "))
+            return true;
+        return false;
+    }
+    const proxy = localStorage.getItem("proxy") || "uv";
+    
+    );
+    const form = document.querySelector("form");
+    form.addEventListener("submit", (event)=>{
+        event.preventDefault();
+        if (typeof navigator.serviceWorker === "undefined")
+            alert("An error occured registering your service worker. Please contact support - discord.gg/unblocker");
+        if (proxy === "uv" || proxy === "osana") {
+            navigator.serviceWorker.register("./uv-sw.js", {
+                scope: "/static/"
+            }).then(()=>{
+                const value = event.target.firstElementChild.value;
+                let url = value.trim();
+                if (!isUrl(url))
+                    url = "https://www.google.com/search?q=" + url;
+                if (!(url.startsWith("https://") || url.startsWith("http://")))
+                    url = "http://" + url;
+                let redirectTo = proxy === "uv" ? __uv$config.prefix + __uv$config.encodeUrl(url) : __osana$config.prefix + __osana$config.codec.xor(url);
+                    }
+                    , 1000);
+    }
+}
+);
     
 setuserbar();
 setusercloak();
