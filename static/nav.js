@@ -114,6 +114,14 @@ function setcloaktoggleicon() {
     iconswtch.classList.remove("fa-toggle-off");
   }
 };
+
+function switchProxy() {
+  var selecter = document.getElementById("proxySwitcher");
+  var selectedOption = selecter.value;
+
+  localStorage.setItem("proxy", selectedOption);
+  var storedChoice = localStorage.getItem("proxy");
+}
     
 setuserbar();
 setusercloak();
