@@ -115,16 +115,26 @@ function setcloaktoggleicon() {
   }
 };
 
+var proxyStored = localStorage.getItem("proxy")
+var proxySel = document.getElementById("proxySwitcher")
+
 function switchProxy() {
   var selecter = document.getElementById("proxySwitcher");
   var selectedOption = selecter.value;
 
   localStorage.setItem("proxy", selectedOption);
   var storedChoice = localStorage.getItem("proxy");
-}
+};
+
+function setdefaults() {
+ if (localStorage.proxy == undefined) {
+  localStorage.setItem("proxy", "uv")
+ };
+};
     
 setuserbar();
 setusercloak();
 setbartoggleicon();
 setcloaktoggleicon();
+proxySel.value = proxyStored
 
