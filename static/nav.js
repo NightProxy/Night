@@ -142,8 +142,6 @@ window.addEventListener("load", ()=>{
         return false;
     }
     const proxy = localStorage.getItem("proxy") || "uv";
-    
-    );
     const form = document.querySelector("form");
     form.addEventListener("submit", (event)=>{
         event.preventDefault();
