@@ -142,8 +142,6 @@ window.addEventListener("load", ()=>{
         return false;
     }
     const proxy = localStorage.getItem("proxy") || "uv";
-    
-    );
     const form = document.querySelector("form");
     form.addEventListener("submit", (event)=>{
         event.preventDefault();
@@ -162,13 +160,14 @@ window.addEventListener("load", ()=>{
                 let redirectTo = proxy === "uv" ? __uv$config.prefix + __uv$config.encodeUrl(url) : __osana$config.prefix + __osana$config.codec.xor(url);
                     }
                     , 1000);
+      }
     }
-}
-);
-    
+    )
+  }
+);  
 setuserbar();
 setusercloak();
 setbartoggleicon();
 setcloaktoggleicon();
-proxySel.value = proxyStored
+proxySel.value = proxyStored;
 
