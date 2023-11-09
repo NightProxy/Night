@@ -1,5 +1,5 @@
 "use strict";
-if (localStorage.proxy = "uv"){
+if (localStorage.getItem("proxy") == "uv"){
   var stockSW = "/static/uv-sw.js";
   var stockscope = "__uv$config.prefix,";
 }else{
