@@ -67,6 +67,17 @@
                <br>
                <a onclick="cloaktoggle(); setcloaktoggleicon();" id="iconswitch" class="fa-solid "></a>   
             </div>
+            <div id="settings-boxes">
+            <p style="text-align: center;"> Choose the proxy that fits your needs </p>
+            <span class="custom-dropdown big">
+               <a">
+                  <select class="dropdown" id="proxySwitcher">
+                     <option value="uv">UltraViolet</option>
+                     <option value="osana">Osana (beta)</option>
+                  </select>
+               </a>
+            </span>
+            <a onclick="saveIc();switchProxy()" class="button-save"> Apply </a>
          </div>
           <div>
             
