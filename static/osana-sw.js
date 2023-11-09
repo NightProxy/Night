@@ -1,4 +1,4 @@
-importScripts("/osana.worker.js");
+importScripts("/static/osana/osana.worker.js");
 
 const sw = new OsanaServiceWorker();
 
