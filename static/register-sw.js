@@ -1,7 +1,7 @@
 "use strict";
 if (localStorage.getItem("proxy") == "osana"){
   var stockSW = "/static/osana-sw.js";
-  var stockscope = "/osana/";
+  var stockscope = "/static/osana/";
 }else{
   var stockSW = "/static/uv-sw.js";
   var stockscope = "__uv$config.prefix,";
