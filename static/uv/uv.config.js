@@ -1,6 +1,6 @@
 self.__uv$config = {
     prefix: '/static/ghost/',
-    bare: 'https://andromeda-srv.vercel.app/outerspace',
+    bare: 'https://english.burpy.info/bare',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/static/uv/uv.handler.js',
