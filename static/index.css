@@ -1,6 +1,16 @@
-/* Custom CSS for black theme */
+:root {
+    --background-primary: #000;
+    --input-text-color: #fff;
+    --input-placeholder-color: #aaa;
+    --input-background-color: #222;
+    --input-border-color: #a800ff;
+    --input-border-size: 1.3px;
+    --footer-border-color: #8c00ff;
+    --ag-button-text-color: #1E1E1E;
+}
+
 body {
-  background-color: #000;
+  background-color: var(--background-primary);
   color: #fff;
   font-family: 'Share Tech Mono';font-size: 24px;
   margin: 0px;
@@ -10,7 +20,7 @@ body {
 }
 
 #header {
-  background-color: #000;
+  background-color: var(--background-primary);
   padding: 20px;
   text-align: center;
 }
@@ -19,7 +29,7 @@ body {
   position: absolute; 
   width: 100%; 
   height: 100%; 
-  background-color: #000000; 
+  background-color: var(--background-primary); 
   background-image: url("https://i.imgur.com/Xptr016.jpg");
   background-repeat: no-repeat; 
   text-align: center;
@@ -88,9 +98,9 @@ body {
   font-size: 16px;
   width: 300px;
   box-shadow: 0 0 5px rgba(196, 196, 196, 0.3);
-  background-color: #222;
+  background-color: var(--input-background-color);
   text-align: center;
-  color: #fff;
+  color: var(--input-text-color);
   cursor:cell;
 }
 
@@ -106,7 +116,7 @@ a{
 }
 
 .form__input::placeholder {
-  color: #aaa;
+  color: var(--input-placeholder-color);
   text-align: center;
 }
 
@@ -125,15 +135,15 @@ a{
   bottom: 0;
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: #8c00ff;
+  border-top-color: var(--footer-border-color);
   font-family: 'Open Sans', sans-serif;
   width: 100%;
   height:15px;
-  background-color: #000000;
+  background-color: var(--background-primary);
   padding-top: 7.5px;
   padding-bottom: 10px;
   text-align: center;
-  color: #fff;
+  color: var(--input-text-color);
   font-size: 14px;
 }
 
@@ -144,11 +154,11 @@ a{
 .fa {
   font-size: 24px;
   margin-right: 10px;
-  color: #fff;
+  color: var(--input-text-color);
 }
 
 .fa:hover {
-  color: #aaa;
+  color: var(--input-placeholder-color);
 }
 
 
@@ -171,16 +181,6 @@ a{
 }
 
 // Apps & Games
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-
-body {
-  text-decoration: none;
-  font-family: "Inter";
-  background: #1E1E1E;
-
-}
-
-
 .column {
   width: 145px;
   transition: all 0.2s ease;
@@ -212,7 +212,7 @@ body {
   font-size: 18px;
   line-height: 19px;
   text-align: center;
-  color: #1E1E1E;
+  color: var(--ag-button-text-color);
   text-shadow: 0px 0px 30px rgba(20, 255, 189, 0.38);
   padding-top: 136px;
   padding-bottom: 12px;
