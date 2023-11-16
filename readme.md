@@ -16,7 +16,7 @@ This is a heavily modified version of the <a href="https://github.com/TheTIW/UV-
     <li>Wide collection of Games from Interstellar Network</li>
     <li>Tab Cloaking</li>
     <li>Wide collection of Apps</li>
-    <li>Built-In Tab System</li>
+    <li>Built-In Tab System from Shadow Network</li>
     <li>Deployable on any static hosting platform</li>
 </ul>
 <br>
