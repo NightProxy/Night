@@ -1,12 +1,4 @@
 "use strict";
-if (localStorage.getItem("proxy") == "osana"){
-  var stockSW = "/static/osana-sw.js";
-  var stockscope = "/static/osana/";
-}else{
-  var stockSW = "/static/uv-sw.js";
-  var stockscope = "__uv$config.prefix,";
-};
-
 /**
  * List of hostnames that are allowed to run serviceworkers on http:
  */
@@ -28,6 +20,6 @@ async function registerSW() {
 
   // Ultraviolet has a stock `sw.js` script.
   await navigator.serviceWorker.register(stockSW, {
-    scope: stockscope
+    scope: __uv$config.prefix,
   });
 }
