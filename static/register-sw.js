@@ -3,7 +3,7 @@
  * List of hostnames that are allowed to run serviceworkers on http:
  */
 const swAllowedHostnames = ["localhost", "127.0.0.1"];
-
+var stockSW = "/static/uv-sw.js";
 /**
  * Global util
  * Used in 404.html and index.html
