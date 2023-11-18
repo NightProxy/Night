@@ -152,7 +152,7 @@ function setthemes() {
  } else if (localStorage.theme == "stealth") {
   themefile.href ="/static/css/themes/stealth.css";
  } else if (localStorage.theme == "fg") {
-  themefile.href ="/static/css/themes/froggermeans.css";
+  themefile.href ="/static/css/themes/froggermans.css";
   particlestheme.src = "";
  } else if (localStorage.theme == "ghost") {
   themefile.href ="/static/css/themes/ghost.css";
