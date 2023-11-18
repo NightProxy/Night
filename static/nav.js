@@ -141,6 +141,7 @@ particlestheme = document.getElementById("paeticlesrc");
 function setthemes() {
  if (localStorage.theme == "default") {
   themefile.href = "/static/index.css";
+  particlestheme.src = "/static/particles.js";
  } else if (localStorage.theme == "noir") {
   themefile.href = "/static/css/themes/noir.css";
  } else if (localStorage.theme == "void") {
@@ -153,7 +154,7 @@ function setthemes() {
   themefile.href ="/static/css/themes/stealth.css";
  } else if (localStorage.theme == "fg") {
   themefile.href ="/static/css/themes/froggermans.css";
-  particlestheme.src = "";
+  particlestheme.src = "/static/css/themes/fg.js";
  } else if (localStorage.theme == "ghost") {
   themefile.href ="/static/css/themes/ghost.css";
  } else if (localStorage.theme == "midnight") {
