@@ -115,20 +115,20 @@ function setcloaktoggleicon() {
   }
 };
 
-var proxyStored = localStorage.getItem("proxy")
+var proxyStored = localStorage.getItem("theme")
 var proxySel = document.getElementById("proxySwitcher")
 
 function switchProxy() {
   var selecter = document.getElementById("proxySwitcher");
   var selectedOption = selecter.value;
 
-  localStorage.setItem("proxy", selectedOption);
-  var storedChoice = localStorage.getItem("proxy");
+  localStorage.setItem("theme", selectedOption);
+  var storedChoice = localStorage.getItem("theme");
 };
 
 function setdefaults() {
- if (localStorage.proxy == undefined) {
-  localStorage.setItem("proxy", "uv")
+ if (localStorage.theme == undefined) {
+  localStorage.setItem("theme", "default")
  };
 };
     
