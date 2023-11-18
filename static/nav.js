@@ -132,16 +132,42 @@ function setdefaults() {
  };
 };
 
+function reload() {
+  window.reload();
+};
+
 themefile = document.getElementById("themecss");
 function setthemes() {
  if (localStorage.theme == "default") {
   themefile.href = "/static/index.css";
+  reload();
  } else if (localStorage.theme == "noir") {
   themefile.href = "/static/css/themes/noir.css";
+  reload();
  } else if (localStorage.theme == "void") {
   themefile.href = "/static/css/themes/void.css";
- } else {
+  reload();
+ } else if (localStorage.theme == "ip") {
   themefile.href ="/static/css/themes/ironprime.css";
+  reload();
+ } else if (localStorage.theme == "xg") {
+  themefile.href ="/static/css/themes/xgames.css";
+  reload();
+ } else if (localStorage.theme == "stealth") {
+  themefile.href ="/static/css/themes/stealth.css";
+  reload();
+ } else if (localStorage.theme == "fg") {
+  themefile.href ="/static/css/themes/froggermeans.css";
+  reload();
+ } else if (localStorage.theme == "ghost") {
+  themefile.href ="/static/css/themes/ghost.css";
+  reload();
+ } else if (localStorage.theme == "midnight") {
+  themefile.href ="/static/css/themes/midnight.css";
+  reload();
+ } else {
+  themefile.href = "/static/index.css";
+  reload();
  }
 };
   
