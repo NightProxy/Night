@@ -152,5 +152,5 @@ setbartoggleicon();
 setcloaktoggleicon();
 setdefaults();
 setthemes();
-proxySel.value = proxyStored
+proxySel.value = proxyStored;
 
