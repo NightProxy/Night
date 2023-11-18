@@ -133,7 +133,7 @@ function setdefaults() {
 };
 
 function reload() {
-  window.location.reload();
+  location.reload();
 };
 
 themefile = document.getElementById("themecss");
