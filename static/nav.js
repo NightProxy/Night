@@ -141,7 +141,7 @@ particlestheme = document.getElementById("paeticlesrc");
 function setthemes() {
  if (localStorage.theme == "default") {
   themefile.href = "/static/index.css";
-  particlestheme.src = "/static/particles.js";
+  particlesJS("particles-js", {"particles":{"number":{"value":270,"density":{"enable":true,"value_area":3709.0524554716385}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":1,"color":"#8600ff"},"polygon":{"nb_sides":4},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":true,"anim":{"enable":true,"speed":2.077789232256878,"opacity_min":0.03196598818856736,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":false,"distance":78.91600969088593,"color":"#ffffff","opacity":0.047349605814531556,"width":1},"move":{"enable":true,"speed":200,"direction":"none","random":true,"straight":true,"out_mode":"out","bounce":false,"attract":{"enable":true,"rotateX":316,"rotateY":316}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"grab"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":239.74491141425517,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":3.99574852357092,"duration":0.23974491141425514,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
  } else if (localStorage.theme == "noir") {
   themefile.href = "/static/css/themes/noir.css";
  } else if (localStorage.theme == "void") {
@@ -154,13 +154,14 @@ function setthemes() {
   themefile.href ="/static/css/themes/stealth.css";
  } else if (localStorage.theme == "fg") {
   themefile.href ="/static/css/themes/froggermans.css";
-  particlestheme.src = "/static/css/themes/fg.js";
+  articlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#14ffbc"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":true,"anim":{"enable":true,"speed":0.5684540486109415,"opacity_min":0.1,"sync":false}},"size":{"value":4,"random":true,"anim":{"enable":false,"speed":0,"size_min":1.6241544246026904,"sync":false}},"line_linked":{"enable":false,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
  } else if (localStorage.theme == "ghost") {
   themefile.href ="/static/css/themes/ghost.css";
  } else if (localStorage.theme == "midnight") {
   themefile.href ="/static/css/themes/midnight.css";
  } else {
   themefile.href = "/static/index.css";
+  particlesJS("particles-js", {"particles":{"number":{"value":270,"density":{"enable":true,"value_area":3709.0524554716385}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":1,"color":"#8600ff"},"polygon":{"nb_sides":4},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":true,"anim":{"enable":true,"speed":2.077789232256878,"opacity_min":0.03196598818856736,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":false,"distance":78.91600969088593,"color":"#ffffff","opacity":0.047349605814531556,"width":1},"move":{"enable":true,"speed":200,"direction":"none","random":true,"straight":true,"out_mode":"out","bounce":false,"attract":{"enable":true,"rotateX":316,"rotateY":316}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"grab"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":239.74491141425517,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":3.99574852357092,"duration":0.23974491141425514,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
 
  }
 };
