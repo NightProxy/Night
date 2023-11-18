@@ -137,6 +137,7 @@ function reloadpage() {
 }
 
 themefile = document.getElementById("themecss");
+particlestheme = document.getElementById("paeticlesrc");
 function setthemes() {
  if (localStorage.theme == "default") {
   themefile.href = "/static/index.css";
@@ -152,6 +153,7 @@ function setthemes() {
   themefile.href ="/static/css/themes/stealth.css";
  } else if (localStorage.theme == "fg") {
   themefile.href ="/static/css/themes/froggermeans.css";
+  particlestheme.src = "";
  } else if (localStorage.theme == "ghost") {
   themefile.href ="/static/css/themes/ghost.css";
  } else if (localStorage.theme == "midnight") {
