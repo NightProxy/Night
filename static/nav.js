@@ -116,10 +116,10 @@ function setcloaktoggleicon() {
 };
 
 var proxyStored = localStorage.getItem("theme")
-var proxySel = document.getElementById("proxySwitcher")
+var proxySel = document.getElementById("themeSwitcher")
 
 function switchProxy() {
-  var selecter = document.getElementById("proxySwitcher");
+  var selecter = document.getElementById("themeSwitcher");
   var selectedOption = selecter.value;
 
   localStorage.setItem("theme", selectedOption);
@@ -131,10 +131,25 @@ function setdefaults() {
   localStorage.setItem("theme", "default")
  };
 };
+
+themefile = document.getElementById("themecss");
+function setthemes() {
+ if (localStorage.theme == "default") {
+  themefile.href = "/static/index.css";
+ } else if (localStorage.theme == "noir") {
+  themefile.href = "/static/css/themes/noir.css";
+ } else if (localStorage.theme == "void") {
+  themefile.href = "/static/css/themes/void.css";
+ } else {
+  themefile.href ="/static/css/themes/ironprime.css";
+ }
+  
     
 setuserbar();
 setusercloak();
 setbartoggleicon();
 setcloaktoggleicon();
+setdefaults();
+setthemes();
 proxySel.value = proxyStored
 
