@@ -143,6 +143,7 @@ function setthemes() {
  } else {
   themefile.href ="/static/css/themes/ironprime.css";
  }
+};
   
     
 setuserbar();
