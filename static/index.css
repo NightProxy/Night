@@ -179,8 +179,6 @@ a{
   -webkit-transform: scale(1.5); /* Safari 3-8 */
   transform: scale(1.5); 
 }
-
-// Apps & Games
 .column {
   width: 145px;
   transition: all 0.2s ease;
