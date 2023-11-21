@@ -32,6 +32,7 @@ body {
   background-color: var(--background-primary); 
   background-image: url("/static/css/themes/ip.jpg");
   background-repeat: no-repeat; 
+  background-size: contain;
   text-align: center;
   padding: 20px;
   margin-top: -4%;
