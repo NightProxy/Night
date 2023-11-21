@@ -33,6 +33,7 @@ body {
   background-image: url("/static/css/themes/ip.jpg");
   background-repeat: no-repeat; 
   background-size: contain;
+  background-position: center;
   text-align: center;
   padding: 20px;
   margin-top: -4%;
