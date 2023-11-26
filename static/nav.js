@@ -171,6 +171,8 @@ function setthemes() {
  }
 };
   
+var splashCacheAll;
+var splashCache;
 
 async function randomSay() {
   // If splashCache is defined and not empty
