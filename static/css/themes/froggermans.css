@@ -297,6 +297,7 @@ a{
   font-size: 1.5rem;
   margin: 1rem;
   align-self: center;
+  display: flex;
 }
 
 
