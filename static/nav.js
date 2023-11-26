@@ -229,7 +229,7 @@ async function setRandomSay() {
 
   // Set the random splash message in the DOM
   document.querySelector(".message").innerText = randomSplash;
-}
+};
 
 
 setuserbar();
@@ -239,4 +239,7 @@ setcloaktoggleicon();
 setdefaults();
 setthemes();
 proxySel.value = proxyStored;
+if (document.querySelector(".message")) {
+  setRandomSay();
+}
 
