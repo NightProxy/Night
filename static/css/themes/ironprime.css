@@ -291,3 +291,16 @@ a{
 	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 	background-color: white;
 }
+
+.message {
+  text-align: center;
+  color: var(--text);
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.homemessage {
+  cursor: pointer;
+  width: fit-content;
+  user-select: none;
+}
