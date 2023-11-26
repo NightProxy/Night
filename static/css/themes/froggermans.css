@@ -296,7 +296,9 @@ a{
   color: var(--text);
   font-size: 1.5rem;
   margin: 1rem;
+  align-self: center;
 }
+
 
 .homemessage {
   cursor: pointer;
