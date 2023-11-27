@@ -12,12 +12,12 @@ function changeFavicon(src) {
  document.head.appendChild(link);
 };
 
-subpanel = document.getElementById("sidenav");
+settings = document.getElementById("sidenav");
 function hide_sidenav(){
-  if (subpanel.hidden == false){
-      subpanel.hidden = true;
+  if (settings.hidden == false){
+      settings.hidden = true;
   }else{
-      subpanel.hidden = false;
+      settings.hidden = false;
   }
 };
 
@@ -74,7 +74,7 @@ function setbartoggleicon() {
 };
 
 function closesettings() {
-    subpanel.hidden = true;
+    settings.hidden = true;
 };
 
 function cloakon() {
@@ -138,10 +138,16 @@ function reloadpage() {
 
 themefile = document.getElementById("themecss");
 particlestheme = document.getElementById("paeticlesrc");
+logo = document.getElementById("logo");
+
 function setthemes() {
  if (localStorage.theme == "default") {
   themefile.href = "/static/index.css";
   particlesJS("particles-js", {"particles":{"number":{"value":270,"density":{"enable":true,"value_area":3709.0524554716385}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":1,"color":"#8600ff"},"polygon":{"nb_sides":4},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":true,"anim":{"enable":true,"speed":2.077789232256878,"opacity_min":0.03196598818856736,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":false,"distance":78.91600969088593,"color":"#ffffff","opacity":0.047349605814531556,"width":1},"move":{"enable":true,"speed":200,"direction":"none","random":true,"straight":true,"out_mode":"out","bounce":false,"attract":{"enable":true,"rotateX":316,"rotateY":316}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"grab"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":239.74491141425517,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":3.99574852357092,"duration":0.23974491141425514,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
+  logo.src = "/static/logomain.png";
+  if (localStorage.cloak == "off") {
+   changeFavicon('../favicon.ico');
+  };
  } else if (localStorage.theme == "noir") {
   themefile.href = "/static/css/themes/noir.css";
  } else if (localStorage.theme == "void") {
@@ -162,6 +168,10 @@ function setthemes() {
  } else if (localStorage.theme == "fire") {
   themefile.href = "/static/css/themes/fire.css";
   particlesJS("particles-js", {"particles":{"number":{"value":149,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffc200"},"shape":{"type":"circle","stroke":{"width":1,"color":"#ff0000"},"polygon":{"nb_sides":3},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":true,"anim":{"enable":true,"speed":10,"opacity_min":0,"sync":false}},"size":{"value":4.008530152163807,"random":true,"anim":{"enable":true,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":false,"distance":0,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":19.24094473038627,"direction":"top-right","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":1362.9002517356944,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
+  logo.src = "/static/css/themes/firethemelogo.png";
+  if (localStorage.cloak == "off") {
+   changeFavicon('/static/css/themes/firefavicon.ico');
+  };
  } else if (localStorage.theme == "meteor") {
   themefile.href = "/static/css/themes/meteor.css";
  } else {
