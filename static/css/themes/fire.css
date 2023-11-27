@@ -126,7 +126,7 @@ a{
 
 .form__input:focus {
   outline: none;
-  box-shadow: 0 0 5px rgba(149, 20, 255);
+  box-shadow: 0 0 5px var(--input-border-color);
 }
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 #footer {
