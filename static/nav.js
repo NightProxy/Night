@@ -74,7 +74,7 @@ function setbartoggleicon() {
 };
 
 function closesettings() {
-    subpanel.hidden = true;
+    settings.hidden = true;
 };
 
 function cloakon() {
