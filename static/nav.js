@@ -138,7 +138,7 @@ function reloadpage() {
 
 themefile = document.getElementById("themecss");
 particlestheme = document.getElementById("paeticlesrc");
-logo = document.geElementById("logo");
+logo = document.getElementById("logo");
 
 function setthemes() {
  if (localStorage.theme == "default") {
