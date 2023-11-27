@@ -154,6 +154,7 @@ function setthemes() {
   themefile.href = "/static/css/themes/void/void.css";
  } else if (localStorage.theme == "ip") {
   themefile.href ="/static/css/themes/ironprime/ironprime.css";
+  logo.src = "/static/css/themes/fire/firethemelogo.png";
  } else if (localStorage.theme == "xg") {
   themefile.href ="/static/css/themes/xgames/xgames.css";
  } else if (localStorage.theme == "stealth") {
