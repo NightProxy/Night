@@ -455,7 +455,6 @@ iframe {
 .rightcontrol a {
   display: inline-block;
   margin-right: 10px;
-  padding: 8px;
   color: var(--main-text-color);
   background-color: var(--secondary-background-color);
   border-radius: 5px;
