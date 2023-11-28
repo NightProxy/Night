@@ -232,20 +232,17 @@ a{
 
 .input-container {
 	position: relative;
-	margin-top: 150px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 0.5em;
 	}
 	
 	input {
 	  padding: 20px;
 	  width: 550px;
 	  border-radius: 5px;
-	  background: #353535;
+	  background:  var(--input-background-color);
 	  text-align: center;
-	  font-size: 24px;
 	  border: none;
 	  outline: none;
 	  color: white;
@@ -254,9 +251,8 @@ a{
 	select {
 		padding: 20px;
 		border-radius: 5px;
-		background: #353535;
+		background:  var(--input-background-color);
 		color: white;
-		font-size: 20px;
 		border: 0px;
 		outline: none;
     cursor: pointer;
