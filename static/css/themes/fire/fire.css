@@ -180,7 +180,7 @@ a{
   transition: all 0.2s ease;
   cursor: crosshair;
   background: rgb(151,0,255);
-  background: linear-gradient(122deg, rgba(151,0,255,1) 0%, rgba(0,116,166,1) 46%, rgba(0,255,211,1) 100%);
+  background: linear-gradient(122deg, rgba(255,59,0,1) 0%, rgba(255,82,0,1) 46%, rgba(255,119,0,1) 100%);
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
