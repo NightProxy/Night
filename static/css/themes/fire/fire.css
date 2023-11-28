@@ -4,6 +4,7 @@
     --input-placeholder-color: #aaa;
     --input-background-color: #222;
     --input-border-color: #FAAC03;
+    --input-border-size: 1.3px;
     --footer-border-color: #FAAC03;
     --ag-button-text-color: #1E1E1E;
   --primary-background-color: #1e1e1e;
@@ -19,6 +20,7 @@
   --button-hover-background-color: #a800ff;
   --cancel-button-background-color: #4C2C63;
   --save-button-background-color: #3A9259;
+  --text: #ffffff;
 }
 
 body {
@@ -657,3 +659,15 @@ a {
   text-decoration: none;
 }
 
+.navitem {
+  border-radius: 35px;
+  padding: 10px 8px;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+  color: var(--text);
+}
+
+.navitem[current] {
+  background: var(--input-border-color);
+}

@@ -3,6 +3,7 @@
     --input-text-color: #fff;
     --input-placeholder-color: #aaa;
     --input-background-color: #222;
+    --input-border-size: 1.3px;
     --input-border-color: #a800ff;
     --footer-border-color: #8c00ff;
     --ag-button-text-color: #1E1E1E;
@@ -10,6 +11,7 @@
   --secondary-background-color: #2a2a2a;
   --accent-color: #8600ff;
   --main-text-color: #ffffff;
+  --text: #ffffff;
   --search-placeholder-color: #a800ff;
   --bookmark-background-color: #6B52A3;
   --bookmark-hover-background-color: #5B3A75;
@@ -655,3 +657,15 @@ a {
   text-decoration: none;
 }
 
+.navitem {
+  border-radius: 35px;
+  padding: 10px 8px;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+  color: var(--text);
+}
+
+.navitem[current] {
+  background: var(--input-border-color);
+}
