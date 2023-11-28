@@ -7,6 +7,19 @@
     --input-border-size: 1.3px;
     --footer-border-color: #8c00ff;
     --ag-button-text-color: #1E1E1E;
+    --primary-background-color: #1e1e1e;
+  --secondary-background-color: #2a2a2a;
+  --accent-color: #8600ff;
+  --main-text-color: #ffffff;
+  --search-placeholder-color: #a800ff;
+  --bookmark-background-color: #6B52A3;
+  --bookmark-hover-background-color: #5B3A75;
+  --input-background-color: #1a1a2b;
+  --button-background-color: #6B52A3;
+  --button-text-color: #fff;
+  --button-hover-background-color: #a800ff;
+  --cancel-button-background-color: #4C2C63;
+  --save-button-background-color: #3A9259;
 }
 
 body {
