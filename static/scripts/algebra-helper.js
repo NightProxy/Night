@@ -106,6 +106,13 @@ document.addEventListener('DOMContentLoaded', () => {
       error: false
     },
     {
+      name: "Now.gg",
+      link: "https://now.gg/",
+      image: " ./images/icons/apps/nowgg.png",
+      categories: ["all", "game"],
+      error: false
+    },
+    {
       name: "Paramount Plus",
       link: "https://paramountplus.com",
       image: "./images/icons/apps/paramount.png",
