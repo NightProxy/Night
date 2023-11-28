@@ -24,7 +24,7 @@
 
 body {
   background-color: var(--background-primary);
-  color: #fff;
+  color: var(--main-text-color);
   font-family: 'Share Tech Mono';font-size: 24px;
   margin: 0px;
   padding: 0;
