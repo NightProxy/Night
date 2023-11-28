@@ -179,8 +179,8 @@ a{
   width: 145px;
   transition: all 0.2s ease;
   cursor: crosshair;
-  background: rgb(151,0,255);
-  background: linear-gradient(122deg, rgba(255,59,0,1) 0%, rgba(255,82,0,1) 46%, rgba(255,119,0,1) 100%);
+  background: rgb(228,151,8);
+  background: linear-gradient(139deg, rgba(228,151,8,1) 0%, rgba(235,94,0,1) 100%);
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
