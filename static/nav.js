@@ -24,6 +24,22 @@ function hide_sidenav(){
 icons = document.getElementById("icbuttons");
 barswtch = document.getElementById("barswitch");
 iconswtch = document.getElementById("iconswitch");
+home = document.getElementById("home");
+apps = document.getElementById("apps");
+game = document.getElementById("game");
+tabs = document.getElementById("tabs");
+blank = document.getElementById("blank");
+about = document.getElementById("about");
+discord = document.getElementById("discord");
+
+home.innerText = '<span>Home</span>';
+apps.innerText = '<span>Apps</span>';
+game.innerText = '<span>Games</span>';
+tabs.innerText = '<span>Tabs</span>';
+blank.innerText = '<span>Blank</span>';
+about.innerHTML = '<span>About</span>';
+discord.innerHTML = '<span>Discord</span>';
+
 
 function sidebar() {
   icons.style.display="grid";
@@ -219,24 +235,8 @@ async function setRandomSay() {
   var randomSplash = await randomSay();
 
   // If the random message is "%REAL_IP%", replace it with the user's IP address
-  if (randomSplash == "%REAL_IP%") {
-    var ips = await getIPs();
-    if (ips[0]) {
-      randomSplash = "Your real IP is " + ips[0];
-    } else {
-      randomSplash = "Cannot get your real IP :(";
-    }
-  }
+  
   // If the random message is "%GAMES_NUMBER%", replace it with the number of games available
-  else if (randomSplash == "%GAMES_NUMBER%") {
-    var gamesFetch = await fetch(location.origin + "/assets/json/games.json");
-    var games = await gamesFetch.json();
-    randomSplash = "There are " + games.length + " games currently";
-  }
-  // If the random message is "%SPLASH_NUMBER%", replace it with the total number of splash messages
-  else if (randomSplash == "%SPLASH_NUMBER%") {
-    randomSplash = "There are " + splashCacheAll.length + " of these messages!";
-  }
 
   // Set the random splash message in the DOM
   document.querySelector(".message").innerText = randomSplash;
