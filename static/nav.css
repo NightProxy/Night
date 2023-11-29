@@ -83,6 +83,7 @@
   color: white;
 }
 .names {
+  padding-left: 1px;
   font-size: 16px;
   color: white;
   font-family: Arial;
