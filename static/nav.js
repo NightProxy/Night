@@ -26,20 +26,14 @@ barswtch = document.getElementById("barswitch");
 iconswtch = document.getElementById("iconswitch");
 home = document.getElementById("home");
 apps = document.getElementById("apps");
-game = document.getElementById("game");
+game = document.getElementById("games");
 tabs = document.getElementById("tabs");
 blank = document.getElementById("blank");
+sett = document.getElementById("settings");
 about = document.getElementById("about");
 discord = document.getElementById("discord");
-
-home.innerText = '<span>Home</span>';
-apps.innerText = '<span>Apps</span>';
-game.innerText = '<span>Games</span>';
-tabs.innerText = '<span>Tabs</span>';
-blank.innerText = '<span>Blank</span>';
-about.innerHTML = '<span>About</span>';
-discord.innerHTML = '<span>Discord</span>';
-
+spantags = document.querySelector(".names");
+navitems = document.querySelector(".navitem");
 
 function sidebar() {
   icons.style.display="grid";
@@ -48,6 +42,15 @@ function sidebar() {
   icons.style.justifyItems="center";
   icons.style.right="0";
   icons.style.left="";
+  navitems.style.marginRight="5px";
+  home.innerHTML = '';
+apps.innerHTML = '';
+game.innerHTML = '';
+tabs.innerHTML = '';
+blank.innerHTML = '';
+sett.innerHTML = '';
+about.innerHTML = '';
+discord.innerHTML = '';
   localStorage.setItem("bar", "side");
   localStorage.setItem("icon", "off");
 };
@@ -58,6 +61,14 @@ function topbar() {
   icons.style.justifyItems="left";
   icons.style.right="";
   icons.style.left="0";
+  home.innerHTML = '<span class="names">Home</span>';
+apps.innerHTML = '<span class="names">Apps</span>';
+game.innerHTML = '<span class="names">Games</span>';
+tabs.innerHTML = '<span class="names">Tabs</span>';
+blank.innerHTML = '<span class="names">Blank</span>';
+sett.innerHTML = '<span class="names">Settings</span>';
+about.innerHTML = '<span class="names">About</span>';
+discord.innerHTML = '<span class="names">Discord</span>';
   localStorage.setItem("bar", "top");
   localStorage.setItem("icon", "on");
   
