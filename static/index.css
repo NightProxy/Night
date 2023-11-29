@@ -299,8 +299,10 @@ a{
 }
 
 .homemessage {
+  text-align: center;
   cursor: pointer;
   width: fit-content;
+  align-self: center;
   user-select: none;
 }
 
