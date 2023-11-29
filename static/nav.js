@@ -61,14 +61,14 @@ function topbar() {
   icons.style.justifyItems="left";
   icons.style.right="";
   icons.style.left="0";
-  home.innerHTML = '<span class="names">Home</span>';
-apps.innerHTML = '<span class="names">Apps</span>';
-game.innerHTML = '<span class="names">Games</span>';
-tabs.innerHTML = '<span class="names">Tabs</span>';
-blank.innerHTML = '<span class="names">Blank</span>';
-sett.innerHTML = '<span class="names">Settings</span>';
-about.innerHTML = '<span class="names">About</span>';
-discord.innerHTML = '<span class="names">Discord</span>';
+  home.innerHTML = '<span class="names"> Home</span>';
+apps.innerHTML = '<span class="names"> Apps</span>';
+game.innerHTML = '<span class="names"> Games</span>';
+tabs.innerHTML = '<span class="names"> Tabs</span>';
+blank.innerHTML = '<span class="names"> Blank</span>';
+sett.innerHTML = '<span class="names"> Settings</span>';
+about.innerHTML = '<span class="names"> About</span>';
+discord.innerHTML = '<span class="names"> Discord</span>';
   localStorage.setItem("bar", "top");
   localStorage.setItem("icon", "on");
   
