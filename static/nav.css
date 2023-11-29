@@ -82,3 +82,10 @@
   font-size: 50px;
   color: white;
 }
+.names {
+  font-size: 50px;
+  color: white;
+  font-family: Arial;
+  cursor: pointer;
+  text-decoration: none;
+}
