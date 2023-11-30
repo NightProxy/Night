@@ -656,7 +656,7 @@ color: var(--button-text-color);
   background-color: var(--accent-color);
 }
 
-\.navitem {
+.navitem {
   border-radius: 35px;
   padding: 10px 8px;
   background: transparent;
