@@ -661,7 +661,7 @@ a {
 
 .navitem {
   border-radius: 35px;
-  padding: 25px 8px;
+  padding: 10px 8px;
   background: transparent;
   cursor: pointer;
   user-select: none;
