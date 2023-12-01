@@ -5,7 +5,8 @@
   z-index: 1000;
  left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.445);
+  backdrop-filter: blur(5px);
   overflow-x: hidden;
 }
 
@@ -90,3 +91,5 @@
   cursor: pointer;
   text-decoration: none;
 }
+
+

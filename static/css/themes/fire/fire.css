@@ -671,3 +671,15 @@ a {
 .navitem[current] {
   background: var(--input-border-color);
 }
+
+th {
+  border-image: linear-gradient(139deg, rgba(228,151,8,1) 0%, rgba(235,94,0,1) 100%);
+  border-width: 2px;
+  border-style: solid;
+}
+
+td {
+  border-image: linear-gradient(139deg, rgba(228,151,8,1) 0%, rgba(235,94,0,1) 100%);
+  border-width: 2px;
+  border-style: solid;
+}
