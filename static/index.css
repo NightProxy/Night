@@ -671,3 +671,42 @@ a {
 .navitem[current] {
   background: var(--input-border-color);
 }
+
+@keyframes gradient {
+  0% {
+    border-color: #ff0000;
+  }
+  50% {
+    border-color: #00ff00;
+  }
+  100% {
+    border-color: #0000ff;
+  }
+}
+
+/ Style the table /
+table {
+  border-collapse: collapse;
+}
+
+table td {
+  padding: 10px;
+}
+
+table td,
+table th {
+  border: 2px solid transparent;
+}
+
+table:hover td,
+table:hover th {
+  animation-name: gradient;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/ Set the fill color as transparent */
+table td {
+  background-color: transparent;
+}
