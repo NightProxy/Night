@@ -263,7 +263,7 @@ function setdefaults() {
   localStorage.setItem("theme", "default")
  };
  if (localStorage.bare == undefined) {
-  localStorage.setItem("theme", "bare")
+  localStorage.setItem("bare", "default")
  };
 };
 
