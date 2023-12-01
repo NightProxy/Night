@@ -706,7 +706,6 @@ table:hover th {
   animation-iteration-count: infinite;
 }
 
-/ Set the fill color as transparent */
 table td {
   background-color: transparent;
 }
