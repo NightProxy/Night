@@ -153,12 +153,6 @@ function switchProxy() {
   var storedChoice = localStorage.getItem("theme");
 };
 
-function setdefaults() {
- if (localStorage.theme == undefined) {
-  localStorage.setItem("theme", "default")
- };
-};
-
 function reloadpage() {
   location.reload();
 }
@@ -253,6 +247,25 @@ async function setRandomSay() {
   document.querySelector(".message").innerText = randomSplash;
 };
 
+var bareStored = localStorage.getItem("bare")
+var bareSel = document.getElementById("bareSwitcher")
+
+function switchBare() {
+  var selecter = document.getElementById("bareSwitcher");
+  var selectedOption = selecter.value;
+
+  localStorage.setItem("bare", selectedOption);
+  var storedChoice = localStorage.getItem("bare");
+};
+
+function setdefaults() {
+ if (localStorage.theme == undefined) {
+  localStorage.setItem("theme", "default")
+ };
+ if (localStorage.bare == undefined) {
+  localStorage.setItem("theme", "bare")
+ };
+};
 
 setuserbar();
 setusercloak();
