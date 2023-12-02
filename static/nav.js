@@ -239,9 +239,7 @@ function setdefaults() {
  };
 };
 
-setuserbar();
 setusercloak();
-setbartoggleicon();
 setcloaktoggleicon();
 setdefaults();
 setthemes();
