@@ -168,6 +168,7 @@ a{
 
 #icbuttons {
   position: absolute;
+  height:64px;
   top: 20px;
   z-index: 999;
 }

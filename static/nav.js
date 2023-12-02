@@ -42,7 +42,7 @@ function hide_sidenav(){
 };
 
 icons = document.getElementById("icbuttons");
-barswtch = document.getElementById("barswitch");
+
 iconswtch = document.getElementById("iconswitch");
 blankswtch = document.getElementById("blankswitch");
 home = document.getElementById("home");
@@ -134,6 +134,7 @@ function reloadpage() {
 
 themefile = document.getElementById("themecss");
 particlestheme = document.getElementById("paeticlesrc");
+logo = document.getElementById("logo");
 
 function setthemes() {
  if (localStorage.theme == "default") {
@@ -142,6 +143,7 @@ function setthemes() {
   if (localStorage.cloak == "off") {
    changeFavicon('../favicon.ico');
   };
+  logo.src = "../favicon.ico";
  } else if (localStorage.theme == "noir") {
   themefile.href = "/static/css/themes/noir/noir.css";
  } else if (localStorage.theme == "void") {
@@ -166,6 +168,7 @@ function setthemes() {
   if (localStorage.cloak == "off") {
    changeFavicon('/static/css/themes/fire/firefavicon.ico');
   };
+  logo.src = "/static/css/themes/fire/firefavicon.ico";
  } else if (localStorage.theme == "meteor") {
   themefile.href = "/static/css/themes/meteor/meteor.css";
  } else {
