@@ -5,7 +5,7 @@ document.head.appendChild(ss);
 
 var ssscript = document.createElement('script');
 ssscript.type = 'text/javascript';
-ssscript.src = 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js';
+ssscript.src = '/static/shoelace-autoloader.js';
 document.body.appendChild(ssscript);
 
 var cookie = document.createElement('script');
@@ -163,8 +163,46 @@ function setcloaktoggleicon() {
   }
 };
 
-var proxyStored = localStorage.getItem("theme");
-var proxySel = document.getElementById("themeSwitcher");
+function blankon() {
+  changeFavicon('./images/favicon/drive.png');
+  document.title = "My Drive - Google Drive";
+   localStorage.setItem("blank", "on");
+};
+
+function blankoff() {
+   changeFavicon('../favicon.ico');
+   document.title = "Andromeda";
+   localStorage.setItem("blank", "off");
+};
+
+function blanktoggle() {
+if (localStorage.getItem("blank") == 'off'){
+  blankon();
+}else{
+  blankoff();
+}
+};
+
+function setuserblank() {
+if (localStorage.getItem("blank") == 'on'){
+  blankon();
+}else{
+  blankoff();
+}
+};
+  
+function setblanktoggleicon() {
+if (localStorage.getItem("blank") == 'off'){
+  blanmkswtch.classList.add("fa-toggle-off");
+  blankswtch.classList.remove("fa-toggle-on");
+}else{
+  blankswtch.classList.add("fa-toggle-on");
+  blankswtch.classList.remove("fa-toggle-off");
+}
+};
+
+var proxyStored = localStorage.getItem("theme")
+var proxySel = document.getElementById("themeSwitcher")
 
 function switchProxy() {
   var selecter = document.getElementById("themeSwitcher");
@@ -176,7 +214,7 @@ function switchProxy() {
 
 function reloadpage() {
   location.reload();
-};
+}
 
 themefile = document.getElementById("themecss");
 particlestheme = document.getElementById("paeticlesrc");
