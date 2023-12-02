@@ -56,26 +56,6 @@ discord = document.getElementById("discord");
 spantags = document.querySelector(".names");
 navitems = document.querySelector(".navitem");
 
-function sidebar() {
-  icons.style.display="grid";
-  icons.style.position="fixed";
-  icons.style.alignItems="center";
-  icons.style.justifyItems="center";
-  icons.style.right="0";
-  icons.style.left="";
-  navitems.style.marginRight="5px";
-  home.innerHTML = '';
-apps.innerHTML = '';
-game.innerHTML = '';
-tabs.innerHTML = '';
-blank.innerHTML = '';
-sett.innerHTML = '';
-about.innerHTML = '';
-discord.innerHTML = '';
-  localStorage.setItem("bar", "side");
-  localStorage.setItem("icon", "off");
-};
-
 function topbar() {
   icons.style.display="flex";
   icons.style.alignItems="left";
@@ -93,32 +73,6 @@ discord.innerHTML = '<span class="names">Discord</span>';
   localStorage.setItem("bar", "top");
   localStorage.setItem("icon", "on");
   
-};
-
-function bartoggle() {
-  if (localStorage.getItem("bar") == 'side'){
-    topbar();
-  }else{
-    sidebar();
-  }
-};
-
-function setuserbar() {
-  if (localStorage.getItem("bar") == 'side'){
-    sidebar();
-  }else{
-    topbar();
-  }
-};
-
-function setbartoggleicon() {
-  if (localStorage.getItem("icon") == 'off'){
-    barswtch.classList.add("fa-toggle-off");
-    barswtch.classList.remove("fa-toggle-on");
-  }else{
-    barswtch.classList.add("fa-toggle-on");
-    barswtch.classList.remove("fa-toggle-off");
-  }
 };
 
 function closesettings() {
@@ -291,6 +245,7 @@ setbartoggleicon();
 setcloaktoggleicon();
 setdefaults();
 setthemes();
+topbar();
 proxySel.value = proxyStored;
 if (document.querySelector(".message")) {
   setRandomSay();
