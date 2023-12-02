@@ -292,7 +292,7 @@ a{
 .message {
   text-align: center;
   color: var(--text);
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin: 1rem;
   align-self: center;
   display: flex;
