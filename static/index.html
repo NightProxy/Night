@@ -32,7 +32,6 @@
       <div id="particles-js"></div>
       <div class="page" id="imgsearch">
          <title>Andromeda</title>
-         <div>
             <div id="icbuttons">
                <a href="index.html" style="height:2.5vh;font-size:16px;margin-right: 2%" id="home" class="fa-solid fa-house zoom navitem" current index></a>
                <a href="apps.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:6%;font-size:16px;" id="apps" class="fa-solid fa-grip zoom navitem" apps></a>
@@ -43,21 +42,20 @@
                <a href="about.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:7%;font-size:16px;" id="about" class="fa-solid fa-circle-exclamation zoom navitem"></a>
                <a href="https://discord.gg/JrmurfukMd" style="width:50px;padding-right:1px;padding-left:1px;margin-right:none;font-size:16px;" id="discord" target="_blank" class="fa-brands fa-discord zoom navitem"></a>
               </div>
-<br>
-<br>
-<br>
+              <div style="margin-top: 22vh;">
             <center>
-            <img src="" alt="Logo" id="logo" style="width:926px;height:81px;margin-top:40px;">
-               </center>
-            <br>
+            <p style="font-size:64px; margin-top:0vh; margin-bottom:0vh;">Andromeda</p>
+            </center>
             <center>
-               <div class="message homemessage" onclick="setRandomSay()">...</div>
+               <div style="margin-top:0px;"class="message homemessage" onclick="setRandomSay()">...</div>
+            </center>
+            <center>
+               <form id="uv-form">
+                  <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
+                  <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input"/>
+                </form>
             </center>
          </div>
-         <form id="uv-form">
-            <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
-            <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input"/>
-          </form>
           <div class="desc left-margin">
             <p id="uv-error"></p>
             <pre id="uv-error-code"></pre>
@@ -141,7 +139,6 @@
             </tr>
          </table>
          </div>
-      <canvas id="ghost"></canvas>
       <script src="uv/uv.bundle.js" defer></script>
       <script src="uv/uv.config.js" defer></script>
       <script src="register-sw.js" defer></script>

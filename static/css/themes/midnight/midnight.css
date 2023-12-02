@@ -26,7 +26,7 @@
 body {
   background-color: var(--background-primary);
   color: #fff;
-  font-family: 'Share Tech Mono';font-size: 24px;
+  font-family: 'Noto Sans';font-size: 24px;
   margin: 0px;
   padding: 0;
   vertical-align: middle;
@@ -44,7 +44,7 @@ body {
   width: 100%; 
   height: 100%; 
   background-color: var(--background-primary); 
-  background-image: url("https://i.imgur.com/Xptr016.jpg");
+  background: url("/static/css/themes/froggermans/fgcat.jpg") no-repeat center center fixed;
   background-repeat: no-repeat; 
   text-align: center;
   padding: 20px;
@@ -73,7 +73,6 @@ body {
   line-height: 1.5;
   margin-bottom: 20px;
 }
-
 
 #content {
   text-align: center;
@@ -141,7 +140,7 @@ a{
   border-top-width: 1px;
   border-top-style: solid;
   border-top-color: var(--footer-border-color);
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Noto Sans';
   width: 100%;
   height:15px;
   background-color: var(--background-primary);
@@ -184,6 +183,7 @@ a{
   -webkit-transform: scale(1.5); /* Safari 3-8 */
   transform: scale(1.5); 
 }
+
 
 .column {
   width: 145px;

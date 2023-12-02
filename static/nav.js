@@ -1,3 +1,23 @@
+var ss = document.createElement('link');
+ss.rel = 'stylesheet';
+ss.href = 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/dark.css';
+document.head.appendChild(ss);
+
+var ssscript = document.createElement('script');
+ssscript.type = 'text/javascript';
+ssscript.src = '/static/shoelace-autoloader.js';
+document.body.appendChild(ssscript);
+
+var cookie = document.createElement('script');
+cookie.type = 'text/javascript';
+cookie.src = '/static/js.cookie.min.js';
+document.body.appendChild(cookie);
+
+var noto = document.createElement('link');
+noto.rel = 'stylesheet';
+noto.href = "https://fonts.googleapis.com/css?family=Noto Sans";
+document.head.appendChild(noto);
+
 document.head = document.head || document.getElementsByTagName('head')[0];
 
 function changeFavicon(src) {
@@ -140,6 +160,44 @@ function setcloaktoggleicon() {
     iconswtch.classList.add("fa-toggle-on");
     iconswtch.classList.remove("fa-toggle-off");
   }
+};
+
+function blankon() {
+  changeFavicon('./images/favicon/drive.png');
+  document.title = "My Drive - Google Drive";
+   localStorage.setItem("blank", "on");
+};
+
+function blankoff() {
+   changeFavicon('../favicon.ico');
+   document.title = "Andromeda";
+   localStorage.setItem("blank", "off");
+};
+
+function blanktoggle() {
+if (localStorage.getItem("blank") == 'off'){
+  blankon();
+}else{
+  blankoff();
+}
+};
+
+function setuserblank() {
+if (localStorage.getItem("blank") == 'on'){
+  blankon();
+}else{
+  blankoff();
+}
+};
+  
+function setblanktoggleicon() {
+if (localStorage.getItem("blank") == 'off'){
+  iconswtch.classList.add("fa-toggle-off");
+  iconswtch.classList.remove("fa-toggle-on");
+}else{
+  iconswtch.classList.add("fa-toggle-on");
+  iconswtch.classList.remove("fa-toggle-off");
+}
 };
 
 var proxyStored = localStorage.getItem("theme")

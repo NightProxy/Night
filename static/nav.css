@@ -15,6 +15,8 @@
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 26px;
+  font-family: 'Noto Sans';
+  font-weight: none;
   color: #f1f1f1;
   border: none;
   background: none;
@@ -87,9 +89,10 @@
   margin-left: 5px;
   font-size: 16px;
   color: white;
-  font-family: Arial;
+  font-family: 'Noto Sans';
   cursor: pointer;
   text-decoration: none;
+  font-weight: none;
 }
 
 
