@@ -44,6 +44,7 @@ function hide_sidenav(){
 icons = document.getElementById("icbuttons");
 barswtch = document.getElementById("barswitch");
 iconswtch = document.getElementById("iconswitch");
+blankswtch = document.getElementById("blankswitch");
 home = document.getElementById("home");
 apps = document.getElementById("apps");
 game = document.getElementById("games");
@@ -192,11 +193,11 @@ if (localStorage.getItem("blank") == 'on'){
   
 function setblanktoggleicon() {
 if (localStorage.getItem("blank") == 'off'){
-  iconswtch.classList.add("fa-toggle-off");
-  iconswtch.classList.remove("fa-toggle-on");
+  blanmkswtch.classList.add("fa-toggle-off");
+  blankswtch.classList.remove("fa-toggle-on");
 }else{
-  iconswtch.classList.add("fa-toggle-on");
-  iconswtch.classList.remove("fa-toggle-off");
+  blankswtch.classList.add("fa-toggle-on");
+  blankswtch.classList.remove("fa-toggle-off");
 }
 };
 
