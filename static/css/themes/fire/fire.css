@@ -170,7 +170,7 @@ a{
 #icbuttons {
   position: absolute;
   top: 20px;
-  height:64px;
+  height:49px;
   z-index: 999;
 }
 
@@ -662,7 +662,7 @@ a {
 
 .navitem {
   border-radius: 35px;
-  padding: 25px 8px;
+  padding: 10px 8px;
   background: transparent;
   cursor: pointer;
   user-select: none;
