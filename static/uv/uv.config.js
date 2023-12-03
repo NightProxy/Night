@@ -4,6 +4,10 @@ if (localStorage.bare == "default") {
     var bare = "https://andromedabare.vercel.app";
 } else if (localStorage.bare == "default3") {
     var bare = "https://218-39-2-78-101-249-205-32-24-217-131.vercel.app";
+} else if (localStorage.bare == "sndefault") {
+    var bare = "https://phantom.lol/bare";
+} else if (localStorage.bare == "snalt") {
+    var bare = "https://multiplication.cheap-car-rental.com";
 } else {
     var bare = "https://218-39-2-78-101-249-205-32-24-217-131.vercel.app";
 };

@@ -33,10 +33,9 @@
       <div class="page" id="imgsearch">
          <title>Andromeda</title>
             <div id="icbuttons">
-               <img src="" alt="Logo" id="logo" style="width:49px;height:49px">
+               <a href="index.html" id="home" class="zoom" index><img src="" alt="Logo" id="logo" style="width:49px;height:49px"></a>
                <div style="position:fixed;right:0;height:64px;top:10px;">
-                  <div>
-               <a href="index.html" style="height:2.5vh;font-size:13px;margin-right: 2%" id="home" class="fa-solid fa-house zoom navitem" current index></a>
+                  <div style="display:flex;justify-content:flex-end;align-items:center;">
                <a href="apps.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:6%;font-size:13px;" id="apps" class="fa-solid fa-grip zoom navitem" apps></a>
                <a href="games.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:13px;" id="games" class="fa-solid fa-gamepad zoom navitem" games></a>
                <a href="tabs.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:5%;font-size:13px;" id="tabs" class="fa-solid fa-bars-progress zoom navitem" tabs></a>
@@ -108,6 +107,7 @@
                            <option value="default2">Default 2</option>
                            <option value="default3">Default 3</option>
                            <option value="sndefault">Shadow Default</option>
+                           <option value="snalt">Shadow Alt</option>
                         </select>
                      </span>
                      <a onclick="switchBare(); reloadpage();" class="button-save"> Apply </a>
