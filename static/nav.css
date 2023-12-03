@@ -1,4 +1,4 @@
-.sidenav {
+#sidenav {
   height: 100%;
   width: 100%;
   position: fixed;
@@ -8,10 +8,12 @@
   background-color: rgba(0, 0, 0, 0.445);
   backdrop-filter: blur(5px);
   overflow-x: hidden;
+  opacity: 1;
+  transition: opacity 1s; 
 }
 
 /* Style the sidenav links and the dropdown button */
-.sidenav a, .dropdown-btn {
+#sidenav a, #sidenav button, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   color: #f1f1f1;
@@ -22,8 +24,12 @@
 }
 
 /* On mouse-over */
-.sidenav a:hover, .dropdown-btn:hover {
+#sidenav a:hover, .dropdown-btn:hover {
   color: #a800ff;
+}
+
+#sidenav.fade {
+  opacity: 0;
 }
 
 /* Main content */

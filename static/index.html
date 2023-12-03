@@ -9,6 +9,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="./particles.css">
 <meta name="apple-mobile-web-app-capable" content="yes"/>
+<style>
+   #sidenav {
+     opacity: 1;
+     transition: opacity 1s; 
+   }
+   
+   #sidenav.fade {
+     opacity: 0;
+   }
+       </style>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -39,7 +49,7 @@
                <a href="apps.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:6%;font-size:13px;" id="apps" class="fa-solid fa-grip zoom navitem" apps></a>
                <a href="games.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:13px;" id="games" class="fa-solid fa-gamepad zoom navitem" games></a>
                <a href="tabs.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:5%;font-size:13px;" id="tabs" class="fa-solid fa-bars-progress zoom navitem" tabs></a>
-              <a onclick="hide_sidenav();" style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:13px;" id="settings" class="fa-solid fa-gear zoom navitem"></a>
+              <a style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:13px;" id="settings" class="fa-solid fa-gear zoom navitem"></a>
             </div>
               </div>
               <div style="margin-top:30vh;position:fixed;top:0;left:0;right:0;bottom:0;">
@@ -61,7 +71,7 @@
             <pre id="uv-error-code"></pre>
           </div>
          <div class="sidenav" id="sidenav">
-            <a onclick="closesettings();" class="fa-solid fa-circle-xmark closebutton"></a>
+            <a class="fa-solid fa-circle-xmark closebutton" id="closebutton"></a>
             <table style="width:80%;margin-left:10%;margin-left:10%;">
             <tr>
                <th>
@@ -149,7 +159,18 @@
          <script src="nav.js"></script>
       <script id="paeticlesrc" src=""></script>
       <script src="blank.js"></script>
-      <script>hide_sidenav();</script>
+      <script>
+         document.getElementById('settings').onclick = function () {
+             document.getElementById('sidenav').classList.toggle('fade');
+         };
+
+         document.getElementById('closebutton').onclick = function () {
+             document.getElementById('sidenav').classList.toggle('fade');
+         };
+         </script>
+         <script>
+            document.getElementById('sidenav').classList.toggle('fade');  
+         </script>
       <div id="footer">
          <p>&copy; 2023 Andromeda. All rights reserved.</p>
       </div>

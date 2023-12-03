@@ -22,6 +22,16 @@
       <script type="text/javascript" src="//counter.websiteout.net/js/7/10/5/0"></script>
       <link rel="shortcut icon" type="image/jpg" href="../favicon.ico"/>
       <link href="https://fonts.googleapis.com/css?family=Share Tech Mono" rel="stylesheet"/>
+      <style>
+         #sidenav {
+           opacity: 1;
+           transition: opacity 1s; 
+         }
+         
+         #sidenav.fade {
+           opacity: 0;
+         }
+             </style>
    </head>
    <body>
       <div id="particles-js"></div>
@@ -105,7 +115,18 @@
       <script id="paeticlesrc" src="particles.js"></script>
       <script src="nav.js"></script>
       <script src="blank.js"></script>
-      <script>hide_sidenav();</script>
+      <script>
+         document.getElementById('settings').onclick = function () {
+             document.getElementById('sidenav').classList.toggle('fade');
+         };
+
+         document.getElementById('closebutton').onclick = function () {
+             document.getElementById('sidenav').classList.toggle('fade');
+         };
+         </script>
+         <script>
+            document.getElementById('sidenav').classList.toggle('fade');  
+         </script>
       <div id="footer">
          <p>&copy; 2023 Andromeda. All rights reserved.</p>
       </div>

@@ -26,6 +26,16 @@
 <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="https://kit.fontawesome.com/32abd502cd.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="./particles.css">
+<style>
+  #sidenav {
+    opacity: 1;
+    transition: opacity 1s; 
+  }
+  
+  #sidenav.fade {
+    opacity: 0;
+  }
+      </style>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -132,6 +142,17 @@
       <script id="paeticlesrc" src="particles.js"></script>
       <script src="blank.js"></script>
     <script src="nav.js"></script>
-	  <script>closesettings();</script>
+	  <script>
+      document.getElementById('settings').onclick = function () {
+          document.getElementById('sidenav').classList.toggle('fade');
+      };
+
+      document.getElementById('closebutton').onclick = function () {
+          document.getElementById('sidenav').classList.toggle('fade');
+      };
+      </script>
+      <script>
+         document.getElementById('sidenav').classList.toggle('fade');  
+      </script>
   </body>
 </html>

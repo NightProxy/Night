@@ -235,6 +235,7 @@ function setdefaults() {
  };
 };
 
+
 setusercloak();
 setcloaktoggleicon();
 setdefaults();
