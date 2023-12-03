@@ -59,7 +59,6 @@ function topbar() {
   icons.style.justifyItems="left";
   icons.style.right="";
   icons.style.left="0";
-  home.innerHTML = '<span class="names">Home</span>';
 apps.innerHTML = '<span class="names">Apps</span>';
 game.innerHTML = '<span class="names">Games</span>';
 tabs.innerHTML = '<span class="names">Tabs</span>';
