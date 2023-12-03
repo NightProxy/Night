@@ -49,10 +49,7 @@ home = document.getElementById("home");
 apps = document.getElementById("apps");
 game = document.getElementById("games");
 tabs = document.getElementById("tabs");
-blank = document.getElementById("blank");
 sett = document.getElementById("settings");
-about = document.getElementById("about");
-discord = document.getElementById("discord");
 spantags = document.querySelector(".names");
 navitems = document.querySelector(".navitem");
 
@@ -66,10 +63,7 @@ function topbar() {
 apps.innerHTML = '<span class="names">Apps</span>';
 game.innerHTML = '<span class="names">Games</span>';
 tabs.innerHTML = '<span class="names">Tabs</span>';
-blank.innerHTML = '<span class="names">Cloak</span>';
 sett.innerHTML = '<span class="names">Settings</span>';
-about.innerHTML = '<span class="names">About</span>';
-discord.innerHTML = '<span class="names">Discord</span>';
   localStorage.setItem("bar", "top");
   localStorage.setItem("icon", "on");
   
