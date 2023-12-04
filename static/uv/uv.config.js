@@ -7,7 +7,7 @@ if (localStorage.bare == "default") {
 } else if (localStorage.bare == "sndefault") {
     var bare = "https://phantom.lol/bare";
 } else if (localStorage.bare == "snalt") {
-    var bare = "https://multiplication.cheap-car-rental.com";
+    var bare = "https://multiplication.cheap-car-rental.com/bare";
 } else {
     var bare = "https://218-39-2-78-101-249-205-32-24-217-131.vercel.app";
 };
