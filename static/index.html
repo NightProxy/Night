@@ -158,18 +158,27 @@
       <script src="particles.min.js"></script>
          <script src="nav.js"></script>
       <script id="paeticlesrc" src=""></script>
-      <script src="blank.js"></script>
-      <script>
-         document.getElementById('settings').onclick = function () {
-             document.getElementById('sidenav').classList.toggle('fade');
-         };
-
-         document.getElementById('closebutton').onclick = function () {
-             document.getElementById('sidenav').classList.toggle('fade');
-         };
+      <script src="blank.js"></script> 
          </script>
          <script>
-            document.getElementById('sidenav').classList.toggle('fade');  
+
+  function fadeOutElement() {
+    document.getElementById('sidenav').classList.add('fadeOut');
+    document.getElementById('sidenav').addEventListener('transitionend', handleTransitionEnd);
+  }
+
+  function handleTransitionEnd(event) {
+    if (event.propertyName === 'opacity') {
+      document.getElementById('sidenav').style.visibility = 'hidden';
+      document.getElementById('sidenav').removeEventListener('transitionend', handleTransitionEnd);
+    }
+  }
+
+  function resetElement() {
+    document.getElementById('sidenav').classList.remove('fadeOut');
+    document.getElementById('sidenav').style.visibility = 'visible';
+    document.getElementById('sidenav').style.opacity = '1';
+  }
          </script>
       <div id="footer">
          <p>&copy; 2023 Andromeda. All rights reserved.</p>
