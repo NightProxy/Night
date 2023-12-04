@@ -239,7 +239,7 @@ function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  const tofade = document.getElementById('elementToFade');
+  const tofade = document.getElementById('sidenav');
 
   function fadeOutElement() {
     tofade.style.opacity = '0';
