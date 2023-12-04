@@ -98,4 +98,14 @@
   font-weight: none;
 }
 
+#elementToFade {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out;
+  margin-bottom: 20px;
+}
 
+#elementToFade.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
