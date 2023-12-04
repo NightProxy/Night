@@ -1,23 +1,83 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <style>
-#sidenav {
-  opacity: 1;
-  transition: opacity 1s; 
-}
+  <meta charset="UTF-8">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
 
-#sidenav.fade {
-  opacity: 0;
-}
-    </style>
+    .container {
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #elementToFade {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.5s ease-in-out;
+      margin-bottom: 20px;
+    }
+
+    #elementToFade.fadeOut {
+      opacity: 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-<a id="settings">Fade</a> 
-<div id="sidenav">Whatever you want here - images or text</div>
+
+<div class="container">
+  <div id="elementToFade">dancers</div>
+
+  <button onclick="fadeOutElement()">clicky</button>
+  <button onclick="resetElement()">clickyclick</button>
+</div>
+
 <script>
-document.getElementById('settings').onclick = function () {
-    document.getElementById('sidenav').classList.toggle('fade');
-}
+  const element = document.getElementById('elementToFade');
+
+  function fadeOutElement() {
+    element.classList.add('fadeOut');
+    element.addEventListener('transitionend', handleTransitionEnd);
+  }
+
+  function handleTransitionEnd(event) {
+    if (event.propertyName === 'opacity') {
+      element.style.visibility = 'hidden';
+      element.removeEventListener('transitionend', handleTransitionEnd);
+    }
+  }
+
+  function resetElement() {
+    element.classList.remove('fadeOut');
+    element.style.visibility = 'visible';
+    element.style.opacity = '1';
+  }
 </script>
+
 </body>
 </html>
