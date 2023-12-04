@@ -55,6 +55,7 @@
   <div id="elementToFade">dancers</div>
 
   <button onclick="fadeOutElement()">clicky</button>
+  <button onclick="fadeInElement()">clicky2</button>
 </div>
 
 <script>
@@ -63,10 +64,11 @@
   function fadeOutElement() {
     element.style.opacity = '0';
     element.style.visibility = 'hidden';
-    setTimeout(() => {
-      element.style.visibility = 'visible';
-      element.style.opacity = '1';
-    }, 1000); 
+  }
+
+  function fadeInElement() {
+    element.style.visibility = 'visible';
+    element.style.opacity = '1';
   }
 </script>
 
