@@ -49,7 +49,7 @@
                <a href="apps.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:6%;font-size:13px;" id="apps" class="fa-solid fa-grip zoom navitem" apps></a>
                <a href="games.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:13px;" id="games" class="fa-solid fa-gamepad zoom navitem" games></a>
                <a href="tabs.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:5%;font-size:13px;" id="tabs" class="fa-solid fa-bars-progress zoom navitem" tabs></a>
-              <a style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:13px;" id="settings" class="fa-solid fa-gear zoom navitem"></a>
+              <a onclick="fadeInElement();" style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:13px;" id="settings" class="fa-solid fa-gear zoom navitem"></a>
             </div>
               </div>
               <div style="margin-top:30vh;position:fixed;top:0;left:0;right:0;bottom:0;">
@@ -71,7 +71,7 @@
             <pre id="uv-error-code"></pre>
           </div>
          <div class="sidenav" id="sidenav elementToFade">
-            <a class="fa-solid fa-circle-xmark closebutton" id="closebutton"></a>
+            <a onclick="fadeOutElement();" class="fa-solid fa-circle-xmark closebutton" id="closebutton"></a>
             <table style="width:80%;margin-left:10%;margin-left:10%;">
             <tr>
                <th>
@@ -159,26 +159,6 @@
          <script src="nav.js"></script>
       <script id="paeticlesrc" src=""></script>
       <script src="blank.js"></script> 
-         </script>
-         <script>
-
-  function fadeOutElement() {
-    document.getElementById('sidenav').classList.add('fadeOut');
-    document.getElementById('sidenav').addEventListener('transitionend', handleTransitionEnd);
-  }
-
-  function handleTransitionEnd(event) {
-    if (event.propertyName === 'opacity') {
-      document.getElementById('sidenav').style.visibility = 'hidden';
-      document.getElementById('sidenav').removeEventListener('transitionend', handleTransitionEnd);
-    }
-  }
-
-  function resetElement() {
-    document.getElementById('sidenav').classList.remove('fadeOut');
-    document.getElementById('sidenav').style.visibility = 'visible';
-    document.getElementById('sidenav').style.opacity = '1';
-  }
          </script>
       <div id="footer">
          <p>&copy; 2023 Andromeda. All rights reserved.</p>
