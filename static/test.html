@@ -59,10 +59,15 @@
 </div>
 
 <script>
+  function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
   const element = document.getElementById('elementToFade');
 
   function fadeOutElement() {
     element.style.opacity = '0';
+    wait(1000)
     element.style.visibility = 'hidden';
   }
 
