@@ -54,28 +54,18 @@
   <div id="elementToFade">dancers</div>
 
   <button onclick="fadeOutElement()">clicky</button>
-  <button onclick="resetElement()">clickyclick</button>
 </div>
 
 <script>
   const element = document.getElementById('elementToFade');
 
   function fadeOutElement() {
-    element.classList.add('fadeOut');
-    element.addEventListener('transitionend', handleTransitionEnd);
-  }
-
-  function handleTransitionEnd(event) {
-    if (event.propertyName === 'opacity') {
-      element.style.visibility = 'hidden';
-      element.removeEventListener('transitionend', handleTransitionEnd);
-    }
-  }
-
-  function resetElement() {
-    element.classList.remove('fadeOut');
-    element.style.visibility = 'visible';
-    element.style.opacity = '1';
+    element.style.opacity = '0';
+    element.style.visibility = 'hidden';
+    setTimeout(() => {
+      element.style.visibility = 'visible';
+      element.style.opacity = '1';
+    }, 1000); 
   }
 </script>
 
