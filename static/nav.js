@@ -235,6 +235,23 @@ function setdefaults() {
  };
 };
 
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  const tofade = document.getElementById('elementToFade');
+
+  function fadeOutElement() {
+    tofade.style.opacity = '0';
+    wait(1000)
+    tofade.style.visibility = 'hidden';
+  }
+
+  function fadeInElement() {
+    tofade.style.visibility = 'visible';
+    tofade.style.opacity = '1';
+  }
+
 
 setusercloak();
 setcloaktoggleicon();
