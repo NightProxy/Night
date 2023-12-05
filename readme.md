@@ -44,7 +44,7 @@ This is a heavily modified version of the <a href="https://github.com/TheTIW/UV-
 You can host this on any static hosting platform!
     
 > **Note**
-> If you have any problems please open an issue, so we can fix it ASAP!<br>
+> If you have any problems please open an issue, so we can fix it as quickly as possible!<br>
 > If you don't know how to do this because you are an absolute no-brainer then message us a report in our [Discord](https://discord.gg/JrmurfukMd).
 
 [![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://glitch.com/edit/#!/import/github/jacksoncraft859/Evasi)
