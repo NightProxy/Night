@@ -80,18 +80,20 @@ function switchCloak() {
   var storedChoice = localStorage.getItem("cloak");
 };
 
-if (localStorage.cloak == "drive") {
+function setcloaks() {
+ if (localStorage.cloak == "drive") {
  changeFavicon('./images/favicon/drive.png');
  document.title = "My Drive - Google Drive";
-} else if (localStorage.cloak == "classroom") {
+ } else if (localStorage.cloak == "classroom") {
   changeFavicon('./images/favicon/classroom.png');
   document.title = "Home";
-} else if (localStorage.cloak == "google") {
+ } else if (localStorage.cloak == "google") {
   changeFavicon('./images/favicon/google.png');
   document.title = "Google";
-} else if (localStorage.cloak == "gmail") {
+ } else if (localStorage.cloak == "gmail") {
   changeFavicon('./images/favicon/gmail.png');
   document.title = "Inbox";
+ };
 };
 
 var proxyStored = localStorage.getItem("theme");
@@ -237,10 +239,9 @@ function wait(ms) {
   }
 
 
-setusercloak();
-setcloaktoggleicon();
 setdefaults();
 setthemes();
+setcloaks();
 topbar();
 proxySel.value = proxyStored;
 bareSel.value = bareStored;
