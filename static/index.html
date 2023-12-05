@@ -81,8 +81,16 @@
                   <div id="settings-boxes">
                      <h2>Toggle Cloak</h2>
                      <p style="text-align: center; font-size: 18px; margin-top: -60px;">Cloak your tab with a custom name and favicon!</p>
-                     <br>
-                     <a onclick="cloaktoggle(); setcloaktoggleicon();" id="iconswitch" class="fa-solid "></a>   
+                     <span class="custom-dropdown big">
+                        <select class="dropdown" id="cloakSwitcher">
+                           <option value="off">Off</option>
+                           <option value="drive">Google Drive</option>
+                           <option value="classroom">Google Classroom</option>
+                           <option value="gmail">Gmail</option>
+                           <option value="google">Google</option>
+                        </select>
+                     </span>
+                     <a onclick="switchCloak(); reloadpage();" class="button-save"> Apply </a>
                   </div>
                </th>
                <th>
