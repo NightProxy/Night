@@ -69,7 +69,7 @@ function closesettings() {
     settings.hidden = true;
 };
 
-var claokStored = localStorage.getItem("cloak");
+var cloakStored = localStorage.getItem("cloak");
 var cloakSel = document.getElementById("cloakSwitcher");
 
 function switchCloak() {
