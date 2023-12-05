@@ -42,9 +42,6 @@ function hide_sidenav(){
 };
 
 icons = document.getElementById("icbuttons");
-
-iconswtch = document.getElementById("iconswitch");
-blankswtch = document.getElementById("blankswitch");
 home = document.getElementById("home");
 apps = document.getElementById("apps");
 game = document.getElementById("games");
@@ -72,42 +69,29 @@ function closesettings() {
     settings.hidden = true;
 };
 
-function cloakon() {
-    changeFavicon('./images/favicon/drive.png');
-    document.title = "My Drive - Google Drive";
-     localStorage.setItem("cloak", "on");
+var claokStored = localStorage.getItem("cloak");
+var cloakSel = document.getElementById("cloakSwitcher");
+
+function switchCloak() {
+  var selecter = document.getElementById("cloakSwitcher");
+  var selectedOption = selecter.value;
+
+  localStorage.setItem("cloak", selectedOption);
+  var storedChoice = localStorage.getItem("cloak");
 };
 
-function cloakoff() {
-     changeFavicon('../favicon.ico');
-     document.title = "Andromeda";
-     localStorage.setItem("cloak", "off");
-};
-
-function cloaktoggle() {
-  if (localStorage.getItem("cloak") == 'off'){
-    cloakon();
-  }else{
-    cloakoff();
-  }
-};
-
-function setusercloak() {
-  if (localStorage.getItem("cloak") == 'on'){
-    cloakon();
-  }else{
-    cloakoff();
-  }
-};
-    
-function setcloaktoggleicon() {
-  if (localStorage.getItem("cloak") == 'off'){
-    iconswtch.classList.add("fa-toggle-off");
-    iconswtch.classList.remove("fa-toggle-on");
-  }else{
-    iconswtch.classList.add("fa-toggle-on");
-    iconswtch.classList.remove("fa-toggle-off");
-  }
+if (localStorage.cloak == "drive") {
+ changeFavicon('./images/favicon/drive.png');
+ document.title = "My Drive - Google Drive";
+} else if (localStorage.cloak == "classroom") {
+  changeFavicon('./images/favicon/classroom.png');
+  document.title = "Home";
+} else if (localStorage.cloak == "google") {
+  changeFavicon('./images/favicon/google.png');
+  document.title = "Google";
+} else if (localStorage.cloak == "gmail") {
+  changeFavicon('./images/favicon/gmail.png');
+  document.title = "Inbox";
 };
 
 var proxyStored = localStorage.getItem("theme");
@@ -259,6 +243,8 @@ setdefaults();
 setthemes();
 topbar();
 proxySel.value = proxyStored;
+bareSel.value = bareStored;
+cloakSel.value = cloakStored;
 if (document.querySelector(".message")) {
   setRandomSay();
 }
