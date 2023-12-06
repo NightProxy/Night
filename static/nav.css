@@ -59,8 +59,8 @@
 }
 
 .closebutton {
-  top: 0;
-  right: 0;
+  top: 20pxpx;
+  right: 10px;
   position: absolute;
 }
 
