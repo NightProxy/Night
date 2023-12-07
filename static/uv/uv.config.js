@@ -16,7 +16,7 @@ if (localStorage.bare == "default") {
 
 self.__uv$config = {
     prefix: '/static/ghost/',
-    bare: bare,
+    bare: "https://218-39-2-78-101-249-205-32-24-217-131.vercel.app",
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/static/uv/uv.handler.js',
