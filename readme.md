@@ -6,9 +6,7 @@
 ### [Join our Discord!](https://discord.gg/JrmurfukMd)
 </div>
 
-> **If you do fork this repo, please give the original repo a star! It helps out alot and only 30% of people who fork give us a star... besides, you know you want to...**
-
-This is a heavily modified version of the <a href="https://github.com/TheTIW/UV-Static" target="blank">Ultraviolet Static</a> backend. This modification makes the proxy faster and mashed with other proxies to create the ultimate proxy, which is something no one has ever done before. 
+> **If you do fork this repo, please give the original repo a star!**
 
 <h2 align="center">Features</h2>
 <ul>
