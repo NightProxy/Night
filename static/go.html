@@ -2,7 +2,7 @@
   <head>
       <link rel="shortcut icon" type="image/jpg" href="../favicon.ico"/>
     <title id="dynamic-title">Classes</title>
-    <script src="https://kit.fontawesome.com/1237c86ba0.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!--- Style --->
     <style>
       body {
@@ -16,7 +16,7 @@
         height: 100vh;
         width: 100vw;
       }
-      .navbtn {
+      .home {
         float:right;
         border-radius: 100%;
         width:50px;
@@ -27,7 +27,7 @@
         top:10px;
         right: 10px;
       }
-      .navbtn1 {
+      .reload {
         float:right;
         border-radius: 100%;
         width:50px;
@@ -38,7 +38,7 @@
         top:70px;
         right: 10px;
       }
-      .navbtn2 {
+      .fullscreen {
         float:right;
         border-radius: 100%;
         width:50px;
@@ -53,10 +53,9 @@
   </head>
   <body>
     <iframe src="" id="iframeId" style="bottom: 0" style="border: 0px #ffffff none" name="Iframe" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>
-
-    <button onclick="reload()" class="navbtn"> <i class="fa-solid fa-rotate-right"></i> </button>
-    <button id="home-page" class="navbtn1" onclick="reload()"> <i class="fa-solid fa-house"></i> </button>
-    <button id="fullscreen-button" class="navbtn2"><i class="fa-solid fa-expand"></i></button>
+    <button id="home-page" class="home" onclick="window.location.href = './';"> <i class="fa-solid fa-house"></i> </button>
+    <button onclick="reload()" class="reload"> <i class="fa-solid fa-rotate-right"></i> </button>
+    <button id="fullscreen-button" class="fullscreen"><i class="fa-solid fa-expand"></i></button>
 
     <script>
       function reload() {
@@ -70,16 +69,47 @@
           document.exitFullscreen();
         }
       });
-      const homeButton = document.getElementById("home-page");
-        homeButton.addEventListener("click", function () {
-        window.location.href = "./";
-      });
-      window.onload = function() {
+      function setIframe() {
         let encodedUrl = sessionStorage.getItem("encodedUrl");
         encodedUrl = "/static/ghost/" + encodedUrl;
         console.log(encodedUrl);
-        window.location.href = encodedUrl;
+       document.querySelector("#iframeid").src = encodedUrl;
       };
+      function setthemes() {
+ if (localStorage.theme == "default") {
+  themefile.href = "/static/index.css";
+  if (localStorage.cloak == "off") {
+   changeFavicon('../favicon.ico');
+  };
+ } else if (localStorage.theme == "noir") {
+  themefile.href = "/static/css/themes/noir/noir.css";
+ } else if (localStorage.theme == "void") {
+  themefile.href = "/static/css/themes/void/void.css";
+ } else if (localStorage.theme == "ip") {
+  themefile.href ="/static/css/themes/ironprime/ironprime.css";
+  logo.src = "/static/css/themes/fire/firethemelogo.png";
+ } else if (localStorage.theme == "xg") {
+  themefile.href ="/static/css/themes/xgames/xgames.css";
+ } else if (localStorage.theme == "stealth") {
+  themefile.href ="/static/css/themes/stealth/stealth.css";
+ } else if (localStorage.theme == "fg") {
+  themefile.href ="/static/css/themes/froggermans/froggermans.css";
+ } else if (localStorage.theme == "ghost") {
+  themefile.href ="/static/css/themes/ghost/ghost.css";
+ } else if (localStorage.theme == "midnight") {
+  themefile.href ="/static/css/themes/midnight/midnight.css";
+ } else if (localStorage.theme == "fire") {
+  themefile.href = "/static/css/themes/fire/fire.css";
+  if (localStorage.cloak == "off") {
+   changeFavicon('/static/css/themes/fire/firefavicon.ico');
+  };
+ } else if (localStorage.theme == "meteor") {
+  themefile.href = "/static/css/themes/meteor/meteor.css";
+ } else {
+  themefile.href = "/static/index.css";
+ }
+};
+      setIframe();
     </script>
     <script src="/scripts/main.js"></script>
     <script src="/scripts/customIcon.js"></script>
