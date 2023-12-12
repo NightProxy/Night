@@ -25,7 +25,7 @@ const input = document.querySelector("input");
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   window.navigator.serviceWorker
-    .register("./sw.js", {
+    .register("./uv.js", {
       scope: __uv$config.prefix,
     })
     .then(() => {
