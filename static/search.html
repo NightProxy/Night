@@ -107,6 +107,22 @@
   themefile.href = "/static/index.css";
  }
 };
+function setcloaks() {
+ if (localStorage.cloak == "drive") {
+ changeFavicon('./images/favicon/drive.png');
+ document.title = "My Drive - Google Drive";
+ } else if (localStorage.cloak == "classroom") {
+  changeFavicon('./images/favicon/classroom.png');
+  document.title = "Home";
+ } else if (localStorage.cloak == "google") {
+  changeFavicon('./images/favicon/google.png');
+  document.title = "Google";
+ } else if (localStorage.cloak == "gmail") {
+  changeFavicon('./images/favicon/gmail.png');
+  document.title = "Inbox";
+ };
+};
+
       setIframe();
     </script>
     <script src="/scripts/main.js"></script>
