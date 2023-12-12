@@ -71,7 +71,7 @@
         let encodedUrl = sessionStorage.getItem("encodedUrl");
         encodedUrl = "/static/ghost/" + encodedUrl;
         console.log(encodedUrl);
-       document.getElementById("iframeid").src = encodedUrl;
+       document.querySelector("#iframeid").src = encodedUrl;
       };
       function setthemes() {
  if (localStorage.theme == "default") {
