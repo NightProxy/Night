@@ -52,7 +52,7 @@ function go(value) {
           url = "https://" + url;
         //pass the encoded url to the second page
         sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
-        location.href = "go.html";
+        location.href = "search.html";
       });
   }
 
