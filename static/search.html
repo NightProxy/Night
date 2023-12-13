@@ -52,6 +52,8 @@
     </style>
   </head>
   <body>
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
     <iframe src="" id="iframeId" style="bottom: 0" style="border: 0px #ffffff none" name="Iframe" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>
     <div style="position:absolute;left:0;top:10px;height:50px;">
     <div style="display:flex;align-items:center;height:50px;">
@@ -68,7 +70,7 @@
 
     <script>
       function reload() {
-        document.getElementById("iframeId").src=document.getElementById("iframeId").src;
+        document.getElementById("iframeId").src = document.getElementById("iframeId").src;
       }
      function back() {
        document.getElementById("iframeId").contentWindow.history.back();
@@ -135,6 +137,7 @@ function setcloaks() {
 
       setIframe();
     </script>
+    <script src="/static/register-sw.js"></script>
     <script src="/static/search.js"></script>
     <script src="/static/index.js"></script>
   </body>
