@@ -29,10 +29,7 @@ form.addEventListener("submit", async (event) => {
       scope: __uv$config.prefix,
     })
     .then(() => {
-      let url = input.value.trim();
-      if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
-      else if (!(url.startsWith("https://") || url.startsWith("http://")))
-        url = "http://" + url;
+      const url = search(address.value, searchEngine.value);
       sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
       location.href = "search.html";
     });
@@ -46,10 +43,7 @@ function go(value) {
         scope: __uv$config.prefix,
       })
       .then(() => {
-        let url = value.trim();
-        if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
-        else if (!(url.startsWith("https://") || url.startsWith("http://")))
-          url = "https://" + url;
+        const url = search(address.value, searchEngine.value);
         //pass the encoded url to the second page
         sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
         location.href = "search.html";
@@ -63,10 +57,7 @@ function blank(value) {
         scope: __uv$config.prefix,
       })
       .then(() => {
-        let url = value.trim();
-        if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
-        else if (!(url.startsWith("https://") || url.startsWith("http://")))
-          url = "https://" + url;
+        const url = search(address.value, searchEngine.value);
         window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
       });
   }
