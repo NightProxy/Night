@@ -107,6 +107,7 @@ body {
   width: 300px;
   box-shadow: 0 0 5px rgba(196, 196, 196, 0.3);
   background-color: none;
+  filter: blur(6px);
   text-align: center;
   color: var(--input-text-color);
   cursor:cell;
@@ -241,6 +242,7 @@ a{
 	  width: 550px;
 	  border-radius: 5px;
 	  background:  none;
+	  filter: blur(6px);
 	  text-align: center;
 	  border: none;
 	  outline: none;
@@ -251,6 +253,7 @@ a{
 		padding: 20px;
 		border-radius: 5px;
 		background:  none;
+		filter: blur(6px);
 		color: white;
 		border: 0px;
 		outline: none;
