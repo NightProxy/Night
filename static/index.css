@@ -4,23 +4,23 @@
     --input-placeholder-color: #aaa;
     --input-background-color: #222;
     --input-border-size: 1.3px;
-    --input-border-color: #a800ff;
-    --footer-border-color: #8c00ff;
+    --input-border-color: #ffffff;
+    --footer-border-color: #ffffff;
     --ag-button-text-color: #1E1E1E;
     --primary-background-color: #1e1e1e;
   --secondary-background-color: #2a2a2a;
-  --accent-color: #8600ff;
+  --accent-color: #ffffff;
   --main-text-color: #ffffff;
   --text: #ffffff;
-  --search-placeholder-color: #a800ff;
+  --search-placeholder-color: #ffffff;
   --bookmark-background-color: #6B52A3;
   --bookmark-hover-background-color: #5B3A75;
   --input-background-color: #1a1a2b;
   --button-background-color: #6B52A3;
   --button-text-color: #fff;
-  --button-hover-background-color: #a800ff;
-  --cancel-button-background-color: #4C2C63;
-  --save-button-background-color: #3A9259;
+  --button-hover-background-color: #ffffff;
+  --cancel-button-background-color: #ffffff;
+  --save-button-background-color: #4f4f4f;
 }
 
 body {
@@ -130,7 +130,7 @@ a{
 
 .form__input:focus {
   outline: none;
-  box-shadow: 0 0 5px rgba(149, 20, 255);
+  box-shadow: 0 0 5px rgba(255, 255, 255);
 }
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 #footer {
