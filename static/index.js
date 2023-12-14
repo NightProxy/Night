@@ -29,13 +29,6 @@ form.addEventListener("submit", async (event) => {
       scope: __uv$config.prefix,
     })
     .then(() => {
-      try {
-        await registerSW();
-      } catch (err) {
-      error.textContent = "Failed to register service worker.";
-      errorCode.textContent = err.toString();
-      throw err;
-      }
       const url = search(address.value, searchEngine.value);
       sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
       location.href = "edu.html";
@@ -50,13 +43,6 @@ function go(value) {
         scope: __uv$config.prefix,
       })
       .then(() => {
-      try {
-        await registerSW();
-      } catch (err) {
-      error.textContent = "Failed to register service worker.";
-      errorCode.textContent = err.toString();
-      throw err;
-      }
         const url = search(address.value, searchEngine.value);
         //pass the encoded url to the second page
         sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
