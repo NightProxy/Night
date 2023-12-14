@@ -31,7 +31,7 @@ form.addEventListener("submit", async (event) => {
     .then(() => {
       const url = search(address.value, searchEngine.value);
       sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
-      location.href = "search.html";
+      location.href = "edu.html";
     });
 });
 
@@ -46,7 +46,7 @@ function go(value) {
         const url = search(address.value, searchEngine.value);
         //pass the encoded url to the second page
         sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
-        location.href = "search.html";
+        location.href = "edu.html";
       });
   }
 
