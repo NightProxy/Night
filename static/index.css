@@ -105,7 +105,7 @@ body {
   border-radius: 5px;
   font-size: 16px;
   width: 300px;
-  box-shadow: 0 0 5px rgba(225, 225, 225,);
+  box-shadow: 0 0 5px rgba(225, 225, 225, 0.8);
   background-color: var(--input-background-color);
   text-align: center;
   color: var(--input-text-color);
