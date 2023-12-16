@@ -141,6 +141,7 @@
             /* bottom-right 2 */
             0 100%);
   transition: color 250ms;
+  margin-left: 5px;
 }
 
 .button-save::after,
