@@ -33,8 +33,12 @@ body {
   position: r;
 }
 
-a:hover {
+.titlebutton:hover {
   opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.titlebutton {
+  opacity: 100;
   transition: opacity 0.3s ease-in-out;
 }
 
