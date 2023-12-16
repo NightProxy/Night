@@ -46,10 +46,9 @@
 }
 
 /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-.dropdown-container {
+.dropdown {
   display: none;
   background-color: #1f1f1f;
-  padding-left: 8px;
   border-radius: 30px;
 }
 
@@ -60,8 +59,8 @@
 }
 
 .closebutton {
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 15px;
   position: absolute;
 }
 
