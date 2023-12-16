@@ -48,8 +48,9 @@
 /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
 .dropdown-container {
   display: none;
-  background-color: #1983f0;
+  background-color: #1f1f1f;
   padding-left: 8px;
+  border-radius: 30px;
 }
 
 /* Optional: Style the caret down icon */
@@ -59,7 +60,7 @@
 }
 
 .closebutton {
-  top: 20px;
+  top: 10px;
   right: 10px;
   position: absolute;
 }
