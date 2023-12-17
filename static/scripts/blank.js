@@ -1,7 +1,7 @@
 function openGame() {
 var win = window.open()
 var url = window.location.href;
-var iframe = win.document.createElement('iframe')
+var iframe = win.document.createElement('iframe');
 iframe.style.frameborder="0";
 iframe.style.marginwidth="0";
 iframe.style.width="100%" ;
