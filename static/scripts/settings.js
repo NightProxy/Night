@@ -115,13 +115,12 @@ themefile = document.getElementById("themecss");
 particlestheme = document.getElementById("paeticlesrc");
 logo = document.getElementById("logo");
 
-function openGame() {
-  var win = window.open()
-  var url = window.location.href;
+function openGame(url) {
+  var win = window.open();
   var iframe = win.document.createElement('iframe');
   iframe.style.frameborder="0";
   iframe.style.marginwidth="0";
-  iframe.style.width="100%" ;
+  iframe.style.width="100%";
   iframe.style.height="100%";
   iframe.style.border="none";
   iframe.style.position="fixed";
@@ -130,8 +129,7 @@ function openGame() {
   iframe.style.scrolling="auto";
   iframe.src = url;
   win.document.body.appendChild(iframe);
-  };
-  
+};
   
 var splashCacheAll;
 var splashCache;
@@ -238,19 +236,10 @@ function wait(ms) {
         const url = window.location.href;
 
         // Check if the current URL is not about:blank and the checkbox is checked
-        if (url !== 'about:blank' && blankcheckbox.checked) {
-            // Define actions based on the current path
-            // Note: Add your own page checks and associated functions here
-            switch (window.location.pathname) {
-                case '/static/':
-                    openGame();
-                    // Your code for the home page
-                    break;
-                // Add more cases as needed for different pages
-                default:
-                    console.log('Function for a different page or no specific function available.');
-                    // Code for any other page or default action
-            }
+        if (window.location.href !== 'about:blank' && blankcheckbox.checked) {
+            openGame(url);
+        } else if (window.location.href == 'about:blank') {
+          alert('Please report if you are getting spammed with about:blank tabs to our Github at https://https://github.com/NightProxy/Night');
         }
     }
 
@@ -319,7 +308,7 @@ function setthemes() {
   }
  };
 
-if (localStorage.defaults != "set") {
+if (localStorage.defaults !== "set") {
   setdefaults();
 };
 setthemes();
