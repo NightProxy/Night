@@ -111,8 +111,8 @@
   transition: opacity 0.5s ease-in-out;
 }
 .button-save {
-  width: 100px;
-  height: 50px;
+  width: 75px;
+  height: 30px;
   border: none;
   outline: none;
   color: #fff;
@@ -179,4 +179,5 @@
     background-position: 0 0;
   }
 }
+
 
