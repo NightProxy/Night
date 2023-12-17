@@ -452,6 +452,7 @@ a{
   z-index: 0;
   border-radius: 30px;
   margin-left: 5px;
+  text-align: center;
   font-size: 17px;
   font-family: Noto Sans;
 }
