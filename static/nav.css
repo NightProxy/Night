@@ -110,7 +110,7 @@
   transition: opacity 0.5s ease-in-out;
 }
 .button-save {
-  --border-color: linear-gradient(-45deg, #1983f0, #5100e8, #303030);
+  --border-color: linear-gradient(-45deg, #1983f0, #230063, #303030);
   --border-width: .125em;
   --curve-size: .5em;
   --blur: 30px;
