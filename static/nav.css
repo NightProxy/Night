@@ -115,7 +115,7 @@
   --curve-size: .5em;
   --blur: 30px;
   --bg: #1f1f1f;
-  --color: #afffff;
+  --color: #ffffff;
   color: var(--color);
     /* use position: relative; so that BG is only for .save */
   position: relative;
