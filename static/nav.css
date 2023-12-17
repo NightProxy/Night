@@ -24,7 +24,7 @@
 }
 
 /* On mouse-over */
-#sidenav a:hover, .dropdown-btn:hover {
+#sidenav .closebutton:hover, .dropdown-btn:hover {
   color: #1983f0;
 }
 
