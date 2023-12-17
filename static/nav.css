@@ -111,122 +111,72 @@
   transition: opacity 0.5s ease-in-out;
 }
 .button-save {
-  --border-color: linear-gradient(-45deg, #1983f0, #230063, #303030);
-  --border-width: .125em;
-  --curve-size: .5em;
-  --blur: 30px;
-  --bg: #1f1f1f;
-  --color: #ffffff;
-  color: var(--color);
-    /* use position: relative; so that BG is only for .save */
+  width: 100px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
   position: relative;
-  isolation: isolate;
-  display: inline-grid;
-  place-content: center;
-  padding: .5em 1.5em;
+  z-index: 0;
+  border-radius: 30px;
   font-size: 17px;
-  border: 0;
-  text-transform: uppercase;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, .6);
-  clip-path: polygon(
-            /* Top-left */
-            0% var(--curve-size),
-
-            var(--curve-size) 0,
-            /* top-right */
-            100% 0,
-            100% calc(100% - var(--curve-size)),
-
-            /* bottom-right 1 */
-            calc(100% - var(--curve-size)) 100%,
-            /* bottom-right 2 */
-            0 100%);
-  transition: color 250ms;
-  margin-left: 5px;
+  font-family: Noto Sans;
 }
 
-.button-save::after,
-.button-save::before {
+.button-save:before {
+  content: '';
+  background: linear-gradient(45deg, #1983f0, #230063, #303030);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 30px;
+}
+
+.button-save:active {
+  color: #000
+}
+
+.button-save:active:after {
+  background: transparent;
+}
+
+.button-save:hover:before {
+  opacity: 1;
+}
+
+.button-save:after {
+  z-index: -1;
   content: '';
   position: absolute;
-  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 30px;
 }
 
-.button-save::before {
-  background: var(--border-color);
-  background-size: 300% 300%;
-  animation: move-bg7234 5s ease infinite;
-  z-index: -2;
-}
-
-@keyframes move-bg7234 {
+@keyframes glowing {
   0% {
-    background-position: 31% 0%
+    background-position: 0 0;
   }
 
   50% {
-    background-position: 70% 100%
+    background-position: 400% 0;
   }
 
   100% {
-    background-position: 31% 0%
+    background-position: 0 0;
   }
 }
 
-.button-save::after {
-  background: var(--bg);
-  z-index: -1;
-  clip-path: polygon(
-            /* Top-left */
-            var(--border-width) 
-            calc(var(--curve-size) + var(--border-width) * .5),
-
-            calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
-
-            /* top-right */
-            calc(100% - var(--border-width)) 
-            var(--border-width),
-
-            calc(100% - var(--border-width)) 
-            calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
-
-            /* bottom-right 1 */
-            calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
-            /* bottom-right 2 */
-            var(--border-width) calc(100% - var(--border-width)));
-  transition: clip-path 500ms;
-}
-
-.button-save:where(:hover, :focus)::after {
-  clip-path: polygon(
-                /* Top-left */
-                calc(100% - var(--border-width)) 
-
-                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-    
-                calc(100% - var(--border-width))
-
-                var(--border-width),
-    
-                /* top-right */
-                calc(100% - var(--border-width))
-
-                 var(--border-width),
-    
-                calc(100% - var(--border-width)) 
-
-                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
-    
-                /* bottom-right 1 */
-                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) 
-                calc(100% - var(--border-width)),
-
-                /* bottom-right 2 */
-                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
-                calc(100% - var(--border-width)));
-  transition: 200ms;
-}
-
-.button-save:where(:hover, :focus) {
-  color: #000000;
-}
