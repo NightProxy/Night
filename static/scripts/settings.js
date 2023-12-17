@@ -201,6 +201,7 @@ function setdefaults() {
  if (localStorage.blankcheckboxState == undefined) {
   localStorage.setItem("blankcheckboxState", "false")
  };
+ localStorage.setItem("defaults", "set")
 };
 
 function wait(ms) {
@@ -318,7 +319,9 @@ function setthemes() {
   }
  };
 
-setdefaults();
+if (localStorage.defaults != "set") {
+  setdefaults();
+};
 setthemes();
 setcloaks();
 topbar();
