@@ -111,7 +111,7 @@
   transition: opacity 0.5s ease-in-out;
 }
 .button-save {
-  width: 75px;
+  width: 50px;
   height: 30px;
   border: none;
   outline: none;
@@ -121,6 +121,7 @@
   position: relative;
   z-index: 0;
   border-radius: 30px;
+  margin-left: 5px;
   font-size: 17px;
   font-family: Noto Sans;
 }
