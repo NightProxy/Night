@@ -25,7 +25,7 @@ const input = document.querySelector("input");
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   window.navigator.serviceWorker
-    .register("./uv.js", {
+    .register("/static/scripts/uv.js", {
       scope: __uv$config.prefix,
     })
     .then(() => {
@@ -39,7 +39,7 @@ form.addEventListener("submit", async (event) => {
 function go(value) {
     let iframe = document.querySelector(".iframe.active");
     window.navigator.serviceWorker
-      .register("./uv.js", {
+      .register("/static/scripts/uv.js", {
         scope: __uv$config.prefix,
       })
       .then(() => {
@@ -53,7 +53,7 @@ function go(value) {
 function blank(value) {
     let iframe = document.querySelector(".iframe.active");
     window.navigator.serviceWorker
-      .register("./uv.js", {
+      .register("/static/scripts/uv.js", {
         scope: __uv$config.prefix,
       })
       .then(() => {
