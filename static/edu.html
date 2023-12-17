@@ -1,7 +1,7 @@
 <html lang="en">
   <head>
-      <link rel="shortcut icon" type="image/jpg" href="../favicon.ico"/>
-    <title id="dynamic-title">Andromeda</title>
+      <link rel="shortcut icon" id="dynamic-favicon" href="../favicon.ico"/>
+    <title id="dynamic-title">Night</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!--- Style --->
     <style>
@@ -86,13 +86,22 @@
 	outline: none;
 	color: white;
 	}
+  .hider {
+        border-radius: 30%;
+	margin-left: 1px;
+	margin-right: 1px;
+        width:50px;
+        height:50px;
+        background-color: #212121;
+        border:none;
+      }
     </style>
   </head>
   <body>
     <script src="uv/uv.bundle.js"></script>
     <script src="uv/uv.config.js"></script>
     <iframe src="" id="iframeId" style="bottom: 0" style="border: 0px #ffffff none" name="Iframe" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>
-    <div style="position:absolute;left:0;top:10px;height:50px;">
+    <div style="position:absolute;left:0;top:10px;height:50px;" id="browser">
     <div style="display:flex;align-items:center;height:50px;">
     <button id="home-page" class="home" onclick="window.location.href = './';"> <i class="fa-solid fa-house"></i> </button>
     <form id="uv-form">
@@ -104,8 +113,24 @@
     <button onclick="forward()" class="forward"> <i class="fa-solid fa-forward"></i> </button>
     </div>
     </div>
+    <div style="position:fixed;bottom:10px;right:10px;">
+      <button onclick="hide();" class="hider"> <i class="fa-solid fa-eye-slash"></i> </button>
+    </div>
 
     <script>
+      document.head = document.head || document.getElementsByTagName('head')[0];
+
+function changeFavicon(src) {
+ var link = document.createElement('link'),
+     oldLink = document.getElementById('dynamic-favicon');
+ link.id = 'dynamic-favicon';
+ link.rel = 'shortcut icon';
+ link.href = src;
+ if (oldLink) {
+  document.head.removeChild(oldLink);
+ }
+ document.head.appendChild(link);
+};
       function reload() {
         document.getElementById("iframeId").src = document.getElementById("iframeId").src;
       }
@@ -114,6 +139,9 @@
      }
     function forward() {
       document.getElementById("iframeId").contentWindow.history.forward();
+    }
+    function hide() {
+      document.getElementById('browser').visibiity.toggle;
     }
     
       function setIframe() {
