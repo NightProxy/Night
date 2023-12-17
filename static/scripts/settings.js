@@ -198,6 +198,9 @@ function setdefaults() {
  if (localStorage.particlecheckboxState == undefined) {
   localStorage.setItem("particlecheckboxState", "true")
  };
+ if (localStorage.blankcheckboxState == undefined) {
+  localStorage.setItem("blankcheckboxState", "false")
+ };
 };
 
 function wait(ms) {
