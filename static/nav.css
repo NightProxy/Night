@@ -64,9 +64,10 @@
 }
 
 #settings-boxes {
+  margin-top: 20px;
   background-color: #363636;
-  height: 300px;
-  width: 300px;
+  height: 300px auto;
+  width: 300px auto;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
