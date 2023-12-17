@@ -329,3 +329,5 @@ if (document.querySelector(".message")) {
   setRandomSay();
 }
 
+runOnCertainPages();
+
