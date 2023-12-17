@@ -266,6 +266,7 @@ function wait(ms) {
     particlecheckbox.addEventListener('change', function() {
       // Update localStorage with the new state
       localStorage.setItem('particlecheckboxState', particlecheckbox.checked);
+      reloadpage();
     });
 });
 
