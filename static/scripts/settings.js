@@ -238,7 +238,7 @@ function wait(ms) {
             // Define actions based on the current path
             // Note: Add your own page checks and associated functions here
             switch (window.location.pathname) {
-                case '/static/index.html':
+                case '/static/':
                     openGame();
                     // Your code for the home page
                     break;
