@@ -50,8 +50,8 @@ body {
 
 #particles-js { 
   position: absolute; 
-  width: 100%; 
-  height: 100%; 
+  width: 100% auto; 
+  height: 100% auto;  
   background-color: var(--background-primary); 
   background-image: url("/static/bg.png");
   background-repeat: no-repeat; 
