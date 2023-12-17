@@ -1,21 +1,37 @@
-// Searching 
+"use strict";
+/**
+ * @type {HTMLFormElement}
+ */
+const form = document.getElementById("uv-form");
+/**
+ * @type {HTMLInputElement}
+ */
+const address = document.getElementById("uv-address");
+/**
+ * @type {HTMLInputElement}
+ */
+const searchEngine = document.getElementById("uv-search-engine");
+/**
+ * @type {HTMLParagraphElement}
+ */
+const error = document.getElementById("uv-error");
+/**
+ * @type {HTMLPreElement}
+ */
+const errorCode = document.getElementById("uv-error-code");
 
-const form = document.querySelector("form");
 const input = document.querySelector("input");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   window.navigator.serviceWorker
-    .register("./sw.js", {
+    .register("./uv.js", {
       scope: __uv$config.prefix,
     })
     .then(() => {
-      let url = input.value.trim();
-      if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
-      else if (!(url.startsWith("https://") || url.startsWith("http://")))
-        url = "http://" + url;
+      const url = search(address.value, searchEngine.value);
       sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
-      location.href = "go.html";
+      location.href = "edu.html";
     });
 });
 
@@ -23,31 +39,25 @@ form.addEventListener("submit", async (event) => {
 function go(value) {
     let iframe = document.querySelector(".iframe.active");
     window.navigator.serviceWorker
-      .register("./sw.js", {
+      .register("./uv.js", {
         scope: __uv$config.prefix,
       })
       .then(() => {
-        let url = value.trim();
-        if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
-        else if (!(url.startsWith("https://") || url.startsWith("http://")))
-          url = "https://" + url;
+        const url = search(address.value, searchEngine.value);
         //pass the encoded url to the second page
         sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
-        location.href = "go.html";
+        location.href = "edu.html";
       });
   }
-  
-  function blank(value) {
+
+function blank(value) {
     let iframe = document.querySelector(".iframe.active");
     window.navigator.serviceWorker
-      .register("./sw.js", {
+      .register("./uv.js", {
         scope: __uv$config.prefix,
       })
       .then(() => {
-        let url = value.trim();
-        if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
-        else if (!(url.startsWith("https://") || url.startsWith("http://")))
-          url = "https://" + url;
+        const url = search(address.value, searchEngine.value);
         window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
       });
   }

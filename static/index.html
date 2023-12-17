@@ -4,10 +4,8 @@
       <script async src="https://arc.io/widget.min.js#L1SfLEWE"></script>
       <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VHVNHMYGN3"></script>
-<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="https://kit.fontawesome.com/32abd502cd.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="stylesheet" href="./particles.css">
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <style>
    #sidenav {
@@ -31,9 +29,9 @@
 </script>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-      <link rel="stylesheet" id="themecss" href="index.css">
-      <link rel="stylesheet" href="nav.css">
-      <link rel="stylesheet" href="overide.css">
+      <link rel="stylesheet" id="themecss" href="/static/css/index.css">
+      <link rel="stylesheet" href="/static/scss/nav.css">
+      <link rel="stylesheet" href="/static/css/overide.css">
       <link rel="apple-touch-icon" sizes="114x114" href="../favicon.ico">
       <link rel="apple-touch-icon" sizes="180x180" href="../favicon.ico">
       <link rel="apple-touch-icon" sizes="76x76" href="../favicon.ico">
@@ -144,8 +142,12 @@
                <td>
                   <br>
                   <div id="settings-boxes">
-                     <h2 style="text-align: center;">Coming soon!</h2>
-                        <p style="text-align: center; font-size: 18px; margin-top: -100px;">This feature will be added soon</p>
+                     <h2 style="text-align: center;">Toggle Particles</h2>
+                        <p style="text-align: center; font-size: 18px; margin-top: -100px;">Allows you to toggle particles on certain themes like the default theme.</p>
+                        <label class="switch">
+                           <input type="checkbox" class="particlecheckbox">
+                           <div class="slider"></div>
+                         </label>
                   </div>
                   </td>
                   <td>
@@ -165,14 +167,13 @@
             </tr>
          </table>
          </div>
-      <script src="register-sw.js" defer></script>
-      <script src="error.js" defer></script>
-      <script src="search.js" defer></script>
-      <script src="index.js" defer></script>
-      <script src="particles.min.js"></script>
-         <script src="nav.js"></script>
+      <script src="/static/scripts/register-sw.js" defer></script>
+      <script src="/static/scripts/search.js" defer></script>
+      <script src="/static/scripts/index.js" defer></script>
+      <script src="/static/scripts/particles.min.js"></script>
+         <script src="/static/scripts/settings.js"></script>
       <script id="paeticlesrc" src=""></script>
-      <script src="blank.js"></script> 
+      <script src="/static/scripts/blank.js"></script> 
       <script>
          fadeOutElement();
       </script>
