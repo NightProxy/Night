@@ -227,10 +227,10 @@ function changeFavicon(src) {
     }
     function togglemenu() {
       var menu = document.getElementById("mySidebar")
-      if (menu.style.display === "none") {
-        menu.style.display = "block";
+      if (menu.style.visibility === "hidden") {
+        menu.style.visibility = "visible";
       } else {
-        menu.style.display = "none";
+        menu.style.visibility = "hidden";
       }
     }
       function setIframe() {
