@@ -133,7 +133,7 @@ function initializeTitleUrlList() {
   
   // This function updates the display of the title/url list under the div tag
   function displayTitleUrlList() {
-  var listDiv = document.querySelector('#dropdown-container');
+  var listDiv =  document.getElementById('dropdown-container');
   let titleUrlList = JSON.parse(localStorage.getItem('titleUrlList')); // Get the list from localStorage
   
   // Construct a string of list items with the title as label and URL as a clickable link
@@ -143,10 +143,10 @@ function initializeTitleUrlList() {
   });
   listHtml += '</ul>';
   
-  document.querySelector('#dropdown-container').appendChild(listHtml);
+  document.getElementById('dropdown-container').appendChild(listHtml);
   
   // Add click event listeners to each link
-  const links = document.querySelector('#dropdown-container').getElementsByClassName('iframe-link');
+  const links =  document.getElementById('dropdown-container').getElementsByClassName('iframe-link');
   for (let link of links) {
   link.addEventListener('click', function(event) {
   event.preventDefault();
