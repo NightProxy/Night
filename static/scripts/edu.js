@@ -130,11 +130,11 @@ function initializeBookmarks() {
     const listDiv = document.getElementById('bookmarkList');
     let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
   
-    let listHtml = '<ul>';
+    let listHtml = '<hr>';
     bookmarks.forEach((bookmark, index) => {
-      listHtml += `<li><a href="#" class="bookmark-link" data-url="${bookmark.url}">${bookmark.title}</a></li>`;
+      listHtml += `<a href="#" class="bookmark-link" data-url="${bookmark.url}">${bookmark.title}</a>`;
     });
-    listHtml += '</ul>';
+    listHtml += '<hr>';
     listDiv.innerHTML = listHtml;
   
     attachBookmarkClickHandlers();
