@@ -1,6 +1,5 @@
-<div align="center">
-    <a> <img src="./logo.png" style="width:60%; align-self:center;"> </img> </a> 
-    <h1></h1>
+<div align="center"> 
+    <h1>Night</h1>
     <h3>Andromeda is one of the fastest and newest static proxies around</h3>
     
 ### [Join our Discord!](https://discord.gg/JrmurfukMd)
