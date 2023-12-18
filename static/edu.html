@@ -123,13 +123,18 @@
   display: none;
 }
 
-.sidebar a .dropdown-btn {
-  padding: 8px 8px 8px 32px;
+.sidebar a, .dropdown-btn {
   text-decoration: none;
-  font-size: 25px;
+  text-align:center;
+  font-size: 16px;
+  border: none;
+  background: none;
   color: #818181;
   display: block;
   transition: 0.3s;
+}
+.dropdown-btn {
+  margin-left: 15px;
 }
 
 .sidebar a:hover .dropdown-btn:hover {
@@ -177,12 +182,13 @@
     </div>
     <div id="mySidebar" class="sidebar">
       <a style="text-align:right;font-size:13px;" onclick="togglemenu();"><i class="fa-solid fa-x"></i></a>
+      <br>
       <a style="text-align:center;font-size:16px;" onclick="hide();">Toggle Topbar</a>
       <button class="dropdown-btn">Bookmarks 
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-container">
-
+        <a onclick="localStorage.titleUrlList">Clear Bookmarks</a>
       </div>
       <a style="text-align:center;font-size:16px;"href="#">Clients</a>
       <a style="text-align:center;font-size:16px;"href="#">Inspect</a>
@@ -324,7 +330,7 @@ function initializeTitleUrlList() {
   
   // This function updates the display of the title/url list under the div tag
   function displayTitleUrlList() {
-  const listDiv = document.getElementById('dropdown-container');
+  var listDiv = document.getElementById('dropdown-container');
   let titleUrlList = JSON.parse(localStorage.getItem('titleUrlList')); // Get the list from localStorage
   
   // Construct a string of list items with the title as label and URL as a clickable link
