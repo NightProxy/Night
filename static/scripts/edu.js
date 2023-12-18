@@ -143,7 +143,7 @@ function initializeTitleUrlList() {
   });
   listHtml += '</ul>';
   
-  document.getElementById('dropdown-container').appendChild(listHtml);
+  document.getElementById('dropdown-container').innerHTML = listHtml;
   
   // Add click event listeners to each link
   const links =  document.getElementById('dropdown-container').getElementsByClassName('iframe-link');
