@@ -114,10 +114,15 @@ function initializeBookmarks() {
   
   function saveBookmark() {
     const iframe = document.getElementById('iframeId');
-    const bookmarkTitle = iframe.contentWindow.document.title; // Assuming you have access to the iframe's document
+    const iframeDoc = iframe.contentWindow.document;
+    const bookmarkTitle = iframeDoc.title;
     const bookmarkUrl = iframe.src;
+    const faviconLink = iframeDoc.querySelector("link[rel~='icon']"); // Find the favicon link element
+    const bookmarkFavicon = faviconLink ? faviconLink.href : ''; // If found, store the favicon URL
   
-    const bookmark = { title: bookmarkTitle, url: bookmarkUrl };
+    // ... Rest of your code stays the same, just add the favicon to the bookmark object
+    const bookmark = { title: bookmarkTitle, url: bookmarkUrl, favicon: bookmarkFavicon };
+    // ... Rest of your existing logic for storing the bookmarks
   
     let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
     bookmarks.push(bookmark);
@@ -129,10 +134,10 @@ function initializeBookmarks() {
   function displayBookmarks() {
     const listDiv = document.getElementById('bookmarkList');
     let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-  
+    
     let listHtml = '<hr>';
     bookmarks.forEach((bookmark, index) => {
-      listHtml += `<a href="#" class="bookmark-link" data-url="${bookmark.url}">${bookmark.title}</a>`;
+      listHtml += `<img src="${bookmark.favicon}" alt="Favicon" class="favicon" /><a href="#" class="bookmark-link" data-url="${bookmark.url}">${bookmark.title}</a><br>`;
     });
     listHtml += '<hr>';
     listDiv.innerHTML = listHtml;
