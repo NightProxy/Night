@@ -328,7 +328,7 @@ function initializeTitleUrlList() {
   let titleUrlList = JSON.parse(localStorage.getItem('titleUrlList')); // Get the list from localStorage
   
   // Construct a string of list items with the title as label and URL as a clickable link
-  let listHtml = '<ul>';
+  var listHtml = '<ul>';
   titleUrlList.forEach((item, index) => {
   listHtml += `<li>${item.title} - <a href="#" class="iframe-link" data-index="${index}">${item.url}</a></li>`;
   });
