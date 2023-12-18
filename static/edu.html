@@ -340,10 +340,10 @@ function initializeTitleUrlList() {
   });
   listHtml += '</ul>';
   
-  listDiv.appendChild(listHtml);
+  document.querySelector('#dropdown-container').appendChild(listHtml);
   
   // Add click event listeners to each link
-  const links = listDiv.getElementsByClassName('iframe-link');
+  const links = document.querySelector('#dropdown-container').getElementsByClassName('iframe-link');
   for (let link of links) {
   link.addEventListener('click', function(event) {
   event.preventDefault();
