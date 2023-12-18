@@ -106,63 +106,59 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
-function initializeTitleUrlList() {
-  if (!localStorage.getItem('titleUrlList')) {
-  localStorage.setItem('titleUrlList', JSON.stringify([])); // Initialize an empty array if it doesn't exist
-  }
-  }
-  
-  // This function saves the title and URL from the iframe to the localStorage list
-  function saveIframeTitleUrlToList() {
-  const iframe = document.getElementById('iframeId');
-  try {
-  const iframeTitle = iframe.contentDocument.title;
-  const iframeUrl = iframe.src;
-  
-  const titleUrlObject = { title: iframeTitle, url: iframeUrl };
-  
-  let titleUrlList = JSON.parse(localStorage.getItem('titleUrlList'));
-  titleUrlList.push(titleUrlObject);
-  localStorage.setItem('titleUrlList', JSON.stringify(titleUrlList));
-  
-  displayTitleUrlList(); // Update the display list after adding new title/url
-  } catch (exception) {
-  console.error('Cannot access iframe document:', exception);
-  }
+function initializeBookmarks() {
+    if (!localStorage.getItem('bookmarks')) {
+      localStorage.setItem('bookmarks', JSON.stringify([]));
+    }
   }
   
-  // This function updates the display of the title/url list under the div tag
-  function displayTitleUrlList() {
-  var listDiv =  document.getElementById('dropdown-container');
-  let titleUrlList = JSON.parse(localStorage.getItem('titleUrlList')); // Get the list from localStorage
+  function saveBookmark() {
+    const iframe = document.getElementById('iframeId');
+    const bookmarkTitle = iframe.contentWindow.document.title; // Assuming you have access to the iframe's document
+    const bookmarkUrl = iframe.src;
   
-  // Construct a string of list items with the title as label and URL as a clickable link
-  var listHtml = '<ul>';
-  titleUrlList.forEach((item, index) => {
-  listHtml += `<li>${item.title} - <a href="#" class="iframe-link" data-index="${index}">${item.url}</a></li>`;
-  });
-  listHtml += '</ul>';
+    const bookmark = { title: bookmarkTitle, url: bookmarkUrl };
   
-  document.getElementById('dropdown-container').innerHTML = listHtml;
+    let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    bookmarks.push(bookmark);
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
   
-  // Add click event listeners to each link
-  const links =  document.getElementById('dropdown-container').getElementsByClassName('iframe-link');
-  for (let link of links) {
-  link.addEventListener('click', function(event) {
-  event.preventDefault();
-  const index = this.dataset.index;
-  const url = titleUrlList[index].url;
-  document.getElementById('iframeId').src = url;
-  });
-  }
+    displayBookmarks();
   }
   
-  // Add click event listener to the button
-  document.getElementById('bookmarkbtn').addEventListener('click', saveIframeTitleUrlToList);
+  function displayBookmarks() {
+    const listDiv = document.getElementById('bookmarkList');
+    let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
   
-  // Initialize the title/url list when the document is fully loaded
+    let listHtml = '<ul>';
+    bookmarks.forEach((bookmark, index) => {
+      listHtml += `<li><a href="#" class="bookmark-link" data-url="${bookmark.url}">${bookmark.title}</a></li>`;
+    });
+    listHtml += '</ul>';
+    listDiv.innerHTML = listHtml;
+  
+    attachBookmarkClickHandlers();
+  }
+  
+  function attachBookmarkClickHandlers() {
+    const links = document.querySelectorAll('.bookmark-link');
+    links.forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        loadIframe(this.dataset.url);
+      });
+    });
+  }
+  
+  function loadIframe(url) {
+    const iframe = document.getElementById('iframeId');
+    iframe.src = url;
+  }
+  
+  // Initialize the bookmarks when the document is fully loaded.
   document.addEventListener('DOMContentLoaded', function() {
-  initializeTitleUrlList();
-  displayTitleUrlList(); // Display the list on initial load
+    initializeBookmarks();
+    displayBookmarks();
+    document.getElementById('saveBookmarkButton').addEventListener('click', saveBookmark);
   });
 setIframe();
