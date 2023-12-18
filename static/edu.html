@@ -297,49 +297,64 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
-function initializeUrlList() {
-  if (!localStorage.getItem('urlList')) {
-  localStorage.setItem('urlList', JSON.stringify([])); // Initialize empty array if not exist
+function initializeTitleUrlList() {
+  if (!localStorage.getItem('titleUrlList')) {
+  localStorage.setItem('titleUrlList', JSON.stringify([])); // Initialize an empty array if it doesn't exist
   }
   }
   
-  // This function saves the URL from the iframe to the localStorage list
-  function saveIframeUrlToList() {
+  // This function saves the title and URL from the iframe to the localStorage list
+  function saveIframeTitleUrlToList() {
   const iframe = document.getElementById('iframeId');
-  const currentTitle = iframe.contentDocument.title;
-  const currentUrl = iframe.src; // Get the current URL of the iframe
+  try {
+  const iframeTitle = iframe.contentDocument.title;
+  const iframeUrl = iframe.src;
   
-  // Fetch the existing list from localStorage, parse it, and add the new URL
-  let urlList = JSON.parse(localStorage.getItem('urlList'));
-  urlList.push(currentUrl, currentTitle);
-  localStorage.setItem('urlList', JSON.stringify(urlList)); // Save back to localStorage
+  const titleUrlObject = { title: iframeTitle, url: iframeUrl };
   
-  displayUrlList(); // Update the display list after adding new URL
+  let titleUrlList = JSON.parse(localStorage.getItem('titleUrlList'));
+  titleUrlList.push(titleUrlObject);
+  localStorage.setItem('titleUrlList', JSON.stringify(titleUrlList));
+  
+  displayTitleUrlList(); // Update the display list after adding new title/url
+  } catch (exception) {
+  console.error('Cannot access iframe document:', exception);
+  }
   }
   
-  // This function updates the display of the list under the div tag
-  function displayUrlList() {
+  // This function updates the display of the title/url list under the div tag
+  function displayTitleUrlList() {
   const listDiv = document.getElementById('dropdown-container');
-  let urlList = JSON.parse(localStorage.getItem('urlList')); // Get the list from localStorage
+  let titleUrlList = JSON.parse(localStorage.getItem('titleUrlList')); // Get the list from localStorage
   
-  // Construct a string of list items
+  // Construct a string of list items with the title as label and URL as a clickable link
   let listHtml = '<ul>';
-  urlList.forEach(url, title => {
-  listHtml += `<li><a href="${url}">${title}</a></li>`;
+  titleUrlList.forEach((item, index) => {
+  listHtml += `<li>${item.title} - <a href="#" class="iframe-link" data-index="${index}">${item.url}</a></li>`;
   });
   listHtml += '</ul>';
   
-  // Set the constructed list as the innerHTML of the listDiv
   listDiv.innerHTML = listHtml;
+  
+  // Add click event listeners to each link
+  const links = listDiv.getElementsByClassName('iframe-link');
+  for (let link of links) {
+  link.addEventListener('click', function(event) {
+  event.preventDefault();
+  const index = this.dataset.index;
+  const url = titleUrlList[index].url;
+  document.getElementById('iframeId').src = url;
+  });
+  }
   }
   
   // Add click event listener to the button
-  document.getElementById('bookmarkbtn').addEventListener('click', saveIframeUrlToList);
+  document.getElementById('bookmarkbtn').addEventListener('click', saveIframeTitleUrlToList);
   
-  // Initialize the URL list when the DOM is fully loaded
+  // Initialize the title/url list when the document is fully loaded
   document.addEventListener('DOMContentLoaded', function() {
-  initializeUrlList();
-  displayUrlList(); // Display the list on initial load
+  initializeTitleUrlList();
+  displayTitleUrlList(); // Display the list on initial load
   });
 setIframe();
     </script>
