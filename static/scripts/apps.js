@@ -1,9 +1,10 @@
-let apps = [
+  let apps = [
     // Preset app shortcuts
     { name: 'Example App', url: 'https://example.com', imgUrl: 'https://example.com/favicon.ico', isPinned: false },
-    { name: 'Github', url: 'https://github.com', imgUrl: '/static/images/icons/github.png', isPinned: false },
-    { name: 'Google', url: 'https://google.com', imgUrl: '/static/images/icons/google.webp', isPinned: false },
+    
     // Additional predefined apps can be added here
+    { name: 'Github', url: 'https://github.com', imgUrl: '/static/images/icons/github.png', isPinned: false },
+
   ];
 
   // Add a new app shortcut

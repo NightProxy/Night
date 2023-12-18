@@ -5,79 +5,106 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Customizable Apps Page</title>
 <style>
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  background-color: #f4f4f4;
-}
-.grid-container {
-  width: 80%;
-}
-.apps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 10px;
-  padding: 20px;
-}
-.app-shortcut {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: white;
-}
-.app-shortcut img {
-  width: 100%;
-  height: auto;
-}
-.pin-button {
-  background-color: #ddd;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin: 5px;
-  cursor: pointer;
-}
-#newAppForm {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-#newAppForm input, #newAppForm button {
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+/* ... existing styles ... */
 </style>
 </head>
 <body>
+<!-- Form for adding new apps -->
+<form id="newAppForm"> <!-- Changed from a div to a form element -->
+    <input type="text" id="appName" placeholder="App Name" required>
+    <input type="url" id="appUrl" placeholder="App URL" required>
+    <input type="url" id="appImgUrl" placeholder="App Image URL" required>
+    <button type="submit">Add App Shortcut</button>
+    </form>
 
-<div id="newAppForm">
-  <input type="text" id="appName" placeholder="App Name" required>
-  <input type="url" id="appUrl" placeholder="App URL" required>
-  <input type="url" id="appImgUrl" placeholder="App Image URL" required>
-  <button onclick="addApp()">Add App Shortcut</button>
-</div>
-
+<!-- Section for pinned and unpinned apps -->
 <div class="grid-container">
-  <h2>Pinned Apps</h2>
-  <div class="apps-grid" id="pinnedAppsGrid">
-    <!-- Pinned app shortcuts will be inserted here -->
-  </div>
-  <h2>Other Apps</h2>
-  <div class="apps-grid" id="appsGrid">
-    <!-- Existing app shortcuts will be inserted here -->
-  </div>
+<h2>Pinned Apps</h2>
+<div class="apps-grid" id="pinnedAppsGrid">
+<!-- Pinned app shortcuts will be placed here -->
 </div>
 
-<script src="/static/scripts/apps.js"></script>
+<h2>Other Apps</h2>
+<div class="apps-grid" id="appsGrid">
+<!-- Unpinned app shortcuts will be placed here -->
+</div>
+</div>
 
+<script>
+// Retrieve apps from localStorage or set to default if not present
+let apps = JSON.parse(localStorage.getItem('apps')) || [
+{ name: 'Example App', url: 'https://example.com', imgUrl: 'https://example.com/favicon.ico', isPinned: false },
+{ name: 'Github', url: 'https://github.com', imgUrl: 'https://nightproxy.netlify.app/static/images/icons/github.png', isPinned: false }
+
+// Add more predefined apps here
+];
+
+function saveAppData() {
+localStorage.setItem('apps', JSON.stringify(apps));
+}
+
+function addApp() {
+const name = document.getElementById('appName').value;
+const url = document.getElementById('appUrl').value;
+const imgUrl = document.getElementById('appImgUrl').value;
+
+if (name && url && imgUrl) {
+apps.push({ name, url, imgUrl, isPinned: false });
+renderApps();
+saveAppData(); // Save to localStorage after adding a new app
+clearForm(); // Clear the form fields after adding
+} else {
+alert('Please ensure all fields are filled in correctly.');
+}
+}
+
+function renderApps() {
+const pinnedAppsGrid = document.getElementById('pinnedAppsGrid');
+const appsGrid = document.getElementById('appsGrid');
+
+pinnedAppsGrid.innerHTML = '';
+appsGrid.innerHTML = '';
+
+apps.forEach((app, index) => {
+const appElement = getAppElement(app, index);
+if (app.isPinned) {
+pinnedAppsGrid.appendChild(appElement);
+} else {
+appsGrid.appendChild(appElement);
+}
+});
+}
+
+function getAppElement(app, index) {
+const appShortcut = document.createElement('div');
+appShortcut.className = 'app-shortcut';
+appShortcut.innerHTML = `
+<a href="${app.url}" target="_blank" title="${app.name}"><img src="${app.imgUrl}" alt="${app.name}"></a>
+<button class="pin-button" onclick="togglePin(${index})">${app.isPinned ? 'Unpin' : 'Pin'}</button>
+`;
+return appShortcut;
+}
+
+function togglePin(index) {
+apps[index].isPinned = !apps[index].isPinned;
+renderApps();
+saveAppData(); // Save to localStorage after toggling the pinned state
+}
+
+function clearForm() {
+document.getElementById('appName').value = '';
+document.getElementById('appUrl').value = '';
+document.getElementById('appImgUrl').value = '';
+}
+
+// Bind the add app function to the form submission
+document.getElementById('newAppForm').onsubmit = function(event) {
+event.preventDefault();
+addApp();
+};
+
+// Render apps on window load
+window.onload = renderApps;
+</script>
 </body>
 </html>
