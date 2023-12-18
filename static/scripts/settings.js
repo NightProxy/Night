@@ -114,22 +114,6 @@ function reloadpage() {
 themefile = document.getElementById("themecss");
 particlestheme = document.getElementById("paeticlesrc");
 logo = document.getElementById("logo");
-
-function openGame(url) {
-  var win = window.open();
-  var iframe = win.document.createElement('iframe');
-  iframe.style.frameborder="0";
-  iframe.style.marginwidth="0";
-  iframe.style.width="100%";
-  iframe.style.height="100%";
-  iframe.style.border="none";
-  iframe.style.position="fixed";
-  iframe.style.inset="0px";
-  iframe.style.outline="none";
-  iframe.style.scrolling="auto";
-  iframe.src = url;
-  win.document.body.appendChild(iframe);
-};
   
 var splashCacheAll;
 var splashCache;
@@ -220,45 +204,53 @@ function wait(ms) {
   }
 
    // When the DOM is fully loaded
-   document.addEventListener('DOMContentLoaded', function() {
-    const blankcheckbox = document.querySelector('.blankcheckbox');
-    const particlecheckbox = document.querySelector('.particlecheckbox');
-
-    // Check if there's a stored value in localStorage
-    const isblankChecked = localStorage.getItem('blankcheckboxState') === 'true';
-    blankcheckbox.checked = isblankChecked;
-
-    const isparticleChecked = localStorage.getItem('particlecheckboxState') === 'true';
-        particlecheckbox.checked = isparticleChecked;
-
-    // Listen for changes on the particlecheckbox
-    function runOnCertainPages() {
-        const url = window.location.href;
-
-        // Check if the current URL is not about:blank and the checkbox is checked
-        if (window.location.href !== 'about:blank' && blankcheckbox.checked) {
-            openGame(url);
-        } else if (window.location.href == 'about:blank') {
-          alert('Please report if you are getting spammed with about:blank tabs to our Github at https://https://github.com/NightProxy/Night');
-        }
-    }
-
-    // Run the function based on the initial checkbox state
-    runOnCertainPages();
-
-    // Listen for changes on the checkbox
-    blankcheckbox.addEventListener('change', function () {
-        // Update localStorage with the new state
-        localStorage.setItem('blankcheckboxState', blankcheckbox.checked);
-        // Run the function if conditions are met
-        runOnCertainPages();
-    });
-    particlecheckbox.addEventListener('change', function() {
-      // Update localStorage with the new state
-      localStorage.setItem('particlecheckboxState', particlecheckbox.checked);
-      reloadpage();
-    });
-});
+   // When the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+  const blankCheckbox = document.querySelector('.blankcheckbox'); // Updated class name here
+  const currentUrl = window.location.href; // Get the current URL just once when the page loads
+  let gameWindow = null; // Initialize a variable to hold the new window reference
+  
+  // Check if there's a stored value in localStorage
+  const isChecked = localStorage.getItem('checkboxState') === 'true';
+  blankCheckbox.checked = isChecked; // Updated variable name here
+  
+  function openGame(url) {
+  // Check if the game window has already been opened or is closed
+  if (gameWindow === null || gameWindow.closed) {
+  // Open a new blank window and keep a reference to it
+  gameWindow = window.open('', '_blank');
+  gameWindow.document.write(`<title>Loading</title>`);
+  gameWindow.document.close();
+  // Let's write the contents into the window after a delay to ensure it loads the blank first
+  setTimeout(() => {
+  gameWindow.document.body.innerHTML = `<iframe src="${url}" style="border: none; width: 100%; height: 100%;"></iframe>`;
+  }, 50);
+  } else {
+  console.log('Game window is already open.');
+  }
+  }
+  
+  // Define the function to run on certain pages
+  function runOnCertainPages() {
+  // Check if the blankCheckbox is checked, and the current URL is not about:blank
+  if (blankCheckbox.checked && window.location.pathname !== 'blank') {
+  // Open the game window with the current URL
+  openGame(currentUrl);
+  }
+  }
+  
+  // Listen for changes on the blankCheckbox
+  blankCheckbox.addEventListener('change', function () {
+  localStorage.setItem('checkboxState', blankCheckbox.checked); // Updated variable name here
+  // Re-evaluate whether to open the game window only if the blankCheckbox is checked and the URL is not about:blank
+  if (blankCheckbox.checked && window.location.pathname !== 'blank') {
+  openGame(currentUrl);
+  }
+  });
+  
+  // Initial check to open the game window
+  runOnCertainPages();
+  });
 
 function setthemes() {
   if (localStorage.theme == "default") {
