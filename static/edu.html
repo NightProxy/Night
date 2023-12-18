@@ -108,7 +108,7 @@
 
       .sidebar {
   height: 100%;
-  width: 0;
+  width: 150px;
   barder-radius:30px;
   position: fixed;
   z-index: 1;
@@ -118,6 +118,7 @@
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  display: none;
 }
 
 .sidebar a {
@@ -160,7 +161,7 @@
       <button onclick="togglemenu();" class="menubtn"><i class="fa-solid fa-bars"></i></button>
     </div>
     <div id="mySidebar" class="sidebar">
-      <a class="closebtn" onclick="togglemenu();">×</a>
+      <a onclick="togglemenu();"><i class="fa-solid fa-x"></i></a>
       <a href="#">About</a>
       <a href="#">Services</a>
       <a href="#">Clients</a>
