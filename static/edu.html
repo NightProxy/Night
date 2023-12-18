@@ -340,7 +340,7 @@ function initializeTitleUrlList() {
   });
   listHtml += '</ul>';
   
-  listDiv.innerHTML = listHtml;
+  listDiv.appendChild(listHtml);
   
   // Add click event listeners to each link
   const links = listDiv.getElementsByClassName('iframe-link');
