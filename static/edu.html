@@ -95,6 +95,49 @@
         background-color: #212121;
         border:none;
       }
+
+      .menubtn {
+        border-radius: 30%;
+	margin-left: 1px;
+	margin-right: 1px;
+        width:50px;
+        height:50px;
+        background-color: #212121;
+        border:none;
+      }
+
+      .sidebar {
+  height: 100%;
+  width: 0;
+  barder-radius:30px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #212121;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
     </style>
   </head>
   <body>
@@ -113,8 +156,15 @@
     <button onclick="forward()" class="forward"> <i class="fa-solid fa-forward"></i> </button>
     </div>
     </div>
-    <div style="position:fixed;top:10px;right:10px;">
-      <button onclick="hide();" class="hider"> <i class="fa-solid fa-eye-slash"></i> </button>
+    <div style="position:fixed;bottom:10px;right:10px;">
+      <button onclick="togglemenu();" class="menubtn"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div id="mySidebar" class="sidebar">
+      <a class="closebtn" onclick="togglemenu();">×</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
     </div>
 
     <script>
@@ -141,9 +191,21 @@ function changeFavicon(src) {
       document.getElementById("iframeId").contentWindow.history.forward();
     }
     function hide() {
-      document.getElementById('browser').visibility.toggle;
+      var hidediv = document.getElementById('browser');
+      if (hidediv.style.display === "none") {
+        hidediv.style.display = "block";
+      } else {
+        hidediv.style.display = "none";
+      }
     }
-    
+    function togglemenu() {
+      var menu = document.getElementById("mySidebar")
+      if (menu.style.display === "none") {
+        menu.style.display = "block";
+      } else {
+        menu.style.display = "none";
+      }
+    }
       function setIframe() {
         let encodedUrl = sessionStorage.getItem("encodedUrl");
         encodedUrl = "/static/ghost/" + encodedUrl;
