@@ -317,6 +317,9 @@ function initializeTitleUrlList() {
   localStorage.setItem('titleUrlList', JSON.stringify(titleUrlList));
   
   displayTitleUrlList(); // Update the display list after adding new title/url
+  } catch (exception) {
+  console.error('Cannot access iframe document:', exception);
+  }
   }
   
   // This function updates the display of the title/url list under the div tag
@@ -359,3 +362,4 @@ setIframe();
     <script src="/static/scripts/search.js"></script>
     <script src="/static/scripts/index.js"></script>
   </body>
+</html>
