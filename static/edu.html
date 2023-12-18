@@ -53,6 +53,16 @@
         background-color: #212121;
         border:none;
       }
+
+      .bookmarkbtn {
+        border-radius: 30%;
+	margin-left: 1px;
+	margin-right: 1px;
+        width:50px;
+        height:50px;
+        background-color: #212121;
+        border:none;
+      }
       
       i {
         color: white;
@@ -85,16 +95,7 @@
 	border: none;
 	outline: none;
 	color: white;
-	}
-  .hider {
-        border-radius: 30%;
-	margin-left: 1px;
-	margin-right: 1px;
-        width:50px;
-        height:50px;
-        background-color: #212121;
-        border:none;
-      }
+        }
 
       .menubtn {
         border-radius: 30%;
@@ -107,17 +108,18 @@
       }
 
       .sidebar {
-  height: 100%;
-  width: 150px;
-  barder-radius:30px;
+  height: 70%;
+  width: 15%;
+  border-radius:30px;
   position: fixed;
   z-index: 1;
   top: 0;
-  left: 0;
+  right: 0;
   background-color: #212121;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  padding-top: 5px;
+  padding-right: 5px;
   display: none;
 }
 
@@ -139,6 +141,19 @@
   transition: margin-left .5s;
   padding: 16px;
 }
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
     </style>
   </head>
   <body>
@@ -155,17 +170,25 @@
     <button onclick="reload()" class="reload"> <i class="fa-solid fa-rotate-right"></i> </button>
     <button onclick="back()" class="back"> <i class="fa-solid fa-backward"></i> </button>
     <button onclick="forward()" class="forward"> <i class="fa-solid fa-forward"></i> </button>
+    <button class="bookmarkbtn" id="bookmarkbtn"> <i class="fa-solid fa-star"></i> </button>
     </div>
     </div>
-    <div style="position:fixed;bottom:10px;right:10px;">
+    <div style="position:fixed;top:10px;right:10px;">
       <button onclick="togglemenu();" class="menubtn"><i class="fa-solid fa-bars"></i></button>
     </div>
     <div id="mySidebar" class="sidebar">
-      <a onclick="togglemenu();"><i class="fa-solid fa-x"></i></a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
+      <a style="text-align:right;font-size:13px;" onclick="togglemenu();"><i class="fa-solid fa-x"></i></a>
+      <a style="text-align:center;font-size:16px;" onclick="hide();">Toggle Topbar</a>
+      <button class="dropdown-btn">Bookmarks 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+      <a style="text-align:center;font-size:16px;"href="#">Clients</a>
+      <a style="text-align:center;font-size:16px;"href="#">Inspect</a>
     </div>
 
     <script>
@@ -263,7 +286,65 @@ function setcloaks() {
  };
 };
 
-      setIframe();
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+function initializeUrlList() {
+  if (!localStorage.getItem('urlList')) {
+  localStorage.setItem('urlList', JSON.stringify([])); // Initialize empty array if not exist
+  }
+  }
+  
+  // This function saves the URL from the iframe to the localStorage list
+  function saveIframeUrlToList() {
+  const iframe = document.getElementById('iframeId');
+  const currentTitle = iframe.contentDocument.title;
+  const currentUrl = iframe.src; // Get the current URL of the iframe
+  
+  // Fetch the existing list from localStorage, parse it, and add the new URL
+  let urlList = JSON.parse(localStorage.getItem('urlList'));
+  urlList.push(currentTitle, currentUrl);
+  localStorage.setItem('urlList', JSON.stringify(urlList)); // Save back to localStorage
+  
+  displayUrlList(); // Update the display list after adding new URL
+  }
+  
+  // This function updates the display of the list under the div tag
+  function displayUrlList() {
+  const listDiv = document.getElementById('dropdown-container');
+  let urlList = JSON.parse(localStorage.getItem('urlList')); // Get the list from localStorage
+  
+  // Construct a string of list items
+  let listHtml = '<ul>';
+  urlList.forEach(title, url => {
+  listHtml += `<li><a href="${url}">${title}</a></li>`;
+  });
+  listHtml += '</ul>';
+  
+  // Set the constructed list as the innerHTML of the listDiv
+  listDiv.innerHTML = listHtml;
+  }
+  
+  // Add click event listener to the button
+  document.getElementById('bookmarkbtn').addEventListener('click', saveIframeUrlToList);
+  
+  // Initialize the URL list when the DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+  initializeUrlList();
+  displayUrlList(); // Display the list on initial load
+  });
+setIframe();
     </script>
     <script src="/static/scripts/register-sw.js"></script>
     <script src="/static/scripts/search.js"></script>
