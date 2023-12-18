@@ -117,12 +117,19 @@ function initializeBookmarks() {
     const iframeDoc = iframe.contentWindow.document;
     const bookmarkTitle = iframeDoc.title;
     const bookmarkUrl = iframe.src;
-    const faviconLink = iframeDoc.querySelector("link[rel~='icon']"); // Find the favicon link element
-    const bookmarkFavicon = faviconLink ? faviconLink.href : ''; // If found, store the favicon URL
   
-    // ... Rest of your code stays the same, just add the favicon to the bookmark object
-    const bookmark = { title: bookmarkTitle, url: bookmarkUrl, favicon: bookmarkFavicon };
-    // ... Rest of your existing logic for storing the bookmarks
+    // Attempt to find the favicon using various common rel attributes.
+    let faviconUrl = undefined;
+    const faviconLink = iframeDoc.querySelector("link[rel~='icon'], link[rel='shortcut icon'], link[rel='Bookmark icon']");
+    
+    if (faviconLink) {
+      faviconUrl = faviconLink.href;
+    }
+  
+    // If a favicon URL is found within the iframe document, use it; otherwise, set it to empty string or a default favicon URL.
+    faviconUrl = faviconUrl || '';
+  
+    const bookmark = { title: bookmarkTitle, url: bookmarkUrl, favicon: faviconUrl };
   
     let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
     bookmarks.push(bookmark);
