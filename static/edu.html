@@ -193,7 +193,7 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-container">
-        <a onclick="localStorage.removeItem('bookmarks');">Clear Bookmarks</a>
+        <a onclick="localStorage.removeItem('bookmarks');initializeBookmarks();displayBookmarks();">Clear Bookmarks</a>
         <div id="bookmarkList">
 
         </div>
