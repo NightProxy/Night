@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customizable Apps Page</title>
+<style>
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+.grid-container {
+  width: 80%;
+}
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+.app-shortcut {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+.app-shortcut img {
+  width: 100%;
+  height: auto;
+}
+.pin-button {
+  background-color: #ddd;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+#newAppForm {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+#newAppForm input, #newAppForm button {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+<div id="newAppForm">
+  <input type="text" id="appName" placeholder="App Name" required>
+  <input type="url" id="appUrl" placeholder="App URL" required>
+  <input type="url" id="appImgUrl" placeholder="App Image URL" required>
+  <button onclick="addApp()">Add App Shortcut</button>
+</div>
+
+<div class="grid-container">
+  <h2>Pinned Apps</h2>
+  <div class="apps-grid" id="pinnedAppsGrid">
+    <!-- Pinned app shortcuts will be inserted here -->
+  </div>
+  <h2>Other Apps</h2>
+  <div class="apps-grid" id="appsGrid">
+    <!-- Existing app shortcuts will be inserted here -->
+  </div>
+</div>
+
+<script src="/static/scripts/apps.js"></script>
+
+</body>
+</html>
