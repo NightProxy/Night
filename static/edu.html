@@ -330,7 +330,7 @@ function initializeTitleUrlList() {
   
   // This function updates the display of the title/url list under the div tag
   function displayTitleUrlList() {
-  var listDiv = document.getElementById('dropdown-container');
+  var listDiv = document.querySelector('#dropdown-container');
   let titleUrlList = JSON.parse(localStorage.getItem('titleUrlList')); // Get the list from localStorage
   
   // Construct a string of list items with the title as label and URL as a clickable link
