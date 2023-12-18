@@ -311,7 +311,7 @@ function initializeUrlList() {
   
   // Fetch the existing list from localStorage, parse it, and add the new URL
   let urlList = JSON.parse(localStorage.getItem('urlList'));
-  urlList.push(currentTitle, currentUrl);
+  urlList.push(currentUrl, currentTitle);
   localStorage.setItem('urlList', JSON.stringify(urlList)); // Save back to localStorage
   
   displayUrlList(); // Update the display list after adding new URL
@@ -324,7 +324,7 @@ function initializeUrlList() {
   
   // Construct a string of list items
   let listHtml = '<ul>';
-  urlList.forEach(title, url => {
+  urlList.forEach(url, title => {
   listHtml += `<li><a href="${url}">${title}</a></li>`;
   });
   listHtml += '</ul>';
