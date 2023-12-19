@@ -596,6 +596,23 @@ a{
 .blankcheckbox:active ~ .blankslider::before {
   transform: translate(0);
 }
+.fa-solid fa-grip zoom navitem:hover {
+   margin-left: 10px;
+   margin-right: 10px
+}
+
+.fa-solid fa-gamepad zoom navitem:hover {
+  margin-left: 10px;
+  margin-right: 10px
+}
+.fa-solid fa-plus zoom navitem:hover {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.fa-solid fa-gear zoom navitem:hover {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 
 
