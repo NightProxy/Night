@@ -362,7 +362,14 @@
           if (faviconLink) {
             faviconUrl = faviconLink.href;
           }
-        
+
+          if (bookmarkTitle.indexOf("Google") >= 0) {
+            faviconUrl = "/static/images/icons/google.webp";
+          }
+
+          if (bookmarkTitle.indexOf("Discord") >= 0) {
+            faviconLink = "/static/images/icons/discord.jpg";
+          }
           // If a favicon URL is found within the iframe document, use it; otherwise, set it to empty string or a default favicon URL.
           faviconUrl = faviconUrl || '';
         
