@@ -58,20 +58,33 @@ alert('Please ensure all fields are filled in correctly.');
 }
 
 function renderApps() {
-    // Sort the apps array alphabetically by the app's name.
-    apps.sort((a, b) => a.name.localeCompare(b.name));
-  
-    // Assuming `appsContainer` is your element where apps are displayed.
-    const appsContainer = document.getElementById('appsContainer'); 
-    appsContainer.innerHTML = ''; // Clear the current list
-  
-    // Iterate over the sorted apps array to render all apps.
-    apps.forEach(app => {
-      // Get the element representation for the app (you should define this based on your HTML structure).
-      const appElement = getAppElement(app);
-      appsContainer.appendChild(appElement);
+    console.log('Rendering apps...');
+    
+    // Check if apps is an array.
+    console.log('Is apps an array?', Array.isArray(apps));
+    
+    // Sort the apps array alphabetically by the app name
+    apps.sort((a, b) => {
+    console.log(`Comparing ${a.name} with ${b.name}`);
+    return a.name.localeCompare(b.name);
     });
-  }
+    
+    // Get the container element for the apps
+    const appsContainer = document.getElementById('appsContainer');
+    console.log('Apps container element:', appsContainer);
+    
+    // Clear out any existing elements
+    appsContainer.innerHTML = '';
+    
+    // Add each app to the container element
+    apps.forEach(app => {
+    const appElement = getAppElement(app);
+    console.log(`Appending ${app.name}`);
+    appsContainer.appendChild(appElement);
+    });
+    
+    console.log('Apps rendered.');
+    }
 
 function getAppElement(app, index) {
 const appShortcut = document.createElement('div');
