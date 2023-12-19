@@ -5,7 +5,67 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Customizable Apps Page</title>
 <style>
-/* ... existing styles ... */
+    .grid-container {
+      width: 80%;
+      margin-top: 20px;
+    }
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+    }
+    
+    /* Style for each app shortcut */
+    .app-shortcut {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: white;
+    }
+    
+    /* Style for the app images */
+    .app-shortcut img {
+      width:64px;
+      height:64px;
+    }
+    
+    /* Style for the pin/unpin buttons */
+    .pin-button {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      background-color: #f4f4f4;
+      font-size: 0.8em;
+    }
+    
+    /* Style for the form inputs and button */
+    #newAppForm input, #newAppForm button {
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    /* Clear the form on success */
+    .clear-input {
+      clear: both;
+      display: block;
+      padding: 1px;
+      margin: 5px;
+      border: none;
+      background: none;
+    }
+    
 </style>
 </head>
 <body>
