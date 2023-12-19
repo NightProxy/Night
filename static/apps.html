@@ -9,6 +9,8 @@
 </style>
 </head>
 <body>
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
 <!-- Form for adding new apps -->
 <form id="newAppForm"> <!-- Changed from a div to a form element -->
     <input type="text" id="appName" placeholder="App Name" required>
@@ -30,6 +32,9 @@
 </div>
 </div>
 
+<script src="/static/scripts/register-sw.js" defer></script>
+<script src="/static/scripts/search.js" defer></script>
+<script src="/static/scripts/index.js" defer></script>
 <script type="text/javascript">
     // Retrieve apps from localStorage or set to default if not present
 let apps = JSON.parse(localStorage.getItem('apps')) || [
@@ -58,39 +63,56 @@ alert('Please ensure all fields are filled in correctly.');
 }
 
 function renderApps() {
-    console.log('Rendering apps...');
-    
-    // Check if apps is an array.
-    console.log('Is apps an array?', Array.isArray(apps));
-    
-    // Sort the apps array alphabetically by the app name
+    // Enlightening the console with the beginning of renderApps function
+    console.log('Commencing the rendering of apps...');
+  
+    // Retrieve the elements for pinned and unpinned apps
+    const pinnedAppsGrid = document.getElementById('pinnedAppsGrid');
+    const appsGrid = document.getElementById('appsGrid');
+  
+    // Clear the grids for the new rendering cycle
+    console.log('Clearing the canvas for the apps...');
+    pinnedAppsGrid.innerHTML = '';
+    appsGrid.innerHTML = '';
+  
+    // Sort apps array first by pinned status, then by name
+    console.log('Organizing the apps by pin status and name...');
     apps.sort((a, b) => {
-    console.log(`Comparing ${a.name} with ${b.name}`);
-    return a.name.localeCompare(b.name);
+      // Pinned apps float to the top
+      if (a.isPinned && !b.isPinned) return -1;
+      if (!a.isPinned && b.isPinned) return 1;
+      // For apps with the same pin status, alphabetical order shall prevail
+      return a.name.localeCompare(b.name);
     });
-    
-    // Get the container element for the apps
-    const appsContainer = document.getElementById('appsContainer');
-    console.log('Apps container element:', appsContainer);
-    
-    // Clear out any existing elements
-    appsContainer.innerHTML = '';
-    
-    // Add each app to the container element
-    apps.forEach(app => {
-    const appElement = getAppElement(app);
-    console.log(`Appending ${app.name}`);
-    appsContainer.appendChild(appElement);
+  
+    // Log the outcome of the sorting
+    console.log('Apps have been sorted:', apps);
+  
+    // Now we populate the grids with each app
+    console.log('Populating the realms with apps...');
+    apps.forEach((app, index) => {
+      // Crafting the element for each app
+      const appElement = getAppElement(app, index);
+  
+      // Determining the realm of the app, whether pinned or not
+      if (app.isPinned) {
+        console.log(`Pinning ${app.name} to the top...`);
+        pinnedAppsGrid.appendChild(appElement);
+      } else {
+        console.log(`Adding ${app.name} to the common grounds...`);
+        appsGrid.appendChild(appElement);
+      }
     });
-    
-    console.log('Apps rendered.');
-    }
+  
+    // Concluding the rendering function with a log
+    console.log('All apps have been rendered successfully.');
+  }
 
 function getAppElement(app, index) {
 const appShortcut = document.createElement('div');
 appShortcut.className = 'app-shortcut';
 appShortcut.innerHTML = `
-<a href="${app.url}" target="_blank" title="${app.name}"><img src="${app.imgUrl}" alt="${app.name}"></a>
+<a onclick="go(${app.url})" title="${app.name}"><img src="${app.imgUrl}" alt="${app.name}"></a>
 <button class="pin-button" onclick="togglePin(${index})">${app.isPinned ? 'Unpin' : 'Pin'}</button>
 `;
 return appShortcut;
@@ -117,5 +139,6 @@ addApp();
 // Render apps on window load
 window.onload = renderApps;
 </script>
+
 </body>
 </html>
