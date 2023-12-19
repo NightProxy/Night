@@ -43,8 +43,10 @@ function go(value) {
         scope: __uv$config.prefix,
       })
       .then(() => {
-        const url = search(address.value, searchEngine.value);
-        //pass the encoded url to the second page
+        let url = value.trim();
+        if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
+        else if (!(url.startsWith("https://") || url.startsWith("http://")))
+          url = "https://" + url;
         sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
         location.href = "edu.html";
       });
