@@ -1,72 +1,74 @@
-<div align="center"> 
-    <h1>Night</h1>
-    <h3>Andromeda is one of the fastest and newest static proxies around</h3>
-    
+<div align="center">
+    <h1 style="font-size:50px; font-family: Noto Sans;">Night</h1>
+
+#### Andromeda is one of the fastest and newest static proxies around
+
 ### [Join our Discord!](https://discord.gg/JrmurfukMd)
 </div>
+<hr>
 
-> **If you do fork this repo, please give the original repo a star!**
+# Features
+    • Fast Speeds
+    • Wide collection of Games from 3kh0
+    • Tab Cloaking
+    • Wide collection of Apps
+    • Built in proxy with functions
+    • Deployable on any static hosting platform
+    • Themes
+    • About:Blank cloaking 
 
-<h2 align="center">Features</h2>
-<ul>
-    <li>Fast Speeds</li>
-    <li>Wide collection of Games from 3kh0</li>
-    <li>Tab Cloaking</li>
-    <li>Wide collection of Apps</li>
-    <li>Built-In Tab System from Shadow Network</li>
-    <li>Deployable on any static hosting platform</li>
-    <li>Themes that customize the particles with them!</li>
-    <li>About:Blank Cloaking</li>
-</ul>
-<br>
-</center> 
-<br>
+# **Deploy to Netlify**
 
-## Deploy to Replit
-1. Create a Replit Account (https://replit.com)
-2. Click **+ Create Repl**
-3. Click **Template** and Change the language to **Python**
-4. Then click **Create Repl**
-5. Click **Shell**
-- Paste the code below. (Ctrl + Shift + V)
-- `git clone https://github.com/andromedaproxy/andromeda`
-6. Once it's done cloning paste the code below. (Ctrl + Shift + V)
-- ``cd andromeda && python3 -m http.server``
+1. Go to [Github](https://github.com) and click sign up.
 
-## Hosting sites</h2>
+2. Once your account is made, fork our github.
 
-**If you need any help with deploying, join our Discord!**
-- [Discord Join link <3](https://discord.gg/JrmurfukMd)
+3. Next go to [Netlify](https://app.netlify.com)
 
-You can host this on any static hosting platform!
-    
+4. Create a account and make sure to link it to __Github.__
+5. Next click on `sites` within Netlify and then click on `Add new site` and `Import an existing project`
+
+6. Click on deploy with Github.
+
+7. Scroll to find the fork of Night you made earlier. When you find it, click it. 
+
+8. Next a page will pull up with some information that you probably don't know about. Ignore all of it and scroll to the bottom. Click `Deploy (fork name)`
+
+9. Wait for the github to finish building. But while you're waiting, go to `Site Configuration` under your site link and a couple other information. 
+
+10. Under `General`, click on Site details, then click `Change site name`
+
+11. Change the domain name to whatever you want, but make sure to give us __100%__ credit in your Git fork or something. Click `Save` and close out the menu. 
+
+12. Next click on the link that was generated below `Configuration for (name of domain)`
+
+13. And you're done. Make sure to keep your Github updated with the most recent versions of Night. 
+
+> **If you need any help with deploying, join our [Discord](https://discord.gg/JrmurfukMd)**
+
 > **Note**
-> If you have any problems please open an issue, so we can fix it as quickly as possible!<br>
-> If you don't know how to do this because you are an absolute no-brainer then message us a report in our [Discord](https://discord.gg/JrmurfukMd).
+> If you have any problems please open an issue, so we can fix it as quickly as possible!
 
-[![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://glitch.com/edit/#!/import/github/jacksoncraft859/Evasi)
-[![Run on Google Cloud](https://binbashbanana.github.io/deploy-buttons/buttons/remade/googlecloud.svg)](https://deploy.cloud.run/?git_repo=https://github.com/jacksoncraft859/Evasi)
-[![Deploy with Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/jacksoncraft859/Evasi) 
-[![Deploy with Netlify](https://binbashbanana.github.io/deploy-buttons/buttons/remade/netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jacksoncraft859/Evasi)
-[![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://render.com/deploy?repo=https://github.com/jacksoncraft859/Evasi)
+# **Contributing**
+If you have any suggestions or improvements, please create a pull request.
 
-<br>
-
-## Contributing
-Contributions are welcome! If you have any suggestions or improvements, please create a pull request.
-
-<br>
+<br />
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE). Skidding will not be tolerated and will get you banned from our Discord. 
 
 ## Disclamer
-> We take no credit for the making of UV. Ultraviolet is made by TN. 
+
+> We take no credit for the making of UV. Ultraviolet is made by TN.
+
+<br />
 
 # Credits
-Huge thanks to following people for contributing to Andromeda Network!
 
-![Contrib](https://contrib.rocks/image?repo=jacksoncraft859/Evasi)
+Thank you to the following people for contributing to Night Network!
 
-
+<a href="https://github.com/nightproxy/night/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=nightproxy/night" />
+</a>
+</div>
