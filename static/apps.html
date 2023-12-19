@@ -185,8 +185,9 @@ function renderApps() {
 function getAppElement(app, index) {
 const appShortcut = document.createElement('div');
 appShortcut.className = 'app-shortcut';
+appShortcut.onclick = edu('${app.url}');
 appShortcut.innerHTML = `
-<div onclick="edu('${app.url}')" title="${app.name}"><img src="${app.imgUrl}" alt="${app.name}"></div>
+<img src="${app.imgUrl}" alt="${app.name}">
 <button class="pin-button" onclick="togglePin(${index})">${app.isPinned ? 'Unpin' : 'Pin'}</button>
 `;
 return appShortcut;
