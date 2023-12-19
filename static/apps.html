@@ -136,6 +136,15 @@ function edu(value) {
       });
   }
 
+  function isUrl(val = "") {
+    if (
+      /^http(s?):\/\//.test(val) ||
+      (val.includes(".") && val.substr(0, 1) !== " ")
+    )
+      return true;
+    return false;
+  }
+
 function renderApps() {
     // Enlightening the console with the beginning of renderApps function
     console.log('Commencing the rendering of apps...');
