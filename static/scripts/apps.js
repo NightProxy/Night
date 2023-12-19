@@ -25,21 +25,20 @@ alert('Please ensure all fields are filled in correctly.');
 }
 
 function renderApps() {
-const pinnedAppsGrid = document.getElementById('pinnedAppsGrid');
-const appsGrid = document.getElementById('appsGrid');
-
-pinnedAppsGrid.innerHTML = '';
-appsGrid.innerHTML = '';
-
-apps.forEach((app, index) => {
-const appElement = getAppElement(app, index);
-if (app.isPinned) {
-pinnedAppsGrid.appendChild(appElement);
-} else {
-appsGrid.appendChild(appElement);
-}
-});
-}
+    // Sort the apps array alphabetically by the app's name.
+    apps.sort((a, b) => a.name.localeCompare(b.name));
+  
+    // Assuming `appsContainer` is your element where apps are displayed.
+    const appsContainer = document.getElementById('appsContainer'); 
+    appsContainer.innerHTML = ''; // Clear the current list
+  
+    // Iterate over the sorted apps array to render all apps.
+    apps.forEach(app => {
+      // Get the element representation for the app (you should define this based on your HTML structure).
+      const appElement = getAppElement(app);
+      appsContainer.appendChild(appElement);
+    });
+  }
 
 function getAppElement(app, index) {
 const appShortcut = document.createElement('div');
