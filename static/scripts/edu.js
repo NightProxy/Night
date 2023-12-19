@@ -30,10 +30,10 @@ function changeFavicon(src) {
     }
     function togglemenu() {
       var menu = document.getElementById("mySidebar")
-      if (menu.style.visibility === "hidden") {
-        menu.style.visibility = "visible";
+      if (menu.style.height === "0%") {
+        menu.style.height = "20%";
       } else {
-        menu.style.visibility = "hidden";
+        menu.style.height = "0%";
       }
     }
       function setIframe() {
