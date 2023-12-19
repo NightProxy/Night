@@ -51,19 +51,6 @@ function go(value) {
         location.href = "edu.html";
       });
   }
-
-function blank(value) {
-    let iframe = document.querySelector(".iframe.active");
-    window.navigator.serviceWorker
-      .register("/static/uv.js", {
-        scope: __uv$config.prefix,
-      })
-      .then(() => {
-        const url = search(address.value, searchEngine.value);
-        window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
-      });
-  }
-  
   function isUrl(val = "") {
     if (
       /^http(s?):\/\//.test(val) ||
