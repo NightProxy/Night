@@ -93,8 +93,6 @@
 </div>
 
 <script src="/static/scripts/register-sw.js" defer></script>
-<script src="/static/scripts/search.js" defer></script>
-<script src="/static/scripts/index.js" defer></script>
 <script type="text/javascript">
     // Retrieve apps from localStorage or set to default if not present
 let apps = JSON.parse(localStorage.getItem('apps')) || [
@@ -121,6 +119,22 @@ clearForm(); // Clear the form fields after adding
 alert('Please ensure all fields are filled in correctly.');
 }
 }
+
+function edu(value) {
+    let iframe = document.querySelector(".iframe.active");
+    window.navigator.serviceWorker
+      .register("/static/uv.js", {
+        scope: __uv$config.prefix,
+      })
+      .then(() => {
+        let url = value.trim();
+        if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
+        else if (!(url.startsWith("https://") || url.startsWith("http://")))
+          url = "https://" + url;
+        sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
+        location.href = "edu.html";
+      });
+  }
 
 function renderApps() {
     // Enlightening the console with the beginning of renderApps function
@@ -172,7 +186,7 @@ function getAppElement(app, index) {
 const appShortcut = document.createElement('div');
 appShortcut.className = 'app-shortcut';
 appShortcut.innerHTML = `
-<a onclick="go('${app.url}')" title="${app.name}"><img src="${app.imgUrl}" alt="${app.name}"></a>
+<div onclick="edu('${app.url}')" title="${app.name}"><img src="${app.imgUrl}" alt="${app.name}"></div>
 <button class="pin-button" onclick="togglePin(${index})">${app.isPinned ? 'Unpin' : 'Pin'}</button>
 `;
 return appShortcut;
