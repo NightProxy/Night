@@ -235,8 +235,8 @@ animation-timing-function: linear;
 animation-iteration-count: infinite;
 }
 
-/* Backward */
-.hvr-backward {
+/* Skew Backward */
+.hvr-skew-backward {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -246,15 +246,17 @@ animation-iteration-count: infinite;
     transition-duration: 0.3s;
     -webkit-transition-property: transform;
     transition-property: transform;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
   }
-  .hvr-backward:hover, .hvr-backward:focus, .hvr-backward:active {
-    -webkit-transform: translateX(-8px);
-    transform: translateX(-8px);
-    margin-left: 10px;
+  .hvr-skew-backward:hover, .hvr-skew-backward:focus, .hvr-skew-backward:active {
+    -webkit-transform: skew(10deg);
+    transform: skew(10deg);
   }
 
 /* Forward */
-.hvr-forward {
+/* Skew Forward */
+.hvr-skew-forward {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -264,9 +266,10 @@ animation-iteration-count: infinite;
     transition-duration: 0.3s;
     -webkit-transition-property: transform;
     transition-property: transform;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
   }
-  .hvr-forward:hover, .hvr-forward:focus, .hvr-forward:active {
-    -webkit-transform: translateX(8px);
-    transform: translateX(8px);
-    margin-right: 10px;
+  .hvr-skew-forward:hover, .hvr-skew-forward:focus, .hvr-skew-forward:active {
+    -webkit-transform: skew(-10deg);
+    transform: skew(-10deg);
   }
