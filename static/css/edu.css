@@ -250,6 +250,7 @@ animation-iteration-count: infinite;
   .hvr-backward:hover, .hvr-backward:focus, .hvr-backward:active {
     -webkit-transform: translateX(-8px);
     transform: translateX(-8px);
+    margin-left: 10px;
   }
 
 /* Forward */
@@ -267,4 +268,5 @@ animation-iteration-count: infinite;
   .hvr-forward:hover, .hvr-forward:focus, .hvr-forward:active {
     -webkit-transform: translateX(8px);
     transform: translateX(8px);
+    margin-right: 10px;
   }
