@@ -20,75 +20,21 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-/* Wobble Vertical */
-@-webkit-keyframes hvr-wobble-vertical {
-   16.65% {
-     -webkit-transform: translateY(8px);
-     transform: translateY(8px);
-   }
-   33.3% {
-     -webkit-transform: translateY(-6px);
-     transform: translateY(-6px);
-   }
-   49.95% {
-     -webkit-transform: translateY(4px);
-     transform: translateY(4px);
-   }
-   66.6% {
-     -webkit-transform: translateY(-2px);
-     transform: translateY(-2px);
-   }
-   83.25% {
-     -webkit-transform: translateY(1px);
-     transform: translateY(1px);
-   }
-   100% {
-     -webkit-transform: translateY(0);
-     transform: translateY(0);
-   }
- }
- @keyframes hvr-wobble-vertical {
-   16.65% {
-     -webkit-transform: translateY(8px);
-     transform: translateY(8px);
-   }
-   33.3% {
-     -webkit-transform: translateY(-6px);
-     transform: translateY(-6px);
-   }
-   49.95% {
-     -webkit-transform: translateY(4px);
-     transform: translateY(4px);
-   }
-   66.6% {
-     -webkit-transform: translateY(-2px);
-     transform: translateY(-2px);
-   }
-   83.25% {
-     -webkit-transform: translateY(1px);
-     transform: translateY(1px);
-   }
-   100% {
-     -webkit-transform: translateY(0);
-     transform: translateY(0);
-   }
- }
- .hvr-wobble-vertical {
+/* Bounce In */
+.hvr-bounce-in {
    display: inline-block;
    vertical-align: middle;
    -webkit-transform: perspective(1px) translateZ(0);
    transform: perspective(1px) translateZ(0);
    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+   -webkit-transition-duration: 0.5s;
+   transition-duration: 0.5s;
  }
- .hvr-wobble-vertical:hover, .hvr-wobble-vertical:focus, .hvr-wobble-vertical:active {
-   -webkit-animation-name: hvr-wobble-vertical;
-   animation-name: hvr-wobble-vertical;
-   -webkit-animation-duration: 1s;
-   animation-duration: 1s;
-   -webkit-animation-timing-function: ease-in-out;
-   animation-timing-function: ease-in-out;
-   -webkit-animation-iteration-count: 1;
-   animation-iteration-count: 1;
+ .hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
+   -webkit-transform: scale(1.2);
+   transform: scale(1.2);
+   -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+   transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
  }
        </style>
 <script>
@@ -136,8 +82,8 @@
                <div style="margin-top:0px;"class="message homemessage" onclick="setRandomSay()">...</div>
             </center>
             <center>
-               <form class="hvr-wobble-vertical" id="uv-form">
-                  <input class="hvr-wobble-vertical" id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
+               <form class="hvr-bounce-in" id="uv-form">
+                  <input class="hvr-bounce-in" id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
                   <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input"/>
                 </form>
             </center>
