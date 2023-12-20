@@ -172,7 +172,7 @@ width: 16px;
 }
 
 .os-bar img {
-height: 70%;
+height: 32px;
 width: auto;
 bottom: -8px;
 position: relative;
@@ -181,6 +181,7 @@ position: relative;
 .os-bar {
 display: flex;
 position: fixed;
+height:50px;
 border-radius: 60px;
 width: 500px;
 background-color: rgba(0, 0, 0, 0.445);
@@ -193,7 +194,6 @@ z-index: 999;
 
 #bookmarkList {
 display:flex;
-background-color: #212121;
 }
 
 /* Buzz */
