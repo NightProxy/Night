@@ -162,6 +162,8 @@
             faviconUrl = "/static/images/icons/google.webp"; // Path to your downloaded Google favicon
           } else if (bookmarkTitle.includes("Discord")) {
             faviconUrl = "/static/images/icons/discord.jpg"; // Path to your downloaded Discord favicon
+          } else if (bookmarkTitle.includes("Youtube")){
+            faviconUrl = "/static/images/icons/youtube.png";
           } else {
             const faviconLink = iframeDoc.querySelector("link[rel~='icon'], link[rel='shortcut icon'], link[rel='Bookmark icon']");
             if (faviconLink) {
