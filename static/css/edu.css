@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 body {
     margin: 0;
     user-select: none;
@@ -116,7 +117,7 @@ margin-right: 1px;
 
   .sidebar {
     height: 0%;
-    width: 10%;
+    width: 12%;
     border-radius: 30px;
     position: fixed;
     z-index: 1;
@@ -131,7 +132,9 @@ margin-right: 1px;
 
   .sidebar a, .sidebar button {
     text-decoration: none;
-    text-align:center;
+    text-align:left;
+    margin-top:1px;
+    margin-bottom: 1px;
     font-size: 12px;
     font-family: Noto Sans;
     border: none;
@@ -174,6 +177,7 @@ width: 16px;
 height: 32px;
 width: auto;
 bottom: -8px;
+border-radius: 60%;
 position: relative;
 margin-left:2px;
 margin-right:2px;
@@ -383,4 +387,15 @@ animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
+  }
+
+  .menubtn {
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform 0.4s ease-in-out;
+            transition: transform 0.4s ease-in-out;
+  }
+  
+  .menubtn:hover {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
