@@ -14,7 +14,7 @@ body {
 
   .home {
     border-radius: 60%;
-      margin-left: 1px;
+      margin-left: 3px;
       margin-right: 1px;
     width:35px;
     height:35px;
@@ -200,8 +200,8 @@ border-radius: 60px;
 width: 500px;
 background-color: rgba(0, 0, 0, 0.445);
 backdrop-filter: blur(10px);
-bottom: 0;
-left: 0;
+bottom: 2px;
+left: 3px;
 right: 0;
 z-index: 999;
 }
