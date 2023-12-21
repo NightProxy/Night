@@ -1,116 +1,564 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Customizable Apps Page</title>
+<html>
+   <head>
+      <script async src="https://arc.io/widget.min.js#L1SfLEWE"></script>
+      <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VHVNHMYGN3"></script>
+<script src="https://kit.fontawesome.com/32abd502cd.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
 <style>
-    .grid-container {
-      width: 80%;
-      margin-top: 20px;
-    }
-    .apps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 10px;
-    }
-    
-    /* Style for each app shortcut */
-    .app-shortcut {
-      position: relative;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      background-color: white;
-    }
-    
-    /* Style for the app images */
-    .app-shortcut img {
-      width:64px;
-      height:64px;
-    }
+   #sidenav {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out;
+  margin-bottom: 20px;
+}
 
-    .apptext {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        right: 0;
-        top: 0;
-        left: 0;
-        margin-top: 2px;
-    }
-    
-    /* Style for the pin/unpin buttons */
-    .pin-button {
-      position: relative;
-      bottom: 0;
+#sidenav.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#addapp {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out;
+    margin-bottom: 20px;
+    height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+ left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.445);
+  backdrop-filter: blur(5px);
+  overflow-x: hidden;
+  
+  transition: opacity 1s; 
+  }
+  
+  #addapp.fadeOut {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+/* Bounce In */
+.hvr-bounce-in {
+   display: inline-block;
+   vertical-align: middle;
+   -webkit-transform: perspective(1px) translateZ(0);
+   transform: perspective(1px) translateZ(0);
+   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+   -webkit-transition-duration: 0.5s;
+   transition-duration: 0.5s;
+ }
+ .hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
+   -webkit-transform: scale(1.2);
+   transform: scale(1.2);
+   -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+   transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+ }
+
+ .grid-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .apps-grid {
+    display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Creates 6 columns */
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1200px; /* Adjust this based on the total width of 6 app shortcuts */
+  margin: auto;
+  overflow-y: auto; /* Center the grid on the page */
+  }
+  
+  /* Style for each app shortcut */
+  .app-shortcut {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #212121;
+    display: flex;
+  }
+  
+  /* Style for the app images */
+  .app-shortcut img {
+    width:48px;
+    height:48px;
+    border-radius: 60%;
+  }
+
+  .apptext {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       right: 0;
-      margin: 10px;
-      border: none;
-      border-radius: 5px;
-      padding: 5px 10px;
-      cursor: pointer;
-      background-color: #f4f4f4;
-      font-size: 0.8em;
-    }
-    
-    /* Style for the form inputs and button */
-    #newAppForm input, #newAppForm button {
-      padding: 10px;
-      margin: 5px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    
-    /* Clear the form on success */
-    .clear-input {
-      clear: both;
-      display: block;
-      padding: 1px;
-      margin: 5px;
-      border: none;
-      background: none;
-    }
-    
-</style>
-</head>
-<body>
-    <script src="uv/uv.bundle.js"></script>
-    <script src="uv/uv.config.js"></script>
-<!-- Form for adding new apps -->
-<form id="newAppForm"> <!-- Changed from a div to a form element -->
-    <input type="text" id="appName" placeholder="App Name" required>
-    <input type="url" id="appUrl" placeholder="App URL" required>
-    <input type="url" id="appImgUrl" placeholder="App Image URL" required>
-    <button type="submit">Add App Shortcut</button>
-    </form>
+      top: 0;
+      left:40px;
+      margin-top: 2px;
+  }
+  
+  /* Style for the pin/unpin buttons */
+  .pin-button {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.445);
+backdrop-filter: blur(10px);
+color: #ffffff;
+    font-size: 0.8em;
+  }
+  
+  /* Style for the form inputs and button */
+  #newAppForm input, #newAppForm button {
+    width: 100px;
+  }
+  
+  /* Clear the form on success */
+  .clear-input {
+    clear: both;
+    display: block;
+    padding: 1px;
+    margin: 5px;
+    border: none;
+    background: none;
+  }
+       </style>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<!-- Section for pinned and unpinned apps -->
-<div class="grid-container">
-<h2>Pinned Apps</h2>
-<div class="apps-grid" id="pinnedAppsGrid">
-<!-- Pinned app shortcuts will be placed here -->
-</div>
+  gtag('config', 'G-VHVNHMYGN3');
+</script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <link rel="stylesheet" id="themecss" href="/static/css/index.css">
+      <link rel="stylesheet" href="/static/css/nav.css">
+      <link rel="stylesheet" href="/static/css/overide.css">
+      <link rel="apple-touch-icon" sizes="114x114" href="../favicon.ico">
+      <link rel="apple-touch-icon" sizes="180x180" href="../favicon.ico">
+      <link rel="apple-touch-icon" sizes="76x76" href="../favicon.ico">
+      <script type="text/javascript" src="//counter.websiteout.net/js/7/10/5/0"></script>
+      <link rel="shortcut icon" type="imgUrl/jpg" href="../favicon.ico"/>
+      <link href="https://fonts.googleapis.com/css?family=Share Tech Mono" rel="stylesheet"/>
+   </head>
+   <body>
+      <script src="uv/uv.bundle.js"></script>
+      <script src="uv/uv.config.js"></script>
+      <div id="particles-js"></div>
+      <div class="page" id="imgsearch">
+         <title>Night</title>
+            <div id="icbuttons" style="left:10px;top:10px;">
+               <a href="index.html" id="home" class="zoom" index><img src="" alt="Logo" id="logo" style="width:49px;height:49px;border-radius:10px;margin-top:10px;margin-left:10px;"></a>
+               <div style="position:fixed;right:0;height:64px;top:10px;">
+                  <div style="display:flex;justify-content:flex-end;align-items:center;">
+               <a href="apps.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:6%;font-size:13px;" id="apps" class="fa-solid fa-grip zoom navitem" apps></a>
+               <a href="games.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:13px;" id="games" class="fa-solid fa-gamepad zoom navitem" games></a>
+               <a href="extras.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:7%;font-size:13px;" id="extras" class="fa-solid fa-plus zoom navitem" extras></a>
+              <a onclick="fadeInElement();" style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:13px;" id="settings" class="fa-solid fa-gear zoom navitem"></a>
+            </div>
+              </div>
+              <div style="margin-top:10vh;position:fixed;top:0;left:0;right:0;bottom:0;">
+            <center>
+                
+                <!-- Section for pinned and unpinned apps -->
+                <div class="grid-container">
+                <h2>Pinned Apps</h2>
+                <div class="apps-grid" id="pinnedAppsGrid">
+                <!-- Pinned app shortcuts will be placed here -->
+                </div>
+                
+                <h2>Other Apps</h2>
+                <div class="apps-grid" id="appsGrid">
+                <!-- Unpinned app shortcuts will be placed here -->
+                </div>
+                </div>
+         </div>
+          <div class="desc left-margin">
+            <p id="uv-error"></p>
+            <pre id="uv-error-code"></pre>
+          </div>
+          <div class="sidenav" id="sidenav">
+            <a onclick="fadeOutElement();" class="fa-solid fa-circle-xmark closebutton" id="closebutton"></a>
+            <table style="width:80%;margin-left:10%;margin-left:10%;">
+            <tr>
+               <th>
+                  <div id="settings-boxes">
+                     <h2>Toggle Cloak</h2>
+                     <p style="text-align: center; font-size: 18px; margin-top: -60px;">Cloak your tab with a custom name and favicon</p>
+                     <span class="custom-dropdown big">
+                        <select class="dropdown" id="cloakSwitcher">
+                           <option value="off">Off</option>
+                           <option value="drive">Google Drive</option>
+                           <option value="classroom">Google Classroom</option>
+                           <option value="gmail">Gmail</option>
+                           <option value="google">Google</option>
+                        </select>
+                     </span>
+                     <a onclick="switchCloak(); reloadpage();" class="button-save">Apply</a>
+                  </div>
+               </th>
+               <th>
+                  <div id="settings-boxes">
+                     <h2 style="text-align: center;">Themes</h2>
+                     <p style="text-align: center; font-size: 18px; margin-top: -60px;">Change the site's themes</p>
+                     <span class="custom-dropdown big">
+                        <select class="dropdown" id="themeSwitcher">
+                           <option value="default">Default</option>
+                           <option value="fire">Fire</option>
+                           <option value="noir">Noir</option>
+                           <option value="void">Void</option>
+                           <option value="ip">IronPrime</option>
+                           <option value="xg">XGames</option>
+                           <option value="stealth">Stealth</option>
+                           <option value="fg">Froggermans</option>
+                           <option value="ghost">Ghost</option>
+                           <option value="midnight">Midnight</option>
+                           <option value="meteor">Meteor</option>
+                        </select>
+                     </span>
+                     <a onclick="switchProxy(); reloadpage();" class="button-save">Apply</a>
+                  </div>
+               </th>
+               <th>
+                  <div id="settings-boxes">
+                     <h2 style="text-align: center;">Proxy Options</h2>
+                     <b>
+                        <p style="text-align: center; font-size: 18px; margin-top: -40px;">If our proxy isn't working it's probably because the bare server is blocked.<br>
+                           This can swap the server so the proxy can function if one is down</p>
+                     </b>
+                        <span class="custom-dropdown big">
+                        <select class="dropdown" id="bareSwitcher">
+                           <option value="default">Default</option>
+                           <option value="default2">Default 2</option>
+                           <option value="default3">Default 3</option>
+                           <option value="sndefault">Shadow Default</option>
+                           <option value="snalt">Shadow Alt</option>
+                           <option value="indefault">Interstellar Default</option>
+                        </select>
+                     </span>
+                     <a onclick="switchBare(); reloadpage();" class="button-save">Apply</a>
+                  </div>
+               </th>
+            </tr>
+            <tr>
+               <td>
+                  <br>
+                  <div id="settings-boxes">
+                     <h2 style="text-align: center;">Toggle Particles</h2>
+                        <p style="text-align: center; font-size: 18px; margin-top: -40px;">Allows you to toggle particles on certain themes like the default theme</p>
+                        <label class="switch">
+                           <input type="checkbox" class="particlecheckbox">
+                           <div class="slider"></div>
+                         </label>
+                  </div>
+                  </td>
+                  <td>
+                     <br>
+                     <div id="settings-boxes">
+                        <h2 style="text-align: center;">Launch about:blank</h2>
+                           <p style="text-align: center; font-size: 18px; margin-top: -40px;">Launches about:blank in a new tab which cloaks the tab entirely</p>
+                           <a class="button-save" style="text-align:center; padding-right:20px;" onclick="openGame();">Launch</a>
 
-<h2>Other Apps</h2>
-<div class="apps-grid" id="appsGrid">
-<!-- Unpinned app shortcuts will be placed here -->
-</div>
-</div>
-
-<script src="/static/scripts/register-sw.js" defer></script>
-<script type="text/javascript">
+                     </div>
+                     </td>
+                     <td>
+                        <br>
+                        <div id="settings-boxes">
+                           <h2 style="text-align: center;">Coming soon!</h2>
+                              <p style="text-align: center; font-size: 18px; margin-top: -100px;">This feature will be added soon</p>
+                        </div>
+                        </td>
+            </tr>
+         </table>
+         </div>
+         <div class="sidenav" id="addapp" style="background-color:rgba(0, 0, 0, 0.445);backdrop-filter:blur(5px);">
+            <a onclick="fadeOutapps();" class="fa-solid fa-circle-xmark closebutton" id="closebutton"></a>
+            <div style="margin-top:45vh;position:fixed;top:0;left:0;right:0;bottom:0;">
+            <form id="newAppForm" style="position:relative;top:0;left:0;right:0;bottom:0;"> <!-- Changed from a div to a form element -->
+                <input style="width:250px" type="text" id="appName" placeholder="App Name" required>
+                <input style="width:250px" type="url" id="appUrl" placeholder="App URL" required>
+                <input style="width:250px" type="url" id="appImgUrl" placeholder="App Image URL" required>
+                <button class="button-save" type="submit" onclick="fadeOutapps();">Add App</button>
+                </form>
+         </div>
+      <script src="/static/scripts/register-sw.js" defer></script>
+      <script src="/static/scripts/search.js" defer></script>
+      <script src="/static/scripts/index.js" defer></script>
+      <script src="/static/scripts/particles.min.js"></script>
+         <script src="/static/scripts/settings.js"></script>
+      <script id="paeticlesrc" src=""></script>
+      <script src="/static/scripts/blank.js"></script> 
+      <script type="text/javascript">
     // Retrieve apps from localStorage or set to default if not present
 let apps = JSON.parse(localStorage.getItem('apps')) || [
-{ name: 'Github', url: 'https://github.com', imgUrl: '/static/images/icons/github.png', isPinned: false },
-{ name: 'Google', url: 'https://google.com', imgUrl: '/static/images/icons/google.webp', isPinned: false },
-{ name: 'Discord', url: 'https://discord.com', imgUrl: '/static/images/icons/discord.jpg', isPinned: false },
+{ 
+    name: 'Github', 
+    url: 'https://github.com', 
+    imgUrl: '/static/images/icons/github.png', 
+    isPinned: false
+},
+{ 
+    name: 'Google', 
+    url: 'https://google.com', 
+    imgUrl: '/static/images/icons/google.webp', 
+    isPinned: false 
+},
+{ 
+    name: 'Discord', 
+    url: 'https://discord.com', 
+    imgUrl: '/static/images/icons/discord.jpg', 
+    isPinned: false 
+},
+{
+    name: "Amazon", 
+    url: "https://amazon.com/",
+    imgUrl: "./images/icons/apps/amazon.png",
+    isPinned: false 
 
+},
+{
+    name: "Free Movies Watch",
+    url: "https://freemovieswatch.tv",
+    imgUrl: "./images/icons/freemovieswatch.png",
+    isPinned: false 
 
+    
+},
+{
+    name: "Scratch",
+    url: "https://scratch.mit.edu",
+    imgUrl: "./images/icons/scratch.jpg",
+    isPinned: false 
 
+    
+},
+{
+    name: "Chess.com",
+    url: "https://chess.com",
+    imgUrl: "./images/icons/chess.png",
+    isPinned: false
+    
+},
+{
+    name: "Cool Math Games",
+    url: "https://coolmathgames.com",
+    imgUrl: "./images/icons/apps/coolmath.png",
+    isPinned: false 
 
-// Add more predefined apps here
+    
+},
+{
+    name: "DuckDuckGo",
+    url: "https://start.duckduckgo.com/",
+    imgUrl: "./images/icons/apps/duckduckgo.png",
+    isPinned: false 
+
+    
+},
+{
+    name: "ESPN",
+    url: "https://www.espn.com/watch/",
+    imgUrl: "./images/icons/apps/espn.webp",
+    isPinned: false 
+
+    
+},
+{
+    name: "Fifa Rosters",
+    url: "https://fifarosters.com/",
+    imgUrl: "./images/icons/fifa.png",
+    isPinned: false 
+
+    
+},
+{
+    name: "Flix HQ",
+    url: "https://flixhq.to",
+    imgUrl: "./images/icons/apps/flixhq.png",
+    isPinned: false 
+
+    
+},
+{
+    name: "Geforce NOW",
+    url: "https://play.geforcenow.com",
+    imgUrl: "./images/icons/apps/geforce-now.png",
+    isPinned: false 
+   
+},
+{
+    name: "HBO MAX",
+    url: "https://www.hbomax.com/",
+    imgUrl: "./images/icons/apps/hbo.webp",
+    isPinned: false 
+ 
+  },
+  {
+    name: "Messenger",
+    url: "https://messenger.com/",
+    imgUrl: "./images/icons/apps/messenger.png",
+    isPinned: false 
+
+  },
+  {
+    name: "Now.gg",
+    url: "https://now.gg/",
+    imgUrl: " ./images/icons/apps/nowgg.png",
+    isPinned: false 
+   
+  },
+  {
+    name: "Paramount Plus",
+    url: "https://paramountplus.com",
+    imgUrl: "./images/icons/apps/paramount.png",
+    isPinned: false 
+
+  },
+  {
+    name: "Pinterest",
+    url: "https://pinterest.com",
+    imgUrl: "./images/icons/apps/pinterest.png",
+    isPinned: false 
+
+    
+  },
+  {
+    name: "Pixlr",
+    url: "https://pixlr.com/",
+    imgUrl: "./images/icons/pix.png",
+    isPinned: false 
+
+    
+  },
+  {
+    name: "Poki",
+    url: "https://poki.com",
+    imgUrl: "./images/icons/apps/poki.png",
+    isPinned: false 
+
+    
+  },
+  {
+    name: "Soundcloud",
+    url: "https://soundcloud.com",
+    imgUrl: "./images/icons/apps/soundcloud.jpg",
+    isPinned: false 
+
+    
+  },
+  {
+    name: "Telegram",
+    url: "https://web.telegram.org/",
+    imgUrl: "./images/icons/apps/telegram.png"  ,
+    isPinned: false 
+  
+  },
+  {
+    name: "Tiktok",
+    url: "https://tiktok.com",
+    imgUrl: "./images/icons/apps/tiktok.png",
+    isPinned: false 
+
+    
+  },
+  {
+    name: "Tumblr",
+    url: "https://tumblr.com/",
+    imgUrl: "./images/icons/apps/tumblr.png",
+    isPinned: false 
+
+    
+  },
+  {
+    name: "Twitch",
+    url: "https://twitch.tv",
+    imgUrl: "./images/icons/apps/twitch-tv.png",
+    isPinned: false 
+
+    
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com",
+    imgUrl: "./images/icons/apps/twitter.png",
+    isPinned: false 
+
+    
+  },
+  {
+    name: "VS Code",
+    url: "https://vscode.dev",
+    imgUrl: "./images/icons/apps/vscode.png",
+    isPinned: false 
+
+    
+  },
+  {
+    name: "Y8 Games",
+    url: "https://y8.com/",
+    imgUrl: "./images/icons/apps/y8.png",
+    isPinned: false 
+
+    
+  },
+  {
+    name: "YouTube",
+    url: "https://youtube.com",
+    imgUrl: "./images/icons/apps/yt.png",
+    isPinned: false 
+
+    
+  },
+  {
+    name: "Whatsapp",
+    url: "https://web.whatsapp.com/",
+    imgUrl: "./images/icons/apps/whatsapp.png",
+    isPinned: false 
+
+  },
+  {
+    name: "Wattpad",
+    url: "https://wattpad.com/",
+    imgUrl: "./images/icons/apps/wattpad.webp",
+    isPinned: false 
+
+    
+  },
+  {
+    name: "ChatGPT Clone",
+    url: "https://chat.shuttle.rip/",
+    imgUrl: "./images/icons/chatgpt.png",
+    isPinned: false 
+
+    
+  },
+  {
+    name: "Discord - Login",
+    url: "https://canary.discord.com/login",
+    imgUrl: "./images/icons/discord.jpg",
+    isPinned: false 
+
+},
+
+  {
+    name: "HD Today",
+    url: "https://hdtoday.tv",
+    imgUrl: "./images/icons/hd.png",
+    isPinned: false 
+
+    
+  }
 ];
 
 function saveAppData() {
@@ -208,9 +656,9 @@ const appShortcut = document.createElement('div');
 appShortcut.className = 'app-shortcut';
 appShortcut.innerHTML = `
 <a onclick="edu('${app.url}')" title="${app.name}"><img src="${app.imgUrl}" alt="${app.name}"></a>
-<div class="apptext">
-<a onclick="edu('${app.url}')" title="${app.name}">${app.name}</a>
-<button class="pin-button" onclick="togglePin(${index})">${app.isPinned ? 'Unpin' : 'Pin'}</button>
+<div class="apptext" onclick="edu('${app.url}')">
+<a style="font-size:12px;" onclick="edu('${app.url}')" title="${app.name}">${app.name}</a>
+<button class="button-save" onclick="togglePin(${index})">${app.isPinned ? 'Unpin' : 'Pin'}</button>
 </div>
 `;
 return appShortcut;
@@ -237,8 +685,24 @@ addApp();
 // Render apps on window load
 window.onload = renderApps;
 </script>
+      <script>
+        const addapp = document.getElementById('addapp');
 
+        function fadeOutapps() {
+            addapp.style.opacity = '0';
+            wait(1000)
+            addapp.style.visibility = 'hidden';
+        }     
 
-
-</body>
+        function fadeInapps() {
+            addapp.style.visibility = 'visible';
+            addapp.style.opacity = '1';
+        }
+         fadeOutElement();
+         fadeOutapps();
+      </script>
+      <div id="footer">
+        <p>&copy; 2023 Night. All rights reserved.</p>
+     </div>
+   </body>
 </html>

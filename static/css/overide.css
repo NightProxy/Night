@@ -1,3 +1,4 @@
 #imgsearch {
   position: fixed !important;
+  overflow: auto;
 }
