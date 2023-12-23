@@ -258,15 +258,15 @@ let apps = JSON.parse(localStorage.getItem('apps')) || [
     }
 ];
 
-function edu(value) {
+function edu(val) {
     let iframe = document.querySelector(".iframe.active");
     window.navigator.serviceWorker
         .register("/static/uv.js", {
             scope: __uv$config.prefix,
         })
         .then(() => {
-            let url = value.trim();
-            if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
+            let url = val.trim();
+            if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
             else if (!(url.startsWith("https://") || url.startsWith("http://")))
                 url = "https://" + url;
             sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
@@ -274,7 +274,7 @@ function edu(value) {
         });
 }
 
-function isUrl(val = "") {
+function ifUrl(val = "") {
     if (
         /^http(s?):\/\//.test(val) ||
         (val.includes(".") && val.substr(0, 1) !== " ")
