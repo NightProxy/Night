@@ -275,12 +275,12 @@ function edu(val) {
 }
 
 function ifUrl(val = "") {
-    if (
-        /^http(s?):\/\//.test(val) ||
-        (val.includes(".") && val.substr(0, 1) !== " ")
-    )
-        return true;
-    return false;
+    try {
+        const url = new URL(val);
+        return url.protocol === 'http:' || url.protocol === 'https:';
+    } catch (e) {
+        return false; // The constructor throws an error for invalid URLs
+    }
 }
 
 // Save the state of apps to localStorage
