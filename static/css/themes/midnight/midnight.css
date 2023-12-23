@@ -1,13 +1,13 @@
 :root {
-    --background-primary: #000;
-    --input-text-color: #fff;
-    --input-placeholder-color: #aaa;
-    --input-background-color: #222;
-    --input-border-color: #a800ff;
-    --input-border-size: 1.3px;
-    --footer-border-color: #8c00ff;
-    --ag-button-text-color: #1E1E1E;
-	--primary-background-color: #1e1e1e;
+  --background-primary: #000;
+  --input-text-color: #fff;
+  --input-placeholder-color: #aaa;
+  --input-background-color: #222;
+  --input-border-color: #a800ff;
+  --input-border-size: 1.3px;
+  --footer-border-color: #8c00ff;
+  --ag-button-text-color: #1E1E1E;
+  --primary-background-color: #1e1e1e;
   --secondary-background-color: #2a2a2a;
   --accent-color: #8600ff;
   --main-text-color: #ffffff;
@@ -26,7 +26,8 @@
 body {
   background-color: var(--background-primary);
   color: #fff;
-  font-family: 'Noto Sans';font-size: 24px;
+  font-family: 'Noto Sans';
+  font-size: 24px;
   margin: 0px;
   padding: 0;
   vertical-align: middle;
@@ -39,17 +40,17 @@ body {
   text-align: center;
 }
 
-#particles-js { 
-  position: absolute; 
-  width: 100%; 
-  height: 100%; 
-  background-color: var(--background-primary); 
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-primary);
   background: url("/static/css/themes/froggermans/fgcat.jpg") no-repeat center center fixed;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   text-align: center;
   padding: 20px;
   margin-top: -4%;
-} 
+}
 
 #imgsearch {
   display: grid;
@@ -67,7 +68,7 @@ body {
 
 #imgsearch h1 {
   font-size: 24px;
-  cursor:pointer;
+  cursor: pointer;
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
@@ -82,7 +83,7 @@ body {
 
 #content h1 {
   font-size: 24px;
-  cursor:pointer;
+  cursor: pointer;
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
@@ -109,12 +110,12 @@ body {
   background-color: var(--input-background-color);
   text-align: center;
   color: var(--input-text-color);
-  cursor:cell;
+  cursor: cell;
 }
 
-a{
+a {
   text-decoration: none;
-  color:white;
+  color: white;
   text-align: center;
   align-self: center;
 }
@@ -124,15 +125,17 @@ a{
   text-align: center;
 }
 
-.form_input:hover{
-  cursor:cell;
+.form_input:hover {
+  cursor: cell;
 }
 
 .form__input:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(149, 20, 255);
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 #footer {
   position: fixed;
   left: 0;
@@ -142,7 +145,7 @@ a{
   border-top-color: var(--footer-border-color);
   font-family: 'Noto Sans';
   width: 100%;
-  height:15px;
+  height: 15px;
   background-color: var(--background-primary);
   padding-top: 7.5px;
   padding-bottom: 10px;
@@ -169,7 +172,7 @@ a{
 #icbuttons {
   position: absolute;
   top: 20px;
-  height:49px;
+  height: 49px;
   z-index: 999;
 }
 
@@ -180,9 +183,11 @@ a{
 }
 
 .zoom:hover {
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(1.5); 
+  -ms-transform: scale(1.5);
+  /* IE 9 */
+  -webkit-transform: scale(1.5);
+  /* Safari 3-8 */
+  transform: scale(1.5);
 }
 
 
@@ -190,14 +195,14 @@ a{
   width: 145px;
   transition: all 0.2s ease;
   cursor: crosshair;
-  background: rgb(151,0,255);
-  background: linear-gradient(122deg, rgba(151,0,255,1) 0%, rgba(0,116,166,1) 46%, rgba(0,255,211,1) 100%);
+  background: rgb(151, 0, 255);
+  background: linear-gradient(122deg, rgba(151, 0, 255, 1) 0%, rgba(0, 116, 166, 1) 46%, rgba(0, 255, 211, 1) 100%);
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
   margin: 0;
-  
+
 }
 
 .column img {
@@ -232,32 +237,33 @@ a{
 }
 
 .input-container {
-	position: relative;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	}
-	
-	input {
-	  padding: 20px;
-	  width: 550px;
-	  border-radius: 5px;
-	  background:  var(--input-background-color);
-	  text-align: center;
-	  border: none;
-	  outline: none;
-	  color: white;
-	}
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-	select {
-		padding: 20px;
-		border-radius: 5px;
-		background:  var(--input-background-color);
-		color: white;
-		border: 0px;
-		outline: none;
-    cursor: pointer;
-	  }
+input {
+  padding: 20px;
+  width: 550px;
+  border-radius: 5px;
+  background: var(--input-background-color);
+  text-align: center;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+select {
+  padding: 20px;
+  border-radius: 5px;
+  background: var(--input-background-color);
+  color: white;
+  border: 0px;
+  outline: none;
+  cursor: pointer;
+}
+
 .container-apps {
   margin-top: 20px;
   display: flex;
@@ -266,6 +272,7 @@ a{
   gap: 2.3em;
   flex-direction: row;
 }
+
 .pinned-apps {
   margin-top: 20px;
   display: flex;
@@ -276,20 +283,20 @@ a{
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-	width: 12px;
-	background-color: black;
+  width: 12px;
+  background-color: black;
 }
 
 ::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-	border-radius: 10px;
-	background-color: #222;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #222;
 }
 
 ::-webkit-scrollbar-thumb {
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-	background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: white;
 }
 
 .message {
@@ -326,17 +333,19 @@ a{
   width: 100%;
   position: fixed;
   z-index: 1000;
- left: 0;
+  left: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.445);
   backdrop-filter: blur(5px);
   overflow-x: hidden;
   opacity: 1;
-  transition: opacity 1s; 
+  transition: opacity 1s;
 }
 
 /* Style the sidenav links and the dropdown button */
-#sidenav a, #sidenav button, .dropdown-btn {
+#sidenav a,
+#sidenav button,
+.dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   color: #f1f1f1;
@@ -347,7 +356,8 @@ a{
 }
 
 /* On mouse-over */
-#sidenav .closebutton:hover, .dropdown-btn:hover {
+#sidenav .closebutton:hover,
+.dropdown-btn:hover {
   color: #1983f0;
 }
 
@@ -357,8 +367,10 @@ a{
 
 /* Main content */
 .main {
-  margin-left: 200px; /* Same as the width of the sidenav */
-  font-size: 20px; /* Increased text to enable scrolling */
+  margin-left: 200px;
+  /* Same as the width of the sidenav */
+  font-size: 20px;
+  /* Increased text to enable scrolling */
   padding: 0px 10px;
 }
 
@@ -399,7 +411,8 @@ a{
   border-radius: 30px;
 }
 
-#settings-boxes h2, p {
+#settings-boxes h2,
+p {
   color: white;
 }
 
@@ -412,6 +425,7 @@ a{
   font-size: 50px;
   color: white;
 }
+
 .names {
   margin-left: 5px;
   font-size: 13px;
@@ -433,6 +447,7 @@ a{
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
+
 .button-save {
   width: 50px;
   height: 30px;
@@ -534,16 +549,16 @@ a{
   box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
 }
 
-.particlecheckbox:checked ~ .slider::before {
+.particlecheckbox:checked~.slider::before {
   transform: translateX(30px);
   box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
 }
 
-.particlecheckbox:checked ~ .slider {
+.particlecheckbox:checked~.slider {
   background-color: #2196F3;
 }
 
-.particlecheckbox:active ~ .slider::before {
+.particlecheckbox:active~.slider::before {
   transform: translate(0);
 }
 
@@ -577,15 +592,15 @@ a{
   box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
 }
 
-.blankcheckbox:checked ~ .blankslider::before {
+.blankcheckbox:checked~.blankslider::before {
   transform: translateX(30px);
   box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
 }
 
-.blankcheckbox:checked ~ .blankslider {
+.blankcheckbox:checked~.blankslider {
   background-color: #2196F3;
 }
 
-.blankcheckbox:active ~ .blankslider::before {
+.blankcheckbox:active~.blankslider::before {
   transform: translate(0);
 }

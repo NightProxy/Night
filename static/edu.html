@@ -1,224 +1,60 @@
 <html lang="en">
-  <head>
-      <link rel="shortcut icon" id="dynamic-favicon" href="../favicon.ico"/>
-    <title id="dynamic-title">Night</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="stylesheet" href="/static/css/edu.css">
-  </head>
-  <body>
-    <script src="uv/uv.bundle.js"></script>
-    <script src="uv/uv.config.js"></script>
-    <script src="/static/scripts/eruda/eruda.js"></script>
-    <iframe src="" id="iframeId" style="bottom: 0" style="border: 0px #ffffff none" name="Iframe" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>
-    <div style="position:absolute;left:0;top:2px;height:50px;" id="browser">
+
+<head>
+  <link rel="shortcut icon" id="dynamic-favicon" href="../favicon.ico" />
+  <title id="dynamic-title">Night</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/edu.css">
+</head>
+
+<body>
+  <script src="uv/uv.bundle.js"></script>
+  <script src="uv/uv.config.js"></script>
+  <script src="/static/scripts/jquery-3.7.1.js"></script>
+
+  <script src="/static/scripts/eruda/eruda.js"></script>  
+  <script src="/static/scripts/edu.js"></script>
+  <iframe src="" id="iframeId" style="bottom: 0" style="border: 0px #ffffff none" name="Iframe" scrolling="yes"
+    frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>
+  <div style="position:absolute;left:0;top:2px;height:50px;" id="browser">
     <div style="display:flex;align-items:center;height:50px;">
-    <button id="home-page" class="home hvr-wobble-vertical" onclick="window.location.href = './';"> <i class="fa-solid fa-house"></i> </button>
-    <form id="uv-form">
-    <input id="uv-search-engine" class="input" value="https://www.google.com/search?q=%s" type="hidden"/> 
-    <input id="uv-address" type="text" class="input" placeholder="Search Google or type an URL" class="form__input"/>
-    </form>
-    <button onclick="reload()" class="reload hvr-buzz"> <i class="fa-solid fa-rotate-right"></i> </button>
-    <button onclick="back()" class="back hvr-skew-backward"> <i class="fa-solid fa-backward"></i> </button>
-    <button onclick="forward()" class="forward hvr-skew-forward"> <i class="fa-solid fa-forward"></i> </button>
-    <button id="saveBookmarkButton" class="hvr-pulse"> <i class="fa-solid fa-star"></i> </button>
+      <button id="home-page" class="home hvr-wobble-vertical" onclick="window.location.href = './';"> <i
+          class="fa-solid fa-house"></i> </button>
+      <form id="uv-form">
+        <input id="uv-search-engine" class="input" value="https://www.google.com/search?q=%s" type="hidden" />
+        <input id="uv-address" type="text" class="input" placeholder="Search Google or type an URL"
+          class="form__input" />
+      </form>
+      <button onclick="reload()" class="reload hvr-buzz"> <i class="fa-solid fa-rotate-right"></i> </button>
+      <button onclick="back()" class="back hvr-skew-backward"> <i class="fa-solid fa-backward"></i> </button>
+      <button onclick="forward()" class="forward hvr-skew-forward"> <i class="fa-solid fa-forward"></i> </button>
+      <button id="saveBookmarkButton" class="hvr-pulse"> <i class="fa-solid fa-star"></i> </button>
     </div>
+  </div>
+  <div id="mySidebar" class="sidebar">
+    <br>
+    <a style="font-size:12px;" onclick="hide();"><i style="margin-right:2px;margin-left:10px;"
+        class="fa-solid fa-eye-slash"></i>Toggle Topbar</a>
+    <a onclick="localStorage.removeItem('bookmarks');initializeBookmarks();displayBookmarks();"><i
+        style="margin-right:2px;margin-left:10px;" class="fa-solid fa-meteor"></i>Clear Bookmarks</a>
+    <a style="font-size:12px;" onclick="eruda.init();eruda.show();"><i style="margin-right:2px;margin-left:10px;"
+        class="fa-solid fa-laptop-code"></i>Inspect</a>
+  </div>
+
+  <div class="os-bar">
+    <button onclick="togglemenu();" class="menubtn"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16"
+        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com/ License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+        <path fill="#ffffff"
+          d="M35.2 171.1C-11.7 217.1-11.7 294 35.2 340.9L171.1 476.8C217.1 523.7 294 523.7 340.9 476.8L476.8 340.9C523.7 294 523.7 217.1 476.8 171.1L340.9 35.2C294-11.7 217.1-11.7 171.1 35.2L35.2 171.1zM315.5 315.5C282.6 348.3 229.4 348.3 196.6 315.5C163.7 282.6 163.7 229.4 196.6 196.6C229.4 163.7 282.6 163.7 315.5 196.6C348.3 229.4 348.3 282.6 315.5 315.5z" />
+      </svg></button>
+    <div id="bookmarkList">
+
     </div>
-    <div id="mySidebar" class="sidebar">
-      <br>
-      <a style="font-size:12px;" onclick="hide();"><i style="margin-right:2px;margin-left:10px;" class="fa-solid fa-eye-slash"></i>Toggle Topbar</a>
-        <a onclick="localStorage.removeItem('bookmarks');initializeBookmarks();displayBookmarks();"><i style="margin-right:2px;margin-left:10px;" class="fa-solid fa-meteor"></i>Clear Bookmarks</a>
-      <a style="font-size:12px;" onclick="eruda.init();eruda.show();"><i style="margin-right:2px;margin-left:10px;" class="fa-solid fa-laptop-code"></i>Inspect</a>
-    </div>
+  </div>
+  <script type="text/javascript">setIframe();</script>
+  <script src="/static/scripts/register-sw.js"></script>
+  <script src="/static/scripts/search.js"></script>
+  <script src="/static/scripts/index.js"></script>
+</body>
 
-    <div class="os-bar">
-      <button onclick="togglemenu();" class="menubtn"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com/ License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="#ffffff" d="M35.2 171.1C-11.7 217.1-11.7 294 35.2 340.9L171.1 476.8C217.1 523.7 294 523.7 340.9 476.8L476.8 340.9C523.7 294 523.7 217.1 476.8 171.1L340.9 35.2C294-11.7 217.1-11.7 171.1 35.2L35.2 171.1zM315.5 315.5C282.6 348.3 229.4 348.3 196.6 315.5C163.7 282.6 163.7 229.4 196.6 196.6C229.4 163.7 282.6 163.7 315.5 196.6C348.3 229.4 348.3 282.6 315.5 315.5z"/></svg></button>
-      <div id="bookmarkList">
-
-      </div>
-    </div>
-
-    <script>document.head = document.head || document.getElementsByTagName('head')[0];
-
-      function changeFavicon(src) {
-       var link = document.createElement('link'),
-           oldLink = document.getElementById('dynamic-favicon');
-       link.id = 'dynamic-favicon';
-       link.rel = 'shortcut icon';
-       link.href = src;
-       if (oldLink) {
-        document.head.removeChild(oldLink);
-       }
-       document.head.appendChild(link);
-      };
-            function reload() {
-              document.getElementById("iframeId").src = document.getElementById("iframeId").src;
-            }
-           function back() {
-             document.getElementById("iframeId").contentWindow.history.back();
-           }
-          function forward() {
-            document.getElementById("iframeId").contentWindow.history.forward();
-          }
-          function hide() {
-            var hidediv = document.getElementById('browser');
-            if (hidediv.style.display === "none") {
-              hidediv.style.display = "block";
-            } else {
-              hidediv.style.display = "none";
-            }
-          }
-          function togglemenu() {
-            var menu = document.getElementById("mySidebar")
-            if (menu.style.height === "0%") {
-              menu.style.height = "25%";
-            } else {
-              menu.style.height = "0%";
-            }
-          }
-            function setIframe() {
-              let encodedUrl = sessionStorage.getItem("encodedUrl");
-              encodedUrl = "/static/ghost/" + encodedUrl;
-              console.log(encodedUrl);
-             document.querySelector("#iframeid").src = encodedUrl;
-            };
-            function setthemes() {
-       if (localStorage.theme == "default") {
-        themefile.href = "/static/index.css";
-        if (localStorage.cloak == "off") {
-         changeFavicon('../favicon.ico');
-        };
-       } else if (localStorage.theme == "noir") {
-        themefile.href = "/static/css/themes/noir/noir.css";
-       } else if (localStorage.theme == "void") {
-        themefile.href = "/static/css/themes/void/void.css";
-       } else if (localStorage.theme == "ip") {
-        themefile.href ="/static/css/themes/ironprime/ironprime.css";
-        logo.src = "/static/css/themes/fire/firethemelogo.png";
-       } else if (localStorage.theme == "xg") {
-        themefile.href ="/static/css/themes/xgames/xgames.css";
-       } else if (localStorage.theme == "stealth") {
-        themefile.href ="/static/css/themes/stealth/stealth.css";
-       } else if (localStorage.theme == "fg") {
-        themefile.href ="/static/css/themes/froggermans/froggermans.css";
-       } else if (localStorage.theme == "ghost") {
-        themefile.href ="/static/css/themes/ghost/ghost.css";
-       } else if (localStorage.theme == "midnight") {
-        themefile.href ="/static/css/themes/midnight/midnight.css";
-       } else if (localStorage.theme == "fire") {
-        themefile.href = "/static/css/themes/fire/fire.css";
-        if (localStorage.cloak == "off") {
-         changeFavicon('/static/css/themes/fire/firefavicon.ico');
-        };
-       } else if (localStorage.theme == "meteor") {
-        themefile.href = "/static/css/themes/meteor/meteor.css";
-       } else {
-        themefile.href = "/static/index.css";
-       }
-      };
-      function setcloaks() {
-       if (localStorage.cloak == "drive") {
-       changeFavicon('./images/favicon/drive.png');
-       document.title = "My Drive - Google Drive";
-       } else if (localStorage.cloak == "classroom") {
-        changeFavicon('./images/favicon/classroom.png');
-        document.title = "Home";
-       } else if (localStorage.cloak == "google") {
-        changeFavicon('./images/favicon/google.png');
-        document.title = "Google";
-       } else if (localStorage.cloak == "gmail") {
-        changeFavicon('./images/favicon/gmail.png');
-        document.title = "Inbox";
-       };
-      };
-      
-      var dropdown = document.getElementsByClassName("dropdown-btn");
-      var i;
-      for (i = 0; i < dropdown.length; i++) {
-        dropdown[i].addEventListener("click", function() {
-          this.classList.toggle("active");
-          var dropdownContent = this.nextElementSibling;
-          if (dropdownContent.style.display === "block") {
-            dropdownContent.style.display = "none";
-          } else {
-            dropdownContent.style.display = "block";
-          }
-        });
-      }
-      
-      function initializeBookmarks() {
-          if (!localStorage.getItem('bookmarks')) {
-            localStorage.setItem('bookmarks', JSON.stringify([]));
-          }
-        }
-        function saveBookmark() {
-          const iframe = document.getElementById('iframeId');
-          const iframeDoc = iframe.contentWindow.document;
-          const bookmarkTitle = iframeDoc.title;
-          const bookmarkUrl = iframe.src;
-        
-          let faviconUrl;
-        
-          if (bookmarkTitle.includes("Google")) {
-            faviconUrl = "/static/images/icons/google.webp"; // Path to your downloaded Google favicon
-          } else if (bookmarkTitle.includes("Discord")) {
-            faviconUrl = "/static/images/icons/discord.jpg"; // Path to your downloaded Discord favicon
-          } else if (bookmarkTitle.includes("Youtube")){
-            faviconUrl = "/static/images/icons/youtube.png";
-          } else {
-            const faviconLink = iframeDoc.querySelector("link[rel~='icon'], link[rel='shortcut icon'], link[rel='Bookmark icon']");
-            if (faviconLink) {
-              faviconUrl = faviconLink.href;
-            }
-          }
-        
-          faviconUrl = faviconUrl || ''; // If no favicon URL is set, default to an empty string
-        
-          const bookmark = { title: bookmarkTitle, url: bookmarkUrl, favicon: faviconUrl };
-        
-          let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
-          bookmarks.push(bookmark);
-          localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-        
-          displayBookmarks();
-        }
-        
-        function displayBookmarks() {
-          const listDiv = document.getElementById('bookmarkList');
-          let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-          
-          let listHtml = '';
-          bookmarks.forEach((bookmark, index) => {
-            listHtml += `<a href="#" class="bookmark-link" data-url="${bookmark.url}"><img src="${bookmark.favicon}" alt="Favicon" class="favicon" /></a><br>`;
-          });
-          listDiv.innerHTML = listHtml;
-        
-          attachBookmarkClickHandlers();
-        }
-        
-        function attachBookmarkClickHandlers() {
-          const links = document.querySelectorAll('.bookmark-link');
-          links.forEach(link => {
-            link.addEventListener('click', function(event) {
-              event.preventDefault();
-              loadIframe(this.dataset.url);
-            });
-          });
-        }
-        
-        function loadIframe(url) {
-          const iframe = document.getElementById('iframeId');
-          iframe.src = url;
-        }
-        
-        // Initialize the bookmarks when the document is fully loaded.
-        document.addEventListener('DOMContentLoaded', function() {
-          initializeBookmarks();
-          displayBookmarks();
-          document.getElementById('saveBookmarkButton').addEventListener('click', saveBookmark);
-        });
-      setIframe();</script>
-    <script src="/static/scripts/register-sw.js"></script>
-    <script src="/static/scripts/search.js"></script>
-    <script src="/static/scripts/index.js"></script>
-  </body>
 </html>
