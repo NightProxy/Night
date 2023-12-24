@@ -57,33 +57,34 @@
     width: 100%;
     margin-top: 20px;
     position: relative;
-    overflow-y: scroll;
     /* or 'absolute' if it's within another positioned element */
+    max-height: 600px;
     /* This is where you decide the scroll threshold */
+    overflow-y: scroll;
 
 }
 
 .apps-grid {
-  display: flex; /* Enables flexbox layout */
-  flex-wrap: wrap; /* Allows items to wrap onto the next line */
-  align-items: flex-start; /* Aligns items to the start of the flex container */
-  justify-content: flex-start; /* Justifies items to the start of the main axis */
-  overflow-y: auto; /* Adds vertical scrolling */
-  max-height: 100vh; /* Sets the maximum height to the view height of the screen */
-  padding: 10px; /* Adds some padding inside the container */
-  gap: 10px; /* Adds space between the app items */
-}
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    /* Creates 6 columns */
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    /* Adjust this based on the total width of 6 app shortcuts */
+    margin: auto;
+    overflow-y: auto;
+    align-items: center;
 
+    /* Center the grid on the page */
+}
 
 /* Style for each app shortcut */
 .app-shortcut {
-    flex: 0 0 calc(16.666%); /* Each item takes up a sixth of the container width minus the gap */
-  display: flex; /* Enables flexbox layout within each app item for content */
-  align-items: center; /* Centers app item content vertically */
-  justify-content: center; /* Centers app item content horizontally */
-  margin: 10px; /* Adds margin around each app item */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow for depth */
-  border-radius: 15px; /* Softens the corners of each app item */
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: #212121;
     display: flex;
     cursor: pointer;
@@ -159,13 +160,8 @@
 }
 
 #searchBar {
+    width: 100%;
     padding: 10px;
-    margin-top: 20px;
     margin-bottom: 20px;
-
     font-size: 16px;
-}
-
-h2 {
-    text-align: center;
 }
