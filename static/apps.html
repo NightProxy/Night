@@ -52,22 +52,29 @@
             class="fa-solid fa-gear zoom navitem"></a>
         </div>
       </div>
-      <div style="margin-top:10vh;position:fixed;top:0;left:0;right:0;bottom:0;">
-        <center>
-          <input type="text" id="searchBar" placeholder="Search apps..." onkeyup="searchApps()">
-
+      </div>
+      <div style="margin-top:10vh;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;">
+        <center style="width:100%;height:100%;overflow-y:scroll">
           <!-- Section for pinned and unpinned apps -->
           <div class="grid-container">
-            <h2 style="background-color: #2e2e2e; width: 550px; border-radius: 15px;">Pinned Apps</h2>
+            <input type="text" id="searchBar" placeholder="Search apps..." onkeyup="searchApps()">
+
+            <h2>Pinned Apps</h2>
             <div class="apps-grid" id="pinnedAppsGrid">
               <!-- Pinned app shortcuts will be placed here -->
             </div>
 
-            <h2 style="background-color: #2e2e2e; width: 400px; border-radius: 15px;">Other Apps</h2>
+            <h2>Custom Apps</h2>
+            <div class="apps-grid" id="customAppsGrid">
+              <!-- Unpinned app shortcuts will be placed here -->
+            </div>
+
+            <h2>Apps</h2>
             <div class="apps-grid" id="appsGrid">
               <!-- Unpinned app shortcuts will be placed here -->
             </div>
           </div>
+        </center>
       </div>
       <div class="desc left-margin">
         <p id="uv-error"></p>

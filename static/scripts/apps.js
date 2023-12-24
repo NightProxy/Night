@@ -312,6 +312,27 @@ function addApp() {
     }
 }
 
+function addCustomApp(name, url, imgUrl) {
+    if (!name || !url || !imgUrl) {
+      alert('Please ensure all fields for the custom app are filled in correctly.');
+      return false; // Do not proceed with adding the app.
+    }
+  
+    const existingAppIndex = apps.findIndex(app => app.name.toLowerCase() === name.toLowerCase());
+    if (existingAppIndex !== -1) {
+      alert('An app with this name already exists.');
+      return false; // Do not proceed with adding the app.
+    }
+  
+    const newCustomApp = { name, url, imgUrl, isPinned: false, isCustom: true };
+    apps.push(newCustomApp);
+    saveAppData(); // Save the updated apps array.
+    renderApps(); // Re-render the app list.
+    clearForm(); // Clear the input form.
+  
+    return true; // Successfully added the app.
+  }
+
 // Render the apps, filtering them if a search query is provided
 function renderApps(filteredApps = apps) {
     const pinnedAppsGrid = document.getElementById('pinnedAppsGrid');
@@ -338,6 +359,17 @@ function renderApps(filteredApps = apps) {
         }
     });
 }
+
+function renderCustomApps() {
+    const customApps = apps.filter(app => app.isCustom);
+    const customAppsGrid = document.getElementById('customAppsGrid');
+    customAppsGrid.innerHTML = ''; // Clear existing custom apps.
+  
+    customApps.forEach((app, index) => {
+      const appElement = getAppElement(app, index);
+      customAppsGrid.appendChild(appElement);
+    });
+  }
 
 // Filter the apps based on the search query
 function searchApps() {
@@ -381,10 +413,17 @@ function getAppElement(app, index) {
 }
 
 // Bind the form submission function and render the apps on window load
-document.getElementById('newAppForm').onsubmit = function (event) {
+document.getElementById('newAppForm').onsubmit = function(event) {
     event.preventDefault();
-    addApp();
-};
+  
+    const name = document.getElementById('appName').value;
+    const url = document.getElementById('appUrl').value;
+    const imgUrl = document.getElementById('appImgUrl').value;
+  
+    if (addCustomApp(name, url, imgUrl)) {
+      renderCustomApps(); // Render the custom apps after adding one.
+    }
+  };
 
 // Render apps on window load, considering any search query
 window.onload = () => {
