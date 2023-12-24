@@ -7,9 +7,9 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VHVNHMYGN3"></script>
   <script src="https://kit.fontawesome.com/32abd502cd.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="/static/css/apps.css">
+  <link rel="stylesheet" href="/static/css/games.css">
 
-  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="gamele-mobile-web-game-capable" content="yes" />
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -22,9 +22,9 @@
   <link rel="stylesheet" id="themecss" href="/static/css/index.css">
   <link rel="stylesheet" href="/static/css/nav.css">
   <link rel="stylesheet" href="/static/css/overide.css">
-  <link rel="apple-touch-icon" sizes="114x114" href="../favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="../favicon.ico">
-  <link rel="apple-touch-icon" sizes="76x76" href="../favicon.ico">
+  <link rel="gamele-touch-icon" sizes="114x114" href="../favicon.ico">
+  <link rel="gamele-touch-icon" sizes="180x180" href="../favicon.ico">
+  <link rel="gamele-touch-icon" sizes="76x76" href="../favicon.ico">
   <script type="text/javascript" src="//counter.websiteout.net/js/7/10/5/0"></script>
   <link rel="shortcut icon" type="imgUrl/jpg" href="../favicon.ico" />
   <link href="https://fonts.googleapis.com/css?family=Share Tech Mono" rel="stylesheet" />
@@ -55,23 +55,23 @@
       </div>
       <div style="margin-top:10vh;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;">
         <center style="width:100%;height:100%;">
-          <!-- Section for pinned and unpinned apps -->
+          <!-- Section for pinned and unpinned games -->
           <div class="grid-container">
-            <input type="text" id="searchBar" placeholder="Search apps..." onkeyup="searchApps()">
+            <input type="text" id="searchBar" placeholder="Search games..." onkeyup="searchGames()">
 
-            <h2>Pinned Apps</h2>
-            <div class="apps-grid" id="pinnedAppsGrid">
-              <!-- Pinned app shortcuts will be placed here -->
+            <h2>Pinned Games</h2>
+            <div class="games-grid" id="pinnedGamesGrid">
+              <!-- Pinned game shortcuts will be placed here -->
             </div>
 
-            <h2>Custom Apps</h2>
-            <div class="apps-grid" id="customAppsGrid">
-              <!-- Unpinned app shortcuts will be placed here -->
+            <h2>Custom Games</h2>
+            <div class="games-grid" id="customGamesGrid">
+              <!-- Unpinned game shortcuts will be placed here -->
             </div>
 
-            <h2>Apps</h2>
-            <div class="apps-grid" id="appsGrid">
-              <!-- Unpinned app shortcuts will be placed here -->
+            <h2>Games</h2>
+            <div class="games-grid" id="gamesGrid">
+              <!-- Unpinned game shortcuts will be placed here -->
             </div>
           </div>
         </center>
@@ -98,7 +98,7 @@
                     <option value="google">Google</option>
                   </select>
                 </span>
-                <a onclick="switchCloak(); reloadpage();" class="button-save">Apply</a>
+                <a onclick="switchCloak(); reloadpage();" class="button-save">Gamely</a>
               </div>
             </th>
             <th>
@@ -120,7 +120,7 @@
                     <option value="meteor">Meteor</option>
                   </select>
                 </span>
-                <a onclick="switchProxy(); reloadpage();" class="button-save">Apply</a>
+                <a onclick="switchProxy(); reloadpage();" class="button-save">Gamely</a>
               </div>
             </th>
             <th>
@@ -141,7 +141,7 @@
                     <option value="indefault">Interstellar Default</option>
                   </select>
                 </span>
-                <a onclick="switchBare(); reloadpage();" class="button-save">Apply</a>
+                <a onclick="switchBare(); reloadpage();" class="button-save">Gamely</a>
               </div>
             </th>
           </tr>
@@ -178,15 +178,15 @@
           </tr>
         </table>
       </div>
-      <div class="sidenav" id="addapp" style="background-color:rgba(0, 0, 0, 0.445);backdrop-filter:blur(5px);">
-        <a onclick="fadeOutapps();" class="fa-solid fa-circle-xmark closebutton" id="closebutton"></a>
+      <div class="sidenav" id="addgame" style="background-color:rgba(0, 0, 0, 0.445);backdrop-filter:blur(5px);">
+        <a onclick="fadeOutgames();" class="fa-solid fa-circle-xmark closebutton" id="closebutton"></a>
         <div style="margin-top:45vh;position:fixed;top:0;left:0;right:0;bottom:0;">
-          <form id="newAppForm" style="position:relative;top:0;left:0;right:0;bottom:0;">
+          <form id="newGameForm" style="position:relative;top:0;left:0;right:0;bottom:0;">
             <!-- Changed from a div to a form element -->
-            <input style="width:250px" type="text" id="appName" placeholder="App Name" required>
-            <input style="width:250px" type="url" id="appUrl" placeholder="App URL" required>
-            <input style="width:250px" type="url" id="appImgUrl" placeholder="App Image URL" required>
-            <button class="button-save" type="submit" onclick="fadeOutapps();">Add App</button>
+            <input style="width:250px" type="text" id="gameName" placeholder="Game Name" required>
+            <input style="width:250px" type="url" id="gameUrl" placeholder="Game URL" required>
+            <input style="width:250px" type="url" id="gameImgUrl" placeholder="Game Image URL" required>
+            <button class="button-save" type="submit" onclick="fadeOutgames();">Add Game</button>
           </form>
         </div>
         <script src="/static/scripts/register-sw.js" defer></script>
@@ -196,19 +196,19 @@
         <script src="/static/scripts/settings.js"></script>
         <script id="paeticlesrc" src=""></script>
         <script src="/static/scripts/blank.js"></script>
-        <script src="/static/scripts/apps.js"></script>
+        <script src="/static/scripts/games.js"></script>
         <script>
-          const addapp = document.getElementById('addapp');
+          const addgame = document.getElementById('addgame');
 
-          function fadeOutapps() {
-            $("#addapp").fadeOut();
+          function fadeOutgames() {
+            $("#addgame").fadeOut();
           }
 
-          function fadeInapps() {
-            $("#addapp").fadeIn();
+          function fadeIngames() {
+            $("#addgame").fadeIn();
           }
           fadeOutElement();
-          fadeOutapps();
+          fadeOutgames();
         </script>
         <div id="footer">
           <p>&copy; 2023 Night. All rights reserved.</p>

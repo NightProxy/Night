@@ -10,7 +10,7 @@
     transition: opacity 0.5s ease-in-out;
 }
  
-#addapp {
+#addgame {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.5s ease-in-out;
@@ -28,7 +28,7 @@
     transition: opacity 1s;
 }
 
-#addapp.fadeOut {
+#addgame.fadeOut {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
@@ -64,14 +64,14 @@
 
 }
 
-.apps-grid {
+.games-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     /* Creates 6 columns */
     gap: 1rem;
     padding: 1rem;
     max-width: 1200px;
-    /* Adjust this based on the total width of 6 app shortcuts */
+    /* Adjust this based on the total width of 6 game shortcuts */
     margin: auto;
     overflow-y: auto;
     align-items: center;
@@ -79,8 +79,8 @@
     /* Center the grid on the page */
 }
 
-/* Style for each app shortcut */
-.app-shortcut {
+/* Style for each game shortcut */
+.game-shortcut {
     position: relative;
     border-radius: 15px;
     overflow: hidden;
@@ -90,14 +90,14 @@
     cursor: pointer;
 }
 
-/* Style for the app images */
-.app-shortcut img {
+/* Style for the game images */
+.game-shortcut img {
     width: 48px;
     height: 48px;
     border-radius: 60%;
 }
 
-.apptext {
+.gametext {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -125,8 +125,8 @@
 }
 
 /* Style for the form inputs and button */
-#newAppForm input,
-#newAppForm button {
+#newGameForm input,
+#newGameForm button {
     width: 100px;
 }
 
