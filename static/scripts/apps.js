@@ -2,19 +2,19 @@ let apps = JSON.parse(localStorage.getItem('apps')) || [
     {
         name: 'Github',
         url: 'https://github.com',
-        imgUrl: '/static/images/icons/github.png',
+        imgUrl: './static/images/icons/github.png',
         isPinned: false
     },
     {
         name: 'Google',
         url: 'https://google.com',
-        imgUrl: '/static/images/icons/google.webp',
+        imgUrl: './static/images/icons/google.webp',
         isPinned: false
     },
     {
         name: 'Discord',
         url: 'https://discord.com',
-        imgUrl: '/static/images/icons/discord.jpg',
+        imgUrl: './static/images/icons/discord.jpg',
         isPinned: false
     },
     {
@@ -261,7 +261,7 @@ let apps = JSON.parse(localStorage.getItem('apps')) || [
 function edu(val) {
     let iframe = document.querySelector(".iframe.active");
     window.navigator.serviceWorker
-        .register("/static/uv.js", {
+        .register("./static/uv.js", {
             scope: __uv$config.prefix,
         })
         .then(() => {
