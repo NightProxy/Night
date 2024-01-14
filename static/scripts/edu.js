@@ -144,7 +144,7 @@ function displayBookmarks() {
 
   let listHtml = '<hr>';
   bookmarks.forEach((bookmark, index) => {
-    listHtml += `<img src="${bookmark.favicon}" alt="Favicon" class="favicon" /><a href="#" class="bookmark-link" data-url="${bookmark.url}"></a><br>`;
+    listHtml += `<img src="${bookmark.favicon}" alt="Favicon" class="favicon" /><a href="${bookmark.url}" class="bookmark-link" data-url="${bookmark.url}"></a><br>`;
   });
   listHtml += '<hr>';
   listDiv.innerHTML = listHtml;
