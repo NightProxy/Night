@@ -282,7 +282,7 @@ function setthemes() {
 };
 
 var proxyStored = localStorage.getItem("proxy");
-var proxySel = document.getElementById("proxywitcher");
+var proxySel = document.getElementById("proxySwitcher");
 
 function switchTheme() {
   var selecter = document.getElementById("proxySwitcher");
