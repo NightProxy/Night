@@ -7,7 +7,7 @@ self.__dynamic$config = {
   logLevel: 0, 
   bare: {
     version: 2, 
-    path: '/bare/',
+    path: "https://218-39-2-78-101-249-205-32-24-217-131.vercel.app",
   },
   tab: {
     title: 'Service',
