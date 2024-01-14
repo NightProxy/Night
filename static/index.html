@@ -131,7 +131,7 @@
                            <option value="meteor">Meteor</option>
                         </select>
                      </span>
-                     <a onclick="switchProxy(); reloadpage();" class="button-save">Apply</a>
+                     <a onclick="switchTheme(); reloadpage();" class="button-save">Apply</a>
                   </div>
                </th>
                <th>
@@ -179,8 +179,15 @@
                      <td>
                         <br>
                         <div id="settings-boxes">
-                           <h2 style="text-align: center;">Coming soon!</h2>
-                              <p style="text-align: center; font-size: 18px; margin-top: -100px;">This feature will be added soon</p>
+                           <h2 style="text-align: center;">Proxy Switcher</h2>
+                              <p style="text-align: center; font-size: 18px; margin-top: -100px;">This will swap the current proxy between UV and Dynamic</p>
+                              <span class="custom-dropdown big">
+                                 <select class="dropdown" id="proxySwitcher">
+                                    <option value="uv">Ultraviolet</option>
+                                    <option value="dyn">Dynamic</option>
+                                    <a onclick="switchProxy(); reloadpage();" class="button-save">Apply</a>
+                                 </select>
+                              </span>
                         </div>
                         </td>
             </tr>

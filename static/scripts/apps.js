@@ -259,19 +259,44 @@ let apps = JSON.parse(localStorage.getItem('apps')) || [
 ];
 
 function edu(val) {
-    let iframe = document.querySelector(".iframe.active");
-    window.navigator.serviceWorker
-        .register("./uv.js", {
-            scope: __uv$config.prefix,
-        })
-        .then(() => {
-            let url = val.trim();
-            if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
-            else if (!(url.startsWith("https://") || url.startsWith("http://")))
-                url = "https://" + url;
-            sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
-            location.href = "edu.html";
-        });
+    if (localStorage.getItem('proxy') == "uv") {
+        window.navigator.serviceWorker
+            .register("/static/uv.js", {
+                scope: __uv$config.prefix,
+            })
+            .then(() => {
+                let url = val.trim();
+                if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
+                else if (!(url.startsWith("https://") || url.startsWith("http://")))
+                    url = "https://" + url;
+                sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
+                location.href = "edu.html";
+            });
+    } else if (localStorage.getItem("proxy") == "dyn") {
+        if (!workerLoaded) {
+            worker();
+        }
+        let url = val.trim();
+        if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
+        else if (!(url.startsWith("https://") || url.startsWith("http://")))
+            url = "https://" + url;
+        sessionStorage.setItem("encodedUrl", encodeURIComponent(url));
+        location.href = "edu.html";
+    } else {
+        window.navigator.serviceWorker
+            .register("/static/uv.js", {
+                scope: __uv$config.prefix,
+            })
+            .then(() => {
+                let url = val.trim();
+                if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
+                else if (!(url.startsWith("https://") || url.startsWith("http://")))
+                    url = "https://" + url;
+                sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
+                location.href = "edu.html";
+            });
+    }
+      
 }
 
 function ifUrl(val = "") {

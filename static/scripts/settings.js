@@ -96,10 +96,10 @@ function setcloaks() {
   };
 };
 
-var proxyStored = localStorage.getItem("theme");
-var proxySel = document.getElementById("themeSwitcher");
+var themeStored = localStorage.getItem("theme");
+var themeSel = document.getElementById("themeSwitcher");
 
-function switchProxy() {
+function switchTheme() {
   var selecter = document.getElementById("themeSwitcher");
   var selectedOption = selecter.value;
 
@@ -183,6 +183,9 @@ function setdefaults() {
   if (localStorage.blankcheckboxState == undefined) {
     localStorage.setItem("blankcheckboxState", "false")
   };
+  if (localStorage.proxy == undefined ) {
+    localStorage.setItem("proxy", "uv");
+  }
   localStorage.setItem("defaults", "set")
 };
 
@@ -278,15 +281,27 @@ function setthemes() {
   }
 };
 
-if (localStorage.defaults !== "set") {
-  setdefaults();
+var proxyStored = localStorage.getItem("proxy");
+var proxySel = document.getElementById("proxywitcher");
+
+function switchTheme() {
+  var selecter = document.getElementById("proxySwitcher");
+  var selectedOption = selecter.value;
+
+  localStorage.setItem("proxy", selectedOption);
+  var storedChoice = localStorage.getItem("proxy");
 };
+
+
+setdefaults();
 setthemes();
 setcloaks();
 topbar();
-proxySel.value = proxyStored;
+themeSel.value = themeStored;
 bareSel.value = bareStored;
 cloakSel.value = cloakStored;
+cloakSel.value = cloakStored;
+proxySel.value = proxyStored;
 if (document.querySelector(".message")) {
   setRandomSay();
 }

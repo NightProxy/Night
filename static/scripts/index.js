@@ -22,15 +22,60 @@ const errorCode = document.getElementById("uv-error-code");
 
 const input = document.querySelector("input");
 
-form.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  window.navigator.serviceWorker
-    .register("/static/uv.js", {
-      scope: __uv$config.prefix,
-    })
-    .then(() => {
-      const url = search(address.value, searchEngine.value);
-      sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
-      location.href = "edu.html";
-    });
+let workerLoaded;
+
+async function worker() {
+  return await navigator.serviceWorker.register("/static/dyn.js", {
+    scope: __dynamic$config.prefix,
+  });
+}
+
+document.addEventListener('DOMContentLoaded', async function(){
+  await worker();
+  workerLoaded = true;
+})
+
+if (localStorage.getItem("proxy") == "uv") {
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    window.navigator.serviceWorker
+      .register("/static/uv.js", {
+        scope: __uv$config.prefix,
+      })
+      .then(() => {
+        const url = search(address.value, searchEngine.value);
+        sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
+        location.href = "edu.html";
+      });
+  });
+} else if (localStorage.getItem("proxy") == "dyn") {
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    console.log("Connecting to service -> loading");
+    if (typeof navigator.serviceWorker === "undefined") {
+      alert(
+        "An error occured with the proxy service please make sure ur proxy settings are configure correctly in settings."
+      );
+    }
+    if (!workerLoaded) {
+      await worker();
+    }
+    const url = search(address.value, searchEngine.value);
+    sessionStorage.setItem("encodedUrl", encodeURIComponent(url));
+    location.href = "edu.html";
 });
+
+} else {
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    window.navigator.serviceWorker
+      .register("/static/uv.js", {
+        scope: __uv$config.prefix,
+      })
+      .then(() => {
+        const url = search(address.value, searchEngine.value);
+        sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
+        location.href = "edu.html";
+      });
+  });
+}
