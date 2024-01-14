@@ -284,7 +284,7 @@ function setthemes() {
 var proxyStored = localStorage.getItem("proxy");
 var proxySel = document.getElementById("proxySwitcher");
 
-function switchTheme() {
+function switchProxy() {
   var selecter = document.getElementById("proxySwitcher");
   var selectedOption = selecter.value;
 
