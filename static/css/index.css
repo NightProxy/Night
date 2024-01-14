@@ -58,7 +58,6 @@ body {
   background-color: var(--background-primary);
   background-image: url("/static/bg.png");
   background-repeat: no-repeat;
-  background-size: contain;
   background-position: center;
   text-align: center;
   margin-top: -4%;
