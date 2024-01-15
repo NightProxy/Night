@@ -9,6 +9,28 @@ async function worker() {
     workerLoaded = true;
   })
 
+  class crypts {
+    static encode(str) {
+      return encodeURIComponent(
+        str
+          .toString()
+          .split("")
+          .map((char, ind) =>
+            ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char
+          )
+          .join("")
+      );
+    }
+    static decode(str) {
+      if (str.charAt(str.length - 1) == "/") str = str.slice(0, -1);
+      return decodeURIComponent(str)
+        .split("")
+        .map((char, ind) =>
+          ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char
+        )
+        .join("");
+    }
+  }
 let games = JSON.parse(localStorage.getItem('games')) || [
     {
         name: '2048',
@@ -412,7 +434,7 @@ function edu(val) {
                 if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
                 else if (!(url.startsWith("https://") || url.startsWith("http://")))
                     url = "https://" + url;
-                    sessionStorage.setItem("encodedUrl", "/static/amp/route" + "?url=" + encodeURI(url));
+                    sessionStorage.setItem("encodedUrl", "/static/amp/" + crypts.encode(url));
                     location.href = "edu.html";
     } else {
         window.navigator.serviceWorker
