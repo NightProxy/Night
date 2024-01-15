@@ -412,7 +412,7 @@ function edu(val) {
                 if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
                 else if (!(url.startsWith("https://") || url.startsWith("http://")))
                     url = "https://" + url;
-        sessionStorage.setItem("encodedUrl", encodeURIComponent(url));
+        sessionStorage.setItem("encodedUrl", __dynamic$config.encodeUrl(url));
         location.href = "edu.html";
     } else {
         window.navigator.serviceWorker

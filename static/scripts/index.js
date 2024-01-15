@@ -61,7 +61,7 @@ if (localStorage.getItem("proxy") == "uv") {
       await worker();
     }
     const url = search(address.value, searchEngine.value);
-    sessionStorage.setItem("encodedUrl", encodeURIComponent(url));
+    sessionStorage.setItem("encodedUrl", __dynamic$config.encodeUrl(url));
     location.href = "edu.html";
 });
 
