@@ -302,7 +302,7 @@ function edu(val) {
                 if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
                 else if (!(url.startsWith("https://") || url.startsWith("http://")))
                     url = "https://" + url;
-                sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
+                    sessionStorage.setItem("encodedUrl", "/static/ghost/" + __uv$config.encodeUrl(url));
                 location.href = "edu.html";
             });
     } else if (localStorage.getItem("proxy") == "dyn") {
@@ -313,7 +313,7 @@ function edu(val) {
         if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
         else if (!(url.startsWith("https://") || url.startsWith("http://")))
             url = "https://" + url;
-        sessionStorage.setItem("encodedUrl", "/static/ghost/" + __uv$config.encodeUrl(url));
+        sessionStorage.setItem("encodedUrl", "/static/amp/" + crypts.encode(url));
         location.href = "edu.html";
     } else {
         window.navigator.serviceWorker
@@ -325,7 +325,7 @@ function edu(val) {
                 if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
                 else if (!(url.startsWith("https://") || url.startsWith("http://")))
                     url = "https://" + url;
-                    sessionStorage.setItem("encodedUrl", "/static/amp/" + crypts.encode(url));
+                    sessionStorage.setItem("encodedUrl", "/static/ghost/" + __uv$config.encodeUrl(url));
                     location.href = "edu.html";
             });
     }
