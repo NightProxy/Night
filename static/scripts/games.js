@@ -432,12 +432,8 @@ function edu(val) {
 }
 
 function ifUrl(val = "") {
-    try {
-        const url = new URL(val);
-        return url.protocol === 'http:' || url.protocol === 'https:';
-    } catch (e) {
-        return false; // The constructor throws an error for invalid URLs
-    }
+    const urlPattern = /^(http(s)?:\/\/)?([\w-]+\.)+[\w]{2,}(\/.*)?$/;
+    return urlPattern.test(val);
 }
 
 // Save the state of games to localStorage

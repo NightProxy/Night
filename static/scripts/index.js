@@ -1,4 +1,21 @@
 "use strict";
+
+document.addEventListener('DOMContentLoaded', async function(){
+  await worker();
+  workerLoaded = true;
+})
+
+function prependHttps(url) {
+  if (!url.startsWith('http://') && !url.startsWith('https://')) {
+    return 'https://' + url;
+  }
+  return url;
+}
+
+function ifUrl(val = "") {
+  const urlPattern = /^(http(s)?:\/\/)?([\w-]+\.)+[\w]{2,}(\/.*)?$/;
+  return urlPattern.test(val);
+}
 /**
  * @type {HTMLFormElement}
  */
@@ -61,7 +78,7 @@ if (localStorage.getItem("proxy") == "uv") {
       await worker();
     }
     const url = search(address.value, searchEngine.value);
-    sessionStorage.setItem("encodedUrl", __dynamic$config.encodeUrl(url));
+    sessionStorage.setItem("encodedUrl", "/static/amp/route" + "?url=" + encodeURI(url));
     location.href = "edu.html";
 });
 
