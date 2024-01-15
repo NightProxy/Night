@@ -1,3 +1,13 @@
+async function worker() {
+    return await navigator.serviceWorker.register("/static/dyn.js", {
+      scope: __dynamic$config.prefix,
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', async function(){
+    await worker();
+    workerLoaded = true;
+  })
 let apps = JSON.parse(localStorage.getItem('apps')) || [
     {
         name: 'Github',
