@@ -38,7 +38,6 @@ function togglemenu() {
 }
 function setIframe() {
   let encodedUrl = sessionStorage.getItem("encodedUrl");
-  encodedUrl = "/static/ghost/" + encodedUrl;
   console.log(encodedUrl);
   document.querySelector("#iframeid").src = encodedUrl;
 };
