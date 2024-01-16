@@ -52,14 +52,14 @@ body {
 }
 
 #particles-js {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   background-color: var(--background-primary);
-  background-image: url("/static/bg.png");
+  background-image: url(https://i.imgur.com/Xptr016.jpg);
   background-repeat: no-repeat;
-  background-position: center;
   text-align: center;
+  padding: 20px;
   margin-top: -4%;
 }
 
