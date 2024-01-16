@@ -60,8 +60,6 @@ function topbar() {
   game.innerHTML += '<span class="names">Games</span>';
   extras.innerHTML += '<span class="names">Extras</span>';
   sett.innerHTML += '<span class="names">Settings</span>';
-  localStorage.setItem("bar", "top");
-  localStorage.setItem("icon", "on");
 
 };
 
