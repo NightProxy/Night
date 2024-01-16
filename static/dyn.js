@@ -1,4 +1,4 @@
-importScripts('/static/dynamic/dynamic.config.js');
+ importScripts('/static/dynamic/dynamic.config.js');
 importScripts('/static/dynamic/dynamic.worker.js');
 importScripts('https://arc.io/arc-sw-core.js');
 
