@@ -56,9 +56,6 @@ function topbar() {
   icons.style.justifyItems = "left";
   icons.style.right = "";
   icons.style.left = "0";
-  apps.innerHTML = '<span class="names">Apps</span>';
-  game.innerHTML = '<span class="names">Games</span>';
-  extras.innerHTML = '<span class="names">Extras</span>';
   sett.innerHTML = '<span class="names">Settings</span>';
   localStorage.setItem("bar", "top");
   localStorage.setItem("icon", "on");
