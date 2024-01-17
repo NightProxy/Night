@@ -580,8 +580,9 @@ p {
   justify-content:flex-end;
   flex-direction:column;
   right: 0;
+  top:0;
   height: 100%;
-  position:absolute;
+  position:fixed;
   width:0px;
   background-color: rgba(0, 0, 0, 0.445);
   backdrop-filter: blur(5px);
