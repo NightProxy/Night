@@ -313,7 +313,7 @@ function togglemobilenav() {
   }
 }
 
-const screenWidth = window.innerWidth;
+const screenWidth = window.screen.width;
 
 function switchnav() {
   if (screenWidth >= 640) {
