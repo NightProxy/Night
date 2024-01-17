@@ -313,17 +313,15 @@ function togglemobilenav() {
   }
 }
 
-const screenWidth = window.screen.width;
+const screenWidth = window.innerWidth;
 
 function switchnav() {
-  if (screenWidth >= 640) {
+  if (screenWidth <= 640) {
     mobilenavbtn.style.display = "block";
     desktopnav.style.display = "none";
-  } else if ( scrennWidth <= 640) {
+  } else {
     mobilenavbtn.style.display = 'none';
     desktopnav.style.display = 'flex'
-  } else {
-    console.log("Invalid Screen")
   }
 }
 
