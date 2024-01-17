@@ -232,6 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function setthemes() {
+  if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
   if (localStorage.theme == "default") {
     themefile.href = "/static/css/index.css";
     if (localStorage.particlecheckboxState == "true") {
@@ -277,6 +278,45 @@ function setthemes() {
       changeFavicon('../favicon.ico');
     };
   }
+} else if (window.location.pathname.endsWith('games.html') || window.location.pathname.endsWith('apps.html')) {
+  if (localStorage.theme == "default") {
+    themefile.href = "/static/css/index.css";
+    if (localStorage.cloak == "off") {
+      changeFavicon('../favicon.ico');
+    };
+    logo.src = "../favicon.ico";
+  } else if (localStorage.theme == "noir") {
+    themefile.href = "/static/css/themes/noir/noir.css";
+  } else if (localStorage.theme == "void") {
+    themefile.href = "/static/css/themes/void/void.css";
+  } else if (localStorage.theme == "ip") {
+    themefile.href = "/static/css/themes/ironprime/ironprime.css";
+    logo.src = "/static/css/themes/fire/firethemelogo.png";
+  } else if (localStorage.theme == "xg") {
+    themefile.href = "/static/css/themes/xgames/xgames.css";
+  } else if (localStorage.theme == "stealth") {
+    themefile.href = "/static/css/themes/stealth/stealth.css";
+  } else if (localStorage.theme == "fg") {
+    themefile.href = "/static/css/themes/froggermans/froggermans.css";
+  } else if (localStorage.theme == "ghost") {
+    themefile.href = "/static/css/themes/ghost/ghost.css";
+  } else if (localStorage.theme == "midnight") {
+    themefile.href = "/static/css/themes/midnight/midnight.css";
+  } else if (localStorage.theme == "fire") {
+    themefile.href = "/static/css/themes/fire/fire.css";
+    if (localStorage.cloak == "off") {
+      changeFavicon('/static/css/themes/fire/firefavicon.ico');
+    };
+    logo.src = "/static/css/themes/fire/firefavicon.ico";
+  } else if (localStorage.theme == "meteor") {
+    themefile.href = "/static/css/themes/meteor/meteor.css";
+  } else {
+    themefile.href = "/static/css/index.css";
+    if (localStorage.cloak == "off") {
+      changeFavicon('../favicon.ico');
+    };
+  }
+}
 };
 
 var proxyStored = localStorage.getItem("proxy");
@@ -316,7 +356,7 @@ function togglemobilenav() {
 const screenWidth = window.innerWidth;
 
 function switchnav() {
-  if (screenWidth <= 640) {
+  if (screenWidth >= 640) {
     mobilenavbtn.style.display = "block";
     desktopnav.style.display = "none";
   } else {
