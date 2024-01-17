@@ -330,46 +330,11 @@ function switchProxy() {
   var storedChoice = localStorage.getItem("proxy");
 };
 
-mapps = document.getElementById("mobileapps");
-mgame = document.getElementById("mobilegames");
-mextras = document.getElementById("mobileextras");
-msett = document.getElementById("mobilesettings");
-mobilenavbtn = document.getElementById("mobilenavbtn");
-desktopnav = document.getElementById("desktopnav");
-
-function mobilebar() {
-  mapps.innerHTML += '<span class="names">Apps</span>';
-  mgame.innerHTML += '<span class="names">Games</span>';
-  mextras.innerHTML += '<span class="names">Extras</span>';
-  msett.innerHTML += '<span class="names">Settings</span>';
-}
-
-function togglemobilenav() {
-  var mobilenav = document.getElementById("mobilenav")
-  if (mobilenav.style.width === "0px") {
-    mobilenav.style.width = "250px";
-  } else {
-    mobilenav.style.width= "0px";
-  }
-}
-
-const screenWidth = window.innerWidth;
-
-function switchnav() {
-  if (screenWidth >= 640) {
-    mobilenavbtn.style.display = "grid";
-    desktopnav.style.display = "none";
-  } else {
-    mobilenavbtn.style.display = 'none';
-    desktopnav.style.display = 'flex'
-  }
-}
 
 setdefaults();
 setthemes();
 setcloaks();
 topbar();
-mobilebar();
 themeSel.value = themeStored;
 bareSel.value = bareStored;
 cloakSel.value = cloakStored;
@@ -378,4 +343,3 @@ proxySel.value = proxyStored;
 if (document.querySelector(".message")) {
   setRandomSay();
 }
-window.addEventListener('resize', switchnav);

@@ -575,23 +575,7 @@ p {
   transform: translate(0);
 }
 
-.mobilenav {
-  display:flex;
-  flex-direction:column;
-  right: 0;
-  bottom:0;
-  top:0;
-  height: 100%;
-  position:fixed;
-  width:0px;
-  background-color: rgba(0, 0, 0, 0.445);
-  backdrop-filter: blur(5px);
-}
 
-.mobilenavbtn {
-  display:none;
-  user-select: none;
-}
 
 
 
