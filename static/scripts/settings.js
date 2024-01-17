@@ -307,7 +307,7 @@ function togglemobilenav() {
   if (mobilenav.style.width === "0px") {
     mobilenav.style.width = "250px";
   } else {
-    mobilnav.style.width= "0px";
+    mobilenav.style.width= "0px";
   }
 }
 
