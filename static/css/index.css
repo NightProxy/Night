@@ -580,7 +580,7 @@ p {
   justify-content:flex-end;
   flex-direction:column;
   right: 0;
-  top:0;
+  bottom:0;
   height: 100%;
   position:fixed;
   width:0px;
