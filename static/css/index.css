@@ -590,7 +590,7 @@ p {
   }
 }
 
-@media (max-width: 640) {
+@media (min-width: 100) {
   .mobilenavbtn {
     display: block;
     user-select: none;
