@@ -290,6 +290,18 @@ function switchProxy() {
   var storedChoice = localStorage.getItem("proxy");
 };
 
+mapps = document.getElementById("mobileapps");
+mgame = document.getElementById("mobilegames");
+mextras = document.getElementById("mobileextras");
+msett = document.getElementById("mobilesettings");
+
+function mobilebar() {
+  mapps.innerHTML += '<span class="names">Apps</span>';
+  mgame.innerHTML += '<span class="names">Games</span>';
+  mextras.innerHTML += '<span class="names">Extras</span>';
+  msett.innerHTML += '<span class="names">Settings</span>';
+}
+
 function togglemobilenav() {
   var mobilenav = document.getElementById("mobilenav")
   if (mobilenav.style.width === "0px") {
@@ -303,6 +315,7 @@ setdefaults();
 setthemes();
 setcloaks();
 topbar();
+mobilebar();
 themeSel.value = themeStored;
 bareSel.value = bareStored;
 cloakSel.value = cloakStored;
