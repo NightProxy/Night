@@ -319,9 +319,11 @@ function switchnav() {
   if (screenWidth >= 640) {
     mobilenavbtn.style.display = "block";
     desktopnav.style.display = "none";
-  } else {
+  } else if ( scrennWidth <= 640) {
     mobilenavbtn.style.display = 'none';
     desktopnav.style.display = 'flex'
+  } else {
+    console.log("Invalid Screen")
   }
 }
 
