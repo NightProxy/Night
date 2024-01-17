@@ -412,7 +412,7 @@ let games = JSON.parse(localStorage.getItem('games')) || [
     }
 ];
 
-function edu(val) {
+function iframe(val) {
     if (localStorage.getItem('proxy') == "uv") {
         window.navigator.serviceWorker
             .register("/static/uv.js", {
@@ -572,11 +572,11 @@ function getGameElement(game, index) {
     const gameShortcut = document.createElement('div');
     gameShortcut.className = 'game-shortcut hvr-grow-rotate';
     gameShortcut.innerHTML = `
-      <a onclick="edu('${game.url}')" title="${game.name}">
+      <a onclick="iframe('${game.url}')" title="${game.name}">
         <img src="${game.imgUrl}" alt="${game.name}">
       </a>
       <div class="gametext">
-        <a style="font-size:12px;" onclick="edu('${game.url}')" title="${game.name}">
+        <a style="font-size:12px;" onclick="iframe('${game.url}')" title="${game.name}">
           ${game.name}
         </a>
         <button class="button-save" onclick="togglePin(${index})">

@@ -291,7 +291,7 @@ let apps = JSON.parse(localStorage.getItem('apps')) || [
     }
 ];
 
-function edu(val) {
+function iframe(val) {
     if (localStorage.getItem('proxy') == "uv") {
         window.navigator.serviceWorker
             .register("/static/uv.js", {
@@ -451,11 +451,11 @@ function getAppElement(app, index) {
     const appShortcut = document.createElement('div');
     appShortcut.className = 'app-shortcut hvr-grow-rotate';
     appShortcut.innerHTML = `
-      <a onclick="edu('${app.url}')" title="${app.name}">
+      <a onclick="iframe('${app.url}')" title="${app.name}">
         <img src="${app.imgUrl}" alt="${app.name}">
       </a>
       <div class="apptext">
-        <a style="font-size:12px;" onclick="edu('${app.url}')" title="${app.name}">
+        <a style="font-size:12px;" onclick="iframe('${app.url}')" title="${app.name}">
           ${app.name}
         </a>
         <button class="button-save" onclick="togglePin(${index})">
