@@ -577,6 +577,9 @@ p {
 
 @media (min-width: 640) {
   .mobilenav {
+    display:flex;
+    justify-content:flex-end;
+    flex-direction:column;
     right: 0;
     height: 100%;
     width:0px;
