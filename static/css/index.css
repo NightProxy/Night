@@ -575,32 +575,21 @@ p {
   transform: translate(0);
 }
 
-@media (min-width: 640) {
-  .mobilenav {
-    display:flex;
-    justify-content:flex-end;
-    flex-direction:column;
-    right: 0;
-    height: 100%;
-    width:0px;
-    background-color: rgba(0, 0, 0, 0.445);
-    backdrop-filter: blur(5px);
-  }
-
-  .mobilenavbtn {
-    display:none;
-    user-select: none;
-  }
+.mobilenav {
+  display:flex;
+  justify-content:flex-end;
+  flex-direction:column;
+  right: 0;
+  height: 100%;
+  width:0px;
+  background-color: rgba(0, 0, 0, 0.445);
+  backdrop-filter: blur(5px);
 }
 
-@media (max-width: 639) {
-  .mobilenavbtn {
-    display: block;
-    user-select: none;
-  }
-
-  .desktopnav {
-    display: none;
-  }
-
+.mobilenavbtn {
+  display:none;
+  user-select: none;
 }
+
+
+

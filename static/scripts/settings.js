@@ -311,6 +311,18 @@ function togglemobilenav() {
   }
 }
 
+const screenWidth = window.innerWidth;
+
+function switchnav() {
+  if (screenWidth >= 640) {
+    mobilenavbtn.style.display = "block";
+    desktopnav.style.display = "none";
+  } else {
+    mobilenavbtn.style.display = 'none';
+    desktopnav.style.display = 'flex'
+  }
+}
+
 setdefaults();
 setthemes();
 setcloaks();
@@ -324,4 +336,4 @@ proxySel.value = proxyStored;
 if (document.querySelector(".message")) {
   setRandomSay();
 }
-
+window.addEventListener('resize', switchnav);
