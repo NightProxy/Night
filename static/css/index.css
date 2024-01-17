@@ -581,6 +581,7 @@ p {
   flex-direction:column;
   right: 0;
   height: 100%;
+  position:absolute;
   width:0px;
   background-color: rgba(0, 0, 0, 0.445);
   backdrop-filter: blur(5px);
