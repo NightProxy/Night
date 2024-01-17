@@ -290,6 +290,14 @@ function switchProxy() {
   var storedChoice = localStorage.getItem("proxy");
 };
 
+function togglemobilenav() {
+  var mobilenav = document.getElementById("mobilenav")
+  if (mobilenav.style.width === "0px") {
+    mobilenav.style.width = "250px";
+  } else {
+    mobilnav.style.width= "0px";
+  }
+}
 
 setdefaults();
 setthemes();

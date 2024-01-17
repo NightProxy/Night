@@ -574,3 +574,28 @@ p {
 .blankcheckbox:active~.blankslider::before {
   transform: translate(0);
 }
+
+.mobilenav {
+  right: 0;
+  height: 100%;
+  width:0px;
+  background-color: rgba(0, 0, 0, 0.445);
+  backdrop-filter: blur(5px);
+}
+
+.mobilenavbtn {
+  display:none;
+  user-select: none;
+}
+
+@media (max-width: 640) {
+  .mobilenavbtn {
+    display: block;
+    user-select: none;
+  }
+
+  .desktopnav {
+    display: none;
+  }
+
+}
