@@ -357,7 +357,7 @@ const screenWidth = window.innerWidth;
 
 function switchnav() {
   if (screenWidth >= 640) {
-    mobilenavbtn.style.display = "block";
+    mobilenavbtn.style.display = "grid";
     desktopnav.style.display = "none";
   } else {
     mobilenavbtn.style.display = 'none';
