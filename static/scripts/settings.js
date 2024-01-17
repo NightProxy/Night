@@ -294,6 +294,8 @@ mapps = document.getElementById("mobileapps");
 mgame = document.getElementById("mobilegames");
 mextras = document.getElementById("mobileextras");
 msett = document.getElementById("mobilesettings");
+mobilenavbtn = document.getElementById("mobilenavbtn");
+desktopnav = document.getElementById("desktopnav");
 
 function mobilebar() {
   mapps.innerHTML += '<span class="names">Apps</span>';
