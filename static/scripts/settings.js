@@ -163,8 +163,10 @@ var bareSel = document.getElementById("bareSwitcher")
 function switchBare() {
   var selecter = document.getElementById("bareSwitcher");
   var selectedOption = selecter.value;
+  var inputValue = document.getElementById('bareUrl').value;
 
-  localStorage.setItem("bare", selectedOption);
+  const finalValue = inputValue.trim() !== '' ? inputValue : selectedOption;
+  localStorage.setItem("bare", finalValue);
   var storedChoice = localStorage.getItem("bare");
 };
 
