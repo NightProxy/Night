@@ -1,0 +1,22 @@
+{
+    "name": "nightproxy",
+    "version": "1.0.0",
+    "type": "module",
+    "engines": {
+      "npm": ">=7.0.0",
+      "node": ">=16.0.0"
+    },
+    "scripts": {
+      "start": "node index.js"
+    },
+    "author": "GhostX & Amplify",
+    "license": "GPL-3.0-or-later",
+    "dependencies": {
+      "@tomphttp/bare-server-node": "^2.0.1",
+      "cors": "^2.8.5",
+      "express": "^4.18.2"
+    },
+    "devDependencies": {
+      "prettier": "3.2.1"
+    }
+  }
