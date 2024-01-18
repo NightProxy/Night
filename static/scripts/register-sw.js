@@ -13,7 +13,7 @@ async function registerSW() {
     location.protocol !== "https:" &&
     !swAllowedHostnames.includes(location.hostname)
   )
-    throw new Error("Service workers cannot be registered without https.");
+    throw new Error("Service workers cannot be registered without https.");3
 
   if (!navigator.serviceWorker)
     throw new Error("Your browser doesn't support service workers.");

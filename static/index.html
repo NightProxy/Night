@@ -55,23 +55,26 @@
       <script type="text/javascript" src="//counter.websiteout.net/js/7/10/5/0"></script>
       <link rel="shortcut icon" type="image/jpg" href="../favicon.ico"/>
       <link href="https://fonts.googleapis.com/css?family=Share Tech Mono" rel="stylesheet"/>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
    </head>
    <body>
-      <script src="uv/uv.bundle.js"></script>
-      <script src="uv/uv.config.js"></script>
+      <script src="uv/uv.bundle.js" defer></script>
+      <script src="uv/uv.config.js" defer></script>
+      <script src="dynamic/dynamic.worker.js" defer></script>
+      <script src="dynamic/dynamic.config.js" defer></script>
       <div id="particles-js"></div>
       <div class="page" id="imgsearch">
          <title>Night</title>
             <div id="icbuttons" style="left:10px;top:10px;">
                <a href="index.html" id="home" class="zoom" index><img src="" alt="Logo" id="logo" style="width:49px;height:49px;border-radius:10px;margin-top:10px;margin-left:10px;"></a>
                <div style="position:fixed;right:0;height:64px;top:10px;">
-                  <div style="display:flex;justify-content:flex-end;align-items:center;">
-               <a href="apps.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:6%;font-size:13px;" id="apps" class="fa-solid fa-grip zoom navitem" apps></a>
-               <a href="games.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:13px;" id="games" class="fa-solid fa-gamepad zoom navitem" games></a>
-               <a href="extras.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:7%;font-size:13px;" id="extras" class="fa-solid fa-plus zoom navitem" extras></a>
-              <a onclick="fadeInElement();" style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:13px;" id="settings" class="fa-solid fa-gear zoom navitem"></a>
+                  <div id="desktopnav" style="display:flex;justify-content:flex-end;align-items:center;">
+               <a href="apps.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:6%;font-size:20px;white-space:nowrap;" id="apps" class="zoom navitem" apps><span class="material-symbols-outlined" style="vertical-align:-4px;font-size:20px;">&#xE5C3</span></a>
+               <a href="games.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:20px;white-space:nowrap;" id="games" class="zoom navitem" games><span class="material-symbols-outlined" style="vertical-align:-4px;font-size:20px;">&#xF135</span></a>
+               <a href="extras.html" style="width:50px;padding-right:1px;padding-left:1px;margin-right:7%;font-size:20px;white-space:nowrap;" id="extras" class="zoom navitem" extras><span class="material-symbols-outlined" style="vertical-align:-4px;font-size:20px;">&#xE145</span></a>
+              <a onclick="fadeInElement();" style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:20px;white-space:nowrap;" id="settings" class="zoom navitem"><span class="material-symbols-outlined" style="vertical-align:-4px;font-size:20px;">&#xE726</span></a>
             </div>
-              </div>
+         </div>
               <div style="margin-top:30vh;position:fixed;top:0;left:0;right:0;bottom:0;">
             <center>
             <div>
@@ -98,7 +101,7 @@
             <tr>
                <th>
                   <div id="settings-boxes">
-                     <h2>Toggle Cloak</h2>
+                     <h2 style="margin-top:0px">Toggle Cloak</h2>
                      <p style="text-align: center; font-size: 18px; margin-top: -60px;">Cloak your tab with a custom name and favicon</p>
                      <span class="custom-dropdown big">
                         <select class="dropdown" id="cloakSwitcher">
@@ -114,7 +117,7 @@
                </th>
                <th>
                   <div id="settings-boxes">
-                     <h2 style="text-align: center;">Themes</h2>
+                     <h2 style="text-align:center;margin-top:0px;">Themes</h2>
                      <p style="text-align: center; font-size: 18px; margin-top: -60px;">Change the site's themes</p>
                      <span class="custom-dropdown big">
                         <select class="dropdown" id="themeSwitcher">
@@ -131,26 +134,26 @@
                            <option value="meteor">Meteor</option>
                         </select>
                      </span>
-                     <a onclick="switchProxy(); reloadpage();" class="button-save">Apply</a>
+                     <a onclick="switchTheme(); reloadpage();" class="button-save">Apply</a>
                   </div>
                </th>
                <th>
                   <div id="settings-boxes">
-                     <h2 style="text-align: center;">Proxy Options</h2>
+                     <h2 style="text-align:center;margin-top:0px;">Proxy Options</h2>
                      <b>
                         <p style="text-align: center; font-size: 18px; margin-top: -40px;">If our proxy isn't working it's probably because the bare server is blocked.<br>
                            This can swap the server so the proxy can function if one is down</p>
                      </b>
                         <span class="custom-dropdown big">
                         <select class="dropdown" id="bareSwitcher">
-                           <option value="default">Default</option>
-                           <option value="default2">Default 2</option>
-                           <option value="default3">Default 3</option>
-                           <option value="sndefault">Shadow Default</option>
-                           <option value="snalt">Shadow Alt</option>
-                           <option value="indefault">Interstellar Default</option>
+                           <option value="https://night-bare.vercel.app">Default</option>
+                           <option value="https://142-4675-64-355-76-6342-8607-24485-75.vercel.app/">Default 2</option>
+                           <option value="https://165-53858-7966-42755-86-347-645-3540.vercel.app/">Default 3</option>
+                           <option value="https://phantom.lol/bare">Shadow Default</option>
+                           <option value="https://phantomcloud.strangled.net/bare">Shadow Alt</option>
                         </select>
                      </span>
+                     <input style="width:150px" type="url" id="bareUrl" placeholder="Custom Bare URL">
                      <a onclick="switchBare(); reloadpage();" class="button-save">Apply</a>
                   </div>
                </th>
@@ -159,7 +162,7 @@
                <td>
                   <br>
                   <div id="settings-boxes">
-                     <h2 style="text-align: center;">Toggle Particles</h2>
+                     <h2 style="text-align:center;margin-top:0px;">Toggle Particles</h2>
                         <p style="text-align: center; font-size: 18px; margin-top: -40px;">Allows you to toggle particles on certain themes like the default theme</p>
                         <label class="switch">
                            <input type="checkbox" class="particlecheckbox">
@@ -170,7 +173,7 @@
                   <td>
                      <br>
                      <div id="settings-boxes">
-                        <h2 style="text-align: center;">Launch about:blank</h2>
+                        <h2 style="text-align:center;margin-top:0px;">Launch about:blank</h2>
                            <p style="text-align: center; font-size: 18px; margin-top: -40px;">Launches about:blank in a new tab which cloaks the tab entirely</p>
                            <a class="button-save" style="text-align:center; padding-right:20px;" onclick="openGame();">Launch</a>
 
@@ -179,8 +182,15 @@
                      <td>
                         <br>
                         <div id="settings-boxes">
-                           <h2 style="text-align: center;">Coming soon!</h2>
-                              <p style="text-align: center; font-size: 18px; margin-top: -100px;">This feature will be added soon</p>
+                           <h2 style="text-align:center;margin-top:0px;">Proxy Switcher</h2>
+                              <p style="text-align: center; font-size: 18px; margin-top: -40px;">This will swap the current proxy between UV and Dynamic</p>
+                              <span class="custom-dropdown big">
+                                 <select class="dropdown" id="proxySwitcher">
+                                    <option value="uv">Ultraviolet</option>
+                                    <option value="dyn">Dynamic (EXPERIMENTAL)</option>
+                                 </select>
+                              </span>
+                              <a onclick="switchProxy(); reloadpage();" class="button-save">Apply</a>
                         </div>
                         </td>
             </tr>

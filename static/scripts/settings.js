@@ -56,12 +56,10 @@ function topbar() {
   icons.style.justifyItems = "left";
   icons.style.right = "";
   icons.style.left = "0";
-  apps.innerHTML = '<span class="names">Apps</span>';
-  game.innerHTML = '<span class="names">Games</span>';
-  extras.innerHTML = '<span class="names">Extras</span>';
-  sett.innerHTML = '<span class="names">Settings</span>';
-  localStorage.setItem("bar", "top");
-  localStorage.setItem("icon", "on");
+  apps.innerHTML += '<span class="names">Apps</span>';
+  game.innerHTML += '<span class="names">Games</span>';
+  extras.innerHTML += '<span class="names">Extras</span>';
+  sett.innerHTML += '<span class="names">Settings</span>';
 
 };
 
@@ -96,10 +94,10 @@ function setcloaks() {
   };
 };
 
-var proxyStored = localStorage.getItem("theme");
-var proxySel = document.getElementById("themeSwitcher");
+var themeStored = localStorage.getItem("theme");
+var themeSel = document.getElementById("themeSwitcher");
 
-function switchProxy() {
+function switchTheme() {
   var selecter = document.getElementById("themeSwitcher");
   var selectedOption = selecter.value;
 
@@ -165,8 +163,10 @@ var bareSel = document.getElementById("bareSwitcher")
 function switchBare() {
   var selecter = document.getElementById("bareSwitcher");
   var selectedOption = selecter.value;
+  var inputValue = document.getElementById('bareUrl').value;
 
-  localStorage.setItem("bare", selectedOption);
+  const finalValue = inputValue.trim() !== '' ? inputValue : selectedOption;
+  localStorage.setItem("bare", finalValue);
   var storedChoice = localStorage.getItem("bare");
 };
 
@@ -183,6 +183,9 @@ function setdefaults() {
   if (localStorage.blankcheckboxState == undefined) {
     localStorage.setItem("blankcheckboxState", "false")
   };
+  if (localStorage.proxy == undefined ) {
+    localStorage.setItem("proxy", "uv");
+  }
   localStorage.setItem("defaults", "set")
 };
 
@@ -231,6 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function setthemes() {
+  if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
   if (localStorage.theme == "default") {
     themefile.href = "/static/css/index.css";
     if (localStorage.particlecheckboxState == "true") {
@@ -276,18 +280,68 @@ function setthemes() {
       changeFavicon('../favicon.ico');
     };
   }
+} else if (window.location.pathname.endsWith('games.html') || window.location.pathname.endsWith('apps.html')) {
+  if (localStorage.theme == "default") {
+    themefile.href = "/static/css/index.css";
+    if (localStorage.cloak == "off") {
+      changeFavicon('../favicon.ico');
+    };
+    logo.src = "../favicon.ico";
+  } else if (localStorage.theme == "noir") {
+    themefile.href = "/static/css/themes/noir/noir.css";
+  } else if (localStorage.theme == "void") {
+    themefile.href = "/static/css/themes/void/void.css";
+  } else if (localStorage.theme == "ip") {
+    themefile.href = "/static/css/themes/ironprime/ironprime.css";
+    logo.src = "/static/css/themes/fire/firethemelogo.png";
+  } else if (localStorage.theme == "xg") {
+    themefile.href = "/static/css/themes/xgames/xgames.css";
+  } else if (localStorage.theme == "stealth") {
+    themefile.href = "/static/css/themes/stealth/stealth.css";
+  } else if (localStorage.theme == "fg") {
+    themefile.href = "/static/css/themes/froggermans/froggermans.css";
+  } else if (localStorage.theme == "ghost") {
+    themefile.href = "/static/css/themes/ghost/ghost.css";
+  } else if (localStorage.theme == "midnight") {
+    themefile.href = "/static/css/themes/midnight/midnight.css";
+  } else if (localStorage.theme == "fire") {
+    themefile.href = "/static/css/themes/fire/fire.css";
+    if (localStorage.cloak == "off") {
+      changeFavicon('/static/css/themes/fire/firefavicon.ico');
+    };
+    logo.src = "/static/css/themes/fire/firefavicon.ico";
+  } else if (localStorage.theme == "meteor") {
+    themefile.href = "/static/css/themes/meteor/meteor.css";
+  } else {
+    themefile.href = "/static/css/index.css";
+    if (localStorage.cloak == "off") {
+      changeFavicon('../favicon.ico');
+    };
+  }
+}
 };
 
-if (localStorage.defaults !== "set") {
-  setdefaults();
+var proxyStored = localStorage.getItem("proxy");
+var proxySel = document.getElementById("proxySwitcher");
+
+function switchProxy() {
+  var selecter = document.getElementById("proxySwitcher");
+  var selectedOption = selecter.value;
+
+  localStorage.setItem("proxy", selectedOption);
+  var storedChoice = localStorage.getItem("proxy");
 };
+
+
+setdefaults();
 setthemes();
 setcloaks();
 topbar();
-proxySel.value = proxyStored;
+themeSel.value = themeStored;
 bareSel.value = bareStored;
 cloakSel.value = cloakStored;
+cloakSel.value = cloakStored;
+proxySel.value = proxyStored;
 if (document.querySelector(".message")) {
   setRandomSay();
 }
-

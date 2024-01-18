@@ -1,3 +1,36 @@
+async function worker() {
+    return await navigator.serviceWorker.register("/static/dyn.js", {
+      scope: __dynamic$config.prefix,
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', async function(){
+    await worker();
+    workerLoaded = true;
+  })
+
+  class crypts {
+    static encode(str) {
+      return encodeURIComponent(
+        str
+          .toString()
+          .split("")
+          .map((char, ind) =>
+            ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char
+          )
+          .join("")
+      );
+    }
+    static decode(str) {
+      if (str.charAt(str.length - 1) == "/") str = str.slice(0, -1);
+      return decodeURIComponent(str)
+        .split("")
+        .map((char, ind) =>
+          ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char
+        )
+        .join("");
+    }
+  }
 let games = JSON.parse(localStorage.getItem('games')) || [
     {
         name: '2048',
@@ -379,29 +412,50 @@ let games = JSON.parse(localStorage.getItem('games')) || [
     }
 ];
 
-function edu(val) {
-    let iframe = document.querySelector(".iframe.active");
-    window.navigator.serviceWorker
-        .register("./uv.js", {
-            scope: __uv$config.prefix,
-        })
-        .then(() => {
-            let url = val.trim();
-            if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
-            else if (!(url.startsWith("https://") || url.startsWith("http://")))
-                url = "https://" + url;
-            sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
-            location.href = "edu.html";
-        });
+function iframe(val) {
+    if (localStorage.getItem('proxy') == "uv") {
+        window.navigator.serviceWorker
+            .register("/static/uv.js", {
+                scope: __uv$config.prefix,
+            })
+            .then(() => {
+                let url = val.trim();
+                if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
+                else if (!(url.startsWith("https://") || url.startsWith("http://")))
+                    url = "https://" + url;
+                sessionStorage.setItem("encodedUrl", "/static/ghost/" + __uv$config.encodeUrl(url));
+                location.href = "edu.html";
+            });
+    } else if (localStorage.getItem("proxy") == "dyn") {
+        if (!workerLoaded) {
+            worker();
+        }
+        let url = val.trim();
+                if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
+                else if (!(url.startsWith("https://") || url.startsWith("http://")))
+                    url = "https://" + url;
+                    sessionStorage.setItem("encodedUrl", "/static/amp/" + crypts.encode(url));
+                    location.href = "edu.html";
+    } else {
+        window.navigator.serviceWorker
+            .register("/static/uv.js", {
+                scope: __uv$config.prefix,
+            })
+            .then(() => {
+                let url = val.trim();
+                if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
+                else if (!(url.startsWith("https://") || url.startsWith("http://")))
+                    url = "https://" + url;
+                sessionStorage.setItem("encodedUrl", "/static/ghost/" + __uv$config.encodeUrl(url));
+                location.href = "edu.html";
+            });
+    }
+      
 }
 
 function ifUrl(val = "") {
-    try {
-        const url = new URL(val);
-        return url.protocol === 'http:' || url.protocol === 'https:';
-    } catch (e) {
-        return false; // The constructor throws an error for invalid URLs
-    }
+    const urlPattern = /^(http(s)?:\/\/)?([\w-]+\.)+[\w]{2,}(\/.*)?$/;
+    return urlPattern.test(val);
 }
 
 // Save the state of games to localStorage
@@ -518,11 +572,11 @@ function getGameElement(game, index) {
     const gameShortcut = document.createElement('div');
     gameShortcut.className = 'game-shortcut hvr-grow-rotate';
     gameShortcut.innerHTML = `
-      <a onclick="edu('${game.url}')" title="${game.name}">
+      <a onclick="iframe('${game.url}')" title="${game.name}">
         <img src="${game.imgUrl}" alt="${game.name}">
       </a>
       <div class="gametext">
-        <a style="font-size:12px;" onclick="edu('${game.url}')" title="${game.name}">
+        <a style="font-size:12px;" onclick="iframe('${game.url}')" title="${game.name}">
           ${game.name}
         </a>
         <button class="button-save" onclick="togglePin(${index})">
