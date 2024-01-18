@@ -1,4 +1,5 @@
 // See documentation for more information 
+var bare = localStorage.getItem("bare");
 
 self.__dynamic$config = {
   prefix: '/static/amp/',
@@ -7,7 +8,7 @@ self.__dynamic$config = {
   logLevel: 0, 
   bare: {
     version: 2, 
-    path: localStorage.getItem("bare"),
+    path: bare,
   },
   tab: {
     title: 'Service',
