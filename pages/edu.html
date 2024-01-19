@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+  <link rel="shortcut icon" id="dynamic-favicon" href="./images/favicon/favicon.ico" />
+  <title id="dynamic-title">Night</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./css/edu.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+  <script src="uv/uv.bundle.js"></script>
+  <script src="uv/uv.config.js"></script>
+  <script src="dynamic/dynamic.worker.js"></script>
+      <script src="dynamic/dynamic.config.js"></script>
+  <script src="./scripts/jquery-3.7.1.js"></script>
+
+  <script src="./scripts/eruda/eruda.js"></script>  
+  <script src="./scripts/edu.js"></script>
+  <iframe src="" id="iframeId" style="bottom: 0" style="border: 0px #ffffff none" name="Iframe" scrolling="yes"
+    frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>
+  <div style="position:absolute;left:0;top:2px;height:50px;" id="browser">
+    <div style="display:flex;align-items:center;height:50px;">
+      <button id="home-page" class="home hvr-wobble-vertical" onclick="window.location.href = './';"> <i
+          class="fa-solid fa-house"></i> </button>
+      <form id="uv-form">
+        <input id="uv-search-engine" class="input" value="https://www.google.com/search?q=%s" type="hidden" />
+        <input id="uv-address" type="text" class="input" placeholder="Search Google or type an URL"
+          class="form__input" />
+      </form>
+      <button onclick="reload()" class="reload hvr-buzz"> <i class="fa-solid fa-rotate-right"></i> </button>
+      <button onclick="back()" class="back hvr-skew-backward"> <i class="fa-solid fa-backward"></i> </button>
+      <button onclick="forward()" class="forward hvr-skew-forward"> <i class="fa-solid fa-forward"></i> </button>
+      <button id="saveBookmarkButton" class="hvr-pulse"> <i class="fa-solid fa-star"></i> </button>
+    </div>
+  </div>
+  <div id="mySidebar" class="sidebar">
+    <br>
+    <a style="font-size:12px;" onclick="hide();"><i style="margin-right:2px;margin-left:10px;"
+        class="fa-solid fa-eye-slash"></i>Toggle Topbar</a>
+    <a onclick="localStorage.removeItem('bookmarks');initializeBookmarks();displayBookmarks();"><i
+        style="margin-right:2px;margin-left:10px;" class="fa-solid fa-meteor"></i>Clear Bookmarks</a>
+    <a style="font-size:12px;" onclick="eruda.init();eruda.show();"><i style="margin-right:2px;margin-left:10px;"
+        class="fa-solid fa-laptop-code"></i>Inspect</a>
+  </div>
+
+  <div class="os-bar">
+    <button onclick="togglemenu();" class="menubtn"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16"
+        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com/ License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+        <path fill="#ffffff"
+          d="M35.2 171.1C-11.7 217.1-11.7 294 35.2 340.9L171.1 476.8C217.1 523.7 294 523.7 340.9 476.8L476.8 340.9C523.7 294 523.7 217.1 476.8 171.1L340.9 35.2C294-11.7 217.1-11.7 171.1 35.2L35.2 171.1zM315.5 315.5C282.6 348.3 229.4 348.3 196.6 315.5C163.7 282.6 163.7 229.4 196.6 196.6C229.4 163.7 282.6 163.7 315.5 196.6C348.3 229.4 348.3 282.6 315.5 315.5z" />
+      </svg></button>
+    <div id="bookmarkList">
+
+    </div>
+  </div>
+  <script type="text/javascript">setIframe();</script>
+  <script src="./scripts/register-sw.js"></script>
+  <script src="./scripts/search.js"></script>
+  <script src="./scripts/index.js"></script>
+</body>
+
+</html>
