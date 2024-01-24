@@ -65,7 +65,7 @@ const input = document.querySelector("input");
 let workerLoaded;
 
 async function worker() {
-  return await navigator.serviceWorker.register("/static/dyn.js", {
+  return await navigator.serviceWorker.register("/dyn.js", {
     scope: __dynamic$config.prefix,
   });
 }
