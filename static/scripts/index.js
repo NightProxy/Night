@@ -84,7 +84,7 @@ if (localStorage.getItem("proxy") == "uv") {
       })
       .then(() => {
         const url = search(address.value, searchEngine.value);
-        sessionStorage.setItem("encodedUrl", "/static/ghost/" + __uv$config.encodeUrl(url));
+        sessionStorage.setItem("encodedUrl", "/ghost/" + __uv$config.encodeUrl(url));
         location.href = "edu";
       });
   });
@@ -101,7 +101,7 @@ if (localStorage.getItem("proxy") == "uv") {
       await worker();
     }
     const url = search(address.value, searchEngine.value);
-    sessionStorage.setItem("encodedUrl", "/static/amp/" + crypts.encode(url));
+    sessionStorage.setItem("encodedUrl", "/amp/" + crypts.encode(url));
     location.href = "edu";
 });
 
@@ -114,7 +114,7 @@ if (localStorage.getItem("proxy") == "uv") {
       })
       .then(() => {
         const url = search(address.value, searchEngine.value);
-        sessionStorage.setItem("encodedUrl", "/static/ghost/" + __uv$config.encodeUrl(url));
+        sessionStorage.setItem("encodedUrl", "/ghost/" + __uv$config.encodeUrl(url));
         location.href = "edu";
       });
   });

@@ -2,7 +2,7 @@
 var bare = localStorage.getItem("bare");
 
 self.__dynamic$config = {
-  prefix: '/static/amp/',
+  prefix: '/amp/',
   encoding: 'xor',
   mode: 'production', 
   logLevel: 0, 
@@ -16,7 +16,7 @@ self.__dynamic$config = {
     ua: null,
   },
   assets: {
-    prefix: '/static/dynamic/',
+    prefix: '/dynamic/',
     files: {
       handler: 'dynamic.handler.js',
       client: 'dynamic.client.js',

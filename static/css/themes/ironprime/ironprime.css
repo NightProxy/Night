@@ -45,7 +45,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--background-primary);
-  background-image: url("/static/css/themes/ironprime/ip.jpg");
+  background-image: url("/css/themes/ironprime/ip.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
