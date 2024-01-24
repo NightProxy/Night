@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(process.cwd(), './pages/index.html'));
 });
 
+app.get('/index', (req, res) => {
+  res.sendFile(path.join(process.cwd(), './pages/index.html'));
+});
+
 app.get('/apps', (req, res) => {
   res.sendFile(path.join(process.cwd(), './pages/apps.html'));
 });

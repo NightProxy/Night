@@ -1,5 +1,5 @@
 async function worker() {
-    return await navigator.serviceWorker.register("/static/dyn.js", {
+    return await navigator.serviceWorker.register("/dyn.js", {
       scope: __dynamic$config.prefix,
     });
   }
@@ -302,7 +302,7 @@ function iframe(val) {
                 if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
                 else if (!(url.startsWith("https://") || url.startsWith("http://")))
                     url = "https://" + url;
-                    sessionStorage.setItem("encodedUrl", "/static/ghost/" + __uv$config.encodeUrl(url));
+                    sessionStorage.setItem("encodedUrl", "/ghost/" + __uv$config.encodeUrl(url));
                 location.href = "edu";
             });
     } else if (localStorage.getItem("proxy") == "dyn") {
@@ -313,7 +313,7 @@ function iframe(val) {
         if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
         else if (!(url.startsWith("https://") || url.startsWith("http://")))
             url = "https://" + url;
-        sessionStorage.setItem("encodedUrl", "/static/amp/" + crypts.encode(url));
+        sessionStorage.setItem("encodedUrl", "/amp/" + crypts.encode(url));
         location.href = "edu";
     } else {
         window.navigator.serviceWorker
@@ -325,7 +325,7 @@ function iframe(val) {
                 if (!ifUrl(url)) url = "https://www.google.com/search?q=" + url;
                 else if (!(url.startsWith("https://") || url.startsWith("http://")))
                     url = "https://" + url;
-                    sessionStorage.setItem("encodedUrl", "/static/ghost/" + __uv$config.encodeUrl(url));
+                    sessionStorage.setItem("encodedUrl", "/ghost/" + __uv$config.encodeUrl(url));
                     location.href = "edu";
             });
     }

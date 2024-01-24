@@ -6,11 +6,11 @@ if (typeof localStorage !== 'undefined') {
   bare = localStorage.getItem("bare");
 } else {
   // Provide a fallback or handle the absence of localStorage
-  bare = "https://night-bare.vercel.app"; // You may adjust this based on your requirements
+  bare = "/bare/"; // You may adjust this based on your requirements
 }
 
 self.__uv$config = {
-  prefix: '/static/ghost/',
+  prefix: '/ghost/',
   bare: bare,
   encodeUrl: Ultraviolet.codec.xor.encode,
   decodeUrl: Ultraviolet.codec.xor.decode,

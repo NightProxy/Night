@@ -15,7 +15,7 @@ if (localStorage.bare == "default") {
 };
 
 self.__uv$config = {
-    prefix: '/static/ghost/',
+    prefix: '/ghost/',
     bare: bare,
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
