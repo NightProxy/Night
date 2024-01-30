@@ -332,25 +332,6 @@ function switchProxy() {
   var storedChoice = localStorage.getItem("proxy");
 };
 
-class Time {
-  constructor(element) {
-      this.element = element
-      this.render()
-      this.startInterval()
-  }
-
-  startInterval() {
-      setInterval(this.render.bind(this), 50)
-  }
-
-  render() { 
-     let date = new Date()
-     this.element.textContent = date.toLocaleTimeString()
-  }
-}
-new Time(time);
-
-
 setdefaults();
 setthemes();
 setcloaks();

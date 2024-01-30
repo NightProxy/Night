@@ -21,6 +21,12 @@
   --button-hover-background-color: #ffffff;
   --cancel-button-background-color: #ffffff;
   --save-button-background-color: #4f4f4f;
+  --blob-color: linear-gradient(
+		to right,
+		blue,
+		mediumpurple
+	);
+	--blob-size: 400px;
 }
 
 body {
@@ -573,6 +579,26 @@ p {
 
 .blankcheckbox:active~.blankslider::before {
   transform: translate(0);
+}
+
+#blob {
+	animation: rotate360 20s infinite;
+	background: var(--blob-color);
+	filter: blur(calc(var(--blob-size)/2.15));
+	
+	width: var(--blob-size);
+	height: var(--blob-size);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	border-radius: 50%;
+}
+
+@keyframes rotate360 {
+	from { rotate: 0deg; }
+	50% { scale: 1 1.15; }
+	to { rotate: 360deg; }
 }
 
 
