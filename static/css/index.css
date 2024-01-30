@@ -23,7 +23,7 @@
   --save-button-background-color: #4f4f4f;
   --blob-color: linear-gradient(
 		to right,
-		blue,
+		rgb(0, 98, 255),
 		mediumpurple
 	);
 	--blob-size: 400px;
