@@ -24,7 +24,7 @@
   --blob-color: linear-gradient(
 		to right,
 		rgb(0, 98, 255),
-		mediumpurple
+		rgb(40, 87, 172)
 	);
 	--blob-size: 400px;
 }
@@ -39,6 +39,7 @@ body {
   vertical-align: middle;
   position: r;
   user-select: none;
+  overflow: hidden;
 }
 
 .titlebutton:hover {
@@ -59,8 +60,8 @@ body {
 
 #particles-js {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: var(--background-primary);
   background-image: url(/bg.png);
   background-repeat: no-repeat;
