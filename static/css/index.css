@@ -891,9 +891,21 @@ p {
   }
 }
 
+@media (max-width: 1776px) {
+  .settings-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 @media (max-width: 1632px) {
   .settings-grid {
     grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1488px) {
+  .settings-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -903,15 +915,34 @@ p {
   }
 }
 
+@media (max-width: 1200px) {
+  .settings-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 1056px) {
   .settings-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+@media (max-width: 912px) {
+  .settings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .settings-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 624px) {
+  .settings-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
