@@ -696,7 +696,7 @@ p {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 8px var(--app-shortcut-shadow);
-  background-color: ;
+  background-color: var(--app-shortcut-bg);
   display: flex;
   cursor: pointer;
 }
@@ -799,7 +799,7 @@ p {
   z-index: 1000;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.445);
+  background-color: var(--);
   backdrop-filter: blur(5px);
   overflow-x: hidden;
 
@@ -831,8 +831,8 @@ p {
   position: relative;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #212121;
+  box-shadow: 0 4px 8px var(--app-shortcut-shadow);
+  background-color: var(--app-shortcut-bg);
   display: flex;
   cursor: pointer;
 }
