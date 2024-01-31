@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function setthemes() {
-  if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
+  if (window.location.pathname.endsWith('index') || window.location.pathname.endsWith('/')) {
   if (localStorage.theme == "default") {
     themefile.href = "/css/index.css";
     if (localStorage.particlecheckboxState == "true") {
@@ -280,7 +280,7 @@ function setthemes() {
       changeFavicon('/images/favicon/favicon.ico');
     };
   }
-} else if (window.location.pathname.endsWith('games.html') || window.location.pathname.endsWith('apps.html')) {
+} else if (window.location.pathname.endsWith('games') || window.location.pathname.endsWith('apps')) {
   if (localStorage.theme == "default") {
     themefile.href = "/css/index.css";
     if (localStorage.cloak == "off") {
