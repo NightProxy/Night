@@ -879,7 +879,7 @@ p {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
   padding: 1rem;
-  max-width: 100%;
+  max-width: 90%;
   margin: auto;
   overflow-y: auto;
   align-items: center;
