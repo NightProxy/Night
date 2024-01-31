@@ -99,9 +99,7 @@
       </div>
       <div class="sidenav" id="sidenav" style="display: none">
          <a onclick="fadeOutElement();" class="fa-solid fa-circle-xmark closebutton" id="closebutton"></a>
-         <table style="width:80%;margin-left:10%;margin-left:10%;">
-            <tr>
-               <th>
+            <div class="settings-grid">
                   <div id="settings-boxes">
                      <h2 style="margin-top:0px">Toggle Cloak</h2>
                      <p style="text-align: center; font-size: 18px; margin-top: -60px;">Cloak your tab with a custom
@@ -117,8 +115,6 @@
                      </span>
                      <a onclick="switchCloak(); reloadpage();" class="button-save">Apply</a>
                   </div>
-               </th>
-               <th>
                   <div id="settings-boxes">
                      <h2 style="text-align:center;margin-top:0px;">Themes</h2>
                      <p style="text-align: center; font-size: 18px; margin-top: -60px;">Change the site's themes</p>
@@ -139,8 +135,6 @@
                      </span>
                      <a onclick="switchTheme(); reloadpage();" class="button-save">Apply</a>
                   </div>
-               </th>
-               <th>
                   <div id="settings-boxes">
                      <h2 style="text-align:center;margin-top:0px;">Proxy Options</h2>
                      <b>
@@ -151,8 +145,10 @@
                      <span class="custom-dropdown big">
                         <select class="dropdown" id="bareSwitcher">
                            <option value="/bare/">Default</option>
-                           <option value="https://142-4675-64-355-76-6342-8607-24485-75.vercel.app/">Default 2</option>
-                           <option value="https://165-53858-7966-42755-86-347-645-3540.vercel.app/">Default 3</option>
+                           <option value="https://142-4675-64-355-76-6342-8607-24485-75.vercel.app/">Default 2
+                           </option>
+                           <option value="https://165-53858-7966-42755-86-347-645-3540.vercel.app/">Default 3
+                           </option>
                            <option value="https://phantom.lol/bare">Shadow Default</option>
                            <option value="https://phantomcloud.strangled.net/bare">Shadow Alt</option>
                         </select>
@@ -160,22 +156,16 @@
                      <input style="width:150px" type="url" id="bareUrl" placeholder="Custom Bare URL">
                      <a onclick="switchBare(); reloadpage();" class="button-save">Apply</a>
                   </div>
-               </th>
-            </tr>
-            <tr>
-               <td>
                   <br>
                   <div id="settings-boxes">
                      <h2 style="text-align:center;margin-top:0px;">Toggle Particles</h2>
-                     <p style="text-align: center; font-size: 18px; margin-top: -40px;">Allows you to toggle particles
-                        on certain themes like the default theme</p>
+                     <p style="text-align: center; font-size: 18px; margin-top: -40px;">Allows you to toggle
+                        particles on certain themes like the default theme</p>
                      <label class="switch">
                         <input type="checkbox" class="particlecheckbox">
                         <div class="slider"></div>
                      </label>
                   </div>
-               </td>
-               <td>
                   <br>
                   <div id="settings-boxes">
                      <h2 style="text-align:center;margin-top:0px;">Launch about:blank</h2>
@@ -185,13 +175,11 @@
                         onclick="openGame();">Launch</a>
 
                   </div>
-               </td>
-               <td>
                   <br>
                   <div id="settings-boxes">
                      <h2 style="text-align:center;margin-top:0px;">Proxy Switcher</h2>
-                     <p style="text-align: center; font-size: 18px; margin-top: -40px;">This will swap the current proxy
-                        between UV and Dynamic</p>
+                     <p style="text-align: center; font-size: 18px; margin-top: -40px;">This will swap the current
+                        proxy between UV and Dynamic</p>
                      <span class="custom-dropdown big">
                         <select class="dropdown" id="proxySwitcher">
                            <option value="uv">Ultraviolet</option>
@@ -200,9 +188,7 @@
                      </span>
                      <a onclick="switchProxy(); reloadpage();" class="button-save">Apply</a>
                   </div>
-               </td>
-            </tr>
-         </table>
+               </div>
       </div>
       <div class="sidenav" id="addgame" style="background-color:rgba(0, 0, 0, 0.445);backdrop-filter:blur(5px); display: none">
          <a onclick="fadeOutgames();" class="fa-solid fa-circle-xmark closebutton" id="closebutton"></a>

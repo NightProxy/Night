@@ -98,13 +98,11 @@
             </div>
             <div class="sidenav" id="sidenav" style="display: none">
                <a onclick="fadeOutElement();" class="fa-solid fa-circle-xmark closebutton" id="closebutton"></a>
-               <table style="width:80%;margin-left:10%;margin-left:10%;">
-                  <tr>
-                     <th>
+                  <div class="settings-grid">
                         <div id="settings-boxes">
                            <h2 style="margin-top:0px">Toggle Cloak</h2>
-                           <p style="text-align: center; font-size: 18px; margin-top: -60px;">Cloak your tab with a
-                              custom name and favicon</p>
+                           <p style="text-align: center; font-size: 18px; margin-top: -60px;">Cloak your tab with a custom
+                              name and favicon</p>
                            <span class="custom-dropdown big">
                               <select class="dropdown" id="cloakSwitcher">
                                  <option value="off">Off</option>
@@ -116,12 +114,9 @@
                            </span>
                            <a onclick="switchCloak(); reloadpage();" class="button-save">Apply</a>
                         </div>
-                     </th>
-                     <th>
                         <div id="settings-boxes">
                            <h2 style="text-align:center;margin-top:0px;">Themes</h2>
-                           <p style="text-align: center; font-size: 18px; margin-top: -60px;">Change the site's themes
-                           </p>
+                           <p style="text-align: center; font-size: 18px; margin-top: -60px;">Change the site's themes</p>
                            <span class="custom-dropdown big">
                               <select class="dropdown" id="themeSwitcher">
                                  <option value="default">Default</option>
@@ -139,13 +134,11 @@
                            </span>
                            <a onclick="switchTheme(); reloadpage();" class="button-save">Apply</a>
                         </div>
-                     </th>
-                     <th>
                         <div id="settings-boxes">
                            <h2 style="text-align:center;margin-top:0px;">Proxy Options</h2>
                            <b>
-                              <p style="text-align: center; font-size: 18px; margin-top: -40px;">If our proxy isn't
-                                 working it's probably because the bare server is blocked.<br>
+                              <p style="text-align: center; font-size: 18px; margin-top: -40px;">If our proxy isn't working
+                                 it's probably because the bare server is blocked.<br>
                                  This can swap the server so the proxy can function if one is down</p>
                            </b>
                            <span class="custom-dropdown big">
@@ -162,10 +155,6 @@
                            <input style="width:150px" type="url" id="bareUrl" placeholder="Custom Bare URL">
                            <a onclick="switchBare(); reloadpage();" class="button-save">Apply</a>
                         </div>
-                     </th>
-                  </tr>
-                  <tr>
-                     <td>
                         <br>
                         <div id="settings-boxes">
                            <h2 style="text-align:center;margin-top:0px;">Toggle Particles</h2>
@@ -176,19 +165,15 @@
                               <div class="slider"></div>
                            </label>
                         </div>
-                     </td>
-                     <td>
                         <br>
                         <div id="settings-boxes">
                            <h2 style="text-align:center;margin-top:0px;">Launch about:blank</h2>
-                           <p style="text-align: center; font-size: 18px; margin-top: -40px;">Launches about:blank in a
-                              new tab which cloaks the tab entirely</p>
+                           <p style="text-align: center; font-size: 18px; margin-top: -40px;">Launches about:blank in a new
+                              tab which cloaks the tab entirely</p>
                            <a class="button-save" style="text-align:center; padding-right:20px;"
                               onclick="openGame();">Launch</a>
-
+   
                         </div>
-                     </td>
-                     <td>
                         <br>
                         <div id="settings-boxes">
                            <h2 style="text-align:center;margin-top:0px;">Proxy Switcher</h2>
@@ -202,9 +187,7 @@
                            </span>
                            <a onclick="switchProxy(); reloadpage();" class="button-save">Apply</a>
                         </div>
-                     </td>
-                  </tr>
-               </table>
+                     </div>
             </div>
             <div class="sidenav" id="addapp"
                style="background-color:rgba(0, 0, 0, 0.445);backdrop-filter:blur(5px); display: none">
