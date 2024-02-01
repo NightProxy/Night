@@ -269,11 +269,6 @@ setdefaults();
 setthemes();
 setcloaks();
 topbar();
-themeSel.value = themeStored;
-bareSel.value = bareStored;
-cloakSel.value = cloakStored;
-cloakSel.value = cloakStored;
-proxySel.value = proxyStored;
 if (document.querySelector(".message")) {
   setRandomSay();
 }
