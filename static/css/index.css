@@ -883,6 +883,7 @@ p {
   margin: auto;
   overflow-y: auto;
   align-items: center;
+  margin-top: 2vh;
 }
 
 @media (max-width: 1920px) {
