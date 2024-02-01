@@ -206,7 +206,7 @@ a {
   height: 49px;
   z-index: 999;
  background-color: rgba(0, 0, 0, 0.445);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(1px);
 }
 
 .zoom {
