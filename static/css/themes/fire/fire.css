@@ -3,35 +3,62 @@
   --input-text-color: #fff;
   --input-placeholder-color: #aaa;
   --input-background-color: #222;
-  --input-border-color: #FAAC03;
   --input-border-size: 1.3px;
-  --footer-border-color: #FAAC03;
+  --input-border-color: #ffffff;
+  --input-outline: rgba(225, 225, 225, 0.8);
+  --input-focus: rgba(5, 126, 242);
+  --footer-border-color: #ffffff;
   --ag-button-text-color: #1E1E1E;
   --primary-background-color: #1e1e1e;
   --secondary-background-color: #2a2a2a;
-  --accent-color: #8600ff;
+  --accent-color: #ffffff;
   --main-text-color: #ffffff;
-  --search-placeholder-color: #a800ff;
+  --text: #ffffff;
+  --search-placeholder-color: #ffffff;
   --bookmark-background-color: #6B52A3;
   --bookmark-hover-background-color: #5B3A75;
-  --input-background-color: #353535;
+  --input-background-color: #1a1a2b;
   --button-background-color: #6B52A3;
   --button-text-color: #fff;
-  --button-hover-background-color: #a800ff;
-  --cancel-button-background-color: #4C2C63;
-  --save-button-background-color: #3A9259;
-  --text: #ffffff;
+  --button-hover-background-color: #ffffff;
+  --cancel-button-background-color: #ffffff;
+  --save-button-background-color: #4f4f4f;
+  --blob-color: linear-gradient(
+		to right,
+		rgb(0, 98, 255),
+		rgb(40, 87, 172)
+	);
+	--blob-size: 400px;
+  --blur-bg-dark: rgba(0, 0, 0, 0.445);
+  --settings-hover-link: #1983f0;
+  --settings-box-bg: #363636;
+  --slider-dark-color: rgb(0, 0, 0, 0.25);
+  --button-save: linear-gradient(45deg, #1983f0, #230063, #303030);
+  --app-shortcut-shadow: rgba(0, 0, 0, 0.2);
+  --app-shortcut-bg: #212121;
 }
 
 body {
   background-color: var(--background-primary);
-  color: #fff;
+  color: var(--main-text-color);
   font-family: 'Noto Sans';
   font-size: 24px;
   margin: 0px;
   padding: 0;
   vertical-align: middle;
   position: r;
+  user-select: none;
+  overflow: hidden;
+}
+
+.titlebutton:hover {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.titlebutton {
+  opacity: 100;
+  transition: opacity 0.3s ease-in-out;
 }
 
 #header {
@@ -42,10 +69,10 @@ body {
 
 #particles-js {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: var(--background-primary);
-  background-image: url("/css/themes/fire/firebg.jpg");
+  background-image: url(/bg.png);
   background-repeat: no-repeat;
   text-align: center;
   padding: 20px;
@@ -54,7 +81,7 @@ body {
 
 #imgsearch {
   display: grid;
-  position: absolute;
+  position: relative;
   align-items: center;
   justify-items: center;
   top: 0;
@@ -64,6 +91,9 @@ body {
   z-index: 999;
   width: 100%;
   height: 100%;
+  overflow-y: auto;
+  /* This invokes the scroll bar when content exceeds max-height */
+
 }
 
 #imgsearch h1 {
@@ -74,7 +104,6 @@ body {
   line-height: 1.5;
   margin-bottom: 20px;
 }
-
 
 #content {
   text-align: center;
@@ -104,10 +133,10 @@ body {
 .form__input {
   padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   font-size: 16px;
   width: 300px;
-  box-shadow: 0 0 5px rgba(196, 196, 196, 0.3);
+  box-shadow: 0 0 5px var(--input-outline);
   background-color: var(--input-background-color);
   text-align: center;
   color: var(--input-text-color);
@@ -116,7 +145,7 @@ body {
 
 a {
   text-decoration: none;
-  color: white;
+  color: var(--text);
   text-align: center;
   align-self: center;
 }
@@ -132,7 +161,7 @@ a {
 
 .form__input:focus {
   outline: none;
-  box-shadow: 0 0 5px var(--input-border-color);
+  box-shadow: 0 0 5px var(--input-focus);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
@@ -153,6 +182,7 @@ a {
   text-align: center;
   color: var(--input-text-color);
   font-size: 14px;
+  z-index: 100000;
 }
 
 #footer p {
@@ -171,7 +201,7 @@ a {
 
 
 #icbuttons {
-  position: absolute;
+  position: fixed;
   top: 20px;
   height: 49px;
   z-index: 999;
@@ -191,51 +221,6 @@ a {
   transform: scale(1.5);
 }
 
-.column {
-  width: 145px;
-  transition: all 0.2s ease;
-  cursor: crosshair;
-  background: rgb(228, 151, 8);
-  background: linear-gradient(139deg, rgba(228, 151, 8, 1) 0%, rgba(235, 94, 0, 1) 100%);
-  border-radius: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  margin: 0;
-
-}
-
-.column img {
-  position: absolute;
-  width: 145px;
-  height: 145px;
-  border-radius: 0px;
-  transition: all 0.2s ease;
-  border-radius: 10px;
-}
-
-.column p {
-  width: 145px;
-  height: 19px;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 19px;
-  text-align: center;
-  color: var(--ag-button-text-color);
-  text-shadow: 0px 0px 30px rgba(20, 255, 189, 0.38);
-  padding-top: 136px;
-  padding-bottom: 12px;
-}
-
-.column:hover {
-  transform: scale(1.2);
-}
-
-.column:hover .label {
-  transform: translateX(-50%) scale(1.3);
-}
-
 .input-container {
   position: relative;
   display: flex;
@@ -251,14 +236,14 @@ input {
   text-align: center;
   border: none;
   outline: none;
-  color: white;
+  color: var(--text);
 }
 
 select {
   padding: 20px;
   border-radius: 5px;
   background: var(--input-background-color);
-  color: white;
+  color: var(--text);
   border: 0px;
   outline: none;
   cursor: pointer;
@@ -284,17 +269,17 @@ select {
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
-  background-color: black;
+  background-color: var(--background-primary);
 }
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #222;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
+  border-radius: 5px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: white;
 }
@@ -302,16 +287,17 @@ select {
 .message {
   text-align: center;
   color: var(--text);
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 1rem;
   align-self: center;
   display: flex;
 }
 
-
 .homemessage {
+  text-align: center;
   cursor: pointer;
   width: fit-content;
+  align-self: center;
   user-select: none;
 }
 
@@ -335,7 +321,7 @@ select {
   z-index: 1000;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.445);
+  background-color: var( --blur-bg-dark);
   backdrop-filter: blur(5px);
   overflow-x: hidden;
   opacity: 1;
@@ -348,7 +334,7 @@ select {
 .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  color: #f1f1f1;
+  color: var(--text);
   border: none;
   background: none;
   cursor: pointer;
@@ -358,7 +344,7 @@ select {
 /* On mouse-over */
 #sidenav .closebutton:hover,
 .dropdown-btn:hover {
-  color: #1983f0;
+  color: var(--settings-hover-link);
 }
 
 #sidenav.fade {
@@ -376,13 +362,13 @@ select {
 
 /* Add an active class to the active dropdown button */
 .active {
-  background-color: black;
-  color: white;
+  background-color: var(--background-primary);
+  color: var(--text);
 }
 
 /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
 .dropdown {
-  background-color: #1f1f1f;
+  background-color: var(--primary-background-color);
   border-radius: 30px;
 }
 
@@ -400,7 +386,7 @@ select {
 
 #settings-boxes {
   margin-top: 20px;
-  background-color: #363636;
+  background-color: var(--settings-box-bg);
   height: 300px;
   width: 300px;
   display: flex;
@@ -413,17 +399,17 @@ select {
 
 #settings-boxes h2,
 p {
-  color: white;
+  color: var(--text);
 }
 
 #barswitch {
   font-size: 50px;
-  color: white;
+  color: var(--text);
 }
 
 #iconswitch {
   font-size: 50px;
-  color: white;
+  color: var(--text);
 }
 
 .names {
@@ -450,11 +436,11 @@ p {
 
 .button-save {
   width: 50px;
-  height: 30px;
+  height: 25px;
   border: none;
   outline: none;
-  color: #fff;
-  background: #111;
+  color: var(--text);
+  background: var(--background-primary);
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -466,7 +452,7 @@ p {
 
 .button-save:before {
   content: '';
-  background: linear-gradient(45deg, #1983f0, #230063, #303030);
+  background: var(--button-save);
   position: absolute;
   top: -2px;
   left: -2px;
@@ -482,7 +468,7 @@ p {
 }
 
 .button-save:active {
-  color: #000
+  color: var(--background-primary)
 }
 
 .button-save:active:after {
@@ -499,7 +485,7 @@ p {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #111;
+  background: var(--background-primary);
   left: 0;
   top: 0;
   border-radius: 30px;
@@ -533,7 +519,7 @@ p {
   align-items: center;
   border: 4px solid transparent;
   transition: .3s;
-  box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.25) inset;
+  box-shadow: 0 0 10px 0 var(--slider-dark-color) inset;
   cursor: pointer;
 }
 
@@ -542,20 +528,20 @@ p {
   display: block;
   width: 100%;
   height: 100%;
-  background-color: #1f1f1f;
+  background-color: var(--ag-button-text-color);
   transform: translateX(-30px);
   border-radius: 20px;
   transition: .3s;
-  box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px 3px var(--slider-dark-color);
 }
 
 .particlecheckbox:checked~.slider::before {
   transform: translateX(30px);
-  box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px 3px var(--slider-dark-color);
 }
 
 .particlecheckbox:checked~.slider {
-  background-color: #2196F3;
+  background-color: var(--settings-hover-link);
 }
 
 .particlecheckbox:active~.slider::before {
@@ -576,7 +562,7 @@ p {
   align-items: center;
   border: 4px solid transparent;
   transition: .3s;
-  box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.25) inset;
+  box-shadow: 0 0 10px 0 var(--slider-dark-color) inset;
   cursor: pointer;
 }
 
@@ -585,22 +571,390 @@ p {
   display: block;
   width: 100%;
   height: 100%;
-  background-color: #1f1f1f;
+  background-color: var(--primary-background-color);
   transform: translateX(-30px);
   border-radius: 20px;
   transition: .3s;
-  box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px 3px var(--slider-dark-color);
 }
 
 .blankcheckbox:checked~.blankslider::before {
   transform: translateX(30px);
-  box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px 3px var(--slider-dark-color);
 }
 
 .blankcheckbox:checked~.blankslider {
-  background-color: #2196F3;
+  background-color: var(--settings-hover-link);
 }
 
 .blankcheckbox:active~.blankslider::before {
   transform: translate(0);
+}
+
+#blob {
+	animation: rotate360 20s infinite;
+	background: var(--blob-color);
+	filter: blur(calc(var(--blob-size)/2.15));
+	
+	width: var(--blob-size);
+	height: var(--blob-size);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	border-radius: 50%;
+}
+
+@keyframes rotate360 {
+	from { rotate: 0deg; }
+	50% { scale: 1 1.15; }
+	to { rotate: 360deg; }
+}
+
+#sidenav {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out;
+  margin-bottom: 20px;
+}
+
+#sidenav.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#addapp {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out;
+  margin-bottom: 20px;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.445);
+  backdrop-filter: blur(5px);
+  overflow-x: hidden;
+
+  transition: opacity 1s;
+}
+
+#addapp.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Bounce In */
+.hvr-bounce-in {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.hvr-bounce-in:hover,
+.hvr-bounce-in:focus,
+.hvr-bounce-in:active {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+
+.grid-container {
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+  /* or 'absolute' if it's within another positioned element */
+  max-height: 87.5vh;
+  /* This is where you decide the scroll threshold */
+  overflow-y: scroll;
+
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  /* Creates 6 columns */
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1200px;
+  /* Adjust this based on the total width of 6 app shortcuts */
+  margin: auto;
+  overflow-y: auto;
+  align-items: center;
+}
+
+/* Style for each app shortcut */
+.app-shortcut {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px var(--app-shortcut-shadow);
+  background-color: var(--app-shortcut-bg);
+  display: flex;
+  cursor: pointer;
+}
+
+/* Style for the app images */
+.app-shortcut img {
+  width: 48px;
+  height: 48px;
+  border-radius: 60%;
+}
+
+.apptext {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  right: 0;
+  top: 0;
+  left: 40px;
+  margin-top: 2px;
+}
+
+/* Style for the pin/unpin buttons */
+.pin-button {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: var(--blur-bg-dark);
+  backdrop-filter: blur(10px);
+  color: var(--accent-color);
+  font-size: 0.8em;
+}
+
+/* Style for the form inputs and button */
+#newAppForm input,
+#newAppForm button {
+  width: 100px;
+}
+
+/* Clear the form on success */
+.clear-input {
+  clear: both;
+  display: block;
+  padding: 1px;
+  margin: 5px;
+  border: none;
+  background: none;
+}
+
+/* Grow Rotate */
+.hvr-grow-rotate {
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.hvr-grow-rotate:hover,
+.hvr-grow-rotate:focus,
+.hvr-grow-rotate:active {
+  -webkit-transform: scale(1.1) rotate(4deg);
+  transform: scale(1.1) rotate(4deg);
+}
+
+#searchBar {
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .apps-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+@media (max-width: 480px) {
+  .apps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+#addgame {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out;
+  margin-bottom: 20px;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  bottom: 0;
+  background-color: var(--);
+  backdrop-filter: blur(5px);
+  overflow-x: hidden;
+
+  transition: opacity 1s;
+}
+
+#addgame.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  /* Creates 6 columns */
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1200px;
+  /* Adjust this based on the total width of 6 game shortcuts */
+  margin: auto;
+  overflow-y: auto;
+  align-items: center;
+
+  /* Center the grid on the page */
+}
+
+/* Style for each game shortcut */
+.game-shortcut {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px var(--app-shortcut-shadow);
+  background-color: var(--app-shortcut-bg);
+  display: flex;
+  cursor: pointer;
+}
+
+/* Style for the game images */
+.game-shortcut img {
+  width: 48px;
+  height: 48px;
+  border-radius: 60%;
+}
+
+.gametext {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  right: 0;
+  top: 0;
+  left: 40px;
+  margin-top: 2px;
+}
+
+
+/* Style for the form inputs and button */
+#newGameForm input,
+#newGameForm button {
+  width: 100px;
+}
+
+@media (max-width: 768px) {
+  .games-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+@media (max-width: 480px) {
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 100%;
+  margin: auto;
+  overflow-y: auto;
+  align-items: center;
+  margin-top: 2vh;
+}
+
+@media (max-width: 1920px) {
+  .settings-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 1776px) {
+  .settings-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1632px) {
+  .settings-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1520px) {
+  .settings-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1488px) {
+  .settings-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1344px) {
+  .settings-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .settings-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1056px) {
+  .settings-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 912px) {
+  .settings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .settings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 624px) {
+  .settings-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
