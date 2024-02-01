@@ -36,6 +36,16 @@ function togglemenu() {
     menu.style.height = "0%";
   }
 }
+
+function togglebar() {
+  var osbar = document.querySelector(".os-bar")
+  if (osbar.style.height === "0px") {
+    osbar.style.height = "50px";
+  } else {
+    osbar.style.height = "0px";
+  }
+}
+
 function setIframe() {
   let encodedUrl = sessionStorage.getItem("encodedUrl");
   console.log(encodedUrl);
