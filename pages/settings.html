@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://arc.io/widget.min.js#L1SfLEWE"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VHVNHMYGN3"></script>
+    <script src="https://kit.fontawesome.com/32abd502cd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #sidenav {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.5s ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #sidenav.fadeOut {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Bounce In */
+        .hvr-bounce-in {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+        }
+
+        .hvr-bounce-in:hover,
+        .hvr-bounce-in:focus,
+        .hvr-bounce-in:active {
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+            -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+            transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+        }
+    </style>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VHVNHMYGN3');
+    </script>
+
+    <script src="./scripts/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" id="themecss" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/overide.css">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/favicon.ico">
+
+    <script type="text/javascript" src="//counter.websiteout.net/js/7/10/5/0"></script>
+    <link rel="shortcut icon" type="image/jpg" href="/images/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Share Tech Mono" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <script src="uv/uv.bundle.js" defer></script>
+    <script src="uv/uv.config.js" defer></script>
+    <script src="dynamic/dynamic.worker.js" defer></script>
+    <script src="dynamic/dynamic.config.js" defer></script>
+    <div id="particles-js">
+        <div id="blob"></div>
+    </div>
+    <div class="page" id="imgsearch">
+        <title>Night</title>
+        <div id="icbuttons" style="left:10px;top:10px;">
+            <a href="index" id="home" class="zoom" index>
+                <img src="/images/favicon/favicon.ico" alt="Logo" id="logo"
+                    style="width:49px;height:49px;border-radius:10px;margin-top:10px;margin-left:10px;"></a>
+
+            <div style="position:fixed;right:0;height:64px;top:10px;">
+                <div id="desktopnav" style="display:flex;justify-content:flex-end;align-items:center;">
+                    <a href="apps"
+                        style="width:50px;padding-right:1px;padding-left:1px;margin-right:6%;font-size:20px;white-space:nowrap;"
+                        id="apps" class="zoom navitem" apps><span class="material-symbols-outlined"
+                            style="vertical-align:-4px;font-size:20px;">&#xE5C3</span></a>
+                    <a href="games"
+                        style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:20px;white-space:nowrap;"
+                        id="games" class="zoom navitem" games><span class="material-symbols-outlined"
+                            style="vertical-align:-4px;font-size:20px;">&#xF135</span></a>
+                    <a href="extras"
+                        style="width:50px;padding-right:1px;padding-left:1px;margin-right:7%;font-size:20px;white-space:nowrap;"
+                        id="extras" class="zoom navitem" extras><span class="material-symbols-outlined"
+                            style="vertical-align:-4px;font-size:20px;">&#xE145</span></a>
+                    <a href="s"
+                        style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:20px;white-space:nowrap;"
+                        id="settings" class="zoom navitem"><span class="material-symbols-outlined"
+                            style="vertical-align:-4px;font-size:20px;">&#xE726</span></a>
+                </div>
+            </div>
+            <div class="time"></div>
+            <div style="margin-top:30vh;position:fixed;top:0;left:0;right:0;bottom:0;">
+                <center>
+                    <div>
+                        <a style="font-size:64px; margin-top:0vh; margin-bottom:0vh; font-family: Noto Sans; text-decoration: none; color: #fff"
+                            class="titlebutton" href="https://discord.gg/7SCnPUM5S6">Night</a>
+                    </div>
+                </center>
+                <center>
+                    <div style="margin-top:0px;" class="message homemessage" onclick="setRandomSay()">...</div>
+                </center>
+                <center>
+                    <form class="hvr-bounce-in" id="uv-form">
+                        <input class="hvr-bounce-in" id="uv-search-engine" value="https://www.google.com/search?q=%s"
+                            type="hidden" />
+                        <input id="uv-address" type="text" placeholder="Search Google or type an URL"
+                            class="form__input" />
+                    </form>
+                </center>
+            </div>
+            <div class="desc left-margin">
+                <p id="uv-error"></p>
+                <pre id="uv-error-code"></pre>
+            </div>
+            <div class="sidenav" id="sidenav">
+                <a onclick="fadeOutElement();" class="fa-solid fa-circle-xmark closebutton" id="closebutton"></a>
+                <div class="settings-grid">
+                    <div id="settings-boxes">
+                        <h2 style="margin-top:0px">Toggle Cloak</h2>
+                        <p style="text-align: center; font-size: 18px; margin-top: -60px;">Cloak your tab with a custom
+                            name and favicon</p>
+                        <span class="custom-dropdown big">
+                            <select class="dropdown" id="cloakSwitcher">
+                                <option value="off">Off</option>
+                                <option value="drive">Google Drive</option>
+                                <option value="classroom">Google Classroom</option>
+                                <option value="gmail">Gmail</option>
+                                <option value="google">Google</option>
+                            </select>
+                        </span>
+                        <a onclick="switchCloak(); reloadpage();" class="button-save">Apply</a>
+                    </div>
+                    <div id="settings-boxes">
+                        <h2 style="text-align:center;margin-top:0px;">Themes</h2>
+                        <p style="text-align: center; font-size: 18px; margin-top: -60px;">Change the site's themes</p>
+                        <span class="custom-dropdown big">
+                            <select class="dropdown" id="themeSwitcher">
+                                <option value="default">Default</option>
+                                <option value="fire">Fire</option>
+                                <option value="noir">Noir</option>
+                                <option value="void">Void</option>
+                                <option value="ip">IronPrime</option>
+                                <option value="xg">XGames</option>
+                                <option value="stealth">Stealth</option>
+                                <option value="fg">Froggermans</option>
+                                <option value="ghost">Ghost</option>
+                                <option value="midnight">Midnight</option>
+                                <option value="meteor">Meteor</option>
+                            </select>
+                        </span>
+                        <a onclick="switchTheme(); reloadpage();" class="button-save">Apply</a>
+                    </div>
+                    <div id="settings-boxes">
+                        <h2 style="text-align:center;margin-top:0px;">Proxy Options</h2>
+                        <b>
+                            <p style="text-align: center; font-size: 18px; margin-top: -40px;">If our proxy isn't
+                                working
+                                it's probably because the bare server is blocked.<br>
+                                This can swap the server so the proxy can function if one is down</p>
+                        </b>
+                        <span class="custom-dropdown big">
+                            <select class="dropdown" id="bareSwitcher">
+                                <option value="/bare/">Default</option>
+                                <option value="https://142-4675-64-355-76-6342-8607-24485-75.vercel.app/">Default 2
+                                </option>
+                                <option value="https://165-53858-7966-42755-86-347-645-3540.vercel.app/">Default 3
+                                </option>
+                                <option value="https://phantom.lol/bare">Shadow Default</option>
+                                <option value="https://phantomcloud.strangled.net/bare">Shadow Alt</option>
+                            </select>
+                        </span>
+                        <input style="width:150px" type="url" id="bareUrl" placeholder="Custom Bare URL">
+                        <a onclick="switchBare(); reloadpage();" class="button-save">Apply</a>
+                    </div>
+                    <div id="settings-boxes">
+                        <h2 style="text-align:center;margin-top:0px;">Toggle Particles</h2>
+                        <p style="text-align: center; font-size: 18px; margin-top: -40px;">Allows you to toggle
+                            particles on certain themes like the default theme</p>
+                        <label class="switch">
+                            <input type="checkbox" class="particlecheckbox">
+                            <div class="slider"></div>
+                        </label>
+                    </div>
+                    <div id="settings-boxes">
+                        <h2 style="text-align:center;margin-top:0px;">Launch about:blank</h2>
+                        <p style="text-align: center; font-size: 18px; margin-top: -40px;">Launches about:blank in a new
+                            tab which cloaks the tab entirely</p>
+                        <a class="button-save" style="text-align:center; padding-right:20px;"
+                            onclick="openGame();">Launch</a>
+
+                    </div>
+                    <div id="settings-boxes">
+                        <h2 style="text-align:center;margin-top:0px;">Proxy Switcher</h2>
+                        <p style="text-align: center; font-size: 18px; margin-top: -40px;">This will swap the current
+                            proxy between UV and Dynamic</p>
+                        <span class="custom-dropdown big">
+                            <select class="dropdown" id="proxySwitcher">
+                                <option value="uv">Ultraviolet</option>
+                                <option value="dyn">Dynamic (EXPERIMENTAL)</option>
+                            </select>
+                        </span>
+                        <a onclick="switchProxy(); reloadpage();" class="button-save">Apply</a>
+                    </div>
+                </div>
+            </div>
+            <script src="./scripts/register-sw.js" defer></script>
+            <script src="./scripts/search.js" defer></script>
+            <script src="./scripts/index.js" defer></script>
+            <script src="./scripts/particles.min.js"></script>
+            <script src="./scripts/settings.js"></script>
+            <script id="paeticlesrc" src=""></script>
+            <script src="./scripts/blank.js"></script>
+            <script>
+                fadeOutElement();
+            </script>
+            <div id="footer">
+                <p>&copy; 2023 Night. All rights reserved.</p>
+            </div>
+</body>
+
+</html>

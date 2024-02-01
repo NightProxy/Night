@@ -41,7 +41,10 @@
    <script src="/uv/uv.config.js"></script>
    <script src="/dynamic/dynamic.worker.js"></script>
    <script src="/dynamic/dynamic.config.js"></script>
-   <div id="particles-js"><div id="blob"></div></div>   <div class="page" id="imgsearch">
+   <div id="particles-js">
+      <div id="blob"></div>
+   </div>
+   <div class="page" id="imgsearch">
       <title>Night</title>
       <div>
          <div id="icbuttons" style="left:10px;top:10px;">
@@ -61,7 +64,7 @@
                      style="width:50px;padding-right:1px;padding-left:1px;margin-right:7%;font-size:20px;white-space:nowrap;"
                      id="extras" class="zoom navitem" extras><span class="material-symbols-outlined"
                         style="vertical-align:-4px;font-size:20px;">&#xE145</span></a>
-                  <a onclick="fadeInElement();"
+                  <a href="s"
                      style="width:50px;padding-right:1px;padding-left:1px;margin-right:10%;font-size:20px;white-space:nowrap;"
                      id="settings" class="zoom navitem"><span class="material-symbols-outlined"
                         style="vertical-align:-4px;font-size:20px;">&#xE726</span></a>
@@ -96,96 +99,6 @@
                <p id="uv-error"></p>
                <pre id="uv-error-code"></pre>
             </div>
-            <div class="sidenav" id="sidenav" style="display: none">
-               <a onclick="fadeOutElement();" class="fa-solid fa-circle-xmark closebutton" id="closebutton"></a>
-                  <div class="settings-grid">
-                        <div id="settings-boxes">
-                           <h2 style="margin-top:0px">Toggle Cloak</h2>
-                           <p style="text-align: center; font-size: 18px; margin-top: -60px;">Cloak your tab with a custom
-                              name and favicon</p>
-                           <span class="custom-dropdown big">
-                              <select class="dropdown" id="cloakSwitcher">
-                                 <option value="off">Off</option>
-                                 <option value="drive">Google Drive</option>
-                                 <option value="classroom">Google Classroom</option>
-                                 <option value="gmail">Gmail</option>
-                                 <option value="google">Google</option>
-                              </select>
-                           </span>
-                           <a onclick="switchCloak(); reloadpage();" class="button-save">Apply</a>
-                        </div>
-                        <div id="settings-boxes">
-                           <h2 style="text-align:center;margin-top:0px;">Themes</h2>
-                           <p style="text-align: center; font-size: 18px; margin-top: -60px;">Change the site's themes</p>
-                           <span class="custom-dropdown big">
-                              <select class="dropdown" id="themeSwitcher">
-                                 <option value="default">Default</option>
-                                 <option value="fire">Fire</option>
-                                 <option value="noir">Noir</option>
-                                 <option value="void">Void</option>
-                                 <option value="ip">IronPrime</option>
-                                 <option value="xg">XGames</option>
-                                 <option value="stealth">Stealth</option>
-                                 <option value="fg">Froggermans</option>
-                                 <option value="ghost">Ghost</option>
-                                 <option value="midnight">Midnight</option>
-                                 <option value="meteor">Meteor</option>
-                              </select>
-                           </span>
-                           <a onclick="switchTheme(); reloadpage();" class="button-save">Apply</a>
-                        </div>
-                        <div id="settings-boxes">
-                           <h2 style="text-align:center;margin-top:0px;">Proxy Options</h2>
-                           <b>
-                              <p style="text-align: center; font-size: 18px; margin-top: -40px;">If our proxy isn't working
-                                 it's probably because the bare server is blocked.<br>
-                                 This can swap the server so the proxy can function if one is down</p>
-                           </b>
-                           <span class="custom-dropdown big">
-                              <select class="dropdown" id="bareSwitcher">
-                                 <option value="/bare/">Default</option>
-                                 <option value="https://142-4675-64-355-76-6342-8607-24485-75.vercel.app/">Default 2
-                                 </option>
-                                 <option value="https://165-53858-7966-42755-86-347-645-3540.vercel.app/">Default 3
-                                 </option>
-                                 <option value="https://phantom.lol/bare">Shadow Default</option>
-                                 <option value="https://phantomcloud.strangled.net/bare">Shadow Alt</option>
-                              </select>
-                           </span>
-                           <input style="width:150px" type="url" id="bareUrl" placeholder="Custom Bare URL">
-                           <a onclick="switchBare(); reloadpage();" class="button-save">Apply</a>
-                        </div>
-                        <div id="settings-boxes">
-                           <h2 style="text-align:center;margin-top:0px;">Toggle Particles</h2>
-                           <p style="text-align: center; font-size: 18px; margin-top: -40px;">Allows you to toggle
-                              particles on certain themes like the default theme</p>
-                           <label class="switch">
-                              <input type="checkbox" class="particlecheckbox">
-                              <div class="slider"></div>
-                           </label>
-                        </div>
-                        <div id="settings-boxes">
-                           <h2 style="text-align:center;margin-top:0px;">Launch about:blank</h2>
-                           <p style="text-align: center; font-size: 18px; margin-top: -40px;">Launches about:blank in a new
-                              tab which cloaks the tab entirely</p>
-                           <a class="button-save" style="text-align:center; padding-right:20px;"
-                              onclick="openGame();">Launch</a>
-   
-                        </div>
-                        <div id="settings-boxes">
-                           <h2 style="text-align:center;margin-top:0px;">Proxy Switcher</h2>
-                           <p style="text-align: center; font-size: 18px; margin-top: -40px;">This will swap the current
-                              proxy between UV and Dynamic</p>
-                           <span class="custom-dropdown big">
-                              <select class="dropdown" id="proxySwitcher">
-                                 <option value="uv">Ultraviolet</option>
-                                 <option value="dyn">Dynamic (EXPERIMENTAL)</option>
-                              </select>
-                           </span>
-                           <a onclick="switchProxy(); reloadpage();" class="button-save">Apply</a>
-                        </div>
-                     </div>
-            </div>
             <div class="sidenav" id="addapp"
                style="background-color:rgba(0, 0, 0, 0.445);backdrop-filter:blur(5px); display: none">
                <a onclick="fadeOutapps();" class="fa-solid fa-circle-xmark closebutton" id="closebutton"></a>
@@ -200,7 +113,7 @@
                </div>
                <script src="../scripts/register-sw.js" defer></script>
                <script src="../scripts/particles.min.js"></script>
-               <script src="../scripts/settings.js"></script>
+               <script src="../scripts/main.js"></script>
                <script id="paeticlesrc" src=""></script>
                <script src="../scripts/blank.js"></script>
                <script src="../scripts/apps.js"></script>
