@@ -36,6 +36,16 @@ function togglemenu() {
     menu.style.height = "0%";
   }
 }
+
+function togglebar() {
+  var osbar = document.querySelector(".os-bar")
+  if (osbar.style.height === "0px") {
+    osbar.style.height = "50px";
+  } else {
+    osbar.style.height = "0px";
+  }
+}
+
 function setIframe() {
   let encodedUrl = sessionStorage.getItem("encodedUrl");
   console.log(encodedUrl);
@@ -143,7 +153,7 @@ function displayBookmarks() {
 
   let listHtml = '<hr>';
   bookmarks.forEach((bookmark, index) => {
-    listHtml += `<img src="${bookmark.favicon}" alt="Favicon" class="favicon" /><a href="${bookmark.url}" class="bookmark-link" data-url="${bookmark.url}"></a><br>`;
+    listHtml += `<a href="${bookmark.url}" class="bookmark-link" data-url="${bookmark.url}"><img src="${bookmark.favicon}" alt="Favicon" class="favicon" /></a><br>`;
   });
   listHtml += '<hr>';
   listDiv.innerHTML = listHtml;

@@ -32,15 +32,6 @@ function changeFavicon(src) {
   document.head.appendChild(link);
 };
 
-settings = document.getElementById("sidenav");
-function hide_sidenav() {
-  if (settings.hidden == false) {
-    settings.hidden = true;
-  } else {
-    settings.hidden = false;
-  }
-};
-
 icons = document.getElementById("icbuttons");
 home = document.getElementById("home");
 apps = document.getElementById("apps");
@@ -63,20 +54,6 @@ function topbar() {
 
 };
 
-function closesettings() {
-  settings.hidden = true;
-};
-
-var cloakStored = localStorage.getItem("cloak");
-var cloakSel = document.getElementById("cloakSwitcher");
-
-function switchCloak() {
-  var selecter = document.getElementById("cloakSwitcher");
-  var selectedOption = selecter.value;
-
-  localStorage.setItem("cloak", selectedOption);
-  var storedChoice = localStorage.getItem("cloak");
-};
 
 function setcloaks() {
   if (localStorage.cloak == "drive") {
@@ -92,17 +69,6 @@ function setcloaks() {
     changeFavicon('./images/favicon/gmail.png');
     document.title = "Inbox";
   };
-};
-
-var themeStored = localStorage.getItem("theme");
-var themeSel = document.getElementById("themeSwitcher");
-
-function switchTheme() {
-  var selecter = document.getElementById("themeSwitcher");
-  var selectedOption = selecter.value;
-
-  localStorage.setItem("theme", selectedOption);
-  var storedChoice = localStorage.getItem("theme");
 };
 
 function reloadpage() {
@@ -157,18 +123,6 @@ async function setRandomSay() {
   document.querySelector(".message").innerText = randomSplash;
 };
 
-var bareStored = localStorage.getItem("bare")
-var bareSel = document.getElementById("bareSwitcher")
-
-function switchBare() {
-  var selecter = document.getElementById("bareSwitcher");
-  var selectedOption = selecter.value;
-  var inputValue = document.getElementById('bareUrl').value;
-
-  const finalValue = inputValue.trim() !== '' ? inputValue : selectedOption;
-  localStorage.setItem("bare", finalValue);
-  var storedChoice = localStorage.getItem("bare");
-};
 
 function setdefaults() {
   if (localStorage.theme == undefined) {
@@ -208,30 +162,6 @@ function openGame() {
 function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-const tofade = document.getElementById('sidenav');
-
-function fadeOutElement() {
-  $("#sidenav").fadeOut();
-}
-
-function fadeInElement() {
-  $("#sidenav").fadeIn();
-}
-// When the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function () {
-  const particlecheckbox = document.querySelector('.particlecheckbox');
-
-  // Define the function to run on certain pages
-  const isparticleChecked = localStorage.getItem('particlecheckboxState') === 'true';
-  particlecheckbox.checked = isparticleChecked;
-
-  particlecheckbox.addEventListener('change', function () {
-    // Update localStorage with the new state
-    localStorage.setItem('particlecheckboxState', particlecheckbox.checked);
-    reloadpage();
-  });
-});
 
 function setthemes() {
   if (window.location.pathname.endsWith('index') || window.location.pathname.endsWith('/')) {
@@ -321,17 +251,6 @@ function setthemes() {
 }
 };
 
-var proxyStored = localStorage.getItem("proxy");
-var proxySel = document.getElementById("proxySwitcher");
-
-function switchProxy() {
-  var selecter = document.getElementById("proxySwitcher");
-  var selectedOption = selecter.value;
-
-  localStorage.setItem("proxy", selectedOption);
-  var storedChoice = localStorage.getItem("proxy");
-};
-
 const blob = document.getElementById('blob');
 
 document.body.onpointermove = event => {
@@ -350,11 +269,6 @@ setdefaults();
 setthemes();
 setcloaks();
 topbar();
-themeSel.value = themeStored;
-bareSel.value = bareStored;
-cloakSel.value = cloakStored;
-cloakSel.value = cloakStored;
-proxySel.value = proxyStored;
 if (document.querySelector(".message")) {
   setRandomSay();
 }

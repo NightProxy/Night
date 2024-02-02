@@ -44,6 +44,10 @@ app.get('/games', (req, res) => {
   res.sendFile(path.join(process.cwd(), './pages/games.html'));
 });
 
+app.get('/s', (req, res) => {
+  res.sendFile(path.join(process.cwd(), './pages/settings.html'));
+});
+
 server.on('request', (req, res) => {
   if (bareServer.shouldRoute(req)) {
     bareServer.routeRequest(req, res)
