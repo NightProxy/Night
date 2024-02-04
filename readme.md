@@ -1,7 +1,7 @@
 <div align="center">
     <h1 style="font-size:50px; font-family: Noto Sans;">Night</h1>
 
-#### Andromeda is one of the fastest and newest static proxies around
+#### Night is one of the fastest and newest static proxies around
 
 ### [Join our Discord!](https://discord.gg/JrmurfukMd)
 </div>
@@ -9,7 +9,6 @@
 
 # Features
     • Fast Speeds
-    • Wide collection of Games from 3kh0
     • Tab Cloaking
     • Wide collection of Apps
     • Built in proxy with functions
