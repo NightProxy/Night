@@ -326,7 +326,7 @@ function iframe(val) {
                 else if (!(url.startsWith("https://") || url.startsWith("http://")))
                     url = "https://" + url;
                     sessionStorage.setItem("encodedUrl", "/ghost/" + __uv$config.encodeUrl(url));
-                    location.href = "edu";
+                    location.href = "/edu";
             });
     }
       
