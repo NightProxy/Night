@@ -59,7 +59,7 @@ This project is licensed under the [MIT License](LICENSE). Skidding will not be 
 
 ## Disclamer
 
-> We take no credit for the making of UV. Ultraviolet is made by TN.
+> We take no credit for the making of UV. Ultraviolet is made by TN. We also take no credit for the making of Dynamic. Dynamic is made by Nebula.
 
 <br />
 
