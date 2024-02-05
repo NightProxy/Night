@@ -17,35 +17,35 @@ app.use(cors());
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(process.cwd(), './pages/index.html'));
+    res.sendFile(path.join(process.cwd(), '/pages/index.html'));
 });
 
 app.get('/index', (req, res) => {
-  res.sendFile(path.join(process.cwd(), './pages/index.html'));
+  res.sendFile(path.join(process.cwd(), '/pages/index.html'));
 });
 
 app.get('/apps', (req, res) => {
-  res.sendFile(path.join(process.cwd(), './pages/apps.html'));
+  res.sendFile(path.join(process.cwd(), '/pages/apps.html'));
 });
 
 app.get('/about', (req, res) => {
-  res.sendFile(path.join(process.cwd(), './pages/about.html'));
+  res.sendFile(path.join(process.cwd(), '/pages/about.html'));
 });
 
 app.get('/extras', (req, res) => {
-  res.sendFile(path.join(process.cwd(), './pages/e.html'));
+  res.sendFile(path.join(process.cwd(), '/pages/e.html'));
 });
 
 app.get('/edu', (req, res) => {
-  res.sendFile(path.join(process.cwd(), './pages/edu.html'));
+  res.sendFile(path.join(process.cwd(), '/pages/edu.html'));
 });
 
 app.get('/games', (req, res) => {
-  res.sendFile(path.join(process.cwd(), './pages/games.html'));
+  res.sendFile(path.join(process.cwd(), '/pages/games.html'));
 });
 
 app.get('/s', (req, res) => {
-  res.sendFile(path.join(process.cwd(), './pages/settings.html'));
+  res.sendFile(path.join(process.cwd(), '/pages/settings.html'));
 });
 
 server.on('request', (req, res) => {
