@@ -170,9 +170,6 @@ a {
   position: fixed;
   bottom: 0;
   border-radius: 15px;
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-top-color: var(--footer-border-color);
   font-family: 'Noto Sans';
   width: 20%;
   height: 5%;
