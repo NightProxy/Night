@@ -377,33 +377,6 @@ window.addEventListener("load", () => {
   }
 });
 
-const chargeLevel = document.getElementById("charge-level");
-const charge = document.getElementById("charge");
-
-navigator.getBattery().then((battery) => {
-  function updateAllBatteryInfo() {
-    updateLevelInfo();
-  }
-  updateAllBatteryInfo();
-
-  //When the charging status changes
-  battery.addEventListener("chargingchange", () => {
-    updateAllBatteryInfo();
-  });
-
-  //When the Battery Levvel Changes
-  battery.addEventListener("levelchange", () => {
-    updateAllBatteryInfo();
-  });
-
-  //Updating battery level
-  function updateLevelInfo() {
-    let batteryLevel = `${parseInt(battery.level * 100)}%`;
-    charge.style.width = batteryLevel;
-    chargeLevel.textContent = batteryLevel;
-  }
-});
-
 setdefaults();
 setthemes();
 setcloaks();
