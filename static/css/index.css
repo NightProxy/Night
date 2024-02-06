@@ -959,4 +959,8 @@ p {
   .settings-grid {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  #footer {
+    display: none;
+  }
 }
