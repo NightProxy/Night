@@ -169,6 +169,7 @@ a {
 #footer {
   position: fixed;
   bottom: 0;
+  border-radius: 15px;
   border-top-width: 1px;
   border-top-style: solid;
   border-top-color: var(--footer-border-color);
