@@ -168,16 +168,15 @@ a {
 
 #footer {
   position: fixed;
-  left: 0;
   bottom: 0;
-  right: 0;
   border-top-width: 1px;
   border-top-style: solid;
   border-top-color: var(--footer-border-color);
   font-family: 'Noto Sans';
   width: 20%;
-  height: 10%;
-  background-color: var(--background-primary);
+  height: 5%;
+  background-color: var(--blur-bg-dark);
+    backdrop-filter: blur(5px);
   padding-top: 7.5px;
   padding-bottom: 10px;
   text-align: center;
