@@ -167,8 +167,9 @@ a {
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 #footer {
-  position: fixed;
+  position: absolute;
   left: 0;
+  right: 0;
   bottom: 0;
   border-top-width: 1px;
   border-top-style: solid;
