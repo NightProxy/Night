@@ -1,961 +1,981 @@
 :root {
-    --background-primary: #000;
-    --input-text-color: #fff;
-    --input-placeholder-color: #aaa;
-    --input-background-color: #222;
-    --input-border-size: 1.3px;
-    --input-border-color: #ffffff;
-    --input-outline: rgba(225, 225, 225, 0.8);
-    --input-focus: rgba(5, 126, 242);
-    --footer-border-color: #ffffff;
-    --ag-button-text-color: #1E1E1E;
-    --primary-background-color: #1e1e1e;
-    --secondary-background-color: #2a2a2a;
-    --accent-color: #ffffff;
-    --main-text-color: #ffffff;
-    --text: #ffffff;
-    --search-placeholder-color: #ffffff;
-    --bookmark-background-color: #6B52A3;
-    --bookmark-hover-background-color: #5B3A75;
-    --input-background-color: #1a1a2b;
-    --button-background-color: #6B52A3;
-    --button-text-color: #fff;
-    --button-hover-background-color: #ffffff;
-    --cancel-button-background-color: #ffffff;
-    --save-button-background-color: #4f4f4f;
-    --blob-color: linear-gradient(
-          to right,
-          rgb(0, 98, 255),
-          rgb(40, 87, 172)
-      );
-      --blob-size: 400px;
-    --blur-bg-dark: rgba(0, 0, 0, 0.445);
-    --settings-hover-link: #1983f0;
-    --settings-box-bg: #363636;
-    --slider-dark-color: rgb(0, 0, 0, 0.25);
-    --button-save: linear-gradient(45deg, #1983f0, #230063, #303030);
-    --app-shortcut-shadow: rgba(0, 0, 0, 0.2);
-    --app-shortcut-bg: #212121;
-  }
-  
-  body {
-    background-color: var(--background-primary);
-    color: var(--main-text-color);
-    font-family: 'Noto Sans';
-    font-size: 24px;
-    margin: 0px;
-    padding: 0;
-    vertical-align: middle;
-    position: r;
-    user-select: none;
-    overflow: hidden;
-  }
-  
-  .titlebutton:hover {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .titlebutton {
-    opacity: 100;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  #header {
-    background-color: var(--background-primary);
-    padding: 20px;
-    text-align: center;
-  }
-  
-  #particles-js {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--background-primary);
-    background-image: url(/bg.png);
-    background-repeat: no-repeat;
-    text-align: center;
-    padding: 20px;
-    margin-top: -4%;
-  }
-  
-  #imgsearch {
-    display: grid;
-    position: relative;
-    align-items: center;
-    justify-items: center;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    /* This invokes the scroll bar when content exceeds max-height */
-  
-  }
-  
-  #imgsearch h1 {
-    font-size: 24px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  
-  #content {
-    text-align: center;
-    padding: 20px;
-    margin-top: -4%;
-  }
-  
-  #content h1 {
-    font-size: 24px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  
-  #searchbar {
-    text-align: center;
-    margin: 0px;
-  }
-  
-  .form {
-    position: absolute;
-    align-self: center;
-  }
-  
-  .form__input {
-    padding: 10px;
-    border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    width: 300px;
-    box-shadow: 0 0 5px var(--input-outline);
-    background-color: var(--input-background-color);
-    text-align: center;
-    color: var(--input-text-color);
-    cursor: cell;
-  }
-  
-  a {
-    text-decoration: none;
-    color: var(--text);
-    text-align: center;
-    align-self: center;
-  }
-  
-  .form__input::placeholder {
-    color: var(--input-placeholder-color);
-    text-align: center;
-  }
-  
-  .form_input:hover {
-    cursor: cell;
-  }
-  
-  .form__input:focus {
-    outline: none;
-    box-shadow: 0 0 5px var(--input-focus);
-  }
-  
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-  
-  #footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: var(--footer-border-color);
-    font-family: 'Noto Sans';
-    width: 100%;
-    height: 15px;
-    background-color: var(--background-primary);
-    padding-top: 7.5px;
-    padding-bottom: 10px;
-    text-align: center;
-    color: var(--input-text-color);
-    font-size: 14px;
-    z-index: 100000;
-  }
-  
-  #footer p {
-    margin: 0;
-  }
-  
-  .fa {
-    font-size: 24px;
-    margin-right: 10px;
-    color: var(--input-text-color);
-  }
-  
-  .fa:hover {
-    color: var(--input-placeholder-color);
-  }
-  
-  
-  #icbuttons {
-    position: fixed;
-    top: 20px;
-    height: 49px;
-    z-index: 999;
-  }
-  
-  .zoom {
-    transition: transform .2s;
-    margin: 0 auto;
-    cursor: pointer;
-  }
-  
-  .zoom:hover {
-    -ms-transform: scale(1.5);
-    /* IE 9 */
-    -webkit-transform: scale(1.5);
-    /* Safari 3-8 */
-    transform: scale(1.5);
-  }
-  
-  .input-container {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  input {
-    padding: 20px;
-    width: 550px;
-    border-radius: 5px;
-    background: var(--input-background-color);
-    text-align: center;
-    border: none;
-    outline: none;
-    color: var(--text);
-  }
-  
-  select {
-    padding: 20px;
-    border-radius: 5px;
-    background: var(--input-background-color);
-    color: var(--text);
-    border: 0px;
-    outline: none;
-    cursor: pointer;
-  }
-  
-  .container-apps {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2.3em;
-    flex-direction: row;
-  }
-  
-  .pinned-apps {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2.3em;
-  }
-  
-  /* Scrollbar */
-  ::-webkit-scrollbar {
-    width: 12px;
-    background-color: var(--background-primary);
-  }
-  
-  ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    background-color: #222;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: white;
-  }
-  
-  .message {
-    text-align: center;
-    color: var(--text);
-    font-size: 1rem;
-    margin: 1rem;
-    align-self: center;
-    display: flex;
-  }
-  
-  .homemessage {
-    text-align: center;
-    cursor: pointer;
-    width: fit-content;
-    align-self: center;
-    user-select: none;
-  }
-  
-  .navitem {
-    border-radius: 35px;
-    padding: 10px 8px;
-    background: transparent;
-    cursor: pointer;
-    user-select: none;
-    color: var(--text);
-  }
-  
-  .navitem[current] {
-    background: var(--input-border-color);
-  }
-  
-  #sidenav {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    bottom: 0;
-    background-color: var( --blur-bg-dark);
-    backdrop-filter: blur(5px);
-    overflow-x: hidden;
-    opacity: 1;
-    transition: opacity 1s;
-  }
-  
-  /* Style the sidenav links and the dropdown button */
-  #sidenav a,
-  #sidenav button,
-  .dropdown-btn {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    color: var(--text);
-    border: none;
-    background: none;
-    cursor: pointer;
-    outline: none;
-  }
-  
-  /* On mouse-over */
-  #sidenav .closebutton:hover,
-  .dropdown-btn:hover {
-    color: var(--settings-hover-link);
-  }
-  
-  #sidenav.fade {
-    opacity: 0;
-  }
-  
-  /* Main content */
-  .main {
-    margin-left: 200px;
-    /* Same as the width of the sidenav */
-    font-size: 20px;
-    /* Increased text to enable scrolling */
-    padding: 0px 10px;
-  }
-  
-  /* Add an active class to the active dropdown button */
-  .active {
-    background-color: var(--background-primary);
-    color: var(--text);
-  }
-  
-  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-  .dropdown {
-    background-color: var(--primary-background-color);
-    border-radius: 30px;
-  }
-  
-  /* Optional: Style the caret down icon */
-  .fa-caret-down {
-    float: right;
-    padding-right: 8px;
-  }
-  
-  .closebutton {
-    top: 20px;
-    right: 10px;
-    position: absolute;
-  }
-  
-  #settings-boxes {
-    margin-top: 20px;
-    background-color: var(--settings-box-bg);
-    height: 300px;
-    width: 300px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    border-radius: 30px;
-  }
-  
-  #settings-boxes h2,
-  p {
-    color: var(--text);
-  }
-  
-  #barswitch {
-    font-size: 50px;
-    color: var(--text);
-  }
-  
-  #iconswitch {
-    font-size: 50px;
-    color: var(--text);
-  }
-  
-  .names {
-    margin-left: 5px;
-    font-size: 13px;
-    color: white;
-    font-family: 'Noto Sans';
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: none;
-  }
-  
-  #sidenav {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s ease-in-out;
-    margin-bottom: 20px;
-  }
-  
-  #sidenav.fadeOut {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .button-save {
-    width: 50px;
-    height: 25px;
-    border: none;
-    outline: none;
-    color: var(--text);
-    background: var(--background-primary);
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 30px;
-    margin-left: 5px;
-    font-size: 17px;
-    font-family: Noto Sans;
-  }
-  
-  .button-save:before {
-    content: '';
-    background: var(--button-save);
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 30px;
-  }
-  
-  .button-save:active {
-    color: var(--background-primary)
-  }
-  
-  .button-save:active:after {
-    background: transparent;
-  }
-  
-  .button-save:hover:before {
-    opacity: 1;
-  }
-  
-  .button-save:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: var(--background-primary);
-    left: 0;
-    top: 0;
-    border-radius: 30px;
-  }
-  
-  @keyframes glowing {
-    0% {
-      background-position: 0 0;
-    }
-  
-    50% {
-      background-position: 400% 0;
-    }
-  
-    100% {
-      background-position: 0 0;
-    }
-  }
-  
-  .particlecheckbox {
-    display: none;
-  }
-  
-  .slider {
-    width: 60px;
-    height: 30px;
-    background-color: lightgray;
-    border-radius: 20px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    border: 4px solid transparent;
-    transition: .3s;
-    box-shadow: 0 0 10px 0 var(--slider-dark-color) inset;
-    cursor: pointer;
-  }
-  
-  .slider::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: var(--ag-button-text-color);
-    transform: translateX(-30px);
-    border-radius: 20px;
-    transition: .3s;
-    box-shadow: 0 0 10px 3px var(--slider-dark-color);
-  }
-  
-  .particlecheckbox:checked~.slider::before {
-    transform: translateX(30px);
-    box-shadow: 0 0 10px 3px var(--slider-dark-color);
-  }
-  
-  .particlecheckbox:checked~.slider {
-    background-color: var(--settings-hover-link);
-  }
-  
-  .particlecheckbox:active~.slider::before {
-    transform: translate(0);
-  }
-  
-  .blankcheckbox {
-    display: none;
-  }
-  
-  .blankslider {
-    width: 60px;
-    height: 30px;
-    background-color: lightgray;
-    border-radius: 20px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    border: 4px solid transparent;
-    transition: .3s;
-    box-shadow: 0 0 10px 0 var(--slider-dark-color) inset;
-    cursor: pointer;
-  }
-  
-  .blankslider::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: var(--primary-background-color);
-    transform: translateX(-30px);
-    border-radius: 20px;
-    transition: .3s;
-    box-shadow: 0 0 10px 3px var(--slider-dark-color);
-  }
-  
-  .blankcheckbox:checked~.blankslider::before {
-    transform: translateX(30px);
-    box-shadow: 0 0 10px 3px var(--slider-dark-color);
-  }
-  
-  .blankcheckbox:checked~.blankslider {
-    background-color: var(--settings-hover-link);
-  }
-  
-  .blankcheckbox:active~.blankslider::before {
-    transform: translate(0);
-  }
-  
-  #blob {
-      animation: rotate360 20s infinite;
-      background: var(--blob-color);
-      filter: blur(calc(var(--blob-size)/2.15));
-      
-      width: var(--blob-size);
-      height: var(--blob-size);
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      translate: -50% -50%;
-      border-radius: 50%;
-  }
-  
-  @keyframes rotate360 {
-      from { rotate: 0deg; }
-      50% { scale: 1 1.15; }
-      to { rotate: 360deg; }
-  }
-  
-  #sidenav {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s ease-in-out;
-    margin-bottom: 20px;
-  }
-  
-  #sidenav.fadeOut {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  #addapp {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s ease-in-out;
-    margin-bottom: 20px;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.445);
-    backdrop-filter: blur(5px);
-    overflow-x: hidden;
-  
-    transition: opacity 1s;
-  }
-  
-  #addapp.fadeOut {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  /* Bounce In */
-  .hvr-bounce-in {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-  }
-  
-  .hvr-bounce-in:hover,
-  .hvr-bounce-in:focus,
-  .hvr-bounce-in:active {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-    -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-  }
-  
-  .grid-container {
-    width: 100%;
-    margin-top: 20px;
-    position: relative;
-    /* or 'absolute' if it's within another positioned element */
-    max-height: 87.5vh;
-    /* This is where you decide the scroll threshold */
-    overflow-y: scroll;
-  
-  }
-  
+  --background-primary: #000;
+  --input-text-color: #fff;
+  --input-placeholder-color: #aaa;
+  --input-background-color: #222;
+  --input-border-size: 1.3px;
+  --input-border-color: #ffffff;
+  --input-outline: rgba(225, 225, 225, 0.8);
+  --input-focus: rgba(5, 126, 242);
+  --footer-border-color: #ffffff;
+  --ag-button-text-color: #1E1E1E;
+  --primary-background-color: #1e1e1e;
+  --secondary-background-color: #2a2a2a;
+  --accent-color: #ffffff;
+  --main-text-color: #ffffff;
+  --text: #ffffff;
+  --search-placeholder-color: #ffffff;
+  --bookmark-background-color: #6B52A3;
+  --bookmark-hover-background-color: #5B3A75;
+  --input-background-color: #1a1a2b;
+  --button-background-color: #6B52A3;
+  --button-text-color: #fff;
+  --button-hover-background-color: #ffffff;
+  --cancel-button-background-color: #ffffff;
+  --save-button-background-color: #4f4f4f;
+  --blob-color: linear-gradient(
+		to right,
+		rgb(0, 98, 255),
+		rgb(40, 87, 172)
+	);
+	--blob-size: 400px;
+  --blur-bg-dark: rgba(0, 0, 0, 0.445);
+  --settings-hover-link: #1983f0;
+  --settings-box-bg: #363636;
+  --slider-dark-color: rgb(0, 0, 0, 0.25);
+  --button-save: linear-gradient(45deg, #1983f0, #230063, #303030);
+  --app-shortcut-shadow: rgba(0, 0, 0, 0.2);
+  --app-shortcut-bg: #212121;
+}
+
+body {
+  background-color: var(--background-primary);
+  color: var(--main-text-color);
+  font-family: 'Noto Sans';
+  font-size: 24px;
+  margin: 0px;
+  padding: 0;
+  vertical-align: middle;
+  position: r;
+  user-select: none;
+  overflow: hidden;
+}
+
+.titlebutton:hover {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.titlebutton {
+  opacity: 100;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#header {
+  background-color: var(--background-primary);
+  padding: 20px;
+  text-align: center;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-primary);
+  background-image: url(/bg.png);
+  background-repeat: no-repeat;
+  text-align: center;
+  margin-top: -4%;
+}
+
+#imgsearch {
+  display: grid;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  /* This invokes the scroll bar when content exceeds max-height */
+
+}
+
+#imgsearch h1 {
+  font-size: 24px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+#content {
+  text-align: center;
+  padding: 20px;
+  margin-top: -4%;
+}
+
+#content h1 {
+  font-size: 24px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+#searchbar {
+  text-align: center;
+  margin: 0px;
+}
+
+.form {
+  position: absolute;
+  align-self: center;
+}
+
+.form__input {
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  width: 300px;
+  box-shadow: 0 0 5px var(--input-outline);
+  background-color: var(--input-background-color);
+  text-align: center;
+  color: var(--input-text-color);
+  cursor: cell;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+  text-align: center;
+  align-self: center;
+}
+
+.form__input::placeholder {
+  color: var(--input-placeholder-color);
+  text-align: center;
+}
+
+.form_input:hover {
+  cursor: cell;
+}
+
+.form__input:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--input-focus);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  border-radius: 15px;
+  font-family: 'Noto Sans';
+  width: 12%;
+  height: 5%;
+  background-color: var(--blur-bg-dark);
+  backdrop-filter: blur(5px);
+  padding-top: 7.5px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: var(--input-text-color);
+  font-size: 14px;
+  z-index: 100000;
+  box-shadow: 0 0 5px 3px white; /* Blur effect with 7px thickness */
+  transition: box-shadow 0.3s; /* Smooth transition for border color change */
+}
+
+#footer:hover {
+box-shadow: 0 0 5px 3px var(--settings-hover-link);}
+
+
+#footer p {
+  margin-top: 14px;
+  margin-left:5px;
+  margin-right:5px;
+}
+
+.fa {
+  font-size: 24px;
+  margin-right: 10px;
+  color: var(--input-text-color);
+}
+
+.fa:hover {
+  color: var(--input-placeholder-color);
+}
+
+
+#icbuttons {
+  position: fixed;
+  top: 20px;
+  height: 49px;
+  z-index: 999;
+ background-color: rgba(0, 0, 0, 0.445);
+  backdrop-filter: blur(1px);
+  box-shadow: 0 0 5px 3px white; /* Blur effect with 7px thickness */
+  transition: box-shadow 0.3s; /* Smooth transition for border color change */
+}
+
+#icbuttons:hover {
+box-shadow: 0 0 5px 3px var(--settings-hover-link);}
+
+.zoom {
+  transition: transform .2s;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5);
+  /* IE 9 */
+  -webkit-transform: scale(1.5);
+  /* Safari 3-8 */
+  transform: scale(1.5);
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+input {
+  padding: 20px;
+  width: 550px;
+  border-radius: 5px;
+  background: var(--input-background-color);
+  text-align: center;
+  border: none;
+  outline: none;
+  color: var(--text);
+}
+
+select {
+  padding: 20px;
+  border-radius: 5px;
+  background: var(--input-background-color);
+  color: var(--text);
+  border: 0px;
+  outline: none;
+  cursor: pointer;
+}
+
+.container-apps {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.3em;
+  flex-direction: row;
+}
+
+.pinned-apps {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.3em;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: var(--background-primary);
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #222;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+.message {
+  text-align: center;
+  color: var(--text);
+  font-size: 1rem;
+  margin: 1rem;
+  align-self: center;
+  display: flex;
+}
+
+.homemessage {
+  text-align: center;
+  cursor: pointer;
+  width: fit-content;
+  align-self: center;
+  user-select: none;
+}
+
+.navitem {
+  border-radius: 35px;
+  padding: 10px 8px;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+  color: var(--text);
+}
+
+.navitem[current] {
+  background: var(--input-border-color);
+}
+
+#sidenav {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  bottom: 0;
+  background-color: var( --blur-bg-dark);
+  backdrop-filter: blur(5px);
+  overflow-x: hidden;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+/* Style the sidenav links and the dropdown button */
+#sidenav a,
+#sidenav button,
+.dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: var(--text);
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+#sidenav .closebutton:hover,
+.dropdown-btn:hover {
+  color: var(--settings-hover-link);
+}
+
+#sidenav.fade {
+  opacity: 0;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px;
+  /* Same as the width of the sidenav */
+  font-size: 20px;
+  /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: var(--background-primary);
+  color: var(--text);
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown {
+  background-color: var(--primary-background-color);
+  border-radius: 30px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+.closebutton {
+  top: 20px;
+  right: 10px;
+  position: absolute;
+}
+
+#settings-boxes {
+  margin-top: 20px;
+  background-color: var(--settings-box-bg);
+  height: 300px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 30px;
+}
+
+#settings-boxes h2,
+p {
+  color: var(--text);
+}
+
+#barswitch {
+  font-size: 50px;
+  color: var(--text);
+}
+
+#iconswitch {
+  font-size: 50px;
+  color: var(--text);
+}
+
+.names {
+  margin-left: 5px;
+  font-size: 13px;
+  color: white;
+  font-family: 'Noto Sans';
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: none;
+}
+
+#sidenav {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out;
+  margin-bottom: 20px;
+}
+
+#sidenav.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.button-save {
+  width: 50px;
+  height: 25px;
+  border: none;
+  outline: none;
+  color: var(--text);
+  background: var(--background-primary);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 30px;
+  margin-left: 5px;
+  font-size: 17px;
+  font-family: Noto Sans;
+  padding: 8px;
+}
+
+.button-save:before {
+  content: '';
+  background: var(--button-save);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 30px;
+}
+
+.button-save:active {
+  color: var(--background-primary)
+}
+
+.button-save:active:after {
+  background: transparent;
+}
+
+.button-save:hover:before {
+  opacity: 1;
+}
+
+.button-save:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--background-primary);
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.particlecheckbox {
+  display: none;
+}
+
+.slider {
+  width: 60px;
+  height: 30px;
+  background-color: lightgray;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border: 4px solid transparent;
+  transition: .3s;
+  box-shadow: 0 0 10px 0 var(--slider-dark-color) inset;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ag-button-text-color);
+  transform: translateX(-30px);
+  border-radius: 20px;
+  transition: .3s;
+  box-shadow: 0 0 10px 3px var(--slider-dark-color);
+}
+
+.particlecheckbox:checked~.slider::before {
+  transform: translateX(30px);
+  box-shadow: 0 0 10px 3px var(--slider-dark-color);
+}
+
+.particlecheckbox:checked~.slider {
+  background-color: var(--settings-hover-link);
+}
+
+.particlecheckbox:active~.slider::before {
+  transform: translate(0);
+}
+
+.blankcheckbox {
+  display: none;
+}
+
+.blankslider {
+  width: 60px;
+  height: 30px;
+  background-color: lightgray;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border: 4px solid transparent;
+  transition: .3s;
+  box-shadow: 0 0 10px 0 var(--slider-dark-color) inset;
+  cursor: pointer;
+}
+
+.blankslider::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-background-color);
+  transform: translateX(-30px);
+  border-radius: 20px;
+  transition: .3s;
+  box-shadow: 0 0 10px 3px var(--slider-dark-color);
+}
+
+.blankcheckbox:checked~.blankslider::before {
+  transform: translateX(30px);
+  box-shadow: 0 0 10px 3px var(--slider-dark-color);
+}
+
+.blankcheckbox:checked~.blankslider {
+  background-color: var(--settings-hover-link);
+}
+
+.blankcheckbox:active~.blankslider::before {
+  transform: translate(0);
+}
+
+#blob {
+	animation: rotate360 20s infinite;
+	background: var(--blob-color);
+	filter: blur(calc(var(--blob-size)/2.15));
+	
+	width: var(--blob-size);
+	height: var(--blob-size);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	border-radius: 50%;
+}
+
+@keyframes rotate360 {
+	from { rotate: 0deg; }
+	50% { scale: 1 1.15; }
+	to { rotate: 360deg; }
+}
+
+#sidenav {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out;
+  margin-bottom: 20px;
+}
+
+#sidenav.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#addapp {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out;
+  margin-bottom: 20px;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.445);
+  backdrop-filter: blur(5px);
+  overflow-x: hidden;
+
+  transition: opacity 1s;
+}
+
+#addapp.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Bounce In */
+.hvr-bounce-in {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.hvr-bounce-in:hover,
+.hvr-bounce-in:focus,
+.hvr-bounce-in:active {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+
+.grid-container {
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+  /* or 'absolute' if it's within another positioned element */
+  max-height: 87.5vh;
+  /* This is where you decide the scroll threshold */
+  overflow-y: scroll;
+
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  /* Creates 6 columns */
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1200px;
+  /* Adjust this based on the total width of 6 app shortcuts */
+  margin: auto;
+  overflow-y: auto;
+  align-items: center;
+}
+
+/* Style for each app shortcut */
+.app-shortcut {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px var(--app-shortcut-shadow);
+  background-color: var(--app-shortcut-bg);
+  display: flex;
+  cursor: pointer;
+}
+
+/* Style for the app images */
+.app-shortcut img {
+  width: 48px;
+  height: 48px;
+  border-radius: 60%;
+}
+
+.apptext {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  right: 0;
+  top: 0;
+  left: 40px;
+  margin-top: 2px;
+}
+
+/* Style for the pin/unpin buttons */
+.pin-button {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: var(--blur-bg-dark);
+  backdrop-filter: blur(10px);
+  color: var(--accent-color);
+  font-size: 0.8em;
+}
+
+/* Style for the form inputs and button */
+#newAppForm input,
+#newAppForm button {
+  width: 100px;
+}
+
+/* Clear the form on success */
+.clear-input {
+  clear: both;
+  display: block;
+  padding: 1px;
+  margin: 5px;
+  border: none;
+  background: none;
+}
+
+/* Grow Rotate */
+.hvr-grow-rotate {
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.hvr-grow-rotate:hover,
+.hvr-grow-rotate:focus,
+.hvr-grow-rotate:active {
+  -webkit-transform: scale(1.1) rotate(4deg);
+  transform: scale(1.1) rotate(4deg);
+}
+
+#searchBar {
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
   .apps-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    /* Creates 6 columns */
-    gap: 1rem;
-    padding: 1rem;
-    max-width: 1200px;
-    /* Adjust this based on the total width of 6 app shortcuts */
-    margin: auto;
-    overflow-y: auto;
-    align-items: center;
-  }
-  
-  /* Style for each app shortcut */
-  .app-shortcut {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px var(--app-shortcut-shadow);
-    background-color: var(--app-shortcut-bg);
-    display: flex;
-    cursor: pointer;
-  }
-  
-  /* Style for the app images */
-  .app-shortcut img {
-    width: 48px;
-    height: 48px;
-    border-radius: 60%;
-  }
-  
-  .apptext {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    right: 0;
-    top: 0;
-    left: 40px;
-    margin-top: 2px;
-  }
-  
-  /* Style for the pin/unpin buttons */
-  .pin-button {
-    position: relative;
-    bottom: 0;
-    right: 0;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    background-color: var(--blur-bg-dark);
-    backdrop-filter: blur(10px);
-    color: var(--accent-color);
-    font-size: 0.8em;
-  }
-  
-  /* Style for the form inputs and button */
-  #newAppForm input,
-  #newAppForm button {
-    width: 100px;
-  }
-  
-  /* Clear the form on success */
-  .clear-input {
-    clear: both;
-    display: block;
-    padding: 1px;
-    margin: 5px;
-    border: none;
-    background: none;
-  }
-  
-  /* Grow Rotate */
-  .hvr-grow-rotate {
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-  }
-  
-  .hvr-grow-rotate:hover,
-  .hvr-grow-rotate:focus,
-  .hvr-grow-rotate:active {
-    -webkit-transform: scale(1.1) rotate(4deg);
-    transform: scale(1.1) rotate(4deg);
-  }
-  
-  #searchBar {
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 16px;
-  }
-  
-  @media (max-width: 768px) {
-    .apps-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-  
-  @media (max-width: 480px) {
-    .apps-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
   }
-  
-  #addgame {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s ease-in-out;
-    margin-bottom: 20px;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    bottom: 0;
-    background-color: var(--);
-    backdrop-filter: blur(5px);
-    overflow-x: hidden;
-  
-    transition: opacity 1s;
+
+@media (max-width: 480px) {
+  .apps-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  #addgame.fadeOut {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
+}
+
+#addgame {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out;
+  margin-bottom: 20px;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  bottom: 0;
+  background-color: var(--);
+  backdrop-filter: blur(5px);
+  overflow-x: hidden;
+
+  transition: opacity 1s;
+}
+
+#addgame.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  /* Creates 6 columns */
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1200px;
+  /* Adjust this based on the total width of 6 game shortcuts */
+  margin: auto;
+  overflow-y: auto;
+  align-items: center;
+
+  /* Center the grid on the page */
+}
+
+/* Style for each game shortcut */
+.game-shortcut {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px var(--app-shortcut-shadow);
+  background-color: var(--app-shortcut-bg);
+  display: flex;
+  cursor: pointer;
+}
+
+/* Style for the game images */
+.game-shortcut img {
+  width: 48px;
+  height: 48px;
+  border-radius: 60%;
+}
+
+.gametext {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  right: 0;
+  top: 0;
+  left: 40px;
+  margin-top: 2px;
+}
+
+
+/* Style for the form inputs and button */
+#newGameForm input,
+#newGameForm button {
+  width: 100px;
+}
+
+@media (max-width: 768px) {
   .games-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    /* Creates 6 columns */
-    gap: 1rem;
-    padding: 1rem;
-    max-width: 1200px;
-    /* Adjust this based on the total width of 6 game shortcuts */
-    margin: auto;
-    overflow-y: auto;
-    align-items: center;
-  
-    /* Center the grid on the page */
-  }
-  
-  /* Style for each game shortcut */
-  .game-shortcut {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px var(--app-shortcut-shadow);
-    background-color: var(--app-shortcut-bg);
-    display: flex;
-    cursor: pointer;
-  }
-  
-  /* Style for the game images */
-  .game-shortcut img {
-    width: 48px;
-    height: 48px;
-    border-radius: 60%;
-  }
-  
-  .gametext {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    right: 0;
-    top: 0;
-    left: 40px;
-    margin-top: 2px;
-  }
-  
-  
-  /* Style for the form inputs and button */
-  #newGameForm input,
-  #newGameForm button {
-    width: 100px;
-  }
-  
-  @media (max-width: 768px) {
-    .games-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-  
-  @media (max-width: 480px) {
-    .games-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
   }
-  
+
+@media (max-width: 480px) {
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 100%;
+  margin: auto;
+  overflow-y: auto;
+  align-items: center;
+  margin-top: 2vh;
+}
+
+@media (max-width: 1920px) {
   .settings-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-    max-width: 100%;
-    margin: auto;
-    overflow-y: auto;
-    align-items: center;
-    margin-top: 2vh;
+    grid-template-columns: repeat(6, 1fr);
   }
-  
-  @media (max-width: 1920px) {
-    .settings-grid {
-      grid-template-columns: repeat(6, 1fr);
-    }
+}
+
+@media (max-width: 1776px) {
+  .settings-grid {
+    grid-template-columns: repeat(5, 1fr);
   }
-  
-  @media (max-width: 1776px) {
-    .settings-grid {
-      grid-template-columns: repeat(5, 1fr);
-    }
+}
+
+@media (max-width: 1632px) {
+  .settings-grid {
+    grid-template-columns: repeat(5, 1fr);
   }
-  
-  @media (max-width: 1632px) {
-    .settings-grid {
-      grid-template-columns: repeat(5, 1fr);
-    }
+}
+
+@media (max-width: 1520px) {
+  .settings-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
-  
-  @media (max-width: 1520px) {
-    .settings-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
+}
+
+@media (max-width: 1488px) {
+  .settings-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
-  
-  @media (max-width: 1488px) {
-    .settings-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
+}
+
+@media (max-width: 1344px) {
+  .settings-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
-  
-  @media (max-width: 1344px) {
-    .settings-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
+}
+
+@media (max-width: 1200px) {
+  .settings-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  @media (max-width: 1200px) {
-    .settings-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+}
+
+@media (max-width: 1056px) {
+  .settings-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  @media (max-width: 1056px) {
-    .settings-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+}
+
+@media (max-width: 912px) {
+  .settings-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  @media (max-width: 912px) {
-    .settings-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .settings-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .settings-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+}
+
+@media (max-width: 624px) {
+  .settings-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
-  
-  @media (max-width: 624px) {
-    .settings-grid {
-      grid-template-columns: repeat(1, 1fr);
-    }
+}
+
+@media (max-width: 480px) {
+  .settings-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
-  
-  @media (max-width: 480px) {
-    .settings-grid {
-      grid-template-columns: repeat(1, 1fr);
-    }
+
+  #footer {
+    display: none;
   }
-  
+
+  #clock {
+    display: none;
+  }
+}
