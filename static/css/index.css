@@ -168,10 +168,10 @@ a {
 #footer {
   position: fixed;
   bottom: 0;
-  border-radius: 15px;
+  border-radius: 40px;
   font-family: 'Noto Sans';
   width: 12%;
-  height: 5%;
+  height: 6%;
   background-color: var(--blur-bg-dark);
   backdrop-filter: blur(5px);
   padding-top: 7.5px;
