@@ -296,7 +296,7 @@ window.addEventListener("load", () => {
   }
 });
 
-window.onload = function() {
+/* window.onload = function() {
   navigator.getBattery().then(function(battery) {
     // Get the current battery level
     var batteryLevel = battery.level * 100;
@@ -304,7 +304,7 @@ window.onload = function() {
     document.getElementById("battery").innerHTML = batteryLevel + "%";
     battery.addEventListener("levelchange", document.getElementById("battery").innerHTML = batteryLevel + "%");
   });
-  };
+  }; */
 
 setdefaults();
 setthemes();
