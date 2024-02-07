@@ -48,7 +48,7 @@ body {
   vertical-align: middle;
   position: r;
   user-select: none;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .titlebutton:hover {
