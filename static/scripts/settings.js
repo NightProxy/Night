@@ -377,6 +377,13 @@ window.addEventListener("load", () => {
   }
 });
 
+navigator.getBattery().then(function(battery) {
+  // Get the current battery level
+  var batteryLevel = battery.level * 100;
+  // Do something with the battery level, such as display it to the user
+  document.getElementById("battery").innerHTML = batteryLevel;
+});
+
 setdefaults();
 setthemes();
 setcloaks();
