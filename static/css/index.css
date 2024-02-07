@@ -171,7 +171,7 @@ a {
   border-radius: 40px;
   font-family: 'Noto Sans';
   width: 7%;
-  height: 6%;
+  height: 5%;
   background-color: var(--blur-bg-dark);
   backdrop-filter: blur(5px);
   padding-top: 7.5px;
