@@ -458,7 +458,7 @@ function getAppElement(app, index) {
         <a style="font-size:12px;" onclick="iframe('${app.url}')" title="${app.name}">
           ${app.name}
         </a>
-        <button class="button-save" onclick="togglePin(${index})">
+        <button style="padding:0" class="button-save" onclick="togglePin(${index})">
           ${app.isPinned ? 'Unpin' : 'Pin'}
         </button>
       </div>`

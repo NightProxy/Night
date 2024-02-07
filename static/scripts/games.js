@@ -579,7 +579,7 @@ function getGameElement(game, index) {
         <a style="font-size:12px;" onclick="iframe('${game.url}')" title="${game.name}">
           ${game.name}
         </a>
-        <button class="button-save" onclick="togglePin(${index})">
+        <button style="padding:0" class="button-save" onclick="togglePin(${index})">
           ${game.isPinned ? 'Unpin' : 'Pin'}
         </button>
       </div>`
