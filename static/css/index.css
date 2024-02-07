@@ -233,8 +233,8 @@ a {
 input {
   padding: 20px;
   width: 550px;
-  border-radius: 5px;
-  background: var(--input-background-color);
+  border-radius: 40px;
+  background: #191919;
   text-align: center;
   border: none;
   outline: none;
@@ -389,7 +389,7 @@ select {
 #settings-boxes {
   margin-top: 20px;
   background-color: var(--settings-box-bg);
-  height: 300px;
+  height: 350px;
   width: 300px;
   display: flex;
   align-items: center;
