@@ -180,6 +180,12 @@ a {
   color: var(--input-text-color);
   font-size: 14px;
   z-index: 100000;
+  border: 2px solid white; /* Default white border */
+  transition: border-color 0.3s; /* Smooth transition for border color change */
+}
+
+#footer:hover {
+  border-color: var(--settings-hover-link); /* Blue border on hover */
 }
 
 #footer p {
@@ -206,6 +212,12 @@ a {
   z-index: 999;
  background-color: rgba(0, 0, 0, 0.445);
   backdrop-filter: blur(1px);
+  border: 2px solid white; /* Default white border */
+  transition: border-color 0.3s; /* Smooth transition for border color change */
+}
+
+#icbuttons:hover {
+  border-color: var(--settings-hover-link) /* Blue border on hover */
 }
 
 .zoom {
