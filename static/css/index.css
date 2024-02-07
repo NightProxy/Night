@@ -450,6 +450,7 @@ p {
   margin-left: 5px;
   font-size: 17px;
   font-family: Noto Sans;
+  padding: 8px;
 }
 
 .button-save:before {
