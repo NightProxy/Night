@@ -20,12 +20,8 @@
   --button-hover-background-color: #ffffff;
   --cancel-button-background-color: #ffffff;
   --save-button-background-color: #4f4f4f;
-  --blob-color: linear-gradient(
-		to right,
-		rgb(222, 222, 222),
-		rgb(54, 54, 54)
-	);
-	--blob-size: 400px;
+  --blob-color: linear-gradient(to right,rgb(222, 222, 222),rgb(54, 54, 54));
+  --blob-size: 400px;
   --blur-bg-dark: rgba(0, 0, 0, 0.445);
   --settings-hover-link: #d6d6d6;
   --settings-box-bg: #171717;
