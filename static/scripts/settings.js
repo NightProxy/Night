@@ -268,7 +268,7 @@ function setthemes() {
     themefile.href = "/css/themes/fire/fire.css";
     particlesJS("particles-js", { "particles": { "number": { "value": 149, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffc200" }, "shape": { "type": "circle", "stroke": { "width": 1, "color": "#ff0000" }, "polygon": { "nb_sides": 3 }, "image": { "src": "img/github.svg", "width": 100, "height": 100 } }, "opacity": { "value": 1, "random": true, "anim": { "enable": true, "speed": 10, "opacity_min": 0, "sync": false } }, "size": { "value": 4.008530152163807, "random": true, "anim": { "enable": true, "speed": 40, "size_min": 0.1, "sync": false } }, "line_linked": { "enable": false, "distance": 0, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 19.24094473038627, "direction": "top-right", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 1362.9002517356944, "rotateY": 1200 } } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } } }, "retina_detect": true });
     if (localStorage.cloak == "off") {
-      changeFavicon('/css/themes/fire/firefavicon.ico');
+      changeFavicon('/css/themes/fire/favicon.ico');
     };
     logo.src = "/css/themes/fire/favicon.ico";
   } else if (localStorage.theme == "meteor") {
@@ -282,7 +282,7 @@ function setthemes() {
       changeFavicon('/images/favicon/favicon.ico');
     };
   }
-} else if (window.location.pathname.endsWith('games') || window.location.pathname.endsWith('apps')) {
+} else {
   if (localStorage.theme == "default") {
     themefile.href = "/css/index.css";
     if (localStorage.cloak == "off") {
@@ -309,9 +309,9 @@ function setthemes() {
   } else if (localStorage.theme == "fire") {
     themefile.href = "/css/themes/fire/fire.css";
     if (localStorage.cloak == "off") {
-      changeFavicon('/css/themes/fire/firefavicon.ico');
+      changeFavicon('/css/themes/fire/favicon.ico');
     };
-    logo.src = "/css/themes/fire/firefavicon.ico";
+    logo.src = "/css/themes/fire/favicon.ico";
   } else if (localStorage.theme == "meteor") {
     themefile.href = "/css/themes/meteor/meteor.css";
   } else {
