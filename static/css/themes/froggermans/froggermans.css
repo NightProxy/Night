@@ -168,9 +168,9 @@ a {
 #footer {
   position: fixed;
   bottom: 0;
-  border-radius: 15px;
+  border-radius: 40px;
   font-family: 'Noto Sans';
-  width: 10%;
+  width: 7%;
   height: 5%;
   background-color: var(--blur-bg-dark);
   backdrop-filter: blur(5px);
