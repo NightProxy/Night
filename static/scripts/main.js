@@ -221,8 +221,8 @@ function setthemes() {
       changeFavicon('/images/favicon/favicon.ico');
     };
     logo.src = "/images/favicon/favicon.ico";
-  } else if (localStorage.theme == "noir") {
-    themefile.href = "/css/themes/noir/noir.css";
+  } else if (localStorage.theme == "monochrome") {
+    themefile.href = "/css/themes/monochrome/monochrome.css";
   } else if (localStorage.theme == "void") {
     themefile.href = "/css/themes/void/void.css";
   } else if (localStorage.theme == "ip") {
