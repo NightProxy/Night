@@ -45,8 +45,6 @@ function topbar() {
   icons.style.display = "flex";
   icons.style.alignItems = "left";
   icons.style.justifyItems = "left";
-  icons.style.right = "";
-  icons.style.left = "0";
   apps.innerHTML += '<span class="names">Apps</span>';
   game.innerHTML += '<span class="names">Games</span>';
   extras.innerHTML += '<span class="names">Extras</span>';
@@ -214,7 +212,7 @@ function setthemes() {
       changeFavicon('/images/favicon/favicon.ico');
     };
   }
-} else if (window.location.pathname.endsWith('games') || window.location.pathname.endsWith('apps')) {
+} else if (window.location.pathname.endsWith('games') || window.location.pathname.endsWith('apps') || window.location.pathname.endsWith('s')) {
   if (localStorage.theme == "default") {
     themefile.href = "/css/index.css";
     if (localStorage.cloak == "off") {
