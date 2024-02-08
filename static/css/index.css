@@ -210,7 +210,8 @@ box-shadow: 0 0 5px 3px var(--settings-hover-link);}
   top: 20px;
   height: 49px;
   z-index: 999;
- background-color: rgba(0, 0, 0, 0.445);
+  background-color: rgba(0, 0, 0, 0.445);
+  left: auto;
   backdrop-filter: blur(1px);
   box-shadow: 0 0 5px 3px white; /* Blur effect with 7px thickness */
   transition: box-shadow 0.3s; /* Smooth transition for border color change */
