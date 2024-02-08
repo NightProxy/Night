@@ -6,7 +6,7 @@
   --input-border-size: 1.3px;
   --input-border-color: #ffffff;
   --input-outline: rgba(225, 225, 225, 0.8);
-  --input-focus: rgba(5, 126, 242);
+  --input-focus: rgba(255, 255, 255);
   --footer-border-color: #ffffff;
   --ag-button-text-color: #1E1E1E;
   --primary-background-color: #1e1e1e;
@@ -15,25 +15,22 @@
   --main-text-color: #ffffff;
   --text: #ffffff;
   --search-placeholder-color: #ffffff;
-  --bookmark-background-color: #6B52A3;
-  --bookmark-hover-background-color: #5B3A75;
-  --input-background-color: #1a1a2b;
-  --button-background-color: #6B52A3;
+  --input-background-color: #1f1f1f;
   --button-text-color: #fff;
   --button-hover-background-color: #ffffff;
   --cancel-button-background-color: #ffffff;
   --save-button-background-color: #4f4f4f;
   --blob-color: linear-gradient(
 		to right,
-		rgb(0, 98, 255),
-		rgb(40, 87, 172)
+		rgb(222, 222, 222),
+		rgb(135, 135, 135)
 	);
 	--blob-size: 400px;
   --blur-bg-dark: rgba(0, 0, 0, 0.445);
-  --settings-hover-link: #1983f0;
+  --settings-hover-link: #d6d6d6;
   --settings-box-bg: #363636;
   --slider-dark-color: rgb(0, 0, 0, 0.25);
-  --button-save: linear-gradient(45deg, #1983f0, #230063, #303030);
+  --button-save: linear-gradient(45deg, #d6d6d6, #878787, #3d3d3d);
   --app-shortcut-shadow: rgba(0, 0, 0, 0.2);
   --app-shortcut-bg: #212121;
 }
@@ -180,8 +177,8 @@ a {
   color: var(--input-text-color);
   font-size: 14px;
   z-index: 100000;
-  box-shadow: 0 0 5px 3px white; /* Blur effect with 7px thickness */
-  transition: box-shadow 0.3s; /* Smooth transition for border color change */
+  box-shadow: 0 0 15px 1px #262626; /* Blur effect with 7px thickness */
+  transition: box-shadow 1s; /* Smooth transition for border color change */
 }
 
 #footer:hover {
@@ -210,10 +207,10 @@ box-shadow: 0 0 5px 3px var(--settings-hover-link);}
   top: 20px;
   height: 49px;
   z-index: 999;
- background-color: rgba(0, 0, 0, 0.445);
+  background-color: rgba(0, 0, 0, 0.445);
   backdrop-filter: blur(1px);
-  box-shadow: 0 0 5px 3px white; /* Blur effect with 7px thickness */
-  transition: box-shadow 0.3s; /* Smooth transition for border color change */
+  box-shadow: 0 0 15px 1px #262626; /* Blur effect with 7px thickness */
+  transition: box-shadow 1s; /* Smooth transition for border color change */
 }
 
 #icbuttons:hover {
