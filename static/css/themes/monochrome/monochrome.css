@@ -173,7 +173,7 @@ a {
   color: var(--input-text-color);
   font-size: 14px;
   z-index: 100000;
-  box-shadow: 0 0 15px 1px #262626; /* Blur effect with 7px thickness */
+  box-shadow: 0 0 15px 4px #262626; /* Blur effect with 7px thickness */
   transition: box-shadow 1s; /* Smooth transition for border color change */
 }
 
@@ -205,7 +205,7 @@ box-shadow: 0 0 5px 3px var(--settings-hover-link);}
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.445);
   backdrop-filter: blur(1px);
-  box-shadow: 0 0 15px 1px #262626; /* Blur effect with 7px thickness */
+  box-shadow: 0 0 15px 4px #262626; /* Blur effect with 7px thickness */
   transition: box-shadow 1s; /* Smooth transition for border color change */
 }
 
