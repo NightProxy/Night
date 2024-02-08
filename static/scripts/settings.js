@@ -54,8 +54,6 @@ function topbar() {
   icons.style.display = "flex";
   icons.style.alignItems = "left";
   icons.style.justifyItems = "left";
-  icons.style.right = "";
-  icons.style.left = "0";
   apps.innerHTML += '<span class="names">Apps</span>';
   game.innerHTML += '<span class="names">Games</span>';
   extras.innerHTML += '<span class="names">Extras</span>';
