@@ -170,6 +170,10 @@ function setthemes() {
     logo.src = "/images/favicon/favicon.ico";
   } else if (localStorage.theme == "monochrome") {
     themefile.href = "/css/themes/monochrome/monochrome.css";
+    if (localStorage.cloak == "off") {
+      changeFavicon('/css/themes/monochrome/favicon.ico');
+    };
+    logo.src = "/css/themes/monochrome/favicon.ico";
   } else if (localStorage.theme == "void") {
     themefile.href = "/css/themes/void/void.css";
   } else if (localStorage.theme == "ip") {
