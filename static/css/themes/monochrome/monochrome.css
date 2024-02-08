@@ -404,7 +404,14 @@ select {
   flex-direction: row;
   justify-content: center;
   border-radius: 30px;
+  transition: 1s;
 }
+
+#settings-boxes:hover {
+  box-shadow: 0 0 15px 1px #ffffff;
+  transition: 1s;
+}
+
 
 #settings-boxes h2,
 p {
