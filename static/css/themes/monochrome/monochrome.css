@@ -5,7 +5,7 @@
   --input-background-color: #222;
   --input-border-size: 1.3px;
   --input-border-color: #ffffff;
-  --input-outline: rgba(225, 225, 225, 0.8);
+  --input-outline: rgba(122 122 122, 0.8);
   --input-focus: rgba(255, 255, 255);
   --footer-border-color: #ffffff;
   --ag-button-text-color: #1E1E1E;
@@ -23,7 +23,7 @@
   --blob-color: linear-gradient(
 		to right,
 		rgb(222, 222, 222),
-		rgb(135, 135, 135)
+		rgb(54, 54, 54)
 	);
 	--blob-size: 400px;
   --blur-bg-dark: rgba(0, 0, 0, 0.445);
