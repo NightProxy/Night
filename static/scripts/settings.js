@@ -244,8 +244,12 @@ function setthemes() {
       changeFavicon('/images/favicon/favicon.ico');
     };
     logo.src = "/images/favicon/favicon.ico";
-  } else if (localStorage.theme == "noir") {
-    themefile.href = "/css/themes/noir/noir.css";
+  } else if (localStorage.theme == "monochrome") {
+    themefile.href = "/css/themes/monochrome/monochrome.css";
+    if (localStorage.cloak == "off") {
+      changeFavicon('/css/themes/monochrome/favicon.ico');
+    };
+    logo.src = "/css/themes/monochrome/favicon.ico";
   } else if (localStorage.theme == "void") {
     themefile.href = "/css/themes/void/void.css";
   } else if (localStorage.theme == "ip") {
@@ -268,7 +272,7 @@ function setthemes() {
     if (localStorage.cloak == "off") {
       changeFavicon('/css/themes/fire/firefavicon.ico');
     };
-    logo.src = "/css/themes/fire/firefavicon.ico";
+    logo.src = "/css/themes/fire/favicon.ico";
   } else if (localStorage.theme == "meteor") {
     themefile.href = "/css/themes/meteor/meteor.css";
   } else {
