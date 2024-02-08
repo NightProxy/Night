@@ -1,3 +1,4 @@
+<option value="fire">Fire</option>
 <option value="void">Void</option>
 <option value="xg">XGames</option>
 <option value="stealth">Stealth</option>
