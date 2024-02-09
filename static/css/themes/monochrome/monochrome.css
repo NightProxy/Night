@@ -204,7 +204,7 @@ box-shadow: 0 0 5px 3px var(--settings-hover-link);}
   height: 49px;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.445);
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(5px);
   box-shadow: 0 0 15px 4px #262626; /* Blur effect with 7px thickness */
   transition: box-shadow 1s; /* Smooth transition for border color change */
 }
@@ -392,7 +392,7 @@ select {
 #settings-boxes {
   margin-top: 20px;
   background-color: var(--settings-box-bg);
-  height: 300px;
+  height: 350px;
   width: 300px;
   display: flex;
   align-items: center;
