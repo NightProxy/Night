@@ -67,8 +67,6 @@ body {
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background-color: var(--background-primary);
-  background-image: url(/bg.png);
   background-repeat: no-repeat;
   text-align: center;
   margin-top: -4%;
