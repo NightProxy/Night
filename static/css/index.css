@@ -69,7 +69,7 @@ body {
   height: 100vh;
   background-repeat: no-repeat;
   text-align: center;
-  margin-top: -4%;
+  overflow: hidden;
 }
 
 #imgsearch {
