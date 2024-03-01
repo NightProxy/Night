@@ -45,6 +45,23 @@ body {
   position: r;
   user-select: none;
   overflow-x: hidden;
+
+  /* Set the base width and height */
+  --base-width: 1920px;
+  --base-height: 1080px;
+
+  /* Get the device width and height */
+  --device-width: 100vw;
+  --device-height: 100vh;
+
+  /* Calculate the UI size */
+  --ui-width: calc(var(--base-width) / var(--device-width) * 100);
+  --ui-height: calc(var(--base-height) / var(--device-height) * 100);
+
+  /* Apply the UI size to all UI objects */
+  font-size: var(--ui-width);
+  width: var(--ui-width);
+  height: var(--ui-height);
 }
 
 .titlebutton:hover {
